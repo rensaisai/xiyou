@@ -1,0 +1,43 @@
+
+<view class="container proxy-body">
+<view class='proxy-head'>
+<image class="proxy-headimg" hidden='{{headimgshow}}' mode="widthFix" src="/image/vip.jpg"></image>
+<!-- <view class=''>请好友扫描即可成为会员</view> -->
+  <!-- <canvas style="width:{{imgwidth}}px;height:{{imgheight}}px;background:#f1f1f1;border:1px solid #ffffff;margin:0 auto;" canvas-id="mycanvas" hidden='{{qrshow}}' /> -->
+  <image class="proxy-qrimg" hidden='{{qrshow}}' mode="widthFix" src="{{qrCodeUrl}}"></image>
+</view>
+  <view class="page-body">
+    <view class="page-section page-section-spacing swiper proxy-viptitle">
+    <view>{{message}}</view>
+    <!-- <image class="top-img-right" src="/image/scan.png" bindtap="scanCode" hidden='{{headimgshow}}'></image> -->
+    </view>
+    <view class="page-section" style="margin-top: 10rpx;margin-bottom: 0rpx;">
+      <view class="weui-cells">
+        <view class="weui-cell proxy-cell">
+          <view class="weui-cell__bd proxy-info">1、获得价值299元定制旅行包一件。</view>
+           <view class="weui-cell__ft">
+           </view>
+        </view>
+        <view class="weui-cell proxy-cell">
+          <view class="weui-cell__bd proxy-info">2、获得旅游直达号超级VIP会员卡一张。</view>
+           <view class="weui-cell__ft">
+           </view>
+        </view>
+        <view class="weui-cell proxy-cell">
+          <view class="weui-cell__bd proxy-info">3、享受旅游直达号会员出游优惠权益。</view>
+           <view class="weui-cell__ft">
+           </view>
+        </view>
+        <view class="weui-cell proxy-cell">
+          <view class="weui-cell__bd proxy-info">4、分享获得旅游直达号商城代金券奖励。</view>
+          <view class="weui-cell__ft">
+          </view>
+        </view>
+      </view>
+    </view>
+        <button type="primary" class="button-big butto butt" style="background-color:#1296db" bindtap="checkOrder" hidden='{{notBuy}}'>立即购买</button>
+  </view>
+
+  <!-- <button type="primary" class="button-big button-big login" style="background-color:#1296db" bindtap='joinVIPRequest' hidden='{{headimgshow}}'>立即加入VIP会员</button> -->
+
+</view>

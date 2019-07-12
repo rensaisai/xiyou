@@ -1,0 +1,115 @@
+
+@import "/pages/addre/addre.wxss";
+.box{
+  width: 100%;
+  height: 88rpx;
+  background: #ffffff;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  margin-top: 2rpx;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.box:nth-child(3){
+  margin-top: 16rpx;
+}
+.title{
+  width: 180rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+  text-align:justify; 
+}
+.title::after{
+  width: 100%;
+  display: inline-block;
+  content: '';  
+}
+.input-box{
+  flex:1; 
+}
+.region-box{
+  display: flex;
+}
+.region{
+  width: 50%;
+  height: 88rpx;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.img{
+  width: 18rpx;
+  height: 28rpx;
+}
+.phone-box{
+  justify-content: space-between;
+}
+.validation{
+  height: 88rpx;
+  line-height: 88rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #E51337;
+}
+.countdown{
+  height: 88rpx;
+  line-height: 88rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #b9b9b9;
+}
+.btn{
+  width: 100%;
+  height: 88rpx;
+  margin-top: 16rpx;
+  font-size: 28rpx;
+  color:#E51337;
+  line-height: 88rpx;
+  background: #ffffff; 
+}
+button{
+  border-radius:0rpx; 
+}
+button::after{
+border: none;
+}
+.attention{
+  font-size: 28rpx;
+  color: #000000;
+  font-weight: 600;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  margin-top: 78rpx;
+}
+.attention-box{
+  width: 100%;
+  height: auto;
+  padding: 28rpx 48rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  color: #8A8B8D;
+}
+.province-box{
+  width: 100%;
+  height: 88rpx;
+  margin-top: 2rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+  color: #9a9a9a;
+  font-weight: 600;
+}
+.province-icon{
+  width: 24rpx;
+  height: 26rpx;
+}

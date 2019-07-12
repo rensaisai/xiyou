@@ -1,0 +1,499 @@
+
+<view class="index" bindtap='show'>
+<view class="logo-head">
+<!-- <image class="logo-img" src="/image/logo.png"></image> -->
+</view>
+<!-- <form bindsubmit='registerClick'> -->
+   <view class="car-box" catchtap='carnos'>
+     <view class="vehicle-title">输入用户车牌号</view>
+     <view class="choose-vehicle">{{carno}}</view>
+   </view>
+   <view class="page-section">
+      <view class="weui-cells__title">汽车24项安全检测</view>
+      <view class="weui-cells weui-cells_after-title">
+      </view>
+  </view>
+   <view class="page-section">
+      <view class="weui-cells__title">全部</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group class="radio-float" bindchange="radioChange">
+            <label wx:for-items="{{checkList}}"  wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+          <!-- <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view> -->
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">检查雨刮器</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group class="radio-float" bindchange="radioChange1">
+            <label wx:for-items="{{checkList}}"  wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+          <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view>
+      </view>
+  </view>
+  <view class="page-section" >
+      <view class="weui-cells__title">检查发动机机油位</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange2" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+           <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view>
+      </view>
+  </view>
+
+  <view class="page-section" >
+      <view class="weui-cells__title">检查玻璃清洗液</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange3" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+           <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view>
+      </view>
+  </view>
+  <view class="page-section" >
+      <view class="weui-cells__title">检查外部灯光</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange4" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+           <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view>
+      </view>
+  </view>
+  <view class="page-section" >
+      <view class="weui-cells__title">检查防冻液</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange5" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+           <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view>
+      </view>
+  </view>
+  <view class="page-section" >
+      <view class="weui-cells__title">检查刹车油</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange6" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+           <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view>
+      </view>
+  </view>
+  <view class="page-section" >
+      <view class="weui-cells__title">检查仪表照明灯</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange7" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+           <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view>
+      </view>
+  </view>
+  <view class="page-section" >
+      <view class="weui-cells__title">检查助力转向机油</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange8" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+           <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view>
+      </view>
+  </view>
+  
+  <view class="page-section" >
+      <view class="weui-cells__title">轮胎面检查</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange9" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+           <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view>
+      </view>
+  </view>
+  
+  <view class="page-section" >
+      <view class="weui-cells__title">胎压检测</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange10" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+           <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view>
+      </view>
+  </view>
+  
+  <view class="page-section" >
+      <view class="weui-cells__title">检查空气滤芯</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange11" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+           <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view>
+      </view>
+  </view>
+  <view class="page-section" >
+      <view class="weui-cells__title">检查变速箱油</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange12" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+           <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view>
+      </view>
+  </view>
+  <view class="page-section" >
+      <view class="weui-cells__title">检查各种皮带</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange13" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+           <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view>
+      </view>
+  </view>
+  <view class="page-section" >
+      <view class="weui-cells__title">检查涨紧轮</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange14" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+           <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view>
+      </view>
+  </view>
+  <view class="page-section" >
+      <view class="weui-cells__title">检查减震/减震支撑</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange15" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+           <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view>
+      </view>
+  </view>
+  <view class="page-section" >
+      <view class="weui-cells__title">检查拉杆</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange16" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+           <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view>
+      </view>
+  </view>
+   <!-- <view class="page-section">
+      <view class="weui-cells__title">OBDII系统检测</view>
+      <view class="weui-cells weui-cells_after-title">
+      </view>
+  </view> -->
+   <view class="page-section" >
+      <view class="weui-cells__title">检查球头</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange17" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+           <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view>
+      </view>
+  </view>
+   <view class="page-section" >
+      <view class="weui-cells__title">检查驱动轴套/驱动轴</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange18" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+           <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view>
+      </view>
+  </view>
+   <view class="page-section" >
+      <view class="weui-cells__title">检查缓冲胶套</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange19" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+           <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view>
+      </view>
+  </view>
+   <view class="page-section" >
+      <view class="weui-cells__title">检查稳定平衡杆</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange20" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+           <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view>
+      </view>
+  </view>
+
+   <view class="page-section" >
+      <view class="weui-cells__title">检查横立杆</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange21" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+           <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view>
+      </view>
+  </view>
+
+  <view class="page-section" >
+      <view class="weui-cells__title">检查差速器</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange22" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+           <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view>
+      </view>
+  </view>
+
+  <view class="page-section" >
+      <view class="weui-cells__title">检查分动箱是否泄漏</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange23" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+           <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view>
+      </view>
+  </view>
+
+  <view class="page-section" >
+      <view class="weui-cells__title">检查电瓶，电瓶线，电瓶支架</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange24" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item.value}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+           <view class='state'><image src="/image/navi.png" class="img"></image>说明
+</view>
+      </view>
+  </view>
+
+
+  
+        
+
+
+
+      <view class="weui-cells__title">技师姓名</view>
+
+        <view class='list_box'>
+    <view class='select' catchtap='selectTaps'>
+        <text class='select_text'>{{stlist[indexs].name}}</text>
+        <image class='select_img {{shows&&"select_img_rotate"}}' src='/image/sortdown.png'></image> 
+    </view>
+    <view class='option_box' style='height:{{shows?(stlist.length>5?300:stlist.length*60):0}}rpx;'>
+        <text class='option' style='{{index==stlist.length-1&&"border:0;"}}' wx:for='{{stlist}}' wx:key='this' data-index='{{index}}' catchtap='optionTaps'>{{item.name}}</text>
+    </view>
+</view>
+
+  
+
+  <view class="page-section">
+      <view class="weui-cells__title">备注</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <textarea name="fishDesc" bindblur="bindTextAreaBlur" placeholder="请输入检测结果建议" value='{{proposal}}' style='height:50px' maxlength='-1'/>
+        </view>
+      </view>
+  </view>
+  <button type="primary" class="button-big login" style="background-color:#1296db" form-type='submit' loading='{{loading}}' catchtap='registerClick'>提交</button>
+<!-- </form> -->
+</view>
+
+
+<!-- 省键盘 -->
+  <view class="provinces" hidden='{{hiddenPro}}'>
+    <view class="pro-li fl" wx:for="{{provinceArr}}" wx:key="{{item.index}}"catchtap='proTap' data-province="{{item}}">{{item}}</view>
+  </view>
+  <!-- 号码键盘 -->
+  <view class="provinces" hidden='{{hiddenStr}}'>
+    <view class="pro-li fl" wx:for="{{strArr}}" wx:key="{{item.index}}" catchtap='strTap' data-str="{{item}}">{{item}}</view>
+    <view class="bot">
+      <view class='kb-icon kb-hide fl pro-li' catchtap='backKeyboard'>返回</view>
+      <view class='kb-icon kb-hide fl pro-li' catchtap='backSpace'>删除</view>
+   </view>
+  </view>

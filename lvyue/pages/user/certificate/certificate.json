@@ -1,0 +1,7 @@
+{  
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "提交身份证信息",
+  "navigationBarBackgroundColor": "#ffffff",
+  "enablePullDownRefresh": false,
+  "usingComponents": {}
+}

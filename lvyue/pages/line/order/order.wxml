@@ -1,0 +1,220 @@
+<view class="index">
+  <view class="box" style='margin-top:0rpx;'>
+    <view class="blank"></view>
+    <view class="icon-box">
+        <view class="icon"></view>
+    </view>
+    <view class="introduce">{{introduce.subtitle}}</view>
+    <view class="essential">
+       <view class="essential-box">
+          <view class="essential-icon1"></view>
+          <view class="essential-text">出发</view>
+       </view>
+       <view class="essential-box">
+          <view class="essential-icon2"></view>
+          <view class="essential-text">{{schedule.time}}</view>
+       </view>
+       <view class="essential-box">
+          <view class="essential-icon3"></view>
+          <view class="essential-text">{{schedule.adultnum}}成人/{{schedule.childrennum}}儿童</view>
+       </view>
+    </view>
+  </view>
+
+  <form bindsubmit="formSubmit">
+  <view class="box">
+     <view class="box-top">
+         <view class="box-top-left">
+            <view class="top-left-icon"></view>
+            <view class="top-left-text">联系人</view>
+         </view>
+         <view class="box-top-right">
+            <view class="top-left-icon1"></view>
+            <view class="top-left-text">联系人</view>
+            <view class="top-left-jtou"></view>
+         </view>
+     </view>
+
+         <view class="input-box">
+            <text class="name" decode="{{true}}" >姓 名</text>
+            <view class="dian">.</view>
+            <input class="name-input" placeholder="请输入姓名" placeholder-style="color:#636363; font-size:28rpx;" name="name"></input>
+         </view>
+          <view class="input-box">
+            <view class="name">手机号</view>
+            <view class="dian">.</view>
+            <input class="name-input" placeholder="请输入手机号" placeholder-style="color:#636363; font-size:28rpx;" name="phone" type="number"></input>
+         </view>
+          <view class="input-box">
+            <view class="name">邮 箱</view>
+            <view class="dian"></view>
+            <input class="name-input1" placeholder="选填，用于接收行程书" placeholder-style="color:#636363; font-size:28rpx;" name="mailbox"></input>
+         </view>
+      </view>
+
+  <view class="box" >
+      <view class="box-tourism" bindtap='selecttourism'>
+          <view class="tourism-left">
+             <view class="tourism-left-icon"></view>
+             <view class="tourism-left-text">出游人</view>
+          </view>
+          <view class="top-left-jtou"></view>
+      </view>
+      <block wx:for="{{listbox}}" wx:key="item.id">
+       <view class="visitors">
+             <view class="visitors-name">{{item.touristName}}</view> 
+             <view class="visitors-phone">{{item.touristPhone}}</view>
+       </view>
+       </block>
+
+  </view>
+
+  <view class="box">
+      <view class="box-tourism">
+          <view class="tourism-left">
+             <view class="discounts-left-icon"></view>
+             <view class="tourism-left-text">优惠方案</view>
+          </view>
+      </view>
+      <view class="discounts-box">
+          <view class="discounts1">
+              <view class="discounts-left-icon"></view>
+              <view class="tourism-left-text" style="color:#E3062A;">标准优惠</view>
+          </view>
+          <!-- <view class="discounts">
+              <view class="coupon">优惠券</view>
+              <view class="top-left-jtous"></view>
+          </view> -->
+          <view class="discounts">
+              <view class="coupon">金币</view>
+              <view class="coupon" wx:if="{{schedule.deduction == 0}}">您无可用金币</view>
+              <view class="coupon text" wx:else>您已使用{{schedule.deduction}}金币</view>
+          </view>
+      </view>
+  </view>
+
+
+    <view class="box">
+      <view class="box-tourism">
+          <view class="tourism-left">
+             <view class="product-left-icon"></view>
+             <view class="tourism-left-text">附加产品</view>
+          </view>
+      </view>
+      <block wx:for="{{addition}}" wx:key="item.id">
+      <view class="product-box">
+          <view class="product-left">
+              <view class="room">{{item.name}}</view>
+              <view class="difference">￥{{item.price}}<text class="between">/{{item.company}}</text>
+              </view>
+          </view>
+           <view class="product-right">
+              <view class="subtract" bindtap='subtract' data-index="{{index}}"></view>
+              <view class="num">{{item.num}}</view>
+              <view class="add" bindtap='add' data-index="{{index}}"></view>
+           </view>
+      </view>
+      </block>
+  </view>
+  
+
+   <view class="box">
+      <view class="box-tourism">
+          <view class="tourism-left">
+             <view class="trip-left-icon"></view>
+             <view class="tourism-left-text">出行信息</view>
+          </view>
+      </view>
+      <view class="trip-box">
+          <view class="trip">
+             <view class="go">
+               <view class="messg">去程:</view>
+               <input placeholder='航班号/车次' class="inputm" name="goflight" placeholder-style="color:#E4E4E4; font-size:28rpx;"></input>
+             </view>
+              <view class="time">
+                <view class="messg">时间:</view>
+                <input placeholder='{{quantum}}' class="inputs" name="gotime" placeholder-style="color:#E4E4E4; font-size:28rpx;"></input>
+              </view>
+          </view>
+          <view class="trip trips">
+              <view class="go">
+               <view class="messg">返程:</view>
+               <input placeholder='航班号/车次' class="inputm" name="getflight" placeholder-style="color:#E4E4E4; font-size:28rpx;"></input>
+             </view>
+              <view class="time">
+                <view class="messg">时间:</view>
+                <input placeholder='{{quantum}}' class="inputs" name="gettime" placeholder-style="color:#E4E4E4; font-size:28rpx;" ></input>
+              </view>
+          </view>
+      </view>
+     </view>
+
+
+  <view class="box">
+      <view class="box-tourism">
+          <view class="tourism-left">
+             <view class="remark-left-icon"></view>
+             <view class="tourism-left-text">备注</view>
+          </view>
+      </view>
+      <view class="remark-box">
+         <view class="remark-icon"></view>
+         <input  placeholder="特殊条件请备注" placeholder-style="color:#636363; font-size:28rpx;" name="remark"/>
+      </view>
+  </view>
+  
+  <view class="box">
+      <view class="box-tourism">
+          <view class="tourism-left">
+             <view class="serve-left-icon"></view>
+             <view class="tourism-left-text">服务门店</view>
+          </view>
+      </view>
+      <view class="serve-box">
+           <view class="serve-left">
+            <block wx:for="{{shop}}" wx:key = "item.id">
+             <view  class="site">{{item.address}}</view>
+            </block> 
+             <!-- <view class="site-text">太原市小店区晋阳街南二巷 </view>
+             <view class="site-text">三恒煤化工大厦</view> -->
+           </view>
+           <view class="serve-right" bindtap='phone'>
+               <view class="serve-phone"></view>
+           </view>
+      </view>
+  </view>
+  <view class="block"></view>
+  <view class="btn">
+     <view class="btn-left">
+      <text class="total">总价</text>￥{{schedule.price}}
+     </view>
+     <view class="btns">
+      <button  class="btn-right" form-type="submit">提交订单</button>
+     </view>
+  </view>
+  </form>
+</view>
+<view class="commodity_screen"  catchtouchmove='true' bindtap="hideModal" wx:if="{{showModalStatus}}"></view> 
+<view  animation="{{animationData}}" catchtouchmove='true' class="commodity_attr_box" wx:if="{{showModalStatus}}">
+     <image src="/image/cancel.png" class="size-img"></image>
+     <view class="specification" catchtap="hide">{{title}}</view>
+     <view wx:if="{{checked}}">
+          <view class="price-box"><text class='yuan'>￥</text>{{schedule.price}}</view>
+          <view class="select-box {{item.active?'':'not-pay'}}" wx:for="{{order}}" wx:key="this" bindtap='select' data-index="{{index}}">
+              <view>{{item.payWayValue}} {{item.balance}}</view>
+              <view class="{{item.select?'select':'hots'}}" wx:if="{{item.active}}"></view>
+              <view class="not" wx:else></view>
+          </view>
+           <button class="button" bindtap='button' loading='{{loading}}'>立即付款</button>
+     </view>
+     <view wx:else>
+       <view class="input-boxs">
+        <block wx:for="{{length}}" wx:key="this">
+            <input class="code-input" type="number" value="{{value.length>=index+1?value[index]:''}}" catchtap='tap' password="true" ></input>
+        </block>
+       </view>
+       <view class="forget" bindtap='forget'>忘记密码?</view>
+       <input class='ipt' maxlength="{{length}}" focus="{{isFocus}}" bindinput="focus" type="number" adjust-position="{{false}}"></input>
+       <button class='next-btn {{active?"button":""}}' bindtap='paybalance'>立即付款</button>
+     </view>
+</view>

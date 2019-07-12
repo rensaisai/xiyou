@@ -1,0 +1,3 @@
+<view class="index">
+    <image src="{{msg}}" mode="widthFix" class="swiper-image" data-src="{{msg}}" bindtap='imges'></image> 
+</view>

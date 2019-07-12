@@ -1,0 +1,65 @@
+<view class="index">
+  <form bindsubmit="formSubmit">
+      <view class="addres">
+          <input value='{{name}}' class="namel"  name="name" placeholder='请输入收货人姓名'/>
+      </view>
+       <view class="addres">
+          <input value='{{phone}}' class="namel" name="phone" type='number' placeholder='请输入常用手机号'/>
+      </view>
+       <view class="addres addr" bindtap='resgiter'>
+          <view class="text"  data-value="{{selec}}">{{selec}}</view>
+          <view class="right-text">
+               <view class="texts">请选择</view>
+               <image src="/image/jiantou.png" class="imge"></image>
+          </view> 
+       </view>
+    <view class="addres1">
+          <input value='{{site}}' class="site" name="site" placeholder="请输入详细地址"/>
+    </view>
+     <view class="addres"bindtap="radioChange">
+        <view class="weui-cell weui-check__label">
+         <view class="weui-cell__bd">设置默认地址</view>
+         <view class="weuixi-right">
+         <view class=" {{checked?'weui-check__labels':'weui-cell__hd'}}" ></view>
+         </view>
+        </view>
+    </view>
+    <button class="list" form-type="submit">保存并使用</button>
+    </form>
+    <view class="commodity_screen"   wx:if="{{showModalStatus}}"></view> 
+           <view  animation="{{animationData}}"  class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <view class="anmit">{{selec}}</view>
+
+    <view class="index-bd" wx:if="{{citylse == true}}">
+    <view class="kind-list">
+      <block wx:for-items="{{city}}" wx:key="{{item.id}}">
+         <view class="province-box" bindtap="selectOver" data-index="{{index}}">
+             <view class="province">{{item.regionName}}</view>
+             <image class="province-icon" src="/image/jiantou.png"></image>
+         </view>
+      </block>
+    </view>
+  </view>
+  <view class="index-bd"  wx:if="{{cityls == true}}">
+    <view class="kind-list">
+        <block wx:for-items="{{citys}}" wx:key="{{item.id}}">
+           <view class="province-box" bindtap="selectOverss" data-index="{{index}}">
+             <view class="province">{{item.regionName}}</view>
+             <image class="province-icon" src="/image/jiantou.png"></image>
+         </view>
+      </block>
+    </view>
+  </view>
+
+   <view class="index-bd" wx:if="{{cityl == true}}">
+    <view class="kind-list">
+      <block wx:for-items="{{citysel}}" wx:key="{{item.id}}">
+          <view class="province-box" bindtap="selectOvercity" data-index="{{index}}">
+             <view class="province">{{item.regionName}}</view>
+             <image class="province-icon" src="/image/jiantou.png"></image>
+         </view>
+      </block>
+    </view>
+  </view>
+           </view>
+</view>

@@ -1,0 +1,89 @@
+@import '/pages/order/order.wxss';
+.orderstatus-box{
+  width: 100%;
+  height: auto;
+  background: #ffffff;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+ 
+}
+.title-box{
+  width: 100%;
+  height: 110rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.invoice{
+    margin-right: 20rpx;
+  }
+/* .show{
+  display: none;
+} */
+.order-title{
+  font-size: 30rpx;
+  color: #000000;
+  font-weight: 600;
+}
+.order-headings{
+  font-size: 30rpx;
+  color: #E8862E;
+}
+.status{
+  width: 100%;
+  height: 110rpx;
+  display: flex;
+  flex-direction: row-reverse;
+  padding-top:10rpx;
+  box-sizing: border-box; 
+}
+.status-evaluation{
+  width: 110rpx;
+  height: 60rpx;
+  border:1rpx solid #E84A2E;
+  border-radius:6rpx;
+  font-size: 28rpx;
+  color: #E84A2E;
+  text-align: center;
+  line-height: 60rpx;  
+  font-weight:600; 
+}
+.marge{
+  margin-right:20rpx; 
+}
+.selected-style{
+  background: #E84A2E;
+  color: #ffffff;
+}
+.consignee-box{
+  margin-top: 6rpx;
+}
+.consignee-box1 {
+  margin-top: 2rpx;
+}
+.maintenance{
+  margin-top: 6rpx;
+}
+.weixin-name{
+  font-size: 30rpx;
+  color: #7A7A7A;
+}
+.pay-details-box{
+  width: 100%;
+  height: 320rpx;
+}
+.services{
+  width: 100%;
+  height: 112rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.car-name{
+  font-size: 27rpx;
+  font-weight: 600;
+}
+.car{
+  display: flex;
+  flex-direction: row-reverse;
+}

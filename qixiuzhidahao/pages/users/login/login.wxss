@@ -1,0 +1,15 @@
+@import "/pages/common/index.wxss";
+
+.page-section{
+  margin-bottom: 20rpx;
+}
+.logo-head{
+  width: 100%;
+  text-align: center;
+}
+.logo-img{
+  width:100px;
+  height:100px;
+  border-radius: 20rpx;
+  margin:20rpx;
+}

@@ -1,0 +1,7 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTitleText": "发布心得",
+  "enablePullDownRefresh": false,
+  "usingComponents": {}
+}

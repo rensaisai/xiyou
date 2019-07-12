@@ -1,0 +1,23 @@
+@import "/pages/common/index.wxss";
+
+.page-section{
+  margin-bottom: 20rpx;
+}
+.registor{
+  margin:50rpx;
+}
+.star-view{
+  padding:0;
+}
+.star-image{
+  position: static;
+  top: 50rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+.item{
+  position: absolute;
+  top: 0rpx;
+  width: 50rpx;
+  height: 100rpx;
+}

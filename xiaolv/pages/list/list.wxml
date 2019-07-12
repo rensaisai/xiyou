@@ -1,0 +1,28 @@
+<import src="/pages/common/none.wxml" />
+<view class="index-boxs">
+  <view class="list-box" bindtap="itemClick" wx:for="{{list}}" wx:key="item.id" data-index="{{index}}">
+    <image src="{{item.headImg}}" class="list-img" mode="aspectFill"></image>
+    <view class="list-right">
+       <view class="list-name">
+           <view class="garage-name">{{item.repairName}}</view>
+          <image src="/image/zhida.png" hidden='{{!item.zdhFlag}}' class="mechanics-img"></image>
+       </view>
+       <view class="list-name">
+          <view class="evaluation">总评分 <text class="points">{{item.evaluate}}</text></view>
+          <view class="evaluation">{{item.distanceShow}}</view>
+       </view>
+       <view class="list-name" >
+          <view class="positioning"></view>
+          <view class="address">{{item.address}}</view>
+       </view>
+    </view>
+</view>
+<view class="loadmore" hidden="{{isHideLoadMore}}">
+      <view class="loading"></view>
+      <view class="loadmore_tips">正在加载</view>
+</view>
+<view hidden="{{hiddenNone}}">
+  <template is="none" />
+</view>
+
+</view>

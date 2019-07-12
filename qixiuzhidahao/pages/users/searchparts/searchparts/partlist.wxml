@@ -1,0 +1,47 @@
+<import src="/pages/common/none.wxml" />
+
+<view class="index">
+
+  <view class="weui-cell weui-cell_input top-search">
+    <view class="btn-sort" bindtap="actionSheetTap">
+      <view>{{searchTypeName}}</view>
+      <image class="kind-list-navi" src="/image/sortdown.png"></image>
+    </view>
+    <input class="weui-input top-searchbox search-box" placeholder="{{qrString}}" bindinput='keywordInput' value='{{keyword}}' />
+    <image class="top-img" src="/image/search.png" mode="widthFix" bindtap="searchPart"></image>
+  </view>
+  <view class="index-bd">
+    <view class="kind-list">
+    <!-- <view class='city_first_letter'>{{titleName}}</view> -->
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd" data-index="{{index}}" bindtap="selectOver">
+            <image class="car-list-img" src="{{logo}}" mode="widthFix"></image>
+            <view class="kind-list-item-00">
+              <view class='order-title'>
+              <view class="kind-list-text3"></view>
+              </view>
+              <view class="kind-list-item-01">
+                <view class="kind-list-text">{{item.goods_name}}</view>
+                <view class="kind-list-text3"></view>
+              </view>
+              <view class="kind-list-text3">{{item.size}}</view>
+              <view class="kind-list-text4">{{item.oem}}</view>
+              <view class="kind-list-text4"></view>
+            </view>
+            <image class="kind-list-navi" src="/image/navi.png"></image>
+          </view>
+          
+        </view>
+      </block>
+      <view class="loadmore" hidden="{{isHideLoadMore}}">
+      <view class="loading"></view>
+      <view class="loadmore_tips">正在加载</view>
+  </view>
+  </view>
+  </view>
+</view>
+
+<view hidden="{{hiddenNone}}">
+  <template is="none" />
+</view>

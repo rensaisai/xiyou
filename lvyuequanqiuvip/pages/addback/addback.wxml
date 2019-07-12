@@ -1,0 +1,89 @@
+<form bindsubmit="formSubmit">
+  <view class="box">
+    <view class="title">真实姓名</view>
+    <input class="input-box" placeholder='请输入您的真实姓名' placeholder-style="color:#B9B9B9; font-size:28rpx;" name="name" type="text" value='{{name}}'></input>
+  </view>
+   <view class="box">
+    <view class="title">身份证号码</view>
+    <input class="input-box" placeholder='请输入本人身份证号码' placeholder-style="color:#B9B9B9; font-size:28rpx;" name="identity" type="idcard" value='{{identity}}'></input>
+  </view>
+  <view class="box">
+    <view class="title">银行卡卡号</view>
+    <input class="input-box" placeholder='请输入本人银行卡号码' placeholder-style="color:#B9B9B9; font-size:28rpx;" name="cardnumber" type="number" value='{{cardnumber}}'></input>
+  </view>
+  <view class="box">
+    <view class="title">发卡银行</view>
+    <input class="input-box" placeholder='xx银行xx分行xx支行(xx营业部)' placeholder-style="color:#B9B9B9; font-size:28rpx;" name="bank" type="text" value='{{bank}}'></input>
+  </view>
+  <view class="box">
+    <view class="title">手机号</view>
+    <input class="input-box" placeholder='请输入银行卡绑定的手机号' placeholder-style="color:#B9B9B9; font-size:28rpx;" name="phone" type="number" value='{{phone}}'></input>
+  </view>
+   <view class="box">
+    <view class="title">银行卡地区</view>
+    <view class="input-box region-box" bindtap='resgiter' wx:if="{{selec == '选择省市'}}">
+        <view class="region">选择省份</view>
+        <view class="region">
+          <view class="select">选择城市</view>
+          <image class="img" src='/image/jiantou.png'></image>
+        </view>
+    </view>
+    <view class="input-box region-box" bindtap='resgiter' wx:else>
+         <view class="region input-box">
+          <view class="select">{{selec}}</view>
+          <image class="img" src='/image/jiantou.png'></image>
+        </view>
+    </view>
+  </view>
+  <view class="box phone-box">
+    <input class="phone-input"  placeholder='请输入验证码' placeholder-style="color:#E51337; font-size:28rpx;" name="num" type="number"></input>
+    <view class="validation" bindtap="sendMsg" wx:if="{{send}}">获取验证码</view>
+    <view class="countdown" wx:if="{{alreadySend}}">{{second+"s后重新发送"}}</view>
+  </view>
+  <button  form-type="submit" class="btn">完成</button>
+</form>
+<view class="attention">注意事项</view>
+<view class="attention-box">
+  <text>为保证成功提现，请在完成信息认证前仔细阅读以下事项：
+1、请输入正确的银行卡卡号。如果卡号输错，会导致提现失
+败；
+2、请确保输入的身份证号和银行卡号有对应绑定关系。如果
+张三填了李四的银行卡，会导致提现失败；
+3、请确保银行卡号和银行卡地区对应关系正确。如果杭州的
+银行卡号填写成义乌，会导致提现失败。 </text>
+</view>
+  <view class="commodity_screen"   wx:if="{{showModalStatus}}"></view> 
+           <view  animation="{{animationData}}"  class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <view class="anmit">{{selec}}</view>
+    <view class="index-bd" wx:if="{{citylse == true}}">
+    <view class="kind-list">
+      <block wx:for-items="{{city}}" wx:key="{{item.id}}">
+         <view class="province-box" bindtap="selectOver" data-index="{{index}}">
+             <view class="province">{{item.regionName}}</view>
+             <image class="province-icon" src="/image/jiantou.png"></image>
+         </view>
+      </block>
+    </view>
+  </view>
+  <view class="index-bd"  wx:if="{{cityls == true}}">
+    <view class="kind-list">
+        <block wx:for-items="{{citys}}" wx:key="{{item.id}}">
+           <view class="province-box" bindtap="selectOverss" data-index="{{index}}">
+             <view class="province">{{item.regionName}}</view>
+             <image class="province-icon" src="/image/jiantou.png"></image>
+         </view>
+      </block>
+    </view>
+  </view>
+
+   <view class="index-bd" wx:if="{{cityl == true}}">
+    <view class="kind-list">
+      <block wx:for-items="{{citysel}}" wx:key="{{item.id}}">
+          <view class="province-box" bindtap="selectOvercity" data-index="{{index}}">
+             <view class="province">{{item.regionName}}</view>
+             <image class="province-icon" src="/image/jiantou.png"></image>
+         </view>
+      </block>
+    </view>
+  </view>
+</view>

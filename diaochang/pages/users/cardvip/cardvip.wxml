@@ -1,0 +1,17 @@
+
+<view class="index">
+<view class="logo-head">
+<image class="logo-img" src="/image/logo.png"></image>
+</view>
+<form bindsubmit='registerClick'>
+  <view class="page-section">
+      <view class="weui-cells__title">团购卡密码</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="cardpwd" class="weui-input" placeholder="请输入团购卡密码"/>
+        </view>
+      </view>
+  </view>
+  <button type="primary" class="button-big login" style="background-color:#1296db" form-type='submit'>升级VIP</button>
+</form>
+</view>

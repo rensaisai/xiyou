@@ -1,0 +1,430 @@
+
+<view class="index">
+<view class="logo-head">
+<!-- <image class="logo-img" src="/image/logo.png"></image> -->
+</view>
+<form bindsubmit='registerClick'>
+
+  <view class="page-section">
+      <view class="weui-cells__title">车辆号牌</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="fishName" class="weui-input" placeholder="请输入车辆号牌" value='{{entity.fishName}}'/>
+        </view>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">检测时间</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <picker mode="date" value="{{startDate}}" start="{{minDate}}" bindchange="bindStartDateChange">
+            <view class="weui-input">{{startDate}}</view>
+          </picker>
+          <text decode="true">&nbsp;&nbsp;</text>
+          <picker mode="time" value="{{startTime}}" start="00:00" end="23:59" bindchange="bindStartTimeChange">
+            <view class="weui-input">{{startTime}}</view>
+          </picker>
+        </view>
+      </view>
+  </view>
+  <!-- <view class="page-section">
+      <view class="weui-cells__title">钓场地点</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-input" auto-height bindtap="chooseLocation">{{locationAddress}}</view>
+            <input class="weui-input" placeholder="请选择钓场地点" auto-height value='{{locationAddress}}' bindtap="chooseLocation" disabled='true'/>
+        </view>
+      </view>
+  </view> -->
+   <view class="page-section">
+      <view class="weui-cells__title">车主手机号</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="tele" type="number" class="weui-input" placeholder="请输入车主手机号" value='{{entity.tele}}'/>
+        </view>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">行驶证照片</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cells">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <view class="weui-uploader">
+                <view class="weui-uploader__hd">
+                  <view class="weui-uploader__title">请上传行驶证照片</view>
+                  <view class="weui-uploader__info">{{imageList.length}}/{{count[countIndex]}}</view>
+                </view>
+                <view class="weui-uploader__bd">
+                  <view class="weui-uploader__files">
+                    <block wx:for="{{imageList}}" wx:for-item="image">
+                      <view class="weui-uploader__file">
+                        <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+                        <view bindtap="deleteImage" data-index="{{index}}">删除</view>
+                      </view>
+                    </block>
+                  </view>
+                  <view class="weui-uploader__input-box" hidden='{{addImgHidden}}'>
+                    <view class="weui-uploader__input" bindtap="chooseImage" hidden='{{addImgHidden}}'></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+  </view>
+   <view class="page-section">
+      <view class="weui-cells__title">车辆检测</view>
+      <view class="weui-cells weui-cells_after-title">
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">检查发动机油液位</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">检查发动机冷却液</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">检查发动机空气滤清器</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">检查空调制冷</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">检查灯光系统</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">检查前雨刮片</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">检查挡风玻璃清洁剂液位</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">检查自动变速箱油液位(AT车型)</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+      </view>
+  </view>
+  
+  <view class="page-section">
+      <view class="weui-cells__title">检查动力转向油</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+      </view>
+  </view>
+  
+  <view class="page-section">
+      <view class="weui-cells__title">检查前、后减震器</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+      </view>
+  </view>
+  
+  <view class="page-section">
+      <view class="weui-cells__title">检查前、后轴承</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">检查刹车油液位</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">检查前、后轮胎</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">检查前、后刹车盘</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">检查蓄电池</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">检查底盘</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+      </view>
+  </view>
+   <view class="page-section">
+      <view class="weui-cells__title">OBDII系统检测</view>
+      <view class="weui-cells weui-cells_after-title">
+      </view>
+  </view>
+   <view class="page-section">
+      <view class="weui-cells__title">长期燃油修正值(标准{{'<'}}1%)</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+      </view>
+  </view>
+   <view class="page-section">
+      <view class="weui-cells__title">短期燃油修正值(标准{{'<'}}1%)</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+      </view>
+  </view>
+   <view class="page-section">
+      <view class="weui-cells__title">氧传感器输出电压(标准0.1-0.9V)</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+      </view>
+  </view>
+   <view class="page-section">
+      <view class="weui-cells__title">氧传感器电压变化频率(标准>8次/10秒)</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+      </view>
+  </view>
+   <view class="page-section">
+      <view class="weui-cells__title">喷油脉宽(ms)(参考厂家规定值)</view>
+      <view class="weui-cells weui-cells_after-title">
+          <radio-group bindchange="radioChange" class="radio-float">
+            <label wx:for-items="{{checkList}}" wx:key="{{item}}">
+              <view class="kind-list-item detail-item">
+                <view id="{{item}}" class="kind-list-item-hd detail-itemtitle">
+                  <radio value="{{index}}" checked="{{item.checked}}" color="#1296db"/>
+                   <view class="kind-list-text">{{item}}</view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+      </view>
+  </view>
+   <view class="page-section">
+      <view class="weui-cells__title">OBD故障码</view>
+      <view class="weui-cells weui-cells_after-title">
+      </view>
+  </view>
+  
+  <view class="page-section">
+      <view class="weui-cells__title">备注</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <textarea name="fishDesc" bindblur="bindTextAreaBlur" placeholder="请输入备注" value='{{entity.fishDesc}}' style='height:50px' maxlength='-1'/>
+        </view>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">技师姓名</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="fishName" class="weui-input" placeholder="请输入技师姓名" value='{{entity.fishName}}'/>
+        </view>
+      </view>
+  </view>
+  
+  <button type="primary" class="button-big login" style="background-color:#1296db" form-type=''>提交</button>
+</form>
+</view>

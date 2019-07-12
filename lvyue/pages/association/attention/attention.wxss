@@ -1,0 +1,329 @@
+.index{
+  width: 100%;
+  height: auto;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.nav-box{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  background: #ffffff;
+  z-index: 99999;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.nav{
+  width: 50%;
+  line-height: 98rpx;
+  font-size: 34rpx;
+  display: inline-block;
+  text-align: center;
+  border-bottom:2rpx solid #ffffff; 
+}
+.hot{
+  font-weight: 700;
+  border-bottom:2rpx solid #F5375A; 
+}
+.clear{
+  width: 100%;
+  height: 100rpx;
+  background: #ffffff;
+}
+.box{
+  width: 100%;
+  height: auto;
+  border-radius:10rpx;
+  background: #ffffff; 
+  padding: 0 20rpx 20rpx;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+}
+.information-box{
+  width: 100%;
+  height: 108rpx;
+  display: flex;
+  align-items: center;
+}
+.user-img{
+   width: 64rpx;
+   height: 64rpx;
+   border-radius:50%; 
+}
+.user-infor-right{
+  flex: 1;
+  height: 108rpx;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+.username{
+  font-size: 28rpx;
+  color: #000000;
+  font-weight: 600;
+}
+.issue-time{
+  font-size: 22rpx;
+  color: #878787;
+}
+.issue-content{
+  width: 100%;
+  height: auto;
+  font-size: 30rpx;
+  color: #000000;
+}
+.img-box{
+  width: 100%;
+  height: auto;
+  display:inline-block; 
+  padding-top:15rpx; 
+  /* justify-content: space-between;
+  flex-wrap: wrap; */
+}
+.img{
+  width: 212rpx;
+  height: 212rpx;
+  border-radius:10rpx;
+  background: #CCCCCC; 
+  margin-right:10rpx;
+}
+.btn-box{
+  width: 100%;
+  height: 94rpx;
+  border-bottom:1rpx solid #EFF3F6; 
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.btn{
+  width: 33.3%;
+  height:94rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+.share-box{
+  width: 80%;
+  height: 94rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes scaleDraw {  /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
+            0%{
+                transform: scale(1);  /*开始为原始大小*/
+            }
+            25%{
+                transform: scale(1.2); /*放大1.1倍*/
+            }
+            50%{
+                transform: scale(1);
+            }
+            75%{
+                transform: scale(1.2);
+            }
+        }
+.icon-img{
+  width: 30rpx;
+  height: 30rpx;
+  animation-name: scaleDraw; /*关键帧名称*/
+  animation-timing-function: ease-in-out; /*动画的速度曲线*/
+  animation-iteration-count: infinite;  /*动画播放的次数*/
+  animation-duration: 3s; /*动画所花费的时间*/
+}
+.number{
+ padding-left:10rpx;
+ font-size: 28rpx;
+ color: #7C7C7C; 
+}
+.like-box{
+  width: 100%;
+  height:92rpx;
+  display: flex;
+  align-items: center;
+}
+.zan{
+  width: 28rpx;
+  height: 28rpx;
+}
+.right{
+  flex-grow: 1;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  height: 92px;
+  padding-left: 10rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+.zuser{
+  min-width: auto;
+  max-width:65%; 
+  height: 92rpx;
+  line-height: 92rpx;
+  color: #425994;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.rcount{
+  color: #5D5C5C;
+}
+
+.list-box{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.left-box{
+  width: 48%;
+  height: auto;
+}
+.right-box{
+  width: 48%;
+  height: auto;
+}
+.list1{
+  width: 100%;
+  /* height: 642rpx; */
+  height: auto;
+  background: #ffffff;
+  border-radius:10rpx;
+  margin-top: 20rpx; 
+  break-inside: avoid;
+}
+.list2{
+  width: 100%;
+  /* height: 560rpx; */
+  height: auto;
+  background: #ffffff;
+  border-radius:10rpx;
+  margin-top: 20rpx; 
+}
+.list2-img{
+  width: 100%;
+  /* height: 370rpx; */
+  /* height: 370rpx; */
+  border-radius:10rpx 10rpx 0 0;
+}
+.list1-img{
+  width: 100%;
+  /* height: 452rpx; */
+  border-radius:10rpx 10rpx 0 0;
+}
+.list1-box{
+  width: 100%;
+  height: 190rpx;
+  border-radius:0 0 10rpx 10rpx; 
+}
+.list1-title{
+  width: 100%;
+  height: 100rpx;
+  font-size: 26rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  line-height: 48rpx;
+}
+.list1-user{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.left{
+  width: 75%;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+}
+.user-heidimg{
+  width: 47rpx;
+  height: 47rpx;
+  border-radius:50%;
+}
+.list-username{
+  flex:1;
+  font-size: 22rpx;
+  padding-left:5rpx;
+  box-sizing: border-box; 
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:1; 
+  line-height: 46rpx;
+}
+.list-right{
+  width: 40%;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  flex-direction:row-reverse;
+}
+.issue-box{
+  position: fixed;
+  bottom: 40rpx;
+  z-index: 99999;
+  width: 425rpx;
+  height: 95rpx;
+  border-radius:47.5rpx; 
+  background: linear-gradient(to right, #ff2d5f , #ff6255); /* 标准的语法 */
+  left: 50%;
+  margin-left: -212.5rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.camera{
+  width: 54rpx;
+  height: 40rpx;
+}
+.issue-text{
+  font-size: 32rpx;
+  color: #ffffff;
+  padding-left: 20rpx;
+}
+.backged{
+  background-color: #f1f1f3!important;
+}
+.return-box{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 200rpx;
+  background: #ffffff;
+  z-index: 9999999;
+  display: none;
+}
+.return{
+  position: fixed;
+  bottom: 0rpx;
+  width: 100%;
+  height: 200rpx;
+  background: #ffffff;
+  z-index: 9999999;
+  display: block;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.textarea{
+  width: 100%;
+  height: 100%;
+  background: #F0F1F2;
+  padding:10rpx;
+  box-sizing: border-box; 
+}

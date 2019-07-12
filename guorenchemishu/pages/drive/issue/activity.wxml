@@ -1,0 +1,106 @@
+<view class="index">
+  <view class="template-btn-box">
+      <view class="template-btn">使用历史模板</view>
+  </view>
+  <view class="add-img-box">
+      <text>点击按钮添加封面</text>
+      <view class="add-box">添加封面</view>
+  </view>
+  <view class="list-box">
+     <view class="list">
+        <view class="list-left">
+           <view class="list-icon">
+              <image class='list-icon' src="/image/huodong.png"></image>
+           </view>
+           <text class="list-text">活动主题</text>
+        </view>
+        <view class="list-right">越野五日游</view>
+     </view>
+     <view class="list">
+        <view class="list-left">
+           <view class="list-icon">
+              <image class='list-icon' src="/image/xingcheng.png"></image>
+           </view>
+           <text class="list-text">行程日期</text>
+        </view>
+        <view class="list-right">越野五日游</view>
+     </view>
+     <view class="list">
+        <view class="list-left">
+           <view class="list-icon">
+                <image class='list-icon' src="/image/chufadi.png"></image>
+           </view>
+           <text class="list-text">出发地</text>
+        </view>
+        <view class="list-right"></view>
+     </view>
+     <view class="list">
+        <view class="list-left">
+           <view class="list-icon">
+              <image class='list-icon' src="/image/mudi.png"></image>
+           </view>
+           <text class="list-text">目的地</text>
+        </view>
+        <view class="list-right">
+            <view class="list-icon">
+                <image class='list-icon' src="/image/add.png"></image>
+           </view>
+        </view>
+     </view>
+     <view class="list">
+        <view class="list-left">
+           <view class="list-icon">
+             <image class='list-icon' src="/image/huodongnum.png"></image>
+           </view>
+           <text class="list-text">活动人数</text>
+        </view>
+        <view class="list-right">
+            <view class="list-icon">
+                <image class='list-icon' src="/image/navi.png"></image>
+           </view>
+        </view>
+     </view>
+     <view class="list">
+        <view class="list-left">
+           <view class="list-icon">
+               <image class='list-icon' src="/image/lianxi.png"></image>
+           </view>
+           <text class="list-text">联系方式</text>
+        </view>
+        <view class="list-right">越野五日游</view>
+     </view>
+     <view class="list">
+        <view class="list-left">
+           <view class="list-icon">
+               <image class='list-icon' src="/image/lianxinum.png"></image>
+           </view>
+           <text class="list-text">联系人</text>
+        </view>
+        <view class="list-right">越野五日游</view>
+     </view>
+     <view class="list">
+        <view class="list-left">
+           <view class="list-icon">
+              <image class='list-icon' src="/image/shuoming.png"></image>
+           </view>
+           <text class="list-text">活动说明</text>
+        </view>
+        <view class="list-right"></view>
+     </view>
+     <view class="list">
+        <view class="list-left">
+           <view class="list-icon">
+              <image class='list-icon' src="/image/muban.png"></image>
+           </view>
+           <text class="list-text">保存为模板</text>
+        </view>
+        <view class="list-right">
+              <switch checked="{{active}}" bindchange="switch1Change"/>
+        </view>
+     </view>
+  </view>
+  <view class="submit-btn-box">
+     <button class="submit-btn submit">暂存</button>
+     <button class="submit-btn">提交</button>
+  </view>
+</view>

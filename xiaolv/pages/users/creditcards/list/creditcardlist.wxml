@@ -1,0 +1,20 @@
+<import src="/pages/common/none.wxml" />
+<view class="index">
+<block wx:for="{{list}}" wx:key="item.id">
+   <image class="bank-box" src="{{item.url}}">
+      <view class="box">
+          <view class="box-left">
+              <view class="bank-name">{{item.bank}}</view>
+              <view class="name">{{item.userName}}</view>
+          </view>
+          <view class="untie-btn" bindtap="deleteClick" data-index="{{index}}" ></view>
+     </view>
+     <text class="card">{{item.card}}</text>
+  </image>
+  </block>
+    <view class="btn" bindtap="add">添加银行卡</view>
+</view>
+
+<view hidden="{{hiddenNone}}">
+  <template is="none"/>
+</view>

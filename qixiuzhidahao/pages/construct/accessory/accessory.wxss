@@ -1,0 +1,53 @@
+@import"/pages/construct/constructlist/constructlist.wxss";
+.index{
+  width: 100%;
+  height: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.tilte{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.box{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+}
+.radio-group{
+  width: 100%;
+  display: flex;
+  /* justify-content: space-around; */
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.radio{
+  margin-right:28rpx; 
+}
+.selcet-box{
+  width: 90%;
+  height: 90rpx;
+  border:1rpx solid #000000;
+  margin: 0 auto; 
+}
+.model{
+  width: 60%;
+  height: 70rpx;
+  border:1rpx solid #000000;
+  font-size: 26rpx;
+  color: #000000;
+  font-weight: 600;
+  text-align: center;
+  line-height: 70rpx; 
+  border-bottom:none; 
+}
+.model:last-child{
+  border-bottom:1rpx solid #000000;
+}
+.submer{
+  background: #1296db;
+  color: #ffffff;
+  margin-top: 30rpx;
+}

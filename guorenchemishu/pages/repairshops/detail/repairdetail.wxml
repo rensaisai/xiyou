@@ -1,0 +1,125 @@
+<view class="index">
+
+  <view class="headinfo">
+    <view class="kind-list-item">
+    <!-- <view class="head-bigimg" wx:if="{{entity.imgs != ''}}"> -->
+        <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500" class="imges">
+        <block wx:for="{{entity.imgs}}" wx:key="item.id">
+          <swiper-item>
+            <view class="swiper-item">
+               <image src="{{item}}" mode="widthFix" class="swiper-image"></image> 
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    <!-- </view> -->
+      <view class="kind-list-item-00">
+        <view class="kind-list-item-01">
+          <view class="kind-list-text">{{entity.repairName}}</view>
+          <view class="kind-list-text2"></view>
+        </view>
+        <view class="kind-list-text3">
+          <block wx:for="{{entity.stars}}" wx:for-item="subitem" wx:for-index="subindex" wx:key="*this">
+            <image class="star-image-index" style="left: {{subindex*100}}rpx" src="/image/star_selected.png">
+            </image>
+          </block>
+        </view>
+        <view class="kind-list-item-01">
+          <view class="kind-list-text4 address">{{entity.address}}</view>
+          <image class="top-img" bindtap='mapShow' src="/image/location.png"></image>
+          <image class="top-img" bindtap='callPhone' src="/image/phone.png"></image>
+        </view>
+          <button  wx:if="{{entity.zdhFlag == 1}}"type="primary" plain="true" class="registor button-small" size="mini" bindtap="confirmObd" data-index="{{index}}" style="color:#fd4200;border-color:#fd4200" hidden='{{hiddenObd}}'>领取OBD</button>
+      </view>
+    </view>
+  </view>
+  
+   <view class="tui-menu-list">
+    <view bindtap="showFrom" class="kind-list-text text">汽修厂介绍</view>
+    <view class="kind-list-text kind-list {{active?'tui-menu-list':'tui-menu'}}">
+    {{entity.repairDesc}}
+    </view>
+  </view>
+
+
+
+  <view class="list-sort tabbar">
+    <view class="btn-sort {{selected?'tabselect':'tabunselect'}}" bindtap="selected">保养套餐</view>
+    <view class="btn-sort {{selected1?'tabselect':'tabunselect'}}" bindtap="selected1">用户评价</view>
+  </view>
+  <view class="index-bd" hidden='{{selected?false:true}}'>
+    <view class="kind-list list-bottom">
+      <radio-group bindchange="radioChange">
+        <label wx:for-items="{{list}}" wx:key="{{item.id}}">
+          <view class="kind-list-item detail-item">
+            <view id="{{item.id}}" class="kind-list-item-hd detail-itemtitle">
+              <radio value="{{index}}" checked="{{item.checked}}" color="#fd4200"/>
+              <!-- <view hidden="{{!item.checked}}">推荐</view> -->
+              <view class="kind-list-item-00">
+                <view class="kind-list-item-01">
+                  <view class="kind-list-text">{{item.setmealName}}</view>
+                  <view class="kind-list-text item-price item-normalprice">¥:{{item.price}}</view>
+                  <view class="kind-list-text item-price">会员:¥{{item.priceMember}}</view>
+                </view>
+                <view class="kind-list-text3"></view>
+                <view class="kind-list-text4">{{item.remark}}</view>
+              </view>
+            </view>
+            <block wx:for-items="{{item.sub}}" wx:key="{{item.id}}">
+              <view class="kind-list-item-01 detail-itemsub">
+                <view class="kind-list-text3">{{item.goodsName}}</view>
+                <view class="kind-list-text2 item-normalprice">¥:{{item.price}}</view>
+              </view>
+            </block>
+          </view>
+        </label>
+      </radio-group>
+      <view class="loadmore" hidden="{{isHideLoadMore}}">
+        <view class="loading"></view>
+        <view class="loadmore_tips">正在加载</view>
+      </view>
+    </view>
+    <view class="view-ios-bottom">
+    </view>
+    <view class="view-bottom">
+      <view class="kind-list-item-01">
+        <view class="kind-list-text">{{selectSetmeal.setmealName}}</view>
+        <view class="kind-list-text item-price">¥{{selectSetmeal.priceMember}}</view>
+        <button type="primary" class="button-big button-bottom" style="background-color:#fd4200" bindtap="checkOrder">去结算</button>
+      </view>
+    </view>
+  </view>
+
+  <view class="index-bd" hidden='{{selected1?false:true}}'>
+    <view class="kind-list">
+      <block wx:for-items="{{commentsList}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="getLocation" url="pages/mine/mine?userid=123">
+             <view class="kind-list-imges" style="background:url({{item.headImg == null?'/image/headdefault.png':item.headImg}}) no-repeat center center/cover"></view>
+            <!-- <image class="kind-list-img" src="{{item.headImg == null ?'/image/headdefault.png' : item.headImg}}"></image> -->
+            <view class="kind-list-item-00">
+              <view class="kind-list-text4">用户：{{item.title}}</view>
+               <view class="kind-list-text3">
+                <block wx:for="{{item.stars}}" wx:for-item="subitem" wx:for-index="subindex" wx:key="*this">
+                  <image class="star-image-index" style="left: {{subindex*100}}rpx" src="/image/star_selected.png">
+                  </image>
+                </block>
+              </view>
+              <view class="kind-list-item-01">
+                <view class="kind-list-text">{{item.comment}}</view>
+                <view class="kind-list-text2">{{item.createTime}}</view>
+              </view>
+             
+         
+            </view>
+          </view>
+        </view>
+      </block>
+      <view class="loadmore" hidden="{{isHideLoadMore}}">
+        <view class="loading"></view>
+        <view class="loadmore_tips">正在加载</view>
+      </view>
+    </view>
+  </view>
+
+</view>

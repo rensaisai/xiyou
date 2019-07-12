@@ -1,0 +1,18 @@
+<view class="index">
+   <view class="box">
+      <view class="title">我们已经发送短信验证码到您的手机</view>
+      <view class="title phone">{{phone}}</view>
+   </view>
+   <form bindsubmit="formSubmit">
+   <view class="input-box">
+      <block wx:for="{{Length}}" wx:key="this">
+        <input class="code-input" type="number" value="{{Value.length>=index+1?Value[index]:''}}" catchtap='Tap'></input>
+      </block>
+   </view>
+   <input class='ipt' maxlength="{{Length}}" focus="{{isFocus}}" bindinput="Focus" type="number"></input>
+   <view class="time" wx:if="{{send}}">{{second}}秒后重新发送</view>
+   <view class="time" wx:if="{{alreadySend}}" bindtap='phone'>重新发送</view>
+   <button class="btn" form-type="submit" loading="{{loading}}">完成</button>
+   </form>
+</view>
+

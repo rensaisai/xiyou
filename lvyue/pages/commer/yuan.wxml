@@ -1,0 +1,28 @@
+<template name="yuan">
+     <view class="wire">
+         <view class="yuan"></view>
+         <view class="yuan"></view>
+         <view class="yuan"></view>
+         <view class="yuan"></view>
+         <view class="yuan"></view>
+         <view class="yuan"></view>
+         <view class="yuan"></view>
+         <view class="yuan"></view>
+         <view class="yuan"></view>
+         <view class="yuan"></view>
+         <view class="yuan"></view>
+         <view class="yuan"></view>
+         <view class="yuan"></view>
+         <view class="yuan"></view>
+         <view class="yuan"></view>
+         <view class="yuan"></view>
+         <view class="yuan"></view>
+         <view class="yuan"></view>
+         <view class="yuan"></view>
+         <view class="yuan"></view>
+         <view class="yuan"></view>
+         <view class="yuan"></view>
+         <view class="yuan"></view>
+         <view class="yuan"></view>
+      </view>
+</template>

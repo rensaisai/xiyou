@@ -1,0 +1,15 @@
+@import '/pages/upgrade/protocol/protocol.wxss';
+.title{
+  text-align: center;
+  padding-left:0rpx; 
+}
+.subtitles{
+width:100%;
+font-size:30rpx;
+font-weight:600;
+height: auto;
+line-height: 60rpx;
+}
+.subtitle{
+  line-height: 100rpx;
+}

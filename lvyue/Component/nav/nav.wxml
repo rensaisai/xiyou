@@ -1,0 +1,13 @@
+<!--Component/nav/nav.wxml-->
+
+
+<view class="{{npm?'npm':''}}">
+  <view class="nav {{open?'open':''}}" bindtap="dlogin">
+      <navigator class="shou" url="/pages/product/product">首页</navigator>
+       <navigator class="gou" url="/pages/cart/cart">购物车</navigator>
+      <view class="navs">
+          <view class="xuan {{zuan?'zuan':''}}" ></view>
+          <text class="su">快速导航</text>
+      </view>     
+  </view>
+</view>

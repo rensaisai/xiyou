@@ -1,0 +1,51 @@
+<import src="/pages/common/none.wxml" />
+
+<view class="index">
+  <view>
+    <view class="weui-cell weui-cell_input top-search">
+      <input class="weui-input top-searchbox search-box" placeholder="{{qrString}}" bindinput='keywordInput' value='{{keyword}}' />
+      <image class="top-img" src="/image/search.png" bindtap="searchShop"></image>
+    </view>
+  </view>
+  <view class="list-sort" hidden='true'>
+    <view class="btn-sort">
+      <button type="default" bindtap="chooseCity">{{city}}</button>
+    </view>
+    <view class="btn-sort">
+      <button type="default" bindtap="actionSheetTap">{{sortname}}</button>
+    </view>
+  </view>
+  <view class="index-bd">
+    <view class="kind-list">
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+        <view id="{{item.id}}" class="kind-list-item-hd" bindtap="itemClick" data-index="{{index}}">
+
+          <image class="kind-list-bigimg" src="{{item.headImg}}"></image>
+          <view class="kind-list-item-00">
+            <view class="kind-list-item-01">
+              <view class="kind-list-text">{{item.repairName}}</view>
+              <view class="kind-list-text2">{{item.distanceShow}}</view>
+            </view>
+            <view class="kind-list-text3">
+              <block wx:for="{{item.stars}}" wx:for-item="subitem" wx:for-index="subindex">
+                <image class="star-image-index" style="left: {{subindex*100}}rpx" src="/image/star_selected.png">
+                </image>
+              </block>
+            </view>
+            <view class="kind-list-text4">{{item.address}}</view>
+          </view>
+        </view>
+      </view>
+      </block>
+      <view class="loadmore" hidden="{{isHideLoadMore}}">
+        <view class="loading"></view>
+        <view class="loadmore_tips">正在加载</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view hidden="{{hiddenNone}}">
+  <template is="none" />
+</view>

@@ -1,0 +1,95 @@
+@import "/pages/common/index.wxss";
+.box{
+  display: flex;
+  justify-content: space-around;
+  background:#f39400;
+  color: #ffffff;
+}
+.index-list{
+  width: 100%;
+}
+.listler{
+  width: 100%;
+  display: flex;
+  /* justify-content: space-around; */
+}
+.kind-list-text{
+  font-size: 14px;
+}
+
+
+
+.table {
+  border: 0px solid darkgray;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 2.5rem;
+  align-items: center;
+}
+.th1 {
+  width: 25%;
+  justify-content: center;
+  background: #f39400;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}
+.th2 {
+  width: 30%;
+  justify-content: center;
+  background: #f39400;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}
+.th3 {
+  width: 30%;
+  justify-content: center;
+  background: #f39400;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}
+.th4 {
+  width: 25%;
+  justify-content: center;
+  background: #f39400;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}
+.td1 {
+    width:25%;
+    justify-content: center;
+    text-align: center;
+    color:#5c5c5c;
+     font-size: 15px;
+}
+.td2 {
+    width:30%;
+    justify-content: center;
+    text-align: center;
+    color:#5c5c5c;
+     font-size: 15px;
+}
+.td3 {
+    width:30%;
+    justify-content: center;
+    text-align: center;
+    color:#5c5c5c;
+     font-size: 15px;
+}
+.td4 {
+    width:25%;
+    justify-content: center;
+    text-align: center;
+    color:#5c5c5c;
+    font-size: 15px;
+}

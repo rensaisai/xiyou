@@ -1,0 +1,6 @@
+<view class="loding-box" wx:if="{{showModalloading}}">
+    <view class="loading-box">
+        <view class="loading"></view>
+        <view class='loading-text'>加载中</view>
+    </view>
+</view>

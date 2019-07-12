@@ -1,0 +1,165 @@
+@import '/pages/progect/project.wxss';
+.next-box{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80rpx;
+  height: 92rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 20rpx;
+}
+.next{
+  width: 34rpx;
+  height: 40rpx;
+}
+.tab-box{
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 92rpx;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 34rpx;
+  color: #232323;
+  z-index: 999;
+}
+.pitch{
+  color: #E84A2E;
+  font-weight: 600;
+  border-bottom: 2rpx solid #E84A2E;
+}
+.nav-boxs{
+  position: fixed;
+  top: 94rpx;
+  left: 0;
+  width: 100%;
+  height: 92rpx;
+  background: #ffffff;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between; 
+}
+.navs{
+  height: 91rpx;
+  display: inline-block;
+  font-size: 30rpx;
+  color: #666666;
+  text-align: center;
+  font-weight: 600;
+  line-height: 91rpx;
+  border-bottom:1rpx solid #ffffff; 
+}
+.block{
+  width: 100%;
+  height: 92rpx;
+}
+.nav-selected{
+  color: #E84A2E;
+  border-bottom:1rpx solid #E84A2E; 
+}
+.list{
+  width: 100%;
+  height: auto;
+  margin-top: 2rpx;
+}
+.list-statse{
+  width: 100%;
+  height: 90rpx;
+  background: #ffffff;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.list-time-left{
+  display: flex;
+  align-items: center;
+}
+.list-ice{
+  width: 30rpx;
+  height: 30rpx;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAADnElEQVRIS72X32scVRTHv2dmE+lCIEir1rcEZs8uhF0DBWlttEFoX+qLSqrvWtGqrc+2tBb63B/atLR/gDUQfNAXCyI2/oSFuCXJ7pkB8xRDm9IGAlsSOnPkLnfjbtLdmR2t93HmnPO599xzz/1eQoIRBMFTYRgeIqKDAPYAGAbwtHW9D+BPAGVVvem67nee563HhaVuBrOzs4PZbPY4gA8B7IwLZv/fA3C5Xq9fGB0dXe3k0xEsIkcAXATwrHW+DWBaVWeiKKrNzc3dNd9HRkaecRwnT0RjAN4AULT2dwAcZ+avHgffBp6amnKLxeIlIvrAOtwCcJKZZ5KsWET2AzgH4GVjT0RXlpaWPh4fH3/U6t8GVlVXRG4Q0ZtE9DAMw08KhcI1AJoE2mJD1Wr1qOu651V1h6pOM/MRIgqbNm1gEbkMwKz0fhRFhwuFwq89AtvMq9XqXsdxvrWFOMnMx7aB7Z7eAPDQcZxXPc/rCK3Vaj+bAPl8/qW4iQVBsDeKou8B7ADwNjMbBhorttXrA9gVRdF7Nr0dY4pII/XM3PVUNAOIyLsAzJat9Pf354aGhlYbjiJyBsBpALeY+ZW4VfQKtowfbcF9xsxnqFwu9w0MDPxlz+kYM//0hMCm2s3JuLe2tvY8+b5/WFW/AXCbmUtxUDv7nlLdkvKKOedE9BqJyBcAjhHRyVwuZ85f7EiTahPU9/1TqnrWdDYD/g3Ai47jHPA8z+xD7EgLDoLgQBRFPwD43YBN69vV19f33PDwsGlzsSMteGFhYbfruqaeVgzYtDK3UqlkJiYmNjtLN3pasGnHpVLJ8B79K3C3yanqL1sbzPz8fH8mkzFX5kbaVJvOta9XcDPVRHQ3VXHFFkEHg63F1fNxSguu+bVTpHRWoZOtDaTCzC+kDZrET0T+AFBqNJA0LTMJZKuNFQj/tMw0l0RKcPslYYIsLi4ObmxsNK5FAEeZ+Xqa4J18ROQdACbmyvr6OheLxQeb96mIvAXgyyRCoJdJdRUCzUC+70+q6vtPQvqo6tV8Pm9iN8ZWsZfxfd/I0df/C7HnOM55K3m+zuVyE0S0qTS3SRerND8noubsjLz9NIlAsIXaJm/NSpeXlz/qKm9b9+4xgr5CRNNhGM6oqtTrdfNiQDab3UlE7LrumKoaQd8QE0R0R1WTC/pWuBWBJ4xQ+N+eMK0TaDzaEB6iiA6CsAeKIQCD1mYVhEUoyuroTRfJHm1/A5Dg440JPALBAAAAAElFTkSuQmCC) no-repeat center center/cover;
+}
+.lisyt-time{
+  margin-left: 18rpx;
+  font-size: 30rpx;
+  color: #666666;
+  font-weight: 600;
+}
+.list-statue-right{
+  font-size: 30rpx;
+  color: #E8862E;
+  font-weight: 600;
+}
+.list-box{
+  width: 100%;
+  height: auto;
+  background: #ffffff;
+  margin-top: 2rpx;
+}
+.list-price{
+  width: 100%;
+  height: 70rpx;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.maintenance-list{
+  border-bottom:0rpx;
+  padding-left:60rpx;
+  box-sizing: border-box;  
+}
+.clearfloat{
+  clear:both;
+  }
+  .prices{
+    font-size: 32rpx;
+    color: #E84A2E;
+    font-weight: 600;
+  }
+  .heji{
+    font-size: 30rpx;
+    color:#000000;
+    font-weight: 600;
+  }
+  .describe{
+    font-size: 28rpx;
+    color: #a7a7a7;
+    margin-right:20rpx;
+  }
+  .btn-status{
+    width: 100%;
+    height: 94rpx;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+  }
+  .show{
+    display: none;
+  }
+  .btn{
+    width: 150rpx;
+    height: 60rpx;
+    border:1rpx solid #E84A2E;
+    border-radius:6rpx;
+    font-size: 28rpx;
+    color: #E84A2E;
+    text-align: center;
+    line-height: 60rpx;
+  }
+  .invoice{
+    margin-right: 20rpx;
+  }
+  .selected-style{
+  background: #E84A2E;
+  color: #ffffff;
+}

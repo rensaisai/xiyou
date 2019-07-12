@@ -1,0 +1,7 @@
+@import '/pages/upgrade/binding/binding.wxss';
+.index{
+  padding-top:20rpx; 
+}
+.left-img{
+  border-radius: 60rpx;
+}

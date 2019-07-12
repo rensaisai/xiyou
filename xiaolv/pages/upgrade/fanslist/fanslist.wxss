@@ -1,0 +1,5 @@
+@import "/pages/cars/mycar/team/team";
+@import "/pages/common/index.wxss";
+.time{
+  font-size: 24rpx;
+}

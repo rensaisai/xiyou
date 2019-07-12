@@ -1,0 +1,36 @@
+<view class="index">
+   <view class="swiper-tab">
+        <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">今日特卖</view>
+        <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">居家</view>
+        <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">服饰</view>   
+   </view>
+</view>   
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+    
+    <swiper-item>
+      <swiper-view scroll-y="true">
+          <view class="list">我是哈哈</view>
+          <view class="list">我是哈哈</view>
+          <view class="list">我是哈哈</view>
+          <view class="list">我是哈哈</view>
+      </swiper-view>
+    </swiper-item>
+   
+    <swiper-item>
+      <swiper-view scroll-y="true">
+          <view class="list">1111</view>
+          <view class="list">1111</view>
+          <view class="list">1111</view>
+          <view class="list">1111</view>
+      </swiper-view>
+    </swiper-item>
+
+    <swiper-item>
+      <swiper-view scroll-y="true">
+          <view class="list">2222</view>
+          <view class="list">22222</view>
+          <view class="list">22222</view>
+          <view class="list">2222</view>
+      </swiper-view>
+    </swiper-item>
+</swiper>

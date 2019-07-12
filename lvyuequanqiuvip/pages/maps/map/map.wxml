@@ -1,0 +1,17 @@
+
+<view class="container">
+
+  <view class="page-body">
+    <view class="page-section page-section-gap">
+      <map
+        style="margin-top:50rpx;width: 100%; height: {{screenHeight}}px;"
+        latitude="{{latitude}}"
+        longitude="{{longitude}}"
+        markers="{{markers}}"
+        covers="{{covers}}"
+        >
+      </map>
+    </view>
+  </view>
+
+</view>

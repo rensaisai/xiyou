@@ -1,0 +1,23 @@
+
+<view class="index">
+  <view class="index-box">
+  <view class="box" bindtap='add'>添加出游人</view>
+  <view class="select">请选择1位出游人</view>
+  <block wx:for="{{list}}" wx:key="item.id">
+  <view class="content {{item.delter?'active':''}}">
+  <view class="list" bindtouchstart="touchS" bindtouchmove="touchM"  data-index="{{index}}">
+     <view class="list-left" bindtap='select'  data-index="{{index}}">
+        <view class="{{item.active?'icon2':'icon1'}}" ></view>
+        <view class="text">{{item.touristName}}</view>
+     </view>
+     <view class="list-left" bindtap='modification' data-index="{{index}}">
+       <view class="img"></view>
+     </view>
+     <view class="delter" bindtap='delter' data-id="{{item.id}}">删除</view>
+  </view>
+  </view>
+  </block>
+  <empty hiddenNone = "{{hiddenNone}}"/>
+  <view class="btn" bindtap='btn'>完成</view>
+  </view>
+</view>

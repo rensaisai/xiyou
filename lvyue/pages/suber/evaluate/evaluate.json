@@ -1,0 +1,7 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTitleText": "发布评论",
+  "enablePullDownRefresh": false,
+  "usingComponents": {}
+}

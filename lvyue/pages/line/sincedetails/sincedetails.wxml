@@ -1,0 +1,274 @@
+<import src="/pages/commer/yuan.wxml"/>
+<view class="index">
+<!-- <view class="index"> -->
+     <swiper class="details-box" indicator-dots="true" autoplay="true" interval="5000" duration="500" circular="true">
+     <block wx:for="{{image}}" wx:key="item.id">
+      <swiper-item>
+        <image class="details-box" src="{{item.imageUrl}}" mode="scaleToFill" bindtap='imges' data-src="{{item.imageUrl}}" ></image>
+      </swiper-item>
+     </block>
+   </swiper>
+   <!-- <view class="details-box"></view> -->
+   <view class="cards"></view>
+   <view class="card">
+      <view class="card-img"></view>
+      <view class="brief">
+        {{circuit.subtitle}}
+      </view>
+      <view class="price-box">
+          <view class="price-left">
+          <text class="price-icon">￥</text>{{date[0].nowPrice}}
+          <text class="original">(原价:￥{{date[0].noMemberPrice}})</text>
+          <view class="price-icon" style=" font-weight:500;">此产品可抵扣{{date[0].couponPrice}}金币/成人(不含儿童)</view>
+          </view>
+          <view class="price-right">
+            <view class="explain">此产品可即时付款</view>
+            <view class='num'>{{date[0].num}}人团购价</view>
+          </view>
+      </view>
+     <template is="yuan"/>
+   </view>
+   <view class="plan">
+      <view class="oneself">自嗨团进度
+         <view class="dian"></view>
+      </view>
+      <view class="schedule">
+         <view class="xian2">
+           <block wx:for="{{sth}}" wx:key="item.id">
+            <view class="lengthl"style="width:{{item.length}}%">
+              <view class="garden2">{{item.userNum}}人</view>
+            </view>  
+           </block>
+         </view>
+         <view class="xian">
+          <view class="garden5"></view>
+          <block wx:for="{{sth}}" wx:key="item.id">
+            <view class="length"style="width:{{item.length}}%">
+               <view class="{{item.active?'garden6':'garden'}}"></view>
+            </view>
+          </block>
+         </view>
+          <view class="xian1">
+           <view class="garden1">开团</view>
+           <!-- <view class="garden1">￥{{date[0].memberPrice}}</view> -->
+           <block wx:for="{{sth}}" wx:key="item.id">
+            <view class="lengths"style="width:{{item.length}}%">
+               <view class="garden1" wx:if="{{item.active}}">已成团</view>
+              <view class="garden1" wx:else >￥{{item.price}}</view>
+            </view>
+           </block>
+         </view>
+        <view class='huang' style="width:{{width}}%">
+           <view class="kedudians" hidden="{{active3}}">
+               <view class="kedudians-text">{{date[0].num}}人</view>
+               <view class="kedudians-img"></view> 
+           </view>
+        </view>
+      </view>
+      <template is="yuan"/>
+            <view class="introduce">人多更优惠,离下一阶段成团还差{{arr[0].statistics}}人</view>
+   </view>
+
+  
+   <view class="plan planse">
+       <view class="Clock" bindtap='watch' data-id='{{circuit.id}}'>
+          <view class="Clock-img"></view>
+          <view class="Clock-jt"></view>
+       </view>
+      <view class="oneself">出行班期
+         <view class="dian"></view>
+      </view>
+   <view class="scheduleler">
+    <block wx:for="{{date}}" wx:key="{{item.id}}" >
+      <view class="calendar" bindtap="calendar" data-index="{{index}}">
+         <view class="calendar-top">
+           <view class="calendar-box" >
+            <view class="calendar-left"></view>
+            <view class="calendar-left"></view>
+          </view>
+            <view class="calendar-text">已有{{item.num}}人</view>
+         </view>
+         <view class='calendar-bottom'>
+            <view>{{item.time}}</view>
+            <view>{{item.tmpnewchar}}</view>
+         </view>
+      </view>
+    </block>
+    </view>
+
+     
+   </view>
+
+  
+    <view class="plan plane">
+        <view class="oneself">行程介绍
+          <view class="dian"></view>
+        </view>
+        <view class="{{scroll?'location':'route'}}" scroll-x="true" scroll-left="{{scrollLeft}}" >        
+         <view class="tab-item {{currentTab==0?'hot':''}}"  data-current="0" bindtap="swichNav">{{circuit.day}}日行程</view>
+        <view class="tab-item {{currentTab==1?'hot':''}}" data-current="1"  bindtap="swichNav" >用户须知</view> 
+        </view>
+        <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{height}}px;">
+      <swiper-item>
+      <swiper-view>
+           <view class="journey">
+               <view class="journey-text">行程天数：<text class="journey-sky">{{circuit.day}}天</text></view>
+               <view class="journey-text">适用团期：<text class="journey-sky">所有</text></view>
+           </view>
+           <block wx:for="{{journey}}" wx:key="item.id">
+           <view class="first">
+               <view class="first-img">
+                <view class="first-text">第{{item.days}}天</view>
+               </view>
+           </view>
+           <view class="{{index==0?'first-introduce':'first-introduces'}}">
+              <view class="first-box">
+                 <view class="first-site">{{item.origin}}
+                    <view class="first-site-imgs-box">
+                        <view class="first-xian"></view>
+                        <!-- <view class="first-site-img"></view> -->
+                    </view>    
+                 {{item.destination}}</view>
+              </view>
+              <view class="first-details">
+               {{item.introduce}}
+              </view>
+           </view>
+           </block>
+           <view class="details-btn-img">
+                <view class="details-btn" bindtap='details'></view>
+           </view>
+        
+      </swiper-view>
+    </swiper-item>
+    
+
+    <swiper-item>
+      <swiper-view scroll-y="{{true}}">
+          <view class="cost">
+             <view class="cost-box">
+                <view class="cost-img1"></view>
+                <view class="cost-text">费用包含</view>
+             </view>
+          </view>
+          <view class="cost-introduce">
+            <text class="cost-introduce-text">{{circuit.contain}}</text>
+          </view>
+
+            <view class="cost">
+             <view class="cost-box">
+                <view class="cost-img1"></view>
+                <view class="cost-text">费用不含</view>
+             </view>
+          </view>
+          <view class="cost-introduce">
+            <text class="cost-introduce-text">{{circuit.notContain}}</text>
+          </view>
+
+          <view class="cost">
+             <view class="cost-box">
+                <view class="cost-img1"></view>
+                <view class="cost-text">自费说明</view>
+             </view>
+          </view>
+          <view class="cost-introduce">
+            <text class="cost-introduce-text">{{circuit.ownExpense}}</text>
+          </view>
+
+          <view class="cost">
+             <view class="cost-box">
+                <view class="cost-img1"></view>
+                <view class="cost-text">购物说明</view>
+             </view>
+          </view>
+          <view class="cost-introduce">
+            <text class="cost-introduce-text">{{circuit.shoppingInstructions}}</text>
+          </view>
+
+    </swiper-view>
+  </swiper-item>
+    </swiper>
+    </view>
+   
+
+<view class="purchase" bindtap='purchase'>
+  <view class="purchase-left">
+    <view class="purchase-img"></view>
+    <text class="purchase-text">购买须知</text>
+  </view>
+  <view class="purchase-right"></view>
+</view>
+<view class="purchase" bindtap='paying'>
+  <view class="purchase-left">
+      <view class="cost-img"></view>
+    <text class="purchase-text">温馨提示</text>
+  </view>
+  <view class="purchase-right"></view>
+</view>
+<view class="purchase" bindtap='qualification'>
+  <view class="purchase-left">
+      <view class="cost-imgs"></view>
+    <text class="purchase-text">产品资质</text>
+  </view>
+  <view class="purchase-right"></view>
+</view>
+
+ <view class="comment-box1">
+      <view class="comment-details-box">
+          <view class="all-comment">
+            <view class="text">全部评论
+            <view class="dian-box">
+              <view class="dian" style='background:#000000;width:6rpx;height:6rpx;'></view>
+            </view> 
+            ({{totalCount}})</view>
+          </view>
+          <view class="examine-box" catchtap='allcomment'>
+              <view>好评率<text class="reputably">{{reputably}}</text></view>
+              <image src="/image/jiantou.png" class="next-icon"></image>
+          </view>
+      </view>
+      <view class="like-comment">
+      <block wx:for="{{evaluate}}" wx:key="this">
+      <view class="box">
+      <view class="img-box">
+        <image class="user-img" src="{{item.profilePic}}"></image>
+      </view>
+      <view class="com-content-box">
+         <view class="comment-name" wx:if="{{item.userName != null && item.userName !=''}}">{{item.userName}}</view>
+         <view class="comment-name" wx:else>{{item.phones}}</view>
+         <view class="comment-box">{{item.content}}</view>
+         <!-- <view class="reply-box" wx:for="{{item.parentReplyMap}}" wx:key="this" wx:for-item="ceil">
+            <view class="reply-name">{{ceil.parentReplyUserPhone}}</view>
+            <view class="reply-comment">{{ceil.parentReplyContent}}</view>
+         </view> -->
+          <!-- <!-- <view class="issue-time" wx:if="{{item.publishTime == '0分钟'}}">发布于刚刚</view> -->
+         <view class="issue-time"></view> 
+      </view>
+    </view>
+    </block>
+    </view>
+     <view class="examine-all-box" >
+        <view class="add-comment" catchtap='allcomment'>查看全部评价</view>
+     <!-- <text catchtap='allcomment'>查看全部{{totalCount}}条评论</text>
+     <image src="/image/arrows.png" class="arrows"></image> -->
+    </view>
+  </view>
+
+  
+<view class="navs"></view>
+<view class="nav">
+  <view class="nav-left" bindtap='phone'>
+    <view class="nav-img"></view>
+     <view class="nav-text">电话咨询</view>
+  </view>
+  <view class="nav-right" bindtap='btn'>立即预定</view>
+</view>
+<!-- </view> -->
+</view>
+
+<view class="commodity_screen"  catchtouchmove='true' wx:if="{{showModalStatus}}"></view> 
+<view  animation="{{animationData}}" catchtouchmove='true' class="commodity_attr_box" wx:if="{{showModalStatus}}">
+      <view class="dial" bindtap='dial'>拨打电话</view>   
+      <view class="phones">400-0098-365</view>  
+      <view class="cancel" bindtap='cancel'>取消</view>      
+</view>

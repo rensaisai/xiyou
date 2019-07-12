@@ -1,0 +1,31 @@
+<import src="/pages/common/none.wxml" />
+<view class="index">
+  <block wx:for="{{list}}" wx:key="{{item.id}}">
+    <view class="box">
+       <image class="img" src="{{item.headImg}}" wx:if="{{item.headImg != '' && item.headImg != null}}" lazy-load="true"></image>
+        <image class="img" src="/image/headdefault.png" lazy-load="true" wx:else></image>
+       <view class="right">
+          <view class="left">
+               <view class="left-name" wx:if="{{item.userName != null}}">{{item.userName}}</view>
+              <view class="left-name" wx:else>{{item.nickName}}</view>
+              <view class=" {{item.memberType == 1?'img1':''}}"></view>
+              <view class=" {{item.memberType == 2?'img2':''}}"></view>
+              <view class=" {{item.memberType == 3?'img3':''}}"></view>
+          </view>
+          <view class="right-box">
+             <view class="phone-icon"></view>
+             <view class="phone" bindtap='phone' data-phone="{{item.phone}}">{{item.phone}}</view>
+          </view>
+       </view>
+    </view>
+  </block>
+    
+
+
+  
+</view>
+
+<view hidden="{{hiddenNone}}">
+  <template is="none" />
+</view>
+

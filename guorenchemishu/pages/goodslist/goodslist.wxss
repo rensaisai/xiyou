@@ -1,0 +1,12 @@
+@import "/pages/progect/project.wxss";
+.index{
+  width: 100%;
+  height: auto;
+  padding: 0;
+}
+.maintenance-list{
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  background: #ffffff;
+}

@@ -1,0 +1,3 @@
+<view class="index">
+     <image class="img" src="{{qrCodeUrl}}" bindtap="previewImage" data-src="{{qrCodeUrl}}"></image>
+</view>

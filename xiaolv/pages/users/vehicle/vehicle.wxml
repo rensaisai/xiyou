@@ -1,0 +1,149 @@
+<import src="/pages/common/none.wxml" />
+<view class="index">
+   <!-- <view class-="header-box">
+      <view class="left" bindtap='chooseCity'>
+         <view class="city">{{city}}</view>
+         <view class="icon-box"></view>
+      </view>
+      <input class="top-searchbox" placeholder="{{qrString}}" placeholder-class="color" bindtap='keywordInput'></input>
+      <view class="search"></view>
+      <view class="message-box"></view>
+   </view>
+   <swiper class="swip" indicator-dots="true" autoplay="true" interval="4000" duration="500">
+     <block wx:for="{{adsList}}" wx:key="this"> 
+     <swiper-item>
+        <image src="{{item.imgUrl}}" class="slide-image"  mode="aspectFill" lazy-load="true"/>
+     </swiper-item>
+     </block>
+   </swiper>
+   <view class="nav">
+   <view class="nav-box">
+       <image src="/image/zijia.png" class="nav-img"></image>
+       <view class="nav-text">自驾游记</view>
+   </view>
+   <view class="nav-box" bindtap='vehicle'>
+       <image src="/image/shenche.png" class="nav-img"></image>
+       <view class="nav-text">年度审车</view>
+   </view>
+   <view class="nav-box" bindtap='wash'>
+       <image src="/image/meirong.png" class="nav-img"></image>
+       <view class="nav-text">洗车美容</view>
+   </view>
+   <view class="nav-box">
+       <image src="/image/jiuyuan.png" class="nav-img"></image>
+       <view class="nav-text">道路救援</view>
+   </view>
+</view>
+<view class="vehicle-box" bindtap="selectMyCar">
+    <image class="selectcar-img" src="/image/mycar.png" wx:if="{{carInfoimg == '' || carInfoimg == null}}"></image>
+    <image class="selectcar-img" src="{{carInfoimg}}" wx:else mode="aspectFit" lazy-load="true"></image>
+    <view class="vehicle-information" wx:if="{{license!=''}}">
+       <view class="carName-box">
+          <view>{{carName}}</view>
+          <view class="license-plate" >{{license}}</view>
+        </view>
+        <view class="displacement">{{caruser}}</view>
+    </view>
+    <view class="vehicle-informations" wx:else>
+        <view>{{carName}}</view>
+    </view>
+    <image class="return" src="/image/navi.png"></image>
+</view> -->
+<view class="stores-box" bindtap='andmore'>
+    <view class="service">服务门店</view>
+    <view class="more">更多</view>
+</view>
+<view class="list-box" bindtap="itemClick" wx:for="{{list}}" wx:key="item.id" data-index="{{index}}">
+    <image src="{{item.headImg}}" class="list-img" mode="aspectFill" lazy-load="true"></image>
+    <view class="list-right">
+       <view class="list-name">
+           <view class="garage-name">{{item.detectionLineName}}</view>
+          <!-- <image src="/image/zhida.png" hidden='{{!item.zdhFlag}}' class="mechanics-img"></image> -->
+       </view>
+       <view class="list-name">
+          <view class="evaluation">总评分 <text class="points">{{item.grade}}</text></view>
+          <view class="evaluation">{{item.distanceShow}}</view>
+       </view>
+       <view class="list-name" >
+          <image class="positioning" src="/image/dingwei.png"></image>
+          <view class="address">{{item.address}}</view>
+       </view>
+    </view>
+</view>
+<view class="loadmore" hidden="{{loadmore}}">
+   <view class="log" hidden="{{isHideLoadMore}}">
+      <view class="loading"></view>
+      <view class="loadmore_tips">正在加载</view>
+    </view> 
+</view>
+<view hidden="{{hiddenNone}}">
+  <template is="none" />
+</view>
+</view>
+
+
+<!-- <view class="index">
+  <view class="index-hd"> -->
+
+    <!-- <view class="page-section swiper swiper-view">
+      <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500">
+        <block wx:for="{{adsList}}" wx:key="item.id">
+          <swiper-item>
+            <view class="swiper-item">
+               <image src="{{item.imgUrl}}" mode="widthFix" class="swiper-image"></image> 
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view> -->
+    <!-- <view class="weui-cell_input top-search">
+      <input class="weui-input top-searchbox" placeholder="{{qrString}}" bindinput='keywordInput' />
+      <image class="top-img" src="/image/search.png" bindtap="searchShop"></image>
+    </view> -->
+  <!-- </view>
+</view> -->
+
+
+<!-- <view class="list-sort">
+  <view class="btn-sort" bindtap="chooseCity">
+    <view>{{city}}</view>
+    <image class="kind-list-navi" src="/image/sortdown.png"></image>
+  </view>
+  <view class="btn-sort" bindtap="actionSheetTap">
+    <view>{{sortname}}</view>
+    <image class="kind-list-navi" src="/image/sortdown.png"></image>
+  </view>
+</view>
+<view class="index-bd">
+  <view class="kind-list">
+    <block wx:for="{{list}}" wx:for-item="item" wx:key="item.id">
+      <view class="kind-list-item">
+        <view class="kind-list-item-hd" bindtap="itemClick" data-id="{{item.id}}">
+
+          <image class="kind-list-bigimg" src="{{item.headImg}}"></image>
+          <view class="kind-list-item-00">
+            <view class="kind-list-item-01">
+              <view class="kind-list-text">{{item.detectionLineName}}</view>
+              <image class="img-tag" mode="widthFix" hidden='{{!item.zdhFlag}}' src="/image/zhida.png"></image>
+              <view class="kind-list-text2">{{item.distance}}km</view>
+            </view>
+            <view class="kind-list-text3">
+              <block wx:for="{{item.stars}}" wx:for-item="subitem" wx:for-index="subindex" wx:key="*this">
+                <image class="star-image-index" style="left: {{subindex*100}}rpx" src="/image/star_selected.png">
+                </image>
+              </block>
+            </view>
+            <view class="kind-list-text4">{{item.address}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class="loadmore" hidden="{{isHideLoadMore}}">
+      <view class="loading"></view>
+      <view class="loadmore_tips">正在加载</view>
+    </view>
+  </view>
+</view>
+<view hidden="{{hiddenNone}}">
+  <template is="none" />
+</view> -->

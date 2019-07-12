@@ -1,0 +1,106 @@
+<view class="index">
+   <view class="box">
+      <view class="the">{{month}}<text class="Luna">月</text></view>
+      <view class="triangle"></view>
+      <view class="week">
+         <block wx:for="{{week}}" wx:key="*this">  
+          <view class="sky">{{item}}</view>
+        </block>  
+      </view>
+   </view>
+   <view class="blank"></view>
+   <view class="todays"></view>
+<swiper class='swpier-box' circular="true" current="{{swiperIndex}}" bindchange='swiperChange'>
+ <swiper-item class='flex m-around days-table '>
+  <block wx:for="{{calendar.first}}" wx:for-item='x' wx:key='x.date'>
+  <view class="grids" wx:if="{{x.month != month}}"></view>
+  <view  class='grid caddy {{x.actives?"back":""}}'  data-month='{{x.month}}' data-day='{{x.day}}' data-date='{{x.date}}' data-actives="{{x.actives}}" bindtap='bindDayTap'  wx:if="{{x.month === month}}">
+      <view class="{{x.active?'intraday':'hots'}}">{{x.date === today?'今天':x.day}}</view>
+      <view class="price">{{x.price}}</view>
+  </view>
+  </block>
+ </swiper-item>
+ <swiper-item class='flex m-around days-table '>
+  <block wx:for="{{calendar.second}}" wx:for-item='x' wx:key='x.date'>
+  <view class="grids" wx:if="{{x.month != month}}"></view>
+  <view class='grid caddy {{x.actives?"back":""}}' data-month='{{x.month}}' data-day='{{x.day}}' data-date='{{x.date}}' data-actives="{{x.actives}}" bindtap='bindDayTap' wx:if="{{x.month === month}}">
+  <view class="{{x.active?'intraday':'hots'}}">{{x.date === today?'今天':x.day}}</view>
+  <view class="price">{{x.price}}</view>
+  </view>
+  </block>
+ </swiper-item>
+ <swiper-item class='flex m-around days-table'>
+  <block wx:for="{{calendar.third}}" wx:for-item='x' wx:key='x.date'>
+   <view class="grids" wx:if="{{x.month != month}}"></view>
+  <view class='grid caddy {{x.actives?"back":""}}'  data-month='{{x.month}}' data-day='{{x.day}}' data-date='{{x.date}}' data-actives="{{x.actives}}" bindtap='bindDayTap' wx:if="{{x.month === month}}">
+    <view class="{{x.active?'intraday':'hots'}}">{{x.date === today?'今天':x.day}}</view>
+    <view class="price">{{x.price}}</view>
+  </view>
+  </block>
+ </swiper-item>
+ <swiper-item class='flex m-around days-table '>
+  <block wx:for="{{calendar.fourth}}" wx:for-item='x' wx:key='x.date'>
+    <view class="grids" wx:if="{{x.month != month}}"></view>
+    <view class='grid caddy {{x.actives?"back":""}}'  data-month='{{x.month}}' data-day='{{x.day}}' data-date='{{x.date}}' data-actives="{{x.actives}}" bindtap='bindDayTap' wx:if="{{x.month === month}}">
+    <view class="{{x.active?'intraday':'hots'}}">{{x.date === today?'今天':x.day}}</view>
+    <view class="price">{{x.price}}</view>
+   </view>
+  </block>
+ </swiper-item>
+ </swiper>
+
+    <view class="tuxedo-box" wx:if="{{hide && type == 0}}">
+     <view class="tuxedo">{{some.time}}已有{{some.num}}人参团</view>
+    </view>
+
+ <view class="outing" wx:if="{{hide}}">
+     <view class="outing-box">
+       <view class="outing-icon-box">
+          <view class="outing-left">
+            <view class="icon"></view>
+            <view class="select">选择出行人数</view>
+          </view>
+       </view> 
+       <view class="outing-select-box select-box">
+           <view class="outing-select-box-left">
+               <view class="adult">成人</view>
+               <view class="outing-select-box-icon"></view>
+               <view class="people" wx:if="{{type == 0}}">￥{{some.nowPrice}}<text class="number">/人</text>       
+               </view>
+               <view class="people" wx:if="{{type == 1 && isvip==0}}">￥{{some.noMemberPrice}}<text class="number">/人</text>
+               </view>
+                <view class="people" wx:if="{{type == 1 && isvip==1}}">￥{{some.memberPrice}}<text class="number">/人</text>
+                </view>  
+           </view>
+           <view class="outing-select-box-right">
+               <view class="reduce"  bindtap='reduce1'></view>
+               <view class="figure">{{num}}</view>
+               <view class="{{active?'add':'plus'}}" bindtap='dd1'></view>
+           </view>
+       </view>
+       <view class="outing-select-box">
+           <view class="outing-select-box-left">
+               <view class="adult">儿童</view>
+               <view class="outing-select-box-icon"></view>
+               <view class="people">￥{{some.childrenPrice}}<text class="number">/人</text>
+               </view>
+           </view>
+           <view class="outing-select-box-right">
+               <view class="reduce" bindtap='reduce2'></view>
+               <view class="figure">{{nums}}</view>
+               <view class="{{active?'plus':'add'}}" bindtap='dd2'></view>
+           
+           </view>
+       </view>  
+     </view>
+ </view>
+
+ <view class="navs"></view>
+  <view class="nav">
+       <view class="nav-left">
+            <view class="time">团期：</view>
+            <input type="text"  placeholder-style="color:#9D9D9D; font-size:28rpx;" disabled="true" value="{{some.time}}" class="text"></input>
+       </view>
+       <view class="next" bindtap='next'>下一步</view>
+   </view>
+</view>

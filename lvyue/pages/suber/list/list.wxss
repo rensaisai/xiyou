@@ -1,0 +1,8 @@
+@import "/pages/mall/mall";
+.index{
+  width: 100%;
+  height: auto;
+}
+.list:first-child{
+  margin-top: 0;
+}

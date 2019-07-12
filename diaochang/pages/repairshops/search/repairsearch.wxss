@@ -1,0 +1,13 @@
+@import "/pages/index/index.wxss";
+
+.search-box{
+  width:85%;
+}
+.closed{
+  position:absolute;
+  /* float:right; */
+  width:150rpx;
+  height:150rpx;
+  right: 10px;
+  /* top: 0px; */
+}

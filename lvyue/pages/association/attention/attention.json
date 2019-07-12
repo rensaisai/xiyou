@@ -1,0 +1,10 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTitleText": "旅约全球",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "loding": "/Component/loding/loding",
+    "empty": "/Component/empty/empty"
+  }
+}

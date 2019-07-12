@@ -1,0 +1,115 @@
+
+<view class="commodity_screen"  catchtouchmove='true'  wx:if="{{showModalStatus}}"></view> 
+           <view  catchtouchmove='true' class="commodity_attr_box" wx:if="{{showModalStatus}}">
+        <view class="referrer-index">
+         <view class='head-boxs'>
+           <image  class="head" src="{{entity.headImg}}"></image>
+         </view>
+           <view class="head-box" wx:if="{{entity.userName== ''}}">{{entity.nickName}}</view>
+           <view class="head-box" wx:else>{{entity.userName}}</view>
+           <view class="boxs-head">
+              <!-- <view class="circle"></view> -->
+              <view class="circle-list">{{entity.phone}}</view>
+           </view>
+           <view class="btn">
+               <button class="btn-l btnul" bindtap='refuse'>取消</button>
+               <button open-type="getUserInfo" class="btn-l btnus" lang="zh_CN" bindtap="onGotUserInfo">联系他</button>   
+           </view>
+       </view>
+    </view>
+
+<view class="index">
+  <!-- <view class="mineback"> -->
+    <view class="mineback-img">
+        <view class="box">
+            <view class="box-left" bindtap='header'>
+                 <image class="head-img" src="{{headimg}}" catchtap='headerimg'></image>
+                 <view class="name">{{nickname}}</view>
+                 <view class="vip-img" wx:if="{{memberFlag == 1}}"></view>
+            </view>
+            <view class="box-right" wx:if="{{kmUserInfo != null && entity != null}}">
+                <view class="counselor" wx:if="{{entity.userName== ''}}">保养顾问: {{entity.nickName}}</view>
+                <view class="counselor" wx:else>保养顾问: {{entity.userName}}</view>
+                <view class="counselor-img-box" bindtap='maintain'>
+                     <view class="counselor-img"></view>
+                </view>
+            </view>
+        </view>
+        <view class="discounts">
+            <view class="discounts-left" bindtap='bean'>
+                <view class="bean">{{bean}}</view>
+                <view class="bean-text">车豆</view>
+            </view>
+            <view class="discounts-xian"></view>
+            <view class="discounts-left" bindtap='coupon'>
+                <view class="bean">{{member}}</view>
+                <view class="bean-text">卡券</view>
+            </view>
+        </view>
+  </view>
+  <!-- </view> -->
+  <view class="index-bd">
+    <view class="kind-list">
+       <view class="kind-list-item" bindtap='mycode'>
+          <view  class="kind-list-item-hd">
+            <view class="list-icon4">
+              <image src="/image/code.png" class="list-icon3"></image>
+            </view>
+            <view class="kind-list-text">我的二维码</view>
+            <image class="kind-list-navi" src="/image/navi.png"></image>
+          </view>
+        </view> 
+        <view class="kind-list-item" bindtap='order'>
+          <view  class="kind-list-item-hd">
+            <image src="/image/orders.png" class="list-icon"></image>
+            <!-- <view ></view> -->
+            <view class="kind-list-text">我的订单</view>
+            <image class="kind-list-navi" src="/image/navi.png"></image>
+          </view>
+        </view>
+         <view class="kind-list-item" bindtap='care'>
+          <view  class="kind-list-item-hd">
+            <image class='list-icon1' src="/image/br.png"></image>
+            <view class="kind-list-text">我的车辆</view>
+            <image class="kind-list-navi" src="/image/navi.png"></image>
+          </view>
+        </view>
+        <view class="kind-list-item" bindtap='move'>
+          <view  class="kind-list-item-hd">
+            <image src="/image/nuo.png" class="list-icon2"></image>
+            <view class="kind-list-text">挪车码</view>
+            <image class="kind-list-navi" src="/image/navi.png"></image>
+          </view>
+        </view>
+        <view class="kind-list-item" bindtap='coupon'>
+          <view  class="kind-list-item-hd">
+            <image src="/image/bao.png" class="list-icon3"></image>
+            <view class="kind-list-text">红包卡券</view>
+            <image class="kind-list-navi" src="/image/navi.png"></image>
+          </view>
+        </view>
+         <!-- <view class="kind-list-item" bindtap='codevh'>
+          <view  class="kind-list-item-hd">
+            <view class="list-icon4"></view>
+            <view class="kind-list-text">卡券</view>
+            <image class="kind-list-navi" src="/image/navi.png"></image>
+          </view>
+        </view>  -->
+        <view class="kind-list-item" bindtap='we' wx:if="{{(memberType == null && kmUserInfo == null) || (memberType  == 0 || memberType==4)}}">
+          <view  class="kind-list-item-hd">
+            <image class="list-icon5" src="/image/wed.png"></image>
+            <view class="kind-list-text">加入我们</view>
+            <image class="kind-list-navi" src="/image/navi.png"></image>
+          </view>
+        </view>
+        <view class="kind-list-item" bindtap='counselor' wx:else>
+          <view  class="kind-list-item-hd">
+            <image src="/image/counselor.png" class="list-icon6"></image>
+            <view class="kind-list-text">顾问专享</view>
+            <view class="number">工号：{{userNo}}</view>
+            <image class="kind-list-navi" src="/image/navi.png"></image>
+          </view>
+        </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,4 @@
+@import "/pages/line/addition/addition.wxss";
+.input {
+  padding-right: 0;
+}

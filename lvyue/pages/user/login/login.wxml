@@ -1,0 +1,16 @@
+
+<view class="index">
+<form bindsubmit='loginRequest'>
+   <view class="input-box">
+       <input name="phone" type='number' class="input"  placeholder="请输入11位手机号" bindblur="inputPhoneNum" placeholder-class="placeholder"/>
+   </view>
+   <view class="input-box box-bottom">
+          <input  class="boxl"  placeholder="请输入短信验证码" bindinput="addCode" placeholder-class="placeholder" type="number"/>
+          <button wx:if="{{send}}" class="sendMsg" bindtap="sendMsg" type='primary'>获取验证码</button>
+          <text wx:if="{{alreadySend}}" class="sendMsg1" >{{second+"s后重新发送"}}</text>
+   </view>
+ 
+  <button type='primary' class="btn" form-type='submit'>下一步</button>
+</form>
+<view class="contact" bindtap='phone'>无法登录，请联系客服</view>
+</view>

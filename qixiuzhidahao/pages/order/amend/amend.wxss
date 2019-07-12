@@ -1,0 +1,46 @@
+.index{
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.motorcycle{
+  width: 100%;
+  height: 40rpx;
+  font-size: 26rpx;
+  color: #000000;
+  line-height: 40rpx;
+  font-weight: 600;
+  margin-top: 10rpx;
+}
+.motorcycle:nth-child(2){
+  margin-top: 0rpx;
+}
+.motorcycle-box{
+  width: 100%;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+  color: #000000;
+  font-weight: 600;
+}
+.title{
+  width: 150rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+}
+.motorcycle-input{
+  width: 70%;
+  height: 80rpx;
+  border: 1rpx solid #000000;
+  border-radius:5rpx;
+  margin-left: 30rpx; 
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.btn{
+  background: #1296db;
+  color: #ffffff;
+}

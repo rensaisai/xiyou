@@ -1,0 +1,73 @@
+.index{
+  width: 100%;
+  height: auto;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.box{
+  width: 100%;
+  height: auto;
+  background: #ffffff;
+  padding: 40rpx;
+  box-sizing: border-box;
+  border-radius:30rpx; 
+}
+.information{
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+}
+.yuan{
+  width: 20rpx;
+  height: 20rpx;
+  background: #878787;
+  border-radius:10rpx; 
+  z-index: 9999;
+}
+.left{
+  width: 12%;
+  height:60rpx;
+}
+.center{
+  width: 16%;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right{
+  flex: 1;
+  height: auto;
+  word-break:break-all; /* 支持IE和chrome，FF不支持*/
+  word-wrap:break-word; 
+}
+.xian{
+  position: absolute;
+  top: -20%;
+  left: 99.5%;
+  width: 2rpx;
+  height: 205rpx;
+  background: #878787;
+}
+.xian-box{
+  position: relative;
+  width: 20%;
+  height: 150rpx;
+}
+.collect{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius:25rpx;
+  background:  #e51337;
+  font-size: 28rpx;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  line-height: 50rpx;
+  z-index: 999999; 
+}
+.xian-box:last-child{
+  display: none;
+}

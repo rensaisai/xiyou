@@ -1,0 +1,91 @@
+<view class="index">
+   <view class="header-box">
+      <view class="top-box">
+          <image class="header-img" src="{{headImg}}"></image>
+          <view class="header-left">
+              <view class='name'>
+                 <text wx:if="{{userName===''}}" class="text-name">{{nickName}}</text>
+                 <text wx:else class="text-name">{{userName}}</text>
+                 <view class="name-box">{{name}}</view>
+              </view>
+              <view class="number">工号：{{userNo}}</view>
+          </view>
+          <view class="code" bindtap='share'>
+             <image class="code-img" src="/image/code.png"></image>
+          </view>
+      </view>
+      <view class="header-bottom">
+         <view class="xian2" style="width:{{width}}">
+         </view>
+         <view class="xian">
+            <view class="sign {{active1?'imgs':'img'}}"></view>
+            <view class="sign {{active2?'imgs':'img'}}"></view>
+            <view class="sign {{active3?'imgs':'img'}}"></view>
+         </view>
+          <view class="xian1">
+            <view class="xian1-text">初级养代</view>
+            <view class="xian1-text">中级养代</view>
+            <view class="xian1-text">高级养代</view>
+         </view>
+      </view>
+   </view>
+   <view class="earnings-box">
+     <view class="earnings" bindtap='commission'>
+        <view class="commission">{{commission}}</view>
+        <view class="commission-name">佣金</view>
+     </view>
+     <view class="earnings" bindtap='team'>
+        <view class="commission">{{membercount}}</view>
+        <view class="commission-name">团队</view>
+     </view>
+     <view class="earnings" bindtap='fanslist'>
+        <view class="commission">{{member}}</view>
+        <view class="commission-name">粉丝列表</view>
+     </view>
+   </view>
+   <view class="instrument-box">
+       <view class="instrument-title">必备工具</view>
+       <view class="boxes" >
+          <!-- <view class="list-box" bindtap='must'>
+              <view class="list">
+                  <image class="list-icon" src="https://www.cmspq.xyz/cmsweb/imgs/SmallProcedures/3.png"></image>
+                  <view class="list-text">养代必买</view>
+              </view>
+          </view>
+          <view class="list-box" bindtap='binding'>
+              <view class="list">
+                    <image class="list-icon" src="https://www.cmspq.xyz/cmsweb/imgs/SmallProcedures/4.png"></image>
+                  <view class="list-text">绑定会员</view>
+              </view>
+          </view>  -->
+          <view class="list-box" bindtap='bank'>
+               <view class="list">
+                  <image class="list-icon" src="https://www.cmspq.xyz/cmsweb/imgs/SmallProcedures/1.png"></image>
+                  <view class="list-text">银行卡</view>
+              </view>
+          </view>
+          <view class="list-box" bindtap='withdraw'>
+              <view class="list">
+                  <image class="list-icon" src="https://www.cmspq.xyz/cmsweb/imgs/SmallProcedures/5.png"></image>
+                  <view class="list-text">提现申请</view>
+              </view>
+          </view>
+          <!-- <view class="list-box" bindtap='client'>
+              <view class="list">
+                  <image class="list-icon" src="https://www.cmspq.xyz/cmsweb/imgs/SmallProcedures/2.png"></image>
+                  <view class="list-text">客服</view>
+              </view>
+          </view> -->
+       </view>
+   </view>
+
+</view>
+<view class="commodity_screen"  catchtouchmove='true' wx:if="{{showModalStatus1}}" bindtap='hider'></view> 
+<view  animation="{{animationData}}" catchtouchmove='true' class="commodity_attr_box" wx:if="{{showModalStatus1}}">
+    <swiper  class="share-box" previous-margin="160rpx" next-margin="60rpx" bindchange="swiperChange" bindtap='previewImage'>
+       <swiper-item wx:for="{{codeimg}}" wx:key="this" wx:index="{{index}}" class="swiper-item">
+           <image src="{{item.imgUrl}}" class="share-img {{swiperIndex == index ? 'active' : ''}}"/>
+       </swiper-item>
+    </swiper>
+    <view class="share-btn" bindtap='save'>保存图片分享朋友圈</view>     
+</view>

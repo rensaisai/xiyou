@@ -1,0 +1,69 @@
+<view class="index">
+   <view class='today-bill'>
+        <view class="today-left">今日订单</view>
+        <view class="today-right">{{daynum}}单</view>
+   </view>
+   <view class='today-bill'>
+        <view class="today-left">今日营业额</view>
+        <view class="today-right">￥{{dayprice}}</view>
+   </view>
+   <view class='today-bill tody' style='border:none;'>
+        <view class="today-left">月度账单</view>
+        <image src="/image/icon.png" class="today-img" bindtap='bill'></image>
+   </view>
+   <view class='ball-box' wx:if="{{active}}">
+      <view class="prompt">
+           <text>非常满意结算100%</text>
+           <text>满意结算80%</text>
+           <text>其他结算0%</text>
+      </view>
+      <view class="triangle"></view>
+   </view>
+   <block wx:for="{{content}}" wx:key="this">
+     <view class="{{item.active?'box':'boxs'}}" wx:if="{{content != null}}">
+     <view class="bill" bindtap='monthbtn' data-index="{{index}}">{{item.year}}-{{item.month}}月结算账单</view>
+     <view class='today-bill' style='border:none;margin-top:0rpx;'>
+        <view class="today-left">订单总数</view>
+        <view class="today-right">{{list.num}}单</view>
+     </view>
+      <view class='today-bill' style='border:none;margin-top:0rpx;'>
+        <view class="today-left">订单总额</view>
+        <view class="today-right">￥{{list.price}}</view>
+     </view>
+      <view class='today-bill' style='border:none;margin-top:0rpx;'>
+        <view class="today-left">订单状态</view>
+        <view class="today-right">{{list.status}}</view>
+     </view>
+     
+    
+     <!-- <view class="evaluation">
+        <view class="list">
+           <text>订单数量</text>
+           <text>0</text>
+        </view>
+        <view class="list">
+           <text>5星订单</text>
+           <text>(非常满意)</text>
+           <text>0</text>
+        </view>
+        <view class="list">
+           <text>4星订单</text>
+           <text>(满意)</text>
+           <text>0</text>
+        </view>
+        <view class="list score">
+           <text>3星及以下订单</text>
+           <text>(一般及不满意)</text>
+           <text>0</text>
+        </view>
+     </view>
+     <view class="settlement">
+        <text>结算金额</text>
+        <text>1000元</text>
+
+        
+        <text>结算状态</text>
+     </view> -->
+   </view>
+   </block>
+</view>

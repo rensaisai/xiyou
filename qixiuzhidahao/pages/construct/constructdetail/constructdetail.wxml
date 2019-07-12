@@ -1,0 +1,25 @@
+<view class="index">
+    <view class="vh-box">
+        <view class="">车牌号：{{details.carNo}}</view>
+        <view class="">车型：{{details.carSplName}}</view>
+    </view>
+    <view class="serve">服务项目：{{details.service}}</view>
+    <view class="title">订单产品：</view>
+    <block wx:for="{{details.itemsList}}" wx:key="this">
+    <view class="order-list" wx:for="{{item.goodsList}}" wx:for-item="ceil" wx:key="this">
+       <image class="img" src="{{ceil.img}}" mode="aspectFill"></image>
+       <view class="order">
+          <view class="goods-name">{{ceil.goodsName}}</view> 
+          <view class="goods-standard-box">
+            <view class="goods-standard" wx:if="{{ceil.goodsPackage != null && ceil.goodsPackage != ''}}">{{ceil.goodsPackage}}</view>
+            <view class="goods-standard"  wx:if="{{ceil.spec != null && ceil.spec != ''}}">{{ceil.spec}}</view>
+          </view>
+        </view>
+        <view class="right">
+          <!-- <view class="btn">配件报误</view>
+          <view class="num">x{{ceil.goodsNumber}}</view> -->
+        </view>
+    </view>
+    </block>
+    <button class="submit" bindtap='btn'>施工验收</button>
+</view>

@@ -1,0 +1,13 @@
+@import '/pages/destination/destination.wxss';
+.index{
+  widows: 100%;
+  height: auto;
+}
+.list{
+  height: auto;
+}
+.lod{
+  width: 100%;
+  height: auto;
+  background: #f1f1f3;
+}

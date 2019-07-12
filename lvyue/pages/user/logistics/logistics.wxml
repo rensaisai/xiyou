@@ -1,0 +1,21 @@
+<view class="index">
+   <view class="box" wx:if="{{logistics != null}}">
+   <block wx:for="{{logistics}}" wx:key="this">
+      <view class="information">
+         <view class="left">
+            <view class="information-date">{{item.date}}</view>
+            <view class="information-time">{{item.time}}</view>
+         </view>
+         <view class="center">
+             <view class="yuan" wx:if="{{index}}"></view>
+             <view class="collect" wx:else>收</view>
+         </view>
+         <view class='right' bindtap='phone' data-index="{{index}}">{{item.expressRoute}}</view>
+      </view>
+       <view class="xian-box">
+          <view class="xian"></view>
+      </view>
+      </block>
+   </view>
+</view>
+<empty hiddenNone = "{{hiddenNone}}"/>

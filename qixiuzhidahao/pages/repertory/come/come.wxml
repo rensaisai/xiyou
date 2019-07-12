@@ -1,0 +1,37 @@
+<import src="/pages/common/none.wxml"/>
+<view class="index">
+     <view class="search-box">
+               <view class='search-input'>
+                   <input class='input' placeholder='请输入名称/编号' bindinput="goods"></input>
+                   <image src='/image/sweep.png' class="sweep" bindtap='sweep'></image>
+               </view>
+               <view class="search-btn" bindtap='inquire'>查询</view>
+            </view>
+            <view class="box">
+                <view class="list-box">
+                   <view class="list title">产品</view>
+                   <view class="list title">规格</view>
+                   <view class="list title">货位</view>
+                   <view class="list title">库存</view>
+                   <view class="come-box"></view>
+                </view>
+                <view class="num-btn-box">
+                    <view class="num-box" bindtap='plus'>+</view>
+                    <view class="num">{{num}}</view>
+                    <view class="num-box" bindtap='subtract'>-</view>
+                </view>
+                <view class="list-box" wx:for="{{list}}" wx:key="this" data-index="{{index}}">
+                   <view class="list">{{item.goodsNo}}</view>
+                   <view class="list">{{item.spec}}</view>
+                   <view class="list">{{item.cargoPosition}}</view>
+                   <view class="list">{{item.sum}}</view>
+                   <view class="come-box" bindtap='come' data-index="{{index}}">
+                      <view class="btn">出库</view>
+                   </view>
+                </view>
+            </view>
+
+       <view hidden="{{hiidenNone}}">
+                <template is="none" />
+       </view>
+</view>

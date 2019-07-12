@@ -1,0 +1,14 @@
+.view-none{
+  width: 100%;
+  height: 500rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size:24rpx; 
+  color: #8D8D8D;
+}
+.icon-none{
+  width: 200rpx;
+  height: 200rpx; 
+}

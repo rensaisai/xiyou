@@ -1,0 +1,109 @@
+
+<view class="index">
+     <view class="box">
+        <view class="box-left">
+            <view class="icon"></view>
+            <view class="texts">收货人：{{name}}</view>
+        </view>
+        <view class="box-left">
+            <view class="texts">{{phone}}</view>
+        </view>
+     </view>
+     <view class="background"></view>
+       <view class="block-box" wx:if="{{cardType == 0 && ids == 1}}">
+           <view class="blocks"></view>
+       </view>
+       <view class="block-box" wx:if="{{cardType == 0 && ids ==  2}}">
+         <image class="block" src="https://www.cmspq.xyz/cmsweb/imgs/ads/vipCard.jpg"></image>
+       </view>
+        <view class="block-box" wx:if="{{data != null && cardType == 2}}">
+         <image class="block" src="{{data.img}}"></image>
+       </view>
+       <view class="coupon-box"  wx:if="{{cardType != 0 && cardType != 2}}">
+       <view class="coupon">
+       <view class="coupon-left">
+          <view class="coupon-left-top">
+             <view class="icon"></view>
+             <view class="texts">{{data.cardName}}</view>
+              <view class="activity">{{data.typeName}}</view>
+              <view class="activity">{{data.useTypeName}}</view>
+          </view>
+          <view class="coupon-bottom">
+             <view class="describe">{{data.remarks}}</view>
+              <view class="describe">有效期：{{data.start}} ~ {{data.finish}}</view>
+          </view>
+       </view>
+       <view class="coupon-right">
+           <view class="price" style="color:#ffffff;">￥{{data.price}}</view>
+           <!-- <view class="btn" bindtap='buy' data-index="{{index}}" data-price="{{item.price}}">立即购买</view> -->
+       </view>
+   </view>
+  </view>
+      <view class="order">
+         <view class="price">单价</view>
+         <view class="money"><text class="price-icon">￥</text>{{price}}</view>
+      </view>
+       <view class="order" wx:if="{{cardType == 0 && ids ==  2}}">
+         <view class="price">购买数量</view>
+         <view class="num">
+             <view class="subtract" bindtap='minus'>
+                <view class="img"></view>
+             </view>
+             <view class="nums">{{num}}</view>
+             <view class="subtract" bindtap='plus'>
+                 <view class="imgs"></view>
+             </view>
+         </view>
+      </view>
+       <view class="order" wx:if="{{cardType == 1}}">
+         <view class="price">购买数量</view>
+         <view class="num">
+             <view class="subtract" bindtap='minus'>
+                <view class="img"></view>
+             </view>
+             <view class="nums">{{num}}</view>
+             <view class="subtract" bindtap='plus'>
+                 <view class="imgs"></view>
+             </view>
+         </view>
+      </view>
+         <view class="orders" wx:if="{{cardType == 0}}">
+         <view class="notice">VIP会员权益</view>
+         <view class="describes">
+            <view class="yuan"></view>
+            <view class="sth">获得车秘书智能故障检测仪一台，价值699元</view>
+         </view>
+          <view class="describes">
+            <view class="yuan"></view>
+            <view class="sth">获得车秘书智能二维码挪车贴一个，价值99元</view>
+         </view>
+          <view class="describes">
+            <view class="yuan"></view>
+            <view class="sth">获得永久VIP会员价值</view>
+         </view>
+         <view class="describes">
+            <view class="yuan"></view>
+            <view class="sth">获得专业养车顾问服务</view>
+         </view>
+      </view>
+      <view class="orders" wx:else>
+         <view class="notice">优惠券权益</view>
+          <view class="sth">{{data.remarks}}</view>
+         
+      </view>
+        <view class="float">
+         <view class="money"><text class="texts">小计：</text><text class="price-icon">￥</text>{{price}}</view>
+         <view class="price names">共{{num}}件商品</view>
+      </view>
+      <view class="payment">
+         <view  class="payment-way">支付方式</view>
+         <view class="WeChat">
+             <view class="WeChat-left">
+                <view class="WeChat-img"></view>
+                <view class="WeChat-text">微信</view>
+             </view>
+             <view class="select"></view>
+         </view>
+      </view>
+      <button class="btn" bindtap='order' disabled="{{loading}}" loading="{{loading}}">提交订单</button>
+</view>

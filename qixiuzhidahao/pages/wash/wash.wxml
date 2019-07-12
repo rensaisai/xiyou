@@ -1,0 +1,6 @@
+<view class="index">
+    <view class="box">
+        <view class="box-list" bindtap='make' >预约</view>
+        <view class="box-list" bindtap='cancel'>核销</view>
+    </view>
+</view>

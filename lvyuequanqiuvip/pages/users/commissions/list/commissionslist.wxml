@@ -1,0 +1,27 @@
+<import src="/pages/common/none.wxml" />
+<view class="index">
+  <view class="table">
+     <view class="tr ">
+        <view class="th1">姓名</view>
+        <view class="th2">手机号</view>
+        <view class="th3">金额(税前)</view>
+        <view class="th4">流水类型</view>
+     </view>
+  <block wx:for="{{listl}}" wx:key="{{item.id}}">
+    <view class="tr">
+      <view class="td1">{{item.userName}}</view>
+      <view class="td2">{{item.phone}}</view>
+      <view class="td2">{{item.flowAmount}}</view>
+      <view class="td4">{{item.flowType}}</view>
+       <!-- <view class="td3">{{item.createTime}}</view> -->
+    </view>
+  </block>
+  </view>
+  <view hidden="{{hiddenNone}}">
+      <template is="none" />
+  </view>
+      <view class="loadmore" hidden="{{isHideLoadMore}}">
+      <view class="loading"></view>
+      <view class="loadmore_tips">正在加载</view>
+  </view>
+</view>

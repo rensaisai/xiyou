@@ -1,0 +1,134 @@
+<import src="/pages/common/none.wxml" />
+<scroll-view class="nav">
+    <view class="{{currentData==0?'nav-selected':''}} nav-box" bindtap='checkCurrent' data-index="0">洗车项目</view>
+    <view class="{{currentData==1?'nav-selected':''}} nav-box" bindtap='checkCurrent' data-index="1">服务门店</view>
+    <!-- <view class="{{currentData==2?'nav-selected':''}} nav-box" bindtap='checkCurrent' data-index="2">保养记录</view> -->
+</scroll-view>
+<view class="index-lists"></view>
+ <swiper class="kind-list-items"  current="{{currentData}}" bindchange="eventchange" style='height:{{windowHeight}}px'>
+<swiper-item>
+<scroll-view scroll-y style='height:{{windowHeight}}px'>
+ <view class="index-box" wx:for="{{projectlist}}" wx:key="item.id">
+    <view class="maintenance" bindtap='maintenance' data-index='{{index}}'>
+       <view class="selected-box">
+           <view class="{{item.checked?'selected':'selected1'}}"></view>
+       </view>
+       <view class="service">
+           <view class="service-name">{{item.itemName}}</view>
+           <!-- <view class="service-time">{{item.remarks}}</view> -->
+       </view>
+       <!-- <view class="editor" catchtap='editor' wx:if="{{item.show == false}}" data-index="{{index}}">编辑</view>
+       <view class="editor" wx:else catchtap='determine' data-index="{{index}}">确定</view> -->
+    </view>
+    <view class="maintenance-box">
+        <view class="maintenance-list">
+             <image class="items-img" src="{{list.headImg}}" mode="aspectFill" lazy-load="true"></image>
+            <view class="maintenance-right">
+              <view class="package-name">{{item.itemName}}</view>
+              <view class="specifications-price"><text class="price-icon">￥</text>{{item.price}}</view>
+            </view>
+        </view>
+        <view class="clear"></view>
+     </view>
+  </view>
+     <view hidden="{{hiddenNone}}">
+        <template is="none" />
+     </view>  
+     <loading showModalloading="{{showModalloading}}"/>
+    <view class="block-nav"></view>
+    <view class="bottom-nav">
+       <view class="customer-service" bindtap='phone'>
+          <view class="customer-service-icon"></view>
+          <view class="customer-service-text">在线客服</view>
+       </view>
+       <view class="total-price">
+          <view class="price-box">
+             <text class="number-text">小计：</text>
+             <text class="specifications-price-icon">￥</text>
+             <text class="specifications-price">{{price}}</text>
+          </view>
+          <button class="settle-accounts" bindtap='btn' loading="{{loading}}" disabled="{{loading}}">去结算</button>
+       </view>
+    </view>
+</scroll-view>
+</swiper-item>
+<swiper-item>
+<scroll-view scroll-y style='height:{{windowHeight}}px' bindscrolltolower="scroll">
+    <swiper indicator-dots="true" autoplay="true" circular="true" interval="5000" duration="500" style="height:320rpx;" class="swiper" >
+      <!-- <block wx:for="{{list}}" wx:key="item.id"> -->
+      <swiper-item>
+          <image src="{{list.headImg}}" class="swiper-image" mode="aspectFill" lazy-load="true"></image>
+      </swiper-item>
+      <!-- </block> -->
+   </swiper>
+   <view class="stores-details">
+      <view class="box">
+      <view class="stores-name names">{{list.repairName}}</view> 
+      <view class="stores-name ping">
+         <text>评分：</text>
+         <block wx:for="{{list.stars}}" wx:key="item">
+           <view class="star {{item}}"></view>
+         </block>
+      </view>
+      <view class="stores-name">
+         <view class="positioning-box">
+            <view class="positioning-icon"></view>
+         </view>
+         <view class="address" bindtap='address'>
+             <view class="address-details">{{list.address}}</view>
+             <view class="jiantou">
+                <view class="jiantou-box"></view>
+             </view>
+         </view>
+         <view class="phone" bindtap='phones' data-phone="{{list.phone}}"></view>
+      </view>
+      </view>
+      <view class="introduction-stores">
+          <view class="introduction-stores-box">
+             <view class="introduction">门店介绍</view>
+          </view>
+          <text class="garage-introduction {{active?'':'hide'}}">{{entity.repairDesc}}</text>
+          <view class="an" bindtap='an'>
+             <view class="an-box">{{clickstate}}</view>
+             <view class="jiantou-icon {{active?'shun':''}}"></view>
+          </view>
+      </view>
+   </view>
+   <view class="evaluation">评价</view>
+   <view class="evaluation-box">
+    <block wx:for="{{commentsList}}" wx:key="item.is">
+      <view class="evaluation-list">
+      <view class="img-box">
+          <image class="heidimg" src="{{item.headImg}}" mode="aspectFill" wx:if="{{item.headImg != '' && item.headImg != null}}"></image>
+         <image class="heidimg" src="/image/headdefault.png" mode="aspectFill" wx:else></image>
+      </view>
+         <view class="information-box">
+            <view class="information-box-right">
+              <view class="information-box-top">
+                  <view class="telephone-no">{{item.title}}</view>
+                  <view class="date">{{item.time}}</view>
+              </view>
+              <view class="information-box-bottom">
+                 <block wx:for="{{item.stars}}" wx:key="item">
+                  <view class="star {{item}}"></view>
+                </block>
+              </view>
+            </view>
+            <text class="evaluation-details">{{item.comment}}</text>
+            <view class="evaluation-img-box">
+                <image class="evaluation-img" wx:for="{{item.commentImages}}" wx:key="this">{{item}}</image>
+            </view>
+         </view>
+      </view>
+      </block>
+   </view>
+<view class="loadmore" hidden="{{loadmore}}">
+    <view class="log" hidden="{{isHideLoadMore}}">
+      <view class="loading"></view>
+      <view class="loadmore_tips">正在加载</view>
+    </view>  
+</view>
+</scroll-view>
+</swiper-item>
+</swiper>
+

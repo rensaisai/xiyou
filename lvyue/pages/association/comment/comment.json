@@ -1,0 +1,11 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTitleText": "全部评论",
+  "enablePullDownRefresh": false,
+  "backgroundColor": "#ffffff",
+  "usingComponents": {
+    "loding": "/Component/loding/loding",
+    "empty": "/Component/empty/empty"
+  }
+}

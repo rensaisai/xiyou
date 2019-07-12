@@ -1,0 +1,69 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": true,
+		"checkInvalidKey": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.0",
+	"appid": "wx0a14d3726280a50e",
+	"projectname": "lvyuequanqiu",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 2,
+			"list": [
+				{
+					"id": 0,
+					"name": "模拟更新",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": 1001
+				},
+				{
+					"id": -1,
+					"name": "卡片打开",
+					"pathName": "pages/suber/goods/goods",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "分享",
+					"pathName": "pages/suber/goods/goods",
+					"query": "id=44e68df5959a4176a4c68f3d9b00962f&goodsSource='sc'",
+					"scene": null
+				}
+			]
+		}
+	}
+}

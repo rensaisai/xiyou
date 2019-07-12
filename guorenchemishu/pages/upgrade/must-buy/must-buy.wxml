@@ -1,0 +1,31 @@
+<import src="/pages/common/none.wxml" />
+<view class="index">
+   <view class="title">超级会员卡</view>
+   <image class="cloud" bindtap='upgrade' src="https://www.cmspq.xyz/cmsweb/imgs/ads/vipCard.jpg"></image>
+   <view class="discounts">优惠券</view>
+   <block wx:for="{{list}}" wx:key="item.id">
+   <view class="coupon">
+       <view class="coupon-left">
+          <view class="coupon-left-top">
+             <view class="icon"></view>
+             <view class="text">{{item.cardName}}</view>
+              <view class="activity">{{item.typeName}}</view>
+              <view class="activity">{{item.useTypeName}}</view>
+          </view>
+          <view class="coupon-bottom">
+             <view class="describe">{{item.remarks}}</view>
+              <view class="describe">有效期：{{item.start}} ~ {{item.finish}}</view>
+          </view>
+       </view>
+       <view class="coupon-right">
+           <view class="price">￥{{item.price}}</view>
+           <view class="btn" bindtap='buy' data-index="{{index}}" data-price="{{item.price}}">立即购买</view>
+       </view>
+   </view>
+   </block>
+
+   
+    <view hidden="{{hiddenNone}}">
+       <template is="none"/>
+   </view>
+</view>

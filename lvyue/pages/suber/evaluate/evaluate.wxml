@@ -1,0 +1,53 @@
+<view class="star-level-box">
+   <!-- <view class="goods-img-box"> -->
+      <image class='goods-img-box' src="{{goodsimg}}" mode="aspectFit"></image>
+   <!-- </view> -->
+   <view class="star-level-describe">描述相符</view>
+   <view class="star-level">
+     <block wx:for="{{starlevel}}" wx:key="this">
+      <image  src="{{index<=posit?star:star1}}" class="star-img" bindtap='star' data-index="{{index}}"></image>
+    </block>
+   </view>
+   <view class="state-box">{{text}}</view>
+</view>
+<form bindsubmit="formSubmit">
+<view class="text-box">
+       <textarea class="text" placeholder="{{placeholder}}" name="content"></textarea>
+</view>
+ <button form-type="submit" class='issue' disabled="{{loding}}" loading="{{loding}}">发布</button>
+</form>
+<view class="img-box">
+       <view class="issue-img-boxs"  wx:for="{{img}}" wx:key="this" data-index="{{index}}">
+          <image class="issue-img" src="{{item}}" mode="aspectFit"></image>
+          <view class="detile" bindtap='detail' data-index="{{index}}">删除</view>
+       </view>
+       <image class="issue-img" src="/image/addicon.png" bindtap='img' wx:if="{{imgnum != 3}}"></image> 
+</view>
+
+
+
+
+
+
+<!-- <view class="index">
+    
+</view>
+
+    <form bindsubmit="formSubmit">
+    <view class="input-box" wx:if="{{active}}">
+        <input class="title" placeholder='标题' maxlength="30" bindinput="title" name="title"></input>
+        <view class="title-num">{{num}}/30</view>
+    </view>
+    
+     <button form-type="submit" class='issue'>{{text}}</button>
+    </form>
+    <view class="add-goods-box" bindtap='goods' wx:if="{{active}}">
+    <view class="goods-box" wx:if="{{busiId != null}}">
+        <view>
+            <image class="goods-img" src="{{goodsimg}}"></image>
+        </view>
+          <view class="goods-left">{{goodsname}}</view>
+      </view>
+      <image src="/image/addgoods.png" class="add-goods" wx:else></image>
+    </view>
+    <view class="clear"></view> -->

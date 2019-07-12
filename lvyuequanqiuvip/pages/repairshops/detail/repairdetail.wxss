@@ -1,0 +1,139 @@
+@import "/pages/common/index.wxss";
+.name{
+  padding: 0 24rpx;
+}
+.index-list-box{
+  height: auto;
+  background-color: #ffffff;
+  padding: 0 20rpx;
+  overflow: hidden;
+}
+.index-list-box .txt{
+  padding: 20rpx 0;
+  color:#5c5c5c;
+}
+.index-item{
+  float: left;
+  font-size: 16px;
+  /* padding: 5px; */
+  width: 180rpx;
+  height: 26px;
+  box-sizing: border-box;
+  background: #e5e5e5;
+  border-radius: 5px 5px 5px 5px;
+  margin-bottom: 10px;
+  margin-right: 16px;
+  color: #5c5c5c;
+  text-align: center;
+  line-height: 26px;
+}
+.index-iteml{
+  float: left;
+  font-size: 14px;
+  /* padding: 5px; */
+  width: 180rpx;
+  height: 26px;
+  box-sizing: border-box;
+  background: #e5e5e5;
+  border-radius: 5px 5px 5px 5px;
+  margin-bottom: 10px;
+  margin-right: 16px;
+  color: #5c5c5c;
+  text-align: center;
+  line-height: 26px;
+}
+.hot{
+  background: #fbebec;
+  border:1px solid #ec0000
+}
+.list-bott{
+  width: 100%;
+  margin-top: 10px; 
+}
+/* .kind-list{
+  /* padding: 12px 0; */
+/* }  */
+.img{
+  padding: 15px 0 0;
+  width: 100%;
+  height: auto;
+  background-color: #ffffff; 
+}
+.img .vipimg{
+  width: 100%;
+  height: 220px;
+}
+.headinfo{
+  width:100%;
+  padding:0rpx 0rpx;
+  background-color: #ffffff;
+}
+.btn-sort-big{
+  width:100%
+}
+.head-bigimg{
+  width:100%;
+  height:300rpx;
+}
+.top-img{
+  width:100%;
+  height:300px;
+}
+.tabbar{
+  margin-top: 10rpx;
+}
+.tabselect{
+  color: #ffffff;
+  background-color: #f39400;
+}
+
+.tabunselect{
+  color: #f39400;
+  background-color: #ffffff;
+}
+.detail-item{
+  padding: 0 20rpx;
+}
+.detail-itemtitle{
+  border-bottom: 1px solid #f1f1f1;
+}
+.detail-itemsub{
+  padding:10rpx 20rpx;
+
+}
+.item-price{
+  color:#FF600B;
+}
+.item-normalprice{
+  text-decoration:line-through
+}
+.address{
+  width:75%;
+}
+.star-image-index{
+  position: static;
+  top: 50rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+.butto{
+  position: fixed;
+  bottom: -9px;
+  right: 2.5%;
+  border-radius:25px; 
+}
+.active{
+  width: 95%;
+  position: fixed;
+  bottom: -9px;
+  right: 2.5%;
+  background-color: #e5e5e5;
+  color: #ffffff;
+}
+.index-l{
+  /* padding-bottom: px;  */
+}
+.kind-list-text2{
+  font-size: 18px;
+  color:#f83f5a;
+}

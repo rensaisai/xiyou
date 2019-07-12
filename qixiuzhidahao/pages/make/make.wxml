@@ -1,0 +1,34 @@
+<view class="index">
+<view class="heider" wx:if="{{type != 1}}">
+   <view class="total">总预约数：{{makenum.allNum}}</view>
+   <view class="current">今日预约数：{{makenum.todayNum}}</view>
+</view>
+<view class="nav-box">
+    <view class="before" bindtap='before'>
+        <image class="arrow" src="/image/zuo.png"></image>
+        <view class="text">前一天</view>
+    </view>
+    <view class="time">{{currenttime}}</view>
+    <view class="before" bindtap='after'>
+        <view class="text">后一天</view>
+        <image class="arrow" src="/image/you.png"></image>
+    </view>
+</view>
+<view class="box">
+   <view class="quantum {{item.checked?'time-box':'time-borde'}} {{item.active?'slect':''}}" wx:for="{{listtime}}" wx:key="this" bindtap='time' data-index="{{index}}">{{item.time}}</view>
+</view>
+<view class="vehicle-box" wx:if="{{order != null}}">
+   <view class="vehicle-information">
+       <view class="left">联系电话: {{order.userPhone}}</view>
+   </view>
+   <view class="vehicle-information">
+       <view class="left">车牌: {{order.carNo}}</view>
+   </view>
+   <view class="vehicle-information">
+       <view class="left">车型: {{order.carSplName}}</view>
+   </view>
+    <view class="vehicle-information">
+       <view class="left">服务项目: {{order.serve}}</view>
+   </view>
+ </view>
+</view>

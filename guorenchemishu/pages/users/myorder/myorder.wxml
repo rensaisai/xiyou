@@ -1,0 +1,168 @@
+<import src="/pages/common/none.wxml" />
+<view class="tab-box">
+     <text class="{{active==1?'pitch':''}}" bindtap='maintain'>保养</text>
+     <text class="{{active==2?'pitch':''}}" bindtap='vehicle'>审车</text>
+     <text class="{{active==3?'pitch':''}}" bindtap='carwash'>洗车</text>
+</view>
+<view class="block"></view>
+<view wx:if="{{active==1}}">
+<scroll-view class="nav-boxs">
+   <view class="{{currentData==0?'nav-selected':''}} navs" bindtap='checkCurrent' data-index="0" style='width: 20%;'>全部</view>
+   <view class="{{currentData==1?'nav-selected':''}} navs" bindtap='checkCurrent' data-index="1" style='width: 20%;'>待付款</view>
+   <view class="{{currentData==2?'nav-selected':''}} navs" bindtap='checkCurrent' data-index="2" style='width: 20%;'>待配送</view>
+   <view class="{{currentData==3?'nav-selected':''}} navs" bindtap='checkCurrent' data-index="3" style='width: 20%;'>待保养</view>
+   <view class="{{currentData==4?'nav-selected':''}} navs" bindtap='checkCurrent' data-index="4" style='width: 20%;'>已完成</view>
+</scroll-view>
+  <view class="block"></view>
+  <swiper style='height:{{windowHeight}}px' current="{{currentData}}" bindchange="eventchange" >
+      <block wx:for="{{num}}" wx:key="*this">
+      <swiper-item>
+         <scroll-view scroll-y style='height:{{windowHeight}}px'> 
+         <block wx:for="{{list}}" wx:key="item.id">
+          <view class="list">
+               <view class="list-statse">
+                   <view class="list-time-left">
+                      <view class="list-ice"></view>
+                      <view class="lisyt-time">{{item.time}}</view>
+                   </view>
+                   <view class="list-statue-right">{{item.status}}</view>
+               </view>
+           <view class="list-box">
+           <view class="maintenance-list" bindtap='orderstatus' data-orderid='{{item.id}}'>
+            <image class="items-img" src="{{item.goodsImg}}" mode="aspectFill"></image>
+            <view class="maintenance-list-right">
+                <view class="package-name">{{item.goodsName}}</view>
+            </view>
+          </view>
+          <view class="clearfloat"></view>
+          <view class="list-price">
+              <view class="prices">￥{{item.payAmount}}</view>
+              <view class="heji">合计：</view> 
+              <view class="describe">共{{item.itemSize}}项服务</view>
+          </view>
+          <view class="{{item.orderStatus == 1?'show':'btn-status'}}">
+             <view class="btn  {{item.checked?'selected-style':''}}" wx:if="{{item.orderStatus == 0}}" bindtap='pay'  data-index='{{index}}'>立即支付</view>
+             <view class="btn invoice {{item.active?'selected-style':''}}" wx:if="{{item.orderStatus == 0}}"   bindtap='cancel'  data-index='{{index}}'>取消支付</view>
+             <view class="btn {{item.checked?'selected-style':''}}" wx:if="{{item.orderStatus == 2}}"  bindtap='pay'  data-index='{{index}}'>立即预约</view>
+             <view class="btn  {{item.checked?'selected-style':''}}" wx:if="{{item.orderStatus == 3 && item.isPj ==0 }}"   bindtap='pay'  data-index='{{index}}'>立即评价</view>
+          </view>
+        </view>
+      </view>
+      </block>
+        <view hidden="{{hiddenNone}}">
+            <template is="none" />
+        </view>
+        </scroll-view>
+      </swiper-item>
+      </block>
+  </swiper>
+  </view>
+
+
+  <view wx:if="{{active==2}}">
+   <scroll-view class="nav-boxs">
+      <view class="{{currentData==0?'nav-selected':''}} navs" bindtap='checkCurrent' data-index="0" style='width: 25%;'>全部</view>
+      <view class="{{currentData==1?'nav-selected':''}} navs" bindtap='checkCurrent' data-index="1" style='width: 25%;'>待付款</view>
+      <view class="{{currentData==2?'nav-selected':''}} navs" bindtap='checkCurrent' data-index="2" style='width: 25%;'>待检测</view>
+      <!-- <view class="{{currentData==3?'nav-selected':''}} navs" bindtap='checkCurrent' data-index="3" style='width: 20%;'>待评价</view> -->
+      <view class="{{currentData==3?'nav-selected':''}} navs" bindtap='checkCurrent' data-index="3" style='width: 25%;'>已完成</view>
+</scroll-view>
+   <view class="block"></view>
+   <swiper style='height:{{windowHeight}}px' current="{{currentData}}" bindchange="eventchange" >
+      <block wx:for="{{num}}" wx:key="*this">
+      <swiper-item>
+         <scroll-view scroll-y style='height:{{windowHeight}}px'> 
+         <block wx:for="{{list}}" wx:key="item.id">
+          <view class="list">
+               <view class="list-statse">
+                   <view class="list-time-left">
+                      <view class="list-ice"></view>
+                      <view class="lisyt-time">{{item.time}}</view>
+                   </view>
+                   <view class="list-statue-right">{{item.status}}</view>
+               </view>
+           <view class="list-box">
+           <view class="maintenance-list"  data-orderid='{{item.id}}'>
+            <image class="items-img" src="{{item.goodsImg}}" mode="aspectFill"></image>
+            <view class="maintenance-list-right">
+                <view class="package-name">{{item.repairName}}</view>
+                <view class="package-name">{{item.words}}</view>
+            </view>
+          </view>
+          <view class="clearfloat"></view>
+          <view class="list-price">
+              <view class="prices">￥{{item.payAmount}}</view>
+              <view class="heji">合计：</view> 
+              <view class="describe">共{{item.itemSize}}项服务</view>
+          </view>
+          <view class="{{item.orderStatus == 1?'show':'btn-status'}}">
+             <view class="btn  {{item.checked?'selected-style':''}}" wx:if="{{item.orderStatus == 0}}" bindtap='pay'  data-index='{{index}}'>立即支付</view>
+             <view class="btn invoice {{item.active?'selected-style':''}}" wx:if="{{item.orderStatus == 0}}"   bindtap='cancel'  data-index='{{index}}'>取消支付</view>
+             <view class="btn {{item.checked?'selected-style':''}}" wx:if="{{item.orderStatus == 2}}"  bindtap='pay'  data-index='{{index}}'>立即预约</view>
+             <view class="btn  {{item.checked?'selected-style':''}}" wx:if="{{item.orderStatus == 3 && item.isPj ==0 }}"   bindtap='pay'  data-index='{{index}}'>立即评价</view>
+          </view>
+        </view>
+      </view>
+      </block>
+        <view hidden="{{hiddenNone}}">
+            <template is="none" />
+        </view>
+        </scroll-view>
+      </swiper-item>
+      </block>
+  </swiper>
+   </view>
+   <view wx:if="{{active==3}}">
+   <scroll-view class="nav-boxs">
+      <view class="{{currentData==0?'nav-selected':''}} navs" bindtap='checkCurrent' data-index="0" style='width: 25%;'>全部</view>
+      <view class="{{currentData==1?'nav-selected':''}} navs" bindtap='checkCurrent' data-index="1" style='width: 25%;'>待付款</view>
+      <!-- <view class="{{currentData==2?'nav-selected':''}} navs" bindtap='checkCurrent' data-index="2"></view> -->
+      <view class="{{currentData==2?'nav-selected':''}} navs" bindtap='checkCurrent' data-index="2" style='width: 25%;'>待洗车</view>
+      <view class="{{currentData==3?'nav-selected':''}} navs" bindtap='checkCurrent' data-index="3" style='width: 25%;'>已完成</view>
+</scroll-view>
+   <view class="block"></view>
+   <swiper style='height:{{windowHeight}}px' current="{{currentData}}" bindchange="eventchange" >
+      <block wx:for="{{num}}" wx:key="*this">
+      <swiper-item>
+         <scroll-view scroll-y style='height:{{windowHeight}}px'> 
+         <block wx:for="{{list}}" wx:key="item.id">
+           <view class="list">
+               <view class="list-statse">
+                   <view class="list-time-left">
+                      <view class="list-ice"></view>
+                      <view class="lisyt-time">{{item.time}}</view>
+                   </view>
+                   <view class="list-statue-right">{{item.status}}</view>
+               </view>
+           <view class="list-box">
+           <view class="maintenance-list"  data-orderid='{{item.id}}'>
+            <image class="items-img" src="{{item.goodsImg}}" mode="aspectFill"></image>
+            <view class="maintenance-list-right">
+                <view class="package-name">{{item.repairName}}</view>
+                <view class="package-name">{{item.words}}</view>
+            </view>
+          </view>
+          <view class="clearfloat"></view>
+          <view class="list-price">
+              <view class="prices">￥{{item.payAmount}}</view>
+              <view class="heji">合计：</view> 
+              <view class="describe">共{{item.itemSize}}项服务</view>
+          </view>
+          <view class="{{item.orderStatus == 1?'show':'btn-status'}}">
+             <view class="btn  {{item.checked?'selected-style':''}}" wx:if="{{item.orderStatus == 0}}" bindtap='pay'  data-index='{{index}}'>立即支付</view>
+             <view class="btn invoice {{item.active?'selected-style':''}}" wx:if="{{item.orderStatus == 0}}"   bindtap='cancel'  data-index='{{index}}'>取消支付</view>
+             <view class="btn {{item.checked?'selected-style':''}}" wx:if="{{item.orderStatus == 2}}"  bindtap='pay'  data-index='{{index}}'>立即预约</view>
+             <view class="btn  {{item.checked?'selected-style':''}}" wx:if="{{item.orderStatus == 3 && item.isPj ==0 }}"   bindtap='pay'  data-index='{{index}}'>立即评价</view>
+          </view>
+        </view>
+      </view>
+      </block>
+        <view hidden="{{hiddenNone}}">
+            <template is="none" />
+        </view>
+        </scroll-view>
+      </swiper-item>
+      </block>
+  </swiper>
+  </view>
+ 

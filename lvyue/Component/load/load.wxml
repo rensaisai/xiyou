@@ -1,0 +1,2 @@
+<!--Component/load/load.wxml-->
+<view class='load {{w ? "active" : "" }}'></view>

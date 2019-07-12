@@ -1,0 +1,128 @@
+<view class="indexs" catchtap='cancel'>
+  <swiper class="details-img-box" autoplay="true" interval="4000" circular="true" indicator-dots="true">
+    <block wx:for="{{details.imgUrlList}}" wx:key="this">
+     <swiper-item>
+        <image class="details-img" mode="aspectFill" src="{{item.imgUrl}}" bindtap="previewImage" data-src="{{item.imgUrl}}"></image>
+     </swiper-item>
+     </block>
+  </swiper>
+  <view class="user-information-box">
+      <view class="user-information-left">
+         <image class="user-img" src="{{details.profilePic}}"  wx:if="{{details.profilePic != null && details.profilePic != ''}}"></image>
+         <image class="user-img" src="/image/header.png" wx:else></image>
+       
+         <view class="user-name">{{details.userName}}</view>
+      </view>
+      <view class="user-information-right" bindtap='attention'>
+         <view class="attention-btn {{details.isFollow?'':'attention'}}">{{stat}}</view>
+      </view>
+  </view>
+  <view class="comment-title">{{details.title}}</view>
+  <view class="comment-title" style="font-size:28rpx; color:#242424;font-weight:500;padding-bottom:0rpx;">{{details.content}}</view>
+    <view class="issue-times" wx:if="{{details.publishTime == '0分钟'}}">发布于刚刚</view>
+  <view class="issue-times" wx:else>发布于{{details.publishTime}}前</view>
+  <view class="goods-box" wx:if="{{details.goods.goodsId != undefined}}">
+     <view class="title-text">文中商品</view>
+     <view class="goods" catchtap='goods' data-goodsid="{{details.goods.goodsId}}" data-goodsType="{{details.goods.goodsType}}"> 
+        <image class="goods-img" src="{{details.goods.goodsImgUrl}}" mode="aspectFill"></image>
+        <view class="goods-right">
+           <view class="goods-left">
+              <view class="goods-name">{{details.goods.goodsSubTitle}}</view>
+              <view class="goods-price">￥{{details.goods.goodsPrice}}</view>
+           </view>
+           <view class="next-box">
+             <image src="/image/next.png" class="naxt"></image>
+           </view>
+        </view>
+     </view>
+  </view>
+  <view class="comment-box1">
+      <view class="comment-details-box">
+          <view class="all-comment">
+            <view class="text">全部评论
+            <view class="dian-box">
+              <view class="dian" style='background:#000000;'></view>
+            </view> 
+            {{details.replyQuantity}}</view>
+          </view>
+          <view class="examine-box" catchtap='allcomment'>
+              <view>查看全部</view>
+              <image src="/image/jiantou.png" class="next-icon"></image>
+          </view>
+      </view>
+      <view class="publish-comment-box" >
+         <image class="user-img" src="/image/lv.jpg"></image>
+         <view class="publish-comment-input" catchtap="comments">开开口,动动手,你就是我的好朋友</view>
+      </view>
+      <view class="like-comment">
+      <block wx:for="{{details.replyList}}" wx:key="this">
+      <view class="box">
+      <view class="img-box">
+        <image class="user-img" src="{{item.profilePic}}"></image>
+      </view>
+      <view class="praise-box">
+        <view class="left" catchtap='likecomment' data-index="{{index}}">
+             <image src="/image/praise1.png" class="praise" wx:if="{{item.isLike}}"></image>
+            <image src="/image/praise.png" class="praise" wx:else></image>
+            <view class="num">{{item.likeQuantity}}</view>
+        </view>
+        <view class="right" catchtap='replycomment' data-index="{{index}}">
+            <image src="/image/pinglun.png" class='praise'></image>
+        </view>
+      </view>
+      <view class="com-content-box">
+         <view class="comment-name" wx:if="{{item.userName != null && item.userName !=''}}">{{item.userName}}</view>
+         <view class="comment-name" wx:else>{{item.phones}}</view>
+         <view class="comment-box">{{item.content}}</view>
+         <view class="reply-box" wx:for="{{item.parentReplyMap}}" wx:key="this" wx:for-item="ceil">
+            <view class="reply-name">{{ceil.parentReplyUserPhone}}</view>
+            <view class="reply-comment">{{ceil.parentReplyContent}}</view>
+         </view>
+          <view class="issue-time" wx:if="{{item.publishTime == '0分钟'}}">发布于刚刚</view>
+         <view class="issue-time" wx:else>发布于{{item.publishTime}}前</view>
+      </view>
+    </view>
+    </block>
+    </view>
+    
+     <view class="examine-all-box" >
+     <text catchtap='allcomment'>查看全部{{details.replyQuantity}}条评论</text>
+     <image src="/image/arrows.png" class="arrows"></image>
+    </view>
+  </view>
+</view>
+<view class="clar"></view>
+<view class="btn-box">
+    <view class="list" bindtap='like'>
+        <image class="praise" src="/image/zan.png" wx:if="{{details.isLike == 1}}"></image>
+       <image class="praise" src="/image/praise.png" wx:else></image>
+       <view class="text">赞
+       <view class="dian-box">
+         <view class="dian"></view>
+       </view> 
+       {{details.likeQuantity}}</view>
+    </view>
+    <view class="xian"></view>
+    <view class="list" bindtap='comments'>
+       <image class="praise" src="/image/pinglun.png"></image>
+       <view class="text">评论
+       <view class="dian-box">
+         <view class="dian"></view>
+       </view> 
+       {{details.replyQuantity}}</view>
+    </view>
+    <view class="xian"></view>
+    <button open-type='share' class="share-box">
+          <view class="list share">
+          <image class="praise" src="/image/zhuanfa.png"></image>
+          <view class="text">分享
+          <view class="dian-box">
+            <view class="dian"></view>
+          </view> 
+          {{details.shareQuantity}}</view> 
+        </view>
+    </button>
+</view>
+<view class="{{focus?'return':'return-box'}}">
+    <textarea placeholder="{{placeholder}}" focus="{{focus}}"  bindconfirm="complete" class="textarea" fixed="true" cursor-spacing="62" value='{{content}}'/>
+</view>

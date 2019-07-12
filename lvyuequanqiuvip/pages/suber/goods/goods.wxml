@@ -1,0 +1,104 @@
+<view class="index">
+    <swiper class="swiper-box" indicator-dots="true" autoplay="{{true}}" interval="5000" duration="500" circular="teue">
+     <block wx:for="{{imgs}}" wx:key="{{item.index}}">
+        <swiper-item >
+                      <image src="{{item}}" class="swiper-img" mode="scaleToFill" bindtap='imges' data-src="{{item}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+      <view class="list-box goods-box">
+            <!-- <block wx:for="{{shops}}" wx:key="{{item.id}}"> -->
+               <view class="list-name name">
+                    <view class="list-price price"><text class="list-cost cost">￥</text>{{shops.fansPrice}}<text class="list-money">(市场价￥{{shops.price}})</text></view>
+                    <view class="vip">会员价</view>
+                    <view class="proprietarys" wx:if="{{shops.newProduct == 1}}">自营</view>
+                </view>
+                <view class="list-name name goods-name">
+                    <!-- <view>热销</view> -->
+                    <view>【{{shops.goodsName}}】{{shops.subtitle}}</view>
+                </view> 
+            <!-- </block>      -->
+      </view>
+      <view class="serve-post">
+          <view class="serve-box">
+              <view class="post-goods">服务</view>
+              <view class="goods-leffer goods-serves">贵就赔、正品保证、全场包邮(新疆，西藏，内蒙古等偏远地区货到后需自己承担邮费)、24小时发货</view>
+         </view>
+      </view>
+       <view class="serve" bindtap='serve'>
+          <view class="serve-box">
+              <view class="goods-serve">规格</view>
+              <view class="goods-leffer">选择规格</view>
+         </view>
+         <image class ="goods-img" src="/image/jiantou.png" mode="widthFix"></image>
+      </view>
+       <view class="serve" bindtap='business'>
+          <view class="serve-box">
+              <view class="goods-serve">资质</view>
+              <view class="goods-leffer">品牌经营商资质</view>
+         </view>
+         <image class ="goods-img" src="/image/jiantou.png" mode="widthFix"></image>
+      </view>
+      <image class="goods-imgs" src="{{shops.goodsDesc}}" mode="widthFix"></image>
+
+      <view class="table">
+           <view class="tab-left">客服</view>
+           <view  class="tab-right" bindtap='click'>
+               <text>立即购买</text>
+               <image class="imges" src="/image/gouwuche.png"></image>
+           </view>
+      </view>
+     
+
+     <view class="commodity_screen"  catchtouchmove='true' bindtap="hideModal" wx:if="{{showModalStatus}}"></view> 
+           <view  animation="{{animationData}}" catchtouchmove='true' class="commodity_attr_box" wx:if="{{showModalStatus}}">
+           <!-- <view class="pop_up"> -->
+                <view class="specification">
+                    <view class="size-img"  style=" background:url({{img}}) no-repeat center center/cover">
+                       <!-- <image class="imgs" src="{{repertory.img}}"></image> -->
+                    </view>
+                     <view class="list-price price xize-price"><text class="list-cost cost">￥</text>{{price}}<text class="list-money"></text></view>
+                     <image class="close" src="/image/guanbi.png" bindtap='close'></image>
+                </view>
+                <scroll-view class="list-color" scroll-x="false" scroll-y="true">
+                  <block wx:for="{{shoplist}}" wx:key="this">
+                  <view class="color">{{item.title}}</view>
+                  <view class="specification-color">
+                  <block wx:for="{{item.specList}}" wx:for-item="ceil" wx:key="{{this}}" >
+                    <view class="goods-color {{ceil.checked?'hots':''}}" bindtap='goodcolor' data-index="{{index}}" data-title="{{item.title}}">{{ceil.attrValue}}</view>
+                  </block>
+                 </view>
+                </block>
+                <view class="row">
+                    <view>购买数量</view>
+                    <view class="row-list">
+                        <view class="row-txt" bindtap="subtract">-</view>
+                        <view class="row-txt txt1">{{num}}</view>
+                        <view class="row-txt" bindtap="add">+</view>   
+                    </view>  
+                </view>
+              </scroll-view>  
+
+                <!-- <view class="table" wx:if="{{userType ==1 || userType ==2}}">
+                        <view class="tab-left">客服</view>
+                        <view  class="tab-right" bindtap='purchase'>
+                            <text>立即购买</text>
+                            <image class="imges" src="/image/gouwuche.png"></image>
+                             <text>(立减{{State}})</text>
+                        </view>
+                </view> -->
+                <view class="table">
+                        <view class="tab-left">客服</view>
+                        <view  class="tab-right" bindtap='purchase'>
+                            <text>立即购买</text>
+                            <image class="imges" src="/image/gouwuche.png"></image>
+                             <text></text>
+                        </view>
+                </view>
+           <!-- </view> -->
+           </view>
+      
+
+
+
+</view>

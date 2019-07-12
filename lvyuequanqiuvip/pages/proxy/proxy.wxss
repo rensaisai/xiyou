@@ -1,0 +1,58 @@
+@import "/pages/common/index.wxss";
+.butt{
+  margin-top: 35px;
+}
+button{
+  margin-bottom: 30rpx;
+}
+button:last-child{
+  margin-bottom: 0;
+}
+.page-section-title{
+  padding: 0;
+}
+.swiper-item{
+  display: block;
+  height: 150px;
+}
+.page-section-title{
+  margin-top: 60rpx;
+  position: relative;
+}
+.info{
+  position: absolute;
+  right: 0;
+  color: #353535;
+  font-size: 30rpx;
+}
+.page-foot{
+  margin-top: 50rpx;
+}
+.proxy-info{
+  color:#999999;
+  font-size: 28rpx;
+}
+.proxy-headimg{
+  width:750rpx;
+  height:475rpx;
+}
+.proxy-qrimg{
+  margin-top:15rpx;
+  width:70%;
+}
+.proxy-head{
+  background-color: #ffffff;
+  text-align: center;
+  align-items: center;
+}
+.proxy-body{
+  min-height:80%;
+}
+.proxy-viptitle{
+  margin-top:30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.proxy-cell{
+  padding: 10px 10px;
+}

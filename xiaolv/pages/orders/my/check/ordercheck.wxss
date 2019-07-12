@@ -1,0 +1,17 @@
+@import "/pages/repairshops/detail/repairdetail.wxss";
+.title{
+  margin-top:20rpx;
+  border-top: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
+}
+.section{
+  background: #ffffff;
+  padding: 0 0 0 20px;
+  line-height: 40px;
+}
+.time{
+   border-bottom: 1px solid #f1f1f1;
+}
+.picker{
+  border-bottom: 1px solid #f1f1f1;
+}

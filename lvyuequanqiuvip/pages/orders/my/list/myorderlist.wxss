@@ -1,0 +1,94 @@
+@import "/pages/common/index.wxss";
+@import"/pages/suber/shops/shops.wxss";
+.menu_box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.index-box{
+  width: 100%;
+  height: auto;
+  padding: 68rpx 20rpx 0;
+  box-sizing: border-box;
+}
+.order{
+  width: 100%;
+  height: auto;
+  background: #ffffff;
+  border-radius: 30rpx;
+  padding: 20rpx;
+  box-sizing:  border-box;
+  margin-top:20rpx; 
+}
+.order-index{
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+.order-left{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius:10rpx; 
+}
+.order-right{
+  flex-grow: 1;
+  height: autorpx;
+}
+.order-right-index{
+  width: 100%;
+  height: auto;
+  padding-left:15rpx;
+  /* box-sizing: border-box; */
+}
+.order-right-index1{
+display: flex;
+justify-content: space-between;
+padding: 8rpx 0 8rpx 15rpx; 
+box-sizing: border-box;
+}
+.order-right-index2{
+  display: flex;
+}
+.order-right-index3{
+ width: 40%;
+ font-size: 30rpx;
+ color: #2e2e2e;
+ padding: 5rpx;
+ background-color: #ffd5dc;
+ border-radius:20rpx; 
+ text-align: center;
+ margin-left:18rpx; 
+}
+.order-right-box{
+  width: 100%;
+  height: auto;
+  font-size: 28rpx;
+  color: #2e2e2e;
+}
+.order-right-boxs{
+ font-size: 30rpx;
+ color: #949494;
+}
+.affirm-box{
+  width: 100%;
+  height: auto;
+  padding-top: 50rpx;
+  display: flex;
+  justify-content: flex-end;
+  
+}
+.affirm{
+ width: 150rpx;
+ height: auto;
+ border: 1rpx solid #949494;
+ text-align: center;
+ color: #949494;
+ padding: 10rpx;
+ font-size: 30rpx;
+ box-sizing: border-box;
+ border-radius: 25rpx; 
+ margin-left: 20rpx;
+}
+.hot{
+ border: 1rpx solid #e31436;
+}

@@ -1,0 +1,16 @@
+@import "/pages/order/orderlist/orderlist.wxss";
+.right{
+  width: auto;
+  height: 130rpx;
+  display: flex;
+  align-items: center;
+}
+.btn-accomplish{
+  width: 94rpx;
+  height: 54rpx;
+  border:1rpx solid  #1296db;
+  line-height: 54rpx;
+  text-align: center;
+  margin-left:20rpx; 
+
+}

@@ -1,0 +1,32 @@
+@import "/pages/common/index.wxss";
+@import "/pages/index/index.wxss";
+.kind-list-bigimg{
+  width:100rpx;
+  height:100rpx;
+}
+.swiper-image{
+  width:100%;
+}
+.swiper-view{
+  margin:0rpx;
+}
+
+.star-image-index{
+  position: static;
+  top: 30rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.selectcar-img {
+  width: 60px;
+  height: 60px;
+}
+.mycar {
+  background-color: #ffffff;
+}
+.img-tag{
+  margin-top: 8rpx;
+  width: 80px;
+  height: 40px;
+}

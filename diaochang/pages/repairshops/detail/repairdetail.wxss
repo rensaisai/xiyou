@@ -1,0 +1,91 @@
+@import "/pages/common/index.wxss";
+
+.headinfo{
+  width:100%;
+  padding:0rpx 0rpx;
+  background-color: #ffffff;
+}
+.fishname{
+  font-size: 42rpx;
+}
+.fishaddr{
+  font-size: 30rpx;
+  color:#1296db
+}
+.fishdesc{
+  font-size: 43rpx;
+}
+.swiper-item-detail{
+  height: 300px;
+  background-color: #ffffff
+}
+.swiper-image-detail{
+  width:100%;
+  height:250px;
+}
+.swiper-view{
+  margin:0rpx;
+}
+.head-bigimg{
+  width:100%;
+  height:300rpx;
+}
+.tabbar{
+  margin-top: 10rpx;
+}
+.tabselect{
+  color: #ffffff;
+  background-color: #1296db;
+}
+.tabunselect{
+  color: #1296db;
+  background-color: #ffffff;
+}
+.detail-item{
+  padding:20rpx;
+}
+.detail-itemtitle{
+  border-bottom: 1px solid #f1f1f1;
+}
+.detail-itemsub{
+  padding:10rpx 20rpx;
+
+}
+.item-price{
+  color:#FF600B;
+}
+.item-normalprice{
+  text-decoration:line-through
+}
+.address{
+  width:75%;
+}
+.star-image-index{
+  position: static;
+  top: 50rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+.list-bottom{
+  margin-bottom: 0rpx;
+}
+.view-bottom{
+  border-top: 1px solid #f1f1f1;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 0px;
+  width: 100%;
+}
+.view-ios-bottom{
+  height: 120rpx;
+  width: 100%;
+}
+.button-bottom{
+  flex:1;
+}
+.button-small{
+  margin-top:0;
+  margin-right:0rpx;
+  float:right;
+}

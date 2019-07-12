@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "输入邀请码",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": false,
+  "usingComponents": {}
+}

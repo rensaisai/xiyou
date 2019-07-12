@@ -1,0 +1,34 @@
+<import src="/pages/common/none.wxml"/>
+
+<view class="index">
+    <block wx:for="{{shops}}" wx:key="item.id">
+     <view class="list lists">
+                <view class="list-img" bindtap='details' data-id="{{item.id}}" style="background:url({{item.img}}) no-repeat center center/cover"></view>
+                <view class="list-count">{{item.volume}}人已买</view>
+                <view class="list-box">
+                     <view class="list-name">
+                          <block wx:if="{{item.hotSale == 1}}">
+                          <view class="promotion">热销</view>
+                          </block>
+                          <view class="goods-img">【{{item.goodsName}}】{{item.subtitle}}</view>
+                     </view>
+                     <view class="list-name shops">
+                          <view class="list-price"><text class="list-cost">￥</text>{{item.fansPrice}}<text class="list-money">(非会员￥{{item.price}})</text></view>
+                          <view class="list-btn" bindtap='buy' data-id="{{item.id}}">立即购买</view>
+                     </view>
+                </view> 
+      </view>
+      </block>
+      <view hidden="{{hiddenNone}}">
+                 <template is="none" />
+     </view>
+    <view class="loadmore" hidden="{{isHideLoadMore}}">
+            <view class="loading"></view>
+            <view class="loadmore_tips">正在加载</view> 
+    </view>
+     <view class="loadmore" hidden="{{hiddenNones}}">
+                <view class="loga"></view>
+                <view class="loadmore_tips">没有更多商品</view>
+                <view class="loga log"></view>
+    </view>
+</view>

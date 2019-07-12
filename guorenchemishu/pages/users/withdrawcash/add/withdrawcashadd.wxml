@@ -1,0 +1,35 @@
+<import src="/pages/common/head.wxml" />
+
+<template is="head" data="{{title: ''}}"/>
+
+<view class="index">
+<form bindsubmit='applyCashRequest'>
+  <view class="page-section">
+      <view class="weui-cells__title">银行卡</view>
+          <view class="phone_one weui-cells weui-cells_after-title" bindtap="clickPerson">
+           <view class=" weui-input weui-cell_input inputs">{{firstPerson}}</view>
+          <!-- <image src="../../image/v6.png" class="personal_image {{selectArea ? 'rotateRight' :''}}"></image> -->
+      </view>
+<view class="person_box">
+   <view class="phone_select" hidden="{{selectPerson}}">
+    <block wx:for="{{list}}" wx:key ="item.id">
+      <view class="select_one" bindtap="mySelect" data-me="{{item.bankNo}}">{{item.bankNo}}</view>
+    </block>
+  </view>
+ </view>
+     
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">金额</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="amount" type="number" class="weui-input"  placeholder="请输入金额"/>
+        </view>
+      </view>
+  </view>
+
+  <button type="primary" class="button-big login" style="background-color:#fd4200"form-type='submit'>确定</button>
+
+</form>
+
+</view>

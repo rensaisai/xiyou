@@ -1,0 +1,340 @@
+@import "/pages/association/comment/comment.wxss";
+.indexs{
+  width: 100%;
+  height: auto;
+}
+.details-img-box{
+  width: 100%;
+  height: 564rpx;
+  background: #ffffff;
+}
+.details-img{
+  width: 100%;
+  height: 100%;
+}
+.user-information-box{
+  width: 100%;
+  height: 150rpx;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.user-information-left{
+  width: auto;
+  height: 150rpx;
+  display: flex;
+  align-items: center;
+}
+.user-img{
+  width: 78rpx;
+  height: 78rpx;
+  border-radius:50%;
+}
+.user-name{
+  font-size: 30rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+.user-information-right{
+  height: 150rpx;
+  display: flex;
+  align-items: center;
+}
+.attention-btn{
+  width: 108rpx;
+  height: 46rpx;
+  background: #B1B1B1;
+  border-radius:10rpx;
+  text-align: center;
+  line-height: 46rpx;
+  font-size: 28rpx;
+  color: #ffffff; 
+}
+.attention{
+  background: #DEB777;
+}
+.comment-title{
+  width: 100%;
+  height: auto;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  line-height: 55rpx;
+  background: #ffffff;
+  padding-bottom: 30rpx;
+  font-size: 32rpx;
+  font-weight: 700;
+}
+.issue-times{
+  width: 100%;
+  line-height: 80rpx;
+  background: #ffffff;
+  font-size: 24rpx;
+  color: #989797;
+  padding: 0 20rpx;
+}
+.goods-box{
+  width: 100%;
+  height: auto;
+  background: #ffffff;
+  padding: 0 20rpx 20rpx;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+}
+.title-text{
+  width: 100%;
+  line-height: 85rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.goods{
+  width: 100%;
+  height: 180rpx;
+  background: #F7F8F9;
+  display: flex;
+}
+.goods-img{
+  width: 180rpx;
+  height: 180rpx;
+}
+.goods-right{
+  flex: 1;
+  height: 180rpx;
+  display: flex;
+}
+.goods-left{
+  width: 85%;
+  height: 180rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.next-box{
+  width: 15%;
+  height: 180rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.naxt{
+  width: 44rpx;
+  height: 44rpx;
+}
+.goods-name{
+  font-size: 30rpx;
+  font-weight: 600;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
+}
+.goods-price{
+  font-size: 30rpx;
+  color: #ED052B;
+  font-weight: 600;
+}
+.clar{
+  width: 100%;
+  height: 120rpx;
+  background:#f1f1f3;
+}
+.btn-box{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  background: #ffffff;
+  border-bottom:1rpx solid #EFF3F6; 
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+}
+.list{
+  width: 33%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.xian{
+  width: 0.25%;
+  height: 40rpx;
+  background: #BDBDBD;
+}
+@keyframes scaleDraw {  /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
+            0%{
+                transform: scale(1);  /*开始为原始大小*/
+            }
+            25%{
+                transform: scale(1.2); /*放大1.1倍*/
+            }
+            50%{
+                transform: scale(1);
+            }
+            75%{
+                transform: scale(1.2);
+            }
+        }
+.praise{
+  width: 29rpx;
+  height: 29rpx;
+  animation-name: scaleDraw; /*关键帧名称*/
+  animation-timing-function: ease-in-out; /*动画的速度曲线*/
+  animation-iteration-count: infinite;  /*动画播放的次数*/
+  animation-duration: 3s; /*动画所花费的时间*/
+}
+.text{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 26rpx;
+  color: #BDBDBD;
+  line-height: 26rpx;
+}
+.dian-box{
+  width: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dian{
+  width: 6rpx;
+  height: 6rpx;
+  background: #BDBDBD;
+  border-radius:50%; 
+}
+.comment-box1{
+  width: 100%;
+  height: auto;
+  background: #ffffff;
+  margin-top: 20rpx;
+  overflow: hidden;
+
+}
+.comment-box1-all{
+  width: 100%;
+  height: auto;
+  background: #ffffff;
+  margin-top: 20rpx;
+}
+.box{
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.com-content-box{
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+.praise-box {
+  right: 20rpx;
+}
+.comment-details-box{
+  width: 100%;
+  line-height: 120rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.all-comment .text{
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #000000;
+}
+.examine-box{
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #999999;
+  font-weight: 700;
+}
+.next-icon{
+  width: 10rpx;
+  height: 17rpx;
+  padding-left: 16rpx;
+}
+.publish-comment-box{
+  width: 100%;
+  height: 150rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.publish-comment-input{
+  width: 86%;
+  height: 85rpx;
+  background: #F0F1F2;
+  border-radius:10rpx; 
+  font-size: 26rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  line-height: 85rpx;
+  color: #999999;
+}
+.examine-all-box{
+  width: 100%;
+  height: 125rpx;
+  background: #ffffff;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  color: #D2AA67;
+  font-weight: 700;
+}
+.arrows{
+  width: 10rpx;
+  height: 12rpx;
+  margin-left: 26rpx;
+}
+.return-box{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 200rpx;
+  background: #ffffff;
+  z-index: 9999999;
+  display: none;
+}
+.return{
+  position: fixed;
+  bottom: 0rpx;
+  width: 100%;
+  height: 200rpx;
+  background: #ffffff;
+  z-index: 9999999;
+  display: block;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.textarea{
+  width: 100%;
+  height: 100%;
+  background: #F0F1F2;
+  padding:10rpx;
+  box-sizing: border-box; 
+}
+.like-comment{
+  width: 100%;
+  height: auto;
+}
+.share-box{
+  width: 33%;
+  height: 100rpx; 
+  background: #ffffff;
+}
+.share{
+  width: 100%;
+  height: 100rpx;
+}

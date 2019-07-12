@@ -1,0 +1,4 @@
+<view class="loding lod"  wx:if="{{show}}">
+    <view class="loging-icon" wx:if="{{loadingType === 1}}"></view>
+    <text class="text">{{loadingText[loadingType]}}</text>
+</view>

@@ -1,0 +1,2 @@
+<view class="btn" bindtap='btn'>保存并使用</view>
+<input class="input" placeholder='请输入要修改的信息' bindinput="name" name="name" type='text'></input>

@@ -1,0 +1,8 @@
+{
+"navigationBarTextStyle": "white",
+"navigationBarTitleText": "旅约全球",
+"usingComponents": {
+  "loding": "/Component/loding/loding",
+  "empty": "/Component/empty/empty"
+}
+}

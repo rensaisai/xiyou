@@ -1,0 +1,11 @@
+<view class="index">
+   <!-- <image src="https://www.cmspq.xyz/cmsweb/imgs/backGroundImg/moveCar.jpg" class="img"></image> -->
+   <view class="box">
+     <view class="phone-box">
+       <view class="title">请输入您的手机号：</view>
+       <input class="phone-input" bindinput='phone' maxlength="11"></input>
+       <view class="subtitle">此电话号码只用作双方通话使用。不会用作其他用途。</view>
+     </view>
+      <view class="phone-btn" bindtap='call'>点击呼叫车主</view>
+   </view>
+</view>

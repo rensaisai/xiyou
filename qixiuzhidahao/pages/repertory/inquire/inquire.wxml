@@ -1,0 +1,109 @@
+<import src="/pages/common/none.wxml"/>
+<scroll-view class="nav-boxs">
+ <view class="{{currentData==0?'nav-selected':''}} navs" bindtap='checkCurrent' data-index="0">根据编号查询</view>
+   <view class="{{currentData==1?'nav-selected':''}} navs" bindtap='checkCurrent' data-index="1">根据车型查询</view>
+</scroll-view>
+<view class="block"></view>
+<swiper style='height:{{windowHeight}}px' current="{{currentData}}" bindchange="eventchange">
+     <swiper-item>
+        <scroll-view scroll-y style='height:{{windowHeight}}px'>
+            <view class="search-box">
+               <view class='search-input'>
+                   <input class='input' placeholder='请输入名称/编号' bindinput="goods"></input>
+                   <image src='/image/sweep.png' class="sweep" bindtap='sweep'></image>
+               </view>
+               <view class="search-btn" bindtap='inquire'>查询</view>
+            </view>
+            <view class="box">
+                <view class="list-box">
+                   <view class="list title">产品</view>
+                   <view class="list title">规格</view>
+                   <view class="list title">货位</view>
+                   <view class="list title">库存</view>
+                </view>
+                 <view class="list-box" wx:for="{{list}}" wx:key="this" bindtap='goodsdetail' data-index="{{index}}">
+                   <view class="list">{{item.goodsName}}</view>
+                   <view class="list">{{item.spec}}</view>
+                   <view class="list">{{item.cargoPosition}}</view>
+                   <view class="list">{{item.sum}}</view>
+                </view>
+                
+            </view>
+            <view hidden="{{hiidenNone}}">
+                <template is="none" />
+            </view>
+        </scroll-view>
+     </swiper-item>
+      <swiper-item>
+        <scroll-view scroll-y style='height:{{windowHeight}}px'  scroll-with-animation scroll-into-view="{{cityListId}}">
+           <view class="list1" hidden='{{hiidenNone1}}'>
+                <view class="right-box">
+                <block wx:for="{{letter}}" wx:key="this">
+                <view class="text" catchtap='letterTap' data-item='{{item}}'>{{item}}</view>
+                </block>
+            </view>
+              <block wx:for="{{fctList}}" wx:key="item.id"> 
+              <view class="letter" id="{{item.letter}}">{{item.letter}}</view>
+              <block wx:for="{{item.data}}" wx:key="item.id"> 
+              <view class="vehicle-box" bindtap="selectOver" data-id="{{item.id}}">
+                <view class="vehicle">
+                    <image src="{{item.img}}" class="img" mode="aspectFit" lazy-load="true"></image>
+                    <view class="vehicle-text">{{item.brandName}}</view>
+                </view>
+              </view>
+              </block>
+              </block>
+         </view>
+         <view class="list1" hidden='{{hiidenNone2}}'>
+            <block wx:for="{{br}}" wx:key="item.id">
+            <view class="letter">{{item.fctName}}</view>
+            <view class="list-box" bindtap='selectOver1' wx:for="{{item.carFcts}}" wx:key="this" wx:for-item="ceil" data-id="{{ceil.id}}">
+                <view class="fctName">{{ceil.brName}}</view>
+                <image src="/image/navi.png" class="jiantou"></image>
+            </view>
+            </block>
+         </view>
+         <view class="list1" hidden='{{hiidenNone3}}'>
+            <block wx:for="{{fct}}" wx:key="item.id">
+            <view class="list-box" bindtap='selectOver2' data-index="{{index}}">
+              <view class="fctName">{{item.cc}}</view>
+              <image src="/image/navi.png" class="jiantou"></image>
+            </view>
+            </block>
+         </view>
+         <view class="list1" hidden='{{hiidenNone4}}'>
+              <block wx:for="{{yuecar}}" wx:key="item.id">
+                <view class="list-box" bindtap='selectOver3' data-index="{{index}}">
+                    <view class="fctName">{{item.year}}</view>
+                    <image src="/image/navi.png" class="jiantou"></image>
+                </view>
+              </block>
+         </view>
+         <view class="list1" hidden="{{hiidenNone5}}">
+              <block wx:for="{{vehicle}}" wx:key="item.id">
+              <view class="list-box" bindtap='selectOver4' data-index="{{index}}">
+                  <view class="fctName">{{item.words}}{{item.splName}}</view>
+                  <image src="/image/navi.png" class="jiantou"></image>
+              </view>
+              </block>
+         </view>
+          <view class="box" hidden="{{hiidenNone6}}">
+                <view class="list-box">
+                   <view class="list title">产品</view>
+                   <view class="list title">规格</view>
+                   <view class="list title">货位</view>
+                   <view class="list title">库存</view>
+                </view>
+                 <view class="list-box" wx:for="{{goodslist}}" wx:key="this" bindtap='goodsdetail1' data-index="{{index}}">
+                   <view class="list">{{item.goodsName}}</view>
+                   <view class="list">{{item.spec}}</view>
+                   <view class="list">{{item.cargoPosition}}</view>
+                   <view class="list">{{item.sum}}</view>
+                </view>
+            <view hidden="{{hiidenNone7}}">
+                <template is="none" />
+            </view>
+            </view>
+        </scroll-view>
+     </swiper-item>
+</swiper>

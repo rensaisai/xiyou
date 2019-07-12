@@ -1,0 +1,32 @@
+<import src="/pages/common/head.wxml" />
+
+<template is="head" data="{{title: ''}}" />
+
+<view class="index">
+  <form bindsubmit='rechargeRequest'>
+    <!-- <view class="page-section">
+      <view class="weui-cells__title">金额</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="price" type="number" class="weui-input" placeholder="请输入金额" />
+        </view>
+      </view>
+    </view> -->
+    <view class="page-section">
+    <view class="page-section-title">选择充值金额</view>
+    <view class="weui-cells weui-cells_after-title">
+      <radio-group bindchange="radioChange">
+        <label class="weui-cell weui-check__label" wx:for="{{moneys}}" wx:key="{{item.value}}">
+
+          <view class="weui-cell__hd">
+            <radio value="{{item.value}}" checked='{{item.checked}}' />
+          </view>
+          <view class="weui-cell__bd">{{item.name}}</view>
+        </label>
+      </radio-group>
+    </view>
+  </view>
+    <button type="primary" class="button-big login" style="background-color:#1296db" form-type='submit'>确定</button>
+  </form>
+
+</view>

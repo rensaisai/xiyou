@@ -1,0 +1,26 @@
+<view class="earnings-box">
+  <view class="left">
+    <view class="time">{{time}}</view>
+    <view class="income">金币￥{{list.sum}}</view>
+  </view>
+  <view class="section">
+  <picker
+    mode="date"
+    fields="month"
+    value="{{date}}"
+    end="2050-01-01"
+    bindchange="bindDateChange">
+   <view class="right">
+     <image class="icon" src="/image/icons.png"></image>
+  </view>
+  </picker>
+</view>
+</view>
+<view class="list-box" wx:for="{{list.detail}}" wx:key="this">
+  <view class="left">
+    <view class="time name">{{item.userName}}({{item.shopname}})</view>
+    <view class="income times">{{item.flowTime}}</view>
+  </view>
+  <view class="right ">{{item.coupon}}</view>
+</view>
+ <empty hiddenNone = "{{hiddenNone}}"/>

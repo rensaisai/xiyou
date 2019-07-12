@@ -1,0 +1,163 @@
+.index{
+  width: 100%;
+  height: 100%;
+  padding: 2rpx 0 0;
+  box-sizing: border-box;
+}
+.box{
+  widows: 100%;
+  height: 420rpx;
+  background: #ffffff;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.stort-name{
+  width: 100%;
+  height: 123rpx;
+  display: flex;
+  align-items: center;
+}
+.stort-icon{
+  width: 44rpx;
+  height: 40rpx;
+}
+.title{
+  font-size: 36rpx;
+  color: #383838;
+  font-weight: 600;
+  margin-left: 16rpx;
+}
+.order-box{
+  width: 100%;
+  height: 299rpx;
+}
+.order{
+  width: 100%;
+  height: 185rpx;
+  display: flex;
+}
+.goods-img{
+  width: 185rpx;
+  height: 185rpx;
+  border-radius:10rpx; 
+}
+.order-right{
+  flex: 1;
+  width: 100%;
+  height: 185rpx;
+  padding-left:20rpx;
+  box-sizing: border-box; 
+}
+.goods-name{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.name{
+  width: 70%;
+  height: auto;
+  font-size: 30rpx;
+  color: #383838;
+  font-weight: 600;
+}
+.price{
+  font-size: 32rpx;
+  color: #E3062A;
+  font-weight: 600;
+}
+.headings-box{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5rpx;
+}
+.headings{
+  width: 72%;
+  height: auto;
+  font-size: 24rpx;
+  color: #383838;
+}
+.num{
+  font-size: 22rpx;
+  color: #E3062A;
+}
+.pay-box{
+  width: 100%;
+  height: 114rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+}
+.payment{
+  color: #383838;
+}
+.order-list{
+  width: 100%;
+  height: 354rpx;
+  background: #ffffff;
+  margin-top: 20rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.order-information{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  align-items:center;
+  font-size: 30rpx;
+  color: #383838;
+  font-weight: 600;
+}
+.xian{
+  width:2px;
+  height:30rpx;
+  background:#E3062A;
+}
+.information{
+  margin-left: 5rpx;
+}
+.list{
+  width: 100%;
+  height: 68.5rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 26rpx;
+  color: #9B9A9B;
+  padding-left: 5rpx;
+  box-sizing: border-box;
+}
+.pay-ment{
+  color: #E3062A;
+}
+.boot-nav{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 110rpx;
+  background: #ffffff;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.btn{
+  width: 145rpx;
+  height: 57rpx;
+  border:1px solid #686768; 
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 57rpx;
+  border-radius:20rpx; 
+}
+.btn:nth-child(2){
+  margin-right: 20rpx;
+}
+.btn-select{
+  color: #E3062A;
+  border:1px solid #E3062A; 
+}

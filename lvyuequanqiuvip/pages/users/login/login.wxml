@@ -1,0 +1,54 @@
+
+<view class="index">
+
+<view class="logo-head">
+<image class="logo-img" src="/image/logo.png"></image>
+</view>
+<form bindsubmit='loginRequest'>
+  <view class="page-section">
+     
+      <view class="weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="phone" type='number' class="weui-input box"  placeholder="请输入11位手机号" bindinput="inputPhoneNum" />
+        </view>
+      </view>
+  </view>
+  <view class="page-section">
+     
+      <view class="weui-cells_after-title">
+        <view class="weui-cell weui-cell_input ">
+          <input  class="weui-input boxl"  placeholder="请输入短信验证码" bindinput="addCode"/>
+          <text wx:if="{{send}}" class="sendMsg" bindtap="sendMsg">获取验证码</text>
+          <text wx:if="{{alreadySend}}" class="sendMsg1" >{{second+"s后重新发送"}}</text>
+        </view>
+      </view>
+  </view>
+ 
+  <button type="primary" class="button-big login" style="background-color:#f39400"form-type='submit'>登录</button>
+</form>
+<view class="contact" bindtap='phone'>无法登录，请联系客服</view>
+<!-- <view class="logo-head">
+<image class="logo-img" src="/image/logo.png"></image>
+</view>
+<form bindsubmit='loginRequest'>
+  <view class="page-section">
+      <view class="weui-cells__title">手机号</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="phone" type='number' class="weui-input"  placeholder="请输入手机号"/>
+        </view>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">密码</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="pwd" password class="weui-input"  placeholder="请输入密码"/>
+        </view>
+      </view>
+  </view>
+  <button type="primary" class="button-big login" style="background-color:#f39400"form-type='submit'>登录</button>
+</form> -->
+  <!-- <button type="primary" plain="true" class="registor button-big" style="color:#1296db;border-color:#1296db" bindtap='register'>注册</button> -->
+
+</view>

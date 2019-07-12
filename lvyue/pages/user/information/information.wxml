@@ -1,0 +1,24 @@
+<view class="box" bindtap='headImg'>
+   <view class="left">头像</view>
+   <view class="right">
+      <image class="img" src="{{headImg}}"></image>
+      <image class="icon" src="/image/jiantou.png"></image>
+   </view>
+</view>
+<view class="box" bindtap='name'>
+   <view class="left">昵称</view>
+   <view class="right">
+      <view class="name">{{username}}</view>
+      <image class="icon" src="/image/jiantou.png"></image>
+   </view>
+</view>
+<view class="box" bindtap='paypassword'>
+   <view class="left">修改支付密码</view>
+   <view class="right">
+      <view class="name"></view>
+      <image class="icon" src="/image/jiantou.png"></image>
+   </view>
+</view>
+<view style='width:0rpx;height:0rpx;overflow:hidden;'>
+   <canvas  canvas-id="canvas" class="canvas" style="position:relative;left:1600rpx;"></canvas>
+</view>

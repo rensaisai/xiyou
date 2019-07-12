@@ -1,0 +1,190 @@
+<import src="/pages/common/none.wxml"/>
+<view class="Billing-box">
+     <view class="Billing-btn {{active?'hot':''}}" bindtap='triggerbtn'>采购</view>
+     <view class="Billing-btn {{active?'':'hot'}}" bindtap='triggerbtn'>补货</view>
+  <!-- <view class="Billing-btn">开单</view> -->
+</view>
+<scroll-view class="nav-boxs">
+  <view class="{{currentData==0?'nav-selected':''}} navs" bindtap='checkCurrent' data-index="0">全部</view>
+   <view class="{{currentData==1?'nav-selected':''}} navs" bindtap='checkCurrent' data-index="1">待付款</view>
+    <view class="{{currentData==2?'nav-selected':''}} navs" bindtap='checkCurrent' data-index="2">待发货</view>
+   <view class="{{currentData==3?'nav-selected':''}} navs" bindtap='checkCurrent' data-index="3">待收货</view>
+    <view class="{{currentData==4?'nav-selected':''}} navs" bindtap='checkCurrent' data-index="4">已完成</view>
+</scroll-view>
+<view class="block"></view>
+<swiper style='height:{{windowHeight}}px' current="{{currentData}}" bindchange="eventchange" wx:if="{{active}}">
+     <swiper-item>
+        <scroll-view scroll-y style='height:{{windowHeight}}px' bindscrolltolower="scroll">
+          <view class="box">
+                <view class="list-box" wx:for="{{list}}" wx:key="this" data-index="{{index}}"  bindtap='goods'>
+                   <view class="lists">{{item.date}}</view>
+                   <view class="lists">{{item.orderNo}}</view>
+                   <view class="lists">{{item.price}}</view>
+                   <view class="lists">{{item.stat}}</view>
+                   <view class="lists list-btn">{{item.btn}}</view>
+                </view>
+                <view class="loadmore" hidden="{{loadmore}}">
+                <view class="log" hidden="{{isHideLoadMore}}">
+                    <view class="loading"></view>
+                    <view class="loadmore_tips">正在加载</view>
+                  </view> 
+                </view>
+                <view hidden="{{hiidenNone}}">
+                    <template is="none" />
+                </view>
+            </view>
+        </scroll-view>
+     </swiper-item>
+      <swiper-item>
+        <scroll-view scroll-y style='height:{{windowHeight}}px' bindscrolltolower="scroll">
+           <view class="box">
+                <view class="list-box" wx:for="{{list}}" wx:key="this">
+                   <view class="lists">{{item.date}}</view>
+                   <view class="lists">{{item.orderNo}}</view>
+                   <view class="lists">{{item.price}}</view>
+                   <view class="lists">{{item.stat}}</view>
+                   <view class="lists list-btn">{{item.btn}}</view>
+                </view>
+                <view hidden="{{hiidenNone}}">
+                    <template is="none" />
+                </view>
+            </view>
+        </scroll-view>
+     </swiper-item>
+      <swiper-item>
+        <scroll-view scroll-y style='height:{{windowHeight}}px' bindscrolltolower="scroll">
+            <view class="box">
+                <view class="list-box" wx:for="{{list}}" wx:key="this">
+                   <view class="lists">{{item.date}}</view>
+                   <view class="lists">{{item.orderNo}}</view>
+                   <view class="lists">{{item.price}}</view>
+                   <view class="lists">{{item.stat}}</view>
+                   <view class="lists list-btn">{{item.btn}}</view>
+                </view>
+                <view hidden="{{hiidenNone}}">
+                    <template is="none" />
+                </view>
+            </view>
+        </scroll-view>
+     </swiper-item>
+      <swiper-item>
+        <scroll-view scroll-y style='height:{{windowHeight}}px' bindscrolltolower="scroll">
+            <view class="box">
+                <view class="list-box" wx:for="{{list}}" wx:key="this">
+                   <view class="lists">{{item.date}}</view>
+                   <view class="lists">{{item.orderNo}}</view>
+                   <view class="lists">{{item.price}}</view>
+                   <view class="lists">{{item.stat}}</view>
+                   <view class="lists list-btn">{{item.btn}}</view>
+                </view>
+                <view hidden="{{hiidenNone}}">
+                    <template is="none" />
+                </view>
+            </view>
+        </scroll-view>
+     </swiper-item>
+      <swiper-item>
+        <scroll-view scroll-y style='height:{{windowHeight}}px' bindscrolltolower="scroll">
+            <view class="box">
+                <view class="list-box" wx:for="{{list}}" wx:key="this">
+                   <view class="lists">{{item.date}}</view>
+                   <view class="lists">{{item.orderNo}}</view>
+                   <view class="lists">{{item.price}}</view>
+                   <view class="lists">{{item.stat}}</view>
+                   <view class="lists list-btn">{{item.btn}}</view>
+                </view>
+                <view hidden="{{hiidenNone}}">
+                    <template is="none" />
+                </view>
+            </view>
+        </scroll-view>
+     </swiper-item>
+</swiper>
+<swiper style='height:{{windowHeight}}px' current="{{currentData}}" bindchange="eventchange" wx:else>
+     <swiper-item>
+        <scroll-view scroll-y style='height:{{windowHeight}}px' bindscrolltolower="scroll">
+          <view class="box">
+                <view class="list-box" wx:for="{{list}}" wx:key="this" data-index="{{index}}"  bindtap='goods'>
+                   <view class="lists">{{item.date}}</view>
+                   <view class="lists">{{item.orderNo}}</view>
+                   <view class="lists">{{item.price}}</view>
+                   <view class="lists">{{item.stat}}</view>
+                   <view class="lists list-btn">{{item.btn}}</view>
+                </view>
+                <view class="loadmore" hidden="{{loadmore}}">
+                <view class="log" hidden="{{isHideLoadMore}}">
+                    <view class="loading"></view>
+                    <view class="loadmore_tips">正在加载</view>
+                  </view> 
+                </view>
+                <view hidden="{{hiidenNone}}">
+                    <template is="none" />
+                </view>
+            </view>
+        </scroll-view>
+     </swiper-item>
+      <swiper-item>
+        <scroll-view scroll-y style='height:{{windowHeight}}px' bindscrolltolower="scroll">
+           <view class="box">
+                <view class="list-box" wx:for="{{list}}" wx:key="this">
+                   <view class="lists">{{item.date}}</view>
+                   <view class="lists">{{item.orderNo}}</view>
+                   <view class="lists">{{item.price}}</view>
+                   <view class="lists">{{item.stat}}</view>
+                   <view class="lists list-btn">{{item.btn}}</view>
+                </view>
+                <view hidden="{{hiidenNone}}">
+                    <template is="none" />
+                </view>
+            </view>
+        </scroll-view>
+     </swiper-item>
+      <swiper-item>
+        <scroll-view scroll-y style='height:{{windowHeight}}px' bindscrolltolower="scroll">
+            <view class="box">
+                <view class="list-box" wx:for="{{list}}" wx:key="this">
+                   <view class="lists">{{item.date}}</view>
+                   <view class="lists">{{item.orderNo}}</view>
+                   <view class="lists">{{item.price}}</view>
+                   <view class="lists">{{item.stat}}</view>
+                   <view class="lists list-btn">{{item.btn}}</view>
+                </view>
+                <view hidden="{{hiidenNone}}">
+                    <template is="none" />
+                </view>
+            </view>
+        </scroll-view>
+     </swiper-item>
+      <swiper-item>
+        <scroll-view scroll-y style='height:{{windowHeight}}px' bindscrolltolower="scroll">
+            <view class="box">
+                <view class="list-box" wx:for="{{list}}" wx:key="this">
+                   <view class="lists">{{item.date}}</view>
+                   <view class="lists">{{item.orderNo}}</view>
+                   <view class="lists">{{item.price}}</view>
+                   <view class="lists">{{item.stat}}</view>
+                   <view class="lists list-btn">{{item.btn}}</view>
+                </view>
+                <view hidden="{{hiidenNone}}">
+                    <template is="none" />
+                </view>
+            </view>
+        </scroll-view>
+     </swiper-item>
+      <swiper-item>
+        <scroll-view scroll-y style='height:{{windowHeight}}px' bindscrolltolower="scroll">
+            <view class="box">
+                <view class="list-box" wx:for="{{list}}" wx:key="this">
+                   <view class="lists">{{item.date}}</view>
+                   <view class="lists">{{item.orderNo}}</view>
+                   <view class="lists">{{item.price}}</view>
+                   <view class="lists">{{item.stat}}</view>
+                   <view class="lists list-btn">{{item.btn}}</view>
+                </view>
+                <view hidden="{{hiidenNone}}">
+                    <template is="none" />
+                </view>
+            </view>
+        </scroll-view>
+     </swiper-item>
+</swiper>

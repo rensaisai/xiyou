@@ -1,0 +1,86 @@
+.index{
+  width: 100%;
+  height: auto;
+  padding: 0 20rpx 110rpx;
+  box-sizing: border-box;
+}
+.box{
+  width: 100%;
+  height: 233rpx;
+  background: #ffffff;
+  padding: 30rpx 0;
+  box-sizing: border-box; 
+  margin-top:10rpx; 
+}
+.vechicle{
+  width: 100%;
+  height: 98rpx;
+  padding: 0 20rpx 0 70rpx;
+  box-sizing: border-box;
+  display: flex;
+}
+.vechicle-icon{
+  width: 98rpx;
+  height: 98rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.vechicle-information{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   padding-left: 18rpx;
+   box-sizing: border-box;
+}
+.information{
+  font-size: 32rpx;
+  color: #000000;
+  font-weight: 600;
+}
+.num{
+  font-size: 24rpx;
+  color:rgba(0,0,0,1); 
+  opacity:0.6;
+}
+.btn-box{
+  width: 100%;
+  height: 104rpx;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  font-size: 26rpx;
+  font-weight: 600;
+  text-align: center;
+  line-height: 54rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.default{
+  width: 150rpx;
+  height: 54rpx;
+  border-radius: 27rpx;
+  background: #E84A2E;
+  color: #ffffff;
+}
+.defaults{
+ background:rgba(232,74,46,0.1);
+ color: #E84A2E;
+}
+.delete{
+margin-right: 18rpx;
+}
+.btn{
+  position: fixed;
+  bottom: 10rpx;
+  left: 2.5%;
+  width: 95%;
+  height: 88rpx;
+  background: #E84A2E;
+  font-size: 30rpx;
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 88rpx;
+  border-radius: 8rpx;
+  text-align: center;
+}

@@ -1,0 +1,91 @@
+<view class="index">
+    <!-- <form bindsubmit='commitOrder'> -->
+      <view class="addres">
+          <input value='{{name}}' class="namel"  name="name" placeholder='请输入收货人姓名' bindblur="name"/>
+      </view>
+       <view class="addres">
+          <input value='{{phone}}' class="namel" name="phone" type='number' placeholder='请输入常用手机号' bindblur="phone"/>
+      </view>
+       <view class="addres addr" bindtap='resgiter'>
+          <view class="text"  data-value="{{selec}}">{{selec}}</view>
+          <view class="right-text">
+               <view class="texts">请选择</view>
+               <image src="/image/right.png" class="imge"></image>
+          </view> 
+       </view>
+    <view class="addres1">
+          <input value='{{site}}' class="site" name="site" bindblur="site" placeholder="请输入详细地址"/>
+          <!-- <view class="commodity_screen"  catchtouchmove='true' bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+           <view  animation="{{animationData}}" catchtouchmove='true' class="commodity_attr_box" wx:if="{{showModalStatus}}">
+           </view> -->
+    </view>
+     <view class="addres"bindtap="radioChange">
+        <view class="weui-cell weui-check__label">
+         <view class="weui-cell__bd">设置默认地址</view>
+         <view class="weuixi-right">
+         <view class="weui-cell__hd {{checked?'weui-check__labels':''}}" ></view>
+         </view>
+        </view>
+    </view>
+    <view class="list" bindtap='commitOrder'>保存并使用</view>
+    <!-- <button type="primar"  class="list" style="background-color:#f39400" form-type="submit">保存并使用</button> -->
+   <!-- </form> -->
+    <view class="commodity_screen"   wx:if="{{showModalStatus}}"></view> 
+           <view  animation="{{animationData}}"  class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <view class="anmit">{{selec}}</view>
+
+    <view class="index-bd" wx:if="{{citylse == true}}">
+    <view class="kind-list">
+      <block wx:for-items="{{city}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd" data-index="{{index}}" bindtap="selectOver">
+            <!-- <image class="kind-list-img" src="/image/province.png"></image> -->
+            <view class="kind-list-item-00">
+              <view class="kind-list-item-01">
+                <view class="kind-list-text">{{item.regionName}}</view>
+                <image class="kind-list-navi" src="/image/navi.png"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="index-bd"  wx:if="{{cityls == true}}">
+    <view class="kind-list">
+        <block wx:for-items="{{citys}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd" data-index="{{index}}" bindtap="selectOverss">
+            <!-- <image class="kind-list-img" src="/image/city.png"></image> -->
+            <view class="kind-list-item-00">
+              <view class="kind-list-item-01">
+                <view class="kind-list-text">{{item.regionName}}</view>
+                <image class="kind-list-navi" src="/image/navi.png"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+   <view class="index-bd" wx:if="{{cityl == true}}">
+    <view class="kind-list">
+      <block wx:for-items="{{citysel}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd" data-index="{{index}}" bindtap="selectOvercity">
+            <!-- <image class="kind-list-img" src="/image/province.png"></image> -->
+            <view class="kind-list-item-00">
+              <view class="kind-list-item-01">
+                <view class="kind-list-text">{{item.regionName}}</view>
+                <image class="kind-list-navi" src="/image/navi.png"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+           </view>
+</view>

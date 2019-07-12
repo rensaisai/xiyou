@@ -1,0 +1,8 @@
+<view class="index">
+   <block wx:for="{{list}}" wx:key="item.id">
+   <view class="list-box" bindtap='selectOver' data-index="{{index}}">
+       <view class="fctName">{{item.cc}}</view>
+       <image src="/image/navi.png" class="jiantou"></image>
+   </view>
+   </block>
+</view>

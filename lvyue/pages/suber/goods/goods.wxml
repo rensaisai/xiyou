@@ -1,0 +1,141 @@
+<view class="index">
+    <swiper class="swiper-box" indicator-dots="true" autoplay="{{true}}" interval="5000" duration="500" circular="teue">
+     <block wx:for="{{imgs}}" wx:key="{{item.index}}">
+        <swiper-item >
+                      <image src="{{item}}" class="swiper-img" mode="scaleToFill" bindtap='imges' data-src="{{item}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+      <view class="goods-boxs">
+            <view class="list-name">
+                <view class="list-price price"><text class="shopkeeper" wx:if="{{isApp > 1}}">店主价:</text><text class="list-cost cost">￥</text>{{price}}<text class="bias" wx:if="{{isApp <= 1 && save != 0}}"> / </text><text class="adv" wx:if="{{isApp <= 1}}">成为店主立省{{save}}</text></view>
+                <view class="vip" wx:if="{{runType != ''}}">{{activity}}</view>
+                <!-- <view class="vip" wx:else>会员价￥{{shops.memberPrice}}</view> -->
+                <view class="proprietarys" wx:if="{{shops.newProduct == 1}}">自营</view>
+            </view>
+            <view class="list-money decline">(市场价￥{{shops.price}})</view>
+            <view class="goods-name">
+                <view>【{{shops.goodsName}}】{{shops.subtitle}}</view>
+            </view> 
+      </view>
+       <view class="ceil"></view>
+       <view class="serve"  wx:if="{{shops.couponPrice > 0 && runType != 1 && runType != 2 && isApp > 1}}">
+          <view class="serve-box">
+              <view class="goods-serve">优惠</view>
+              <view class="goods-leffer" style='color:#D30D0D;'>此产品可抵扣{{shops.couponPrice}}金币</view>
+         </view>
+         <image class ="goods-img" src="/image/jiantou.png" mode="widthFix"></image>
+      </view>
+      <view class="serve">
+      <view class="serve-box">
+              <view class="post-goods">服务</view>
+              <view class="goods-leffer goods-serves">贵就赔、正品保证、全场包邮(新疆，西藏，内蒙古等偏远地区货到后需自己承担邮费)、24小时发货</view>
+         </view>
+         <image class ="goods-img" src="/image/jiantou.png"></image>
+      </view>
+       <view class="serve" bindtap='serve'>
+          <view class="serve-box">
+              <view class="goods-serve">规格</view>
+              <view class="goods-leffer">选择规格</view>
+         </view>
+         <image class ="goods-img" src="/image/jiantou.png" mode="widthFix"></image>
+      </view>
+      <!-- <view class="ceil"></view> -->
+        <view class="serve" bindtap='aptitude'>
+          <view class="serve-box">
+              <view class="goods-serve">资质</view>
+              <view class="goods-leffer">品牌经营商资质</view>
+         </view>
+         <image class ="goods-img" src="/image/jiantou.png" mode="widthFix"></image>
+      </view>
+      <view class="ceil"></view>
+
+      <view class="comment-box1">
+      <view class="comment-details-box">
+          <view class="all-comment">
+            <view class="text">买家评论
+            <view class="dian-box">
+              <view class="dian" style='background:#000000;'></view>
+            </view> 
+            ({{totalCount}})</view>
+          </view>
+          <view class="examine-box" catchtap='allcomment'>
+              <view>好评率<text class="reputably">{{reputably}}</text></view>
+              <image src="/image/jiantou.png" class="next-icon"></image>
+          </view>
+      </view>
+      <view class="like-comment">
+      <block wx:for="{{evaluate}}" wx:key="this">
+      <view class="box">
+      <view class="img-box">
+        <image class="user-img" src="{{item.profilePic}}"></image>
+      </view>
+      <view class="com-content-box">
+         <view class="comment-name" wx:if="{{item.userName != null && item.userName !=''}}">{{item.userName}}</view>
+         <view class="comment-name" wx:else>{{item.phones}}</view>
+         <view class="comment-box">{{item.content}}</view>
+         <!-- <view class="reply-box" wx:for="{{item.parentReplyMap}}" wx:key="this" wx:for-item="ceil">
+            <view class="reply-name">{{ceil.parentReplyUserPhone}}</view>
+            <view class="reply-comment">{{ceil.parentReplyContent}}</view>
+         </view> -->
+          <view class="issue-time"></view>
+         <!-- <view class="issue-time" wx:else>发布于{{item.publishTime}}前</view> -->
+      </view>
+    </view>
+    </block>
+    </view>
+     <view class="examine-all-box" >
+        <view class="add-comment" catchtap='allcomment'>查看全部评价</view>
+     <!-- <text >查看全部{{totalCount}}条评论</text>
+     <image src="/image/arrows.png" class="arrows"></image> -->
+    </view>
+  </view>
+      <view class="goods-imgs">
+         <image class="goods-imgs" src="{{shops.goodsDesc}}" mode="widthFix"></image>
+      </view>
+      <view class="block"></view>
+      <view class="table">
+           <view class="tab-left">客服</view>
+           <view  class="tab-right" bindtap='click'>
+               <text>立即购买</text>
+               <image class="imges" src="/image/gouwuche.png"></image>
+           </view>
+      </view>
+     
+
+     <view class="commodity_screen"  catchtouchmove='true' bindtap="hideModal" wx:if="{{showModalStatus}}"></view> 
+           <view  animation="{{animationData}}" catchtouchmove='true' class="commodity_attr_box" wx:if="{{showModalStatus}}">
+                <view class="specification">
+                    <view class="size-img"  style=" background:url({{img}}) no-repeat center center/cover">
+                    </view>
+                     <view class="list-price price xize-price" style="color:#e51337;"><text class="list-cost cost">￥</text>{{price}}<text class="list-money"></text></view>
+                     <image class="close" src="/image/guanbi.png" bindtap='close'></image>
+                </view>
+                <scroll-view class="list-color"  scroll-y>
+                <block wx:for="{{shoplist}}" wx:key="this">
+                  <view class="color">{{item.title}}</view>
+                  <view class="specification-color">
+                  <block wx:for="{{item.specList}}" wx:for-item="ceil" wx:key="{{this}}" >
+                    <view class="goods-color {{ceil.checked?'hots':''}}" bindtap='goodcolor' data-index="{{index}}" data-title="{{item.title}}">{{ceil.attrValue}}</view>
+                  </block>
+                 </view>
+                </block>
+                <view class="row">
+                    <view>购买数量</view>
+                    <view class="row-list">
+                        <view class="row-txt" bindtap="subtract">-</view>
+                        <view class="row-txt txt1">{{num}}</view>
+                        <view class="row-txt" bindtap="add">+</view>   
+                    </view>  
+                </view>
+              </scroll-view>  
+              <view class="table">
+                    <view class="tab-left">客服</view>
+                    <view  class="tab-right" bindtap='purchase'>
+                        <text>立即购买</text>
+                        <image class="imges" src="/image/gouwuche.png"></image>
+                        <text></text>
+                    </view>
+              </view>
+           </view>
+</view>

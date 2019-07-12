@@ -1,0 +1,29 @@
+
+<view class="index">
+    <block wx:for="{{list}}" wx:key="item.id">
+    <view class="index-box">
+        <view class="location-index">
+           <view class="location-box">{{item.receiver}}</view>
+           <view class="location-box1">{{item.phone}}</view>
+           <!-- <block wx:for="{{addres}}"> -->
+            <view class="location-box2">{{item.addres}}{{item.detailAddress}}</view>
+            <!-- </block> -->
+        </view>
+        <view class="location-label">
+          <view class="weui-cell" >
+            <view class="yuan">
+            <view class="weui-cell__hd {{item.checked?'weui-check__labels':''}}" data-id="{{item.id}}" bindtap="radioChange"></view>
+            </view>
+            <view class="weui-cell__bd">默认地址</view>
+         </view>
+       <view class="location-right">
+           <view class="location-left" bindtap='editor' data-index="{{index}}">编辑</view>
+            <view class="location-left" bindtap='delert' data-id='{{item.id}}'>删除</view>
+       </view>
+      </view>
+    </view>
+    </block>
+    <empty hiddenNone = "{{hiddenNone}}"/>
+</view>
+ <view class="indexs-box"   bindtap='address'>添加新地址</view>
+

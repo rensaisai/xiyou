@@ -1,0 +1,36 @@
+<import src="/pages/common/none.wxml" />
+
+<view class="index">
+
+  <navigator url='/pages/cars/carselect/fct/fctlist?addCar=1' class="navigator">
+    <button type="primary" class="button-big" style="background-color:#1296db" hidden='{{cantAdd}}'>新增车辆</button>
+  </navigator>
+  <view class="index-bd">
+    <view class="kind-list">
+    <!-- <view class='city_first_letter'>{{titleName}}</view> -->
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd" data-index="{{index}}" bindtap="selectOver">
+            <image class="car-list-img" src="{{item.fctImg}}" mode="widthFix"></image>
+            <view class="kind-list-item-00">
+              <view class="kind-list-item-01">
+                <view class="kind-list-text">{{item.fctName + item.brName + "(" + item.year + ")" + item.cc}}</view>
+                <image class="kind-list-navi" src="/image/navi.png"></image>
+              </view>
+            </view>
+          </view>
+          <button type="primary" plain="true" class="registor button-small" size="mini" bindtap="defaultClick" data-index="{{index}}" style="color:#1296db;border-color:#1296db" hidden='{{item.hiddenDefault}}'>设为默认</button>
+          <button type="primary" plain="true" class="registor button-small" size="mini" bindtap="deleteClick" data-index="{{index}}" style="color:#1296db;border-color:#1296db" hidden='{{item.hiddenDelete}}'>删除</button>
+        </view>
+      </block>
+      <view class="loadmore" hidden="{{isHideLoadMore}}">
+      <view class="loading"></view>
+      <view class="loadmore_tips">正在加载</view>
+  </view>
+  </view>
+  </view>
+</view>
+
+<view hidden="{{hiddenNone}}">
+  <template is="none" />
+</view>

@@ -1,0 +1,29 @@
+@import "/pages/common/index.wxss";
+
+.page-section{
+  margin-bottom: 20rpx;
+}
+.register{
+  margin:50rpx;
+}
+.logo-head{
+  width: 100%;
+  text-align: center;
+}
+.logo-img{
+  width:100px;
+  height:100px;
+  border-radius: 20rpx;
+  margin:20rpx;
+}
+textarea {
+    width: 700rpx;
+    padding: 25rpx 0;
+}
+.textarea-wrp {
+    padding: 0 25rpx;
+    background-color: #fff;
+}
+.radio-float{
+  display: flex;
+}

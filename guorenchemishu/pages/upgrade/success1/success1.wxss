@@ -1,0 +1,15 @@
+@import '/pages/upgrade/success/success.wxss';
+.box{
+  height: 670rpx;
+}
+.btn{
+  width: 95%;
+  height: 80rpx;
+  background: #E84A2E;
+  color: #ffffff;
+  border-radius:10rpx; 
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 80rpx;
+  margin: 90rpx auto 0;
+}

@@ -1,0 +1,26 @@
+/* Component/login/login.wxss */
+.login{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom:0;
+  width: 52rpx;
+  height: 52rpx;
+  margin: auto auto;
+  z-index: 999;
+  display: none;
+  background: url(https://www.apple.com/ac/globalnav/4/zh_CN/assets/ac-store/spinner.svg) no-repeat center center/40rpx auto;
+}
+.login.active{
+  animation: run 1s  ease infinite;
+  display: block;
+}
+  @keyframes run{
+  0%{
+    transform: rotateZ(0deg)
+  }
+  100%{
+    transform: rotateZ(360deg)
+  }
+}

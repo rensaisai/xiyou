@@ -1,0 +1,5 @@
+<view class="list-box" wx:for="{{list}}" wx:key="this">
+   <view class="left">{{item.userName}}({{item.shopname}})</view>
+   <view class="right">{{item.pricename}}</view>
+</view>
+ <empty hiddenNone = "{{hiddenNone}}"/>

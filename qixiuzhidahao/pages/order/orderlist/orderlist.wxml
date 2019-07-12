@@ -1,0 +1,13 @@
+<import src="/pages/common/none.wxml"/>
+<view class="index">
+  <view class="list-box" bindtap='detail' wx:for="{{list}}" wx:key="this" data-index="{{index}}">
+     <view class="vhinformation-left">
+         <view class="">{{item.userCarNo}}</view>
+         <view class="">{{item.words}}</view>
+     </view>
+     <view class="right">{{item.time}} {{item.createTime}}</view>
+  </view>
+ <view hidden="{{hiidenNone}}">
+     <template is="none"/>
+ </view>
+</view>

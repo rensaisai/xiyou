@@ -1,0 +1,16 @@
+@import "/pages/common/index.wxss";
+@import "/pages/progect/project.wxss";
+.maintenance-box{
+  display: flex;
+}
+.maintenance-right{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.nav-box{
+  width: 50%;
+}

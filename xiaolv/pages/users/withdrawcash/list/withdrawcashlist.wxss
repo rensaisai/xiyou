@@ -1,0 +1,33 @@
+@import "/pages/common/index.wxss";
+.bai{
+  width: 100%;
+  height: 80rpx;
+}
+.button-btn{
+  bottom:0;
+  left: 0;
+  z-index: 9999;
+  height: 90rpx;
+  color: #ffffff;
+}
+button{
+  margin-bottom:0; 
+}
+.button-big{
+  width: 100%;
+}
+.kind-list-text4{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.statue{
+  color:#E84A2E; 
+}
+.button-btn{
+  width: 95%;
+  height: 88rpx;
+  bottom: 20rpx;
+  left: 2.5%;
+}

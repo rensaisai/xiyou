@@ -1,0 +1,373 @@
+<import src="/pages/common/none.wxml" />
+
+<view class='index'>
+  <view class="box">
+  <view class='select_box'>
+    <view class='select' catchtap='selectTap'>
+        <text class='select_text'>{{selectData[index]}}</text>
+         <image class="img" src="/image/sortdown.png"></image>
+    </view>
+    <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*60):0}}rpx;'>
+        <text class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+    </view>
+</view>
+  <!-- <view class="section">
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+    {{name}}
+    </view>
+  </picker>
+   
+</view> -->
+     <view class='gro_index' >    
+          <view class="search">      
+               <view class="df search_arr">
+                 <!-- <icon class="searchcion" size='20' type='search'></icon>  -->
+                  <input class=""  bindinput="click" placeholder="请输姓名/地址" value="{{searchValue}}"/>     
+               </view> 
+          </view>   
+         <view class='sousuo' bindtap="suo">搜索</view>  
+     </view>
+  </view>
+   <view class="index-bd">
+    <view class="kind-list">
+      <view class="menu_box">
+           <text class='tab {{currentData=="0"?"borders":""}}' data-current="0" bindtap='checkCurrent'>全部</text>
+          <text class='tab {{currentData=="1"?"borders":""}}' data-current="1" bindtap='checkCurrent1'>待发货</text>
+           <text class='tab {{currentData=="2"?"borders":""}}' data-current="2" bindtap='checkCurrent2'>待收货</text>
+            <text class='tab {{currentData=="3"?"borders":""}}' data-current="3" bindtap='checkCurrent3'>未支付</text>
+             <text class='tab {{currentData=="4"?"borders":""}}' data-current="4" bindtap='checkCurrent4'>已完成</text>
+      </view>
+
+        <view class="kind-list-item " hidden="{{currentData!='0'}}">
+         <view class='swiper_con'>
+        <block wx:for="{{list}}" wx:key="{{item.id}}">
+        <view class="index-box">
+            <view class="item-index">
+                <view class='text'>订单编号：</view>
+                <view class="text">{{item.orderNo}}</view>
+            </view>
+            <view class="item-index">
+                <view class='text'>姓名：</view>
+                <view class='text'>{{item.userName}}</view>
+            </view>
+            <view class="item-index">
+                <view class='text'>地址：</view>
+                <view class='text'>{{item.address}}</view>
+            </view>
+            <view class="item-index">
+                 <view class='text'>手机号：</view> 
+                <view class='text'>{{item.phone}}</view>
+            </view>
+             <view class="item-index">
+                 <view class='text'>收货状态：</view> 
+                <view class='text'>{{item.orderStatus}}</view>
+            </view>
+        </view>
+        </block>
+  </view>
+           <view hidden="{{hiddenNone}}">
+                <template is="none" />
+            </view>
+            <view class="loadmore" hidden="{{isHideLoadMore}}">
+                  <view class="loading"></view>
+            <view class="loadmore_tips">正在加载</view>
+      </view>
+        </view>
+     
+
+        <view class="kind-list-item " hidden="{{currentData!='1'}}">
+          <view class='swiper_con'>
+         <block wx:for="{{list1}}" wx:key="{{item.id}}">
+        <view class="index-box">
+            <view class="item-index">
+                <view class='text'>订单编号：</view>
+                <view class="text">{{item.orderNo}}</view>
+            </view>
+            <view class="item-index">
+                <view class='text'>姓名：</view>
+                <view class='text'>{{item.userName}}</view>
+            </view>
+            <view class="item-index">
+                <view class='text'>地址：</view>
+                <view class='text'>{{item.address}}</view>
+            </view>
+            <view class="item-index">
+                 <view class='text'>手机号：</view> 
+                <view class='text'>{{item.phone}}</view>
+            </view>
+             <view class="item-index">
+                 <view class='text'>收货状态：</view> 
+                <view class='text'>{{item.orderStatus}}</view>
+            </view>
+        </view>
+        </block>
+       </view>
+             <view hidden="{{hiddenNone1}}">
+                <template is="none" />
+            </view>
+        </view>
+
+       <view class="kind-list-item " hidden="{{currentData!='2'}}">
+            <view class='swiper_con'>
+         <block wx:for="{{list2}}" wx:key="{{item.id}}">
+        <view class="index-box">
+            <view class="item-index">
+                <view class='text'>订单编号：</view>
+                <view class="text">{{item.orderNo}}</view>
+            </view>
+            <view class="item-index">
+                <view class='text'>姓名：</view>
+                <view class='text'>{{item.userName}}</view>
+            </view>
+            <view class="item-index">
+                <view class='text'>地址：</view>
+                <view class='text'>{{item.address}}</view>
+            </view>
+            <view class="item-index">
+                 <view class='text'>手机号：</view> 
+                <view class='text'>{{item.phone}}</view>
+            </view>
+             <view class="item-index">
+                 <view class='text'>收货状态：</view> 
+                <view class='text'>{{item.orderStatus}}</view>
+            </view>
+        </view>
+        </block>
+  </view>
+         <view hidden="{{hiddenNone2}}">
+                <template is="none" />
+            </view>
+       </view>
+
+        <view class="kind-list-item " hidden="{{currentData!='3'}}">
+            <view class='swiper_con'>
+         <block wx:for="{{list3}}" wx:key="{{item.id}}">
+        <view class="index-box">
+            <view class="item-index">
+                <view class='text'>订单编号：</view>
+                <view class="text">{{item.orderNo}}</view>
+            </view>
+            <view class="item-index">
+                <view class='text'>姓名：</view>
+                <view class='text'>{{item.userName}}</view>
+            </view>
+            <view class="item-index">
+                <view class='text'>地址：</view>
+                <view class='text'>{{item.address}}</view>
+            </view>
+            <view class="item-index">
+                 <view class='text'>手机号：</view> 
+                <view class='text'>{{item.phone}}</view>
+            </view>
+             <view class="item-index">
+                 <view class='text'>收货状态：</view> 
+                <view class='text'>{{item.orderStatus}}</view>
+            </view>
+        </view>
+        </block>
+  </view>
+           <view hidden="{{hiddenNone3}}">
+                <template is="none" />
+            </view>
+       </view>
+
+        <view class="kind-list-item " hidden="{{currentData!='4'}}">
+            <view class='swiper_con'>
+         <block wx:for="{{list4}}" wx:key="{{item.id}}">
+        <view class="index-box">
+            <view class="item-index">
+                <view class='text'>订单编号：</view>
+                <view class="text">{{item.orderNo}}</view>
+            </view>
+            <view class="item-index">
+                <view class='text'>姓名：</view>
+                <view class='text'>{{item.userName}}</view>
+            </view>
+            <view class="item-index">
+                <view class='text'>地址：</view>
+                <view class='text'>{{item.address}}</view>
+            </view>
+            <view class="item-index">
+                 <view class='text'>手机号：</view> 
+                <view class='text'>{{item.phone}}</view>
+            </view>
+             <view class="item-index">
+                 <view class='text'>收货状态：</view> 
+                <view class='text'>{{item.orderStatus}}</view>
+            </view>
+        </view>
+        </block>
+  </view>
+          <view hidden="{{hiddenNone4}}">
+                <template is="none" />
+            </view>
+       </view>
+
+
+      <view class="loadmore" hidden="{{isHideLoadMore}}">
+        <view class="loading"></view>
+        <view class="loadmore_tips">正在加载</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <view class='topTabSwiper'>
+    <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}'  data-current = "0" bindtap='checkCurrent'>全部</view>
+    <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrentl'>待发货</view>
+    <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}'  data-current = "2" bindtap='checkCurrent2'>待收货</view>
+     <view class='tab  {{currentData == 3 ? "tabBorer" : ""}}'  data-current = "3" bindtap='checkCurrent3'>未支付</view> 
+       <view class='tab  {{currentData == 4 ? "tabBorer" : ""}}'  data-current = "4" bindtap='checkCurrent4'>已完成</view> 
+</view>
+<view current="{{currentData}}" class='swiper'   bindchange="bindchange">
+  <swiper-item>
+  <view class='swiper_con'>
+        <block wx:for="{{list}}" wx:key="{{item.id}}">
+        <view class="index-box">
+            <view class="item-index">
+                <view class='text'>订单编号：</view>
+                <view class="text">{{item.orderNo}}</view>
+            </view>
+            <view class="item-index">
+                <view class='text'>姓名：</view>
+                <view class='text'>{{item.userName}}</view>
+            </view>
+            <view class="item-index">
+                <view class='text'>地址：</view>
+                <view class='text'>{{item.address}}</view>
+            </view>
+            <view class="item-index">
+                 <view class='text'>手机号：</view> 
+                <view class='text'>{{item.phone}}</view>
+            </view>
+             <view class="item-index">
+                 <view class='text'>收货状态：</view> 
+                <view class='text'>{{item.orderStatus}}</view>
+            </view>
+        </view>
+        </block>
+  </view>
+  </swiper-item> 
+
+
+  <swiper-item>
+  <view class='swiper_con'>
+         <block wx:for="{{list1}}" wx:key="{{item.id}}">
+        <view class="index-box">
+            <view class="item-index">
+                <view class='text'>订单编号：</view>
+                <view class="text">{{item.orderNo}}</view>
+            </view>
+            <view class="item-index">
+                <view class='text'>姓名：</view>
+                <view class='text'>{{item.userName}}</view>
+            </view>
+            <view class="item-index">
+                <view class='text'>地址：</view>
+                <view class='text'>{{item.address}}</view>
+            </view>
+            <view class="item-index">
+                 <view class='text'>手机号：</view> 
+                <view class='text'>{{item.phone}}</view>
+            </view>
+             <view class="item-index">
+                 <view class='text'>收货状态：</view> 
+                <view class='text'>{{item.orderStatus}}</view>
+            </view>
+        </view>
+        </block>
+  </view>
+  </swiper-item>
+
+
+
+  <swiper-item>
+  <view class='swiper_con'>
+         <block wx:for="{{list2}}" wx:key="{{item.id}}">
+        <view class="index-box">
+            <view class="item-index">
+                <view class='text'>订单编号：</view>
+                <view class="text">{{item.orderNo}}</view>
+            </view>
+            <view class="item-index">
+                <view class='text'>姓名：</view>
+                <view class='text'>{{item.userName}}</view>
+            </view>
+            <view class="item-index">
+                <view class='text'>地址：</view>
+                <view class='text'>{{item.address}}</view>
+            </view>
+            <view class="item-index">
+                 <view class='text'>手机号：</view> 
+                <view class='text'>{{item.phone}}</view>
+            </view>
+             <view class="item-index">
+                 <view class='text'>收货状态：</view> 
+                <view class='text'>{{item.orderStatus}}</view>
+            </view>
+        </view>
+        </block>
+  </view>
+  </swiper-item>  
+
+
+
+  <swiper-item>
+  <view class='swiper_con'>
+        <block wx:for="{{list3}}" wx:key="{{item.id}}">
+        <view class="index-box">
+            <view class="item-index">
+                <view class='text'>订单编号：</view>
+                <view class="text">{{item.orderNo}}</view>
+            </view>
+            <view class="item-index">
+                <view class='text'>姓名：</view>
+                <view class='text'>{{item.userName}}</view>
+            </view>
+            <view class="item-index">
+                <view class='text'>地址：</view>
+                <view class='text'>{{item.address}}</view>
+            </view>
+            <view class="item-index">
+                 <view class='text'>手机号：</view> 
+                <view class='text'>{{item.phone}}</view>
+            </view>
+             <view class="item-index">
+                 <view class='text'>收货状态：</view> 
+                <view class='text'>{{item.orderStatus}}</view>
+            </view>
+        </view>
+        </block>
+  </view>
+  </swiper-item>  
+
+
+  <swiper-item>
+  <view class='swiper_con'>
+     <block wx:for="{{list4}}" wx:key="{{item.id}}">
+        <view class="index-box">
+            <view class="item-index">
+                <view class='text'>订单编号：</view>
+                <view class="text">{{item.orderNo}}</view>
+            </view>
+            <view class="item-index">
+                <view class='text'>姓名：</view>
+                <view class='text'>{{item.userName}}</view>
+            </view>
+            <view class="item-index">
+                <view class='text'>地址：</view>
+                <view class='text'>{{item.address}}</view>
+            </view>
+            <view class="item-index">
+                 <view class='text'>手机号：</view> 
+                <view class='text'>{{item.phone}}</view>
+            </view>
+             <view class="item-index">
+                 <view class='text'>收货状态：</view> 
+                <view class='text'>{{item.orderStatus}}</view>
+            </view>
+        </view>
+        </block>
+  </view>
+  </swiper-item>  
+</view> -->

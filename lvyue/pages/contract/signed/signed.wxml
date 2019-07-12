@@ -1,0 +1,8 @@
+<view class="box">
+   <view class="success">
+      <image class="icon" src="/image/success.png"></image>
+      <view class="signed">签署成功!</view>
+   </view>
+</view>
+<button class="text-btn {{active?'hot':''}}" bindtap='btn'>协议文本</button>
+<view class="text-btn {{active?'':'hot'}}" bindtap='btn1'>完成</view>

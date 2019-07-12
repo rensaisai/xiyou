@@ -1,0 +1,26 @@
+<import src="/pages/common/none.wxml"/>
+<view class="index">
+     <block wx:for="{{list}}" wx:key="this">  
+     <view class="coupon">
+       <view class="coupon-left">
+          <view class="coupon-left-top">
+             <view class="icon"></view>
+             <view class="text">{{item.cardName}}</view>
+             <view class="activity">{{item.typeName}}</view>
+             <view class="activity">{{item.useTypeName}}</view>
+          </view>
+          <view class="coupon-bottom">
+             <view class="describe">{{item.remarks}}</view>
+              <view class="describe">有效期：{{item.begin}}~{{item.finish}}</view>
+          </view>
+       </view>
+       <view class="coupon-right">
+           <view class="price">￥{{item.deductionAmount}}</view>
+           <view class="btn" bindtap='btn' data-index='{{index}}'>核销</view>
+       </view>
+   </view>
+   </block>
+</view>
+ <view hidden="{{hiidenNone}}">
+     <template is="none"/>
+ </view>

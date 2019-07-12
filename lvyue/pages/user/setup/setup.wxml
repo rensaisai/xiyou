@@ -1,0 +1,16 @@
+<view class="contact-box information">
+   <view class="contact">意见反馈</view>
+   <view class="return1"></view>
+</view>
+<!-- <view class="contact-box information" bindtap='cache'>
+   <view class="contact">清除缓存</view>
+   <view class="contact-right">
+      <view class="return1"></view>
+      <view class="immediately">{{cache}}kB</view>
+   </view>
+</view> -->
+<view class="contact-box">
+   <view class="contact">关于</view>
+   <view class="return1"></view>
+</view>
+<view class="login" bindtap='exitlogin'>退出登录</view>

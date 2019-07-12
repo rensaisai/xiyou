@@ -1,0 +1,70 @@
+
+/* @import "/pages/common/index.wxss"; */
+.box{
+  width: 100%;
+  height: 140rpx;
+  background: #ffffff;
+  margin-top:1rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.img{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius:50%; 
+}
+.right{
+  flex: 1;
+  padding-left:20rpx;
+  display: flex; 
+  justify-content: space-between;
+  height: 85rpx;
+}
+.left-name{
+  width: auto;
+  height: 30rpx;
+  font-size:26rpx; 
+  font-weight:600;
+}
+.left{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  line-height: 30rpx;
+
+}
+.left-generation{
+  width: 94rpx;
+  height: 32rpx;
+}
+.phone-icon{
+  width: 26rpx;
+  height: 26rpx;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAA/ElEQVRIS+1WwQ2DMAzESJmhsAkS/rBA6RZlJLpF6QI8CBKblM5ghCuQQAEBDVBRtSUvFBmf73KxA4aypJRHZr4AgKXuz/1m5hwAzoh4a/4FNUmSJPe1IEq+HBHtQSApJc+tfioeEVsiHUafBIqIKPA8L5+qPI5jSwgRGobhq3HajIjIfgXSJM6y7FAURacgbSA1UOfs+tLvQDqq1TG7dK1Uv+e6zS4sM1+FEIHjOI8p61VdgYhCADgtakHavh4J1O4MfwFUj42K6dBY6CuwWDrVhUNj4fuAGrtXlQ/Z+W2M5rpw9Iw2e26laeqXZVnd8NUPSNM0A9d1o0aFJ7UN6BvGp9W3AAAAAElFTkSuQmCC) no-repeat center center/cover;
+}
+.phone{
+font-size: 36rpx;
+font-weight: 600;
+}
+.right-box{
+display: flex;
+align-items: center;
+}
+.img1{
+   width: 94rpx;
+  height: 32rpx;
+  background: url("https://www.cmspq.xyz/cmsweb/imgs/SmallProcedures/cjyd.png") no-repeat center center/cover;
+}
+.img2{
+   width: 94rpx;
+  height: 32rpx;
+  background: url("https://www.cmspq.xyz/cmsweb/imgs/SmallProcedures/zjyd.png") no-repeat center center/cover;
+}
+.img3{
+   width: 94rpx;
+  height: 32rpx;
+  background: url("https://www.cmspq.xyz/cmsweb/imgs/SmallProcedures/gjyd.png") no-repeat center center/cover;
+}

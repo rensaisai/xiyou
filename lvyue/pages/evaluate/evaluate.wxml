@@ -1,0 +1,52 @@
+<view class="{{hiddenNone==''?'indexm':'index'}}" catchtap='cancel'>
+  <block wx:for="{{evaluate}}" wx:key="this">
+    <view class="box">
+      <view class="img-box">
+        <image class="user-img" src="{{item.profilePic}}"></image>
+      </view>
+      <view class="com-content-box">
+         <view bindtap='detail' data-id= "{{item.commentId}}">
+         <view class="comment-name" >
+              <view class="comment-user" wx:if="{{item.userName != null && item.userName != ''}}">{{item.userName}}</view>
+              <view class="comment-user" wx:else>{{item.phones}}</view>
+              <view class="goods-standard">{{item.attr}}</view>
+         </view>
+         <view class="comment-box">{{item.content}}</view>
+         <view class="goods-img-box" wx:if="{{item.imgUrlList.length > 0}}">
+             <image class="goods-img" wx:for="{{item.imgUrlList}}" wx:key="this" wx:for-item="ceil" src="{{ceil.imgUrl}}" mode="aspectFill"></image>
+         </view>
+         </view>
+         <view class="like-box">
+             <view class="browse-box">浏览{{item.browseQuantity}}次</view>
+             <view class="praises">
+                <view class="left"  catchtap='likecomment' data-index="{{index}}">
+                    <image src="/image/praise1.png" class="praise" wx:if="{{item.isLile}}"></image>
+                    <image src="/image/praise.png" class="praise" wx:else></image>
+                    <view class="num">{{item.likeQuantity}}</view>
+                </view>
+                <view class="right" catchtap='replycomment' data-index="{{index}}">
+                    <image src="/image/pinglun.png" class='praise'></image>
+                </view>
+             </view>
+         </view>
+
+         <!-- <view class="reply-box" wx:for="{{item.parentReplyMap}}" wx:key="this" wx:for-item="ceil">
+            <view class="reply-name">{{ceil.parentReplyUserPhone}}</view>
+            <view class="reply-comment">{{ceil.parentReplyContent}}</view>
+         </view> -->
+         <!-- <view class="issue-time" wx:if="{{item.publishTime == '0分钟'}}">发布于刚刚</view>
+         <view class="issue-time" wx:else>发布于{{item.publishTime}}前</view> -->
+      </view>
+    </view>
+    </block>
+      <empty hiddenNone = "{{hiddenNone}}"/>
+      <loding  loadingType="{{loadingType}}" wx:if="{{hiddenNone && length >= 10}}" lod="backged"/>
+    <!-- <view class='clear'></view> -->
+</view>
+<!-- <view class="comment-btn">
+   <view class="comment-input"  catchtap="comments">千言万语总是情，评论一句行不行</view>
+</view> -->
+<view class="{{focus?'return':'return-box'}}">
+    <textarea placeholder="{{placeholder}}" focus="{{focus}}"  bindconfirm="complete" class="textarea" fixed="true" cursor-spacing="62" value='{{content}}' bindblur="bindblurs"/>
+</view>
+

@@ -1,0 +1,126 @@
+{
+  "pages": [
+    "pages/index/index",
+    "component/loading/loading",
+    "pages/fault/fault",
+    "pages/progect/project",
+    "pages/order/order",
+    "pages/orderstatus/orderstatus",
+    "pages/proxy/proxy",
+    "pages/mine/mine",
+    "pages/driving/drivingimg",
+    "pages/success/success",
+    "pages/appointment/appointment",
+    "pages/cars/carselect/fct/fctlist",
+    "pages/cars/carselect/br/brlist",
+    "pages/cars/carselect/year/yearlist",
+    "pages/cars/carselect/cc/cclist",
+    "pages/cars/mycar/cardetail/mycar",
+    "pages/cars/mycar/client/client",
+    "pages/users/commissions/list/commissionslist",
+    "pages/users/myorder/myorder",
+    "pages/upgrade/joinus/joinus",
+    "pages/address/province/provincelist",
+    "pages/address/city/citylist",
+    "pages/address/district/districtlist",
+    "pages/repairshops/search/repairsearch",
+    "pages/repairshops/detail/repairdetail",
+    "pages/orders/my/check/ordercheck",
+    "pages/users/creditcards/list/creditcardlist",
+    "pages/users/creditcards/add/creditcardadd",
+    "pages/users/withdrawcash/list/withdrawcashlist",
+    "pages/users/withdrawcash/add/withdrawcashadd",
+    "pages/orders/my/evaluate/orderevaluate",
+    "pages/orders/autoshop/list/autoshoporderlist",
+    "pages/orders/repair/list/repairorderlist",
+    "pages/orders/autoshop/perfect/orderperfect",
+    "pages/pay/payment/payment",
+    "pages/pay/payresult/payresult",
+    "pages/logs/logs",
+    "pages/users/logins/logins",
+    "pages/cars/mycar/team/team",
+    "pages/cars/mycar/commission/commission",
+    "pages/cars/mycar/noac/noac",
+   
+    "pages/users/vehicle/vehicle",
+    "pages/users/wash/wash",
+    "pages/users/vehicle-details/vehicle-details",
+    "pages/users/order/order",
+    "pages/users/wash-details/wash-details",
+    "pages/users/myvehicle/myvehicle",
+    "pages/users/confirm/confirm",
+    "pages/upgrade/protocol/protocol",
+    "pages/upgrade/success/success",
+    "pages/upgrade/counselor/counselor",
+    "pages/upgrade/coupon/coupon",
+    "pages/upgrade/brief/brief",
+    "pages/upgrade/must-buy/must-buy",
+    "pages/upgrade/binding/binding",
+    "pages/upgrade/statement/statement",
+    "pages/upgrade/order/order",
+    "pages/upgrade/declarant/declarant",
+    "pages/upgrade/fanslist/fanslist",
+    "pages/upgrade/member/member",
+    "pages/upgrade/success1/success1",
+    "pages/users/beanwater/beanwater",
+    "pages/goodslist/goodslist",
+    "pages/map/map",
+    "pages/detection/malfunction/malfunction",
+    "pages/substitute/substitute",
+    "pages/detection/history/history",
+    "pages/detection/details/details",
+    "pages/mycode/mycode",
+    "pages/xcar/xcar",
+    "pages/faultlist/fault/fault",
+    "pages/celcoupon/celcoupon",
+    "pages/faultlist/track/track",
+    "pages/faultlist/history/history",
+    "pages/drive/issue/activity",
+    "pages/cars/mycar/mvcar/mvcar",
+    "pages/join/join",
+    "pages/drive/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F3F3F3",
+    "navigationBarTitleText": "小毛驴养车",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F3F3F3"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#fd4200",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/home.png",
+        "selectedIconPath": "image/home2.png"
+      },
+      {
+        "pagePath": "pages/fault/fault",
+        "text": "故障检测",
+        "iconPath": "image/fault.png",
+        "selectedIconPath": "image/fault1.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "个人中心",
+        "iconPath": "image/mine.png",
+        "selectedIconPath": "image/mine2.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

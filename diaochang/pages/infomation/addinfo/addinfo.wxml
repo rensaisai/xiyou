@@ -1,0 +1,135 @@
+
+<view class="index">
+<view class="logo-head">
+<!-- <image class="logo-img" src="/image/logo.png"></image> -->
+</view>
+<form bindsubmit='registerClick'>
+
+  <view class="page-section">
+      <view class="weui-cells__title">钓场名称</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="fishName" class="weui-input" placeholder="请输入钓场名称" value='{{entity.fishName}}'/>
+        </view>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">开始时间</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <picker mode="date" value="{{startDate}}" start="{{minDate}}" bindchange="bindStartDateChange">
+            <view class="weui-input">{{startDate}}</view>
+          </picker>
+          <text decode="true">&nbsp;&nbsp;</text>
+          <picker mode="time" value="{{startTime}}" start="00:00" end="23:59" bindchange="bindStartTimeChange">
+            <view class="weui-input">{{startTime}}</view>
+          </picker>
+        </view>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">结束时间</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <picker mode="date" value="{{endDate}}" start="{{minDate}}" bindchange="bindEndDateChange">
+            <view class="weui-input">{{endDate}}</view>
+          </picker>
+          <text decode="true">&nbsp;&nbsp;</text>
+          <picker mode="time" value="{{endTime}}" start="00:00" end="23:59" bindchange="bindEndTimeChange">
+            <view class="weui-input">{{endTime}}</view>
+          </picker>
+        </view>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title" bindtap="chooseLocation">钓场地点(点击选择地点)</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <!-- <view class="weui-input" auto-height bindtap="chooseLocation">{{locationAddress}}</view> -->
+            <input class="weui-input" placeholder="点击选择钓场地点" auto-height value='{{locationAddress}}' bindtap="chooseLocation" disabled='true'/>
+        </view>
+      </view>
+  </view>
+   <view class="page-section">
+      <view class="weui-cells__title">活动热线(手机号)</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="tele" type="number" class="weui-input" placeholder="请输入活动热线" value='{{entity.tele}}'/>
+        </view>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">活动费用</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="fishAmount" type="number" class="weui-input" placeholder="请输入活动费用" value='{{entity.fishAmount}}'/>
+        </view>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">钓台号范围</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="placeMin" type="number" bindinput="bindPlaceMinInput" class="weui-input" placeholder="起始号" value='{{entity.placeMin}}'/>
+          <view>~</view>
+          <input name="placeMax" type="number" bindinput="bindPlaceMaxInput" class="weui-input" placeholder="结束号" value='{{entity.placeMax}}'/>
+        </view>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">限号人数</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="peopleLimit" type="number" class="weui-input" placeholder="输入钓台号范围自动计算" value='{{peopleLimit}}' bindinput='bindPeopleLimitInput' disabled='true'/>
+        </view>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">放鱼数量</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="fishCount" type="number" class="weui-input" placeholder="请输入放鱼数量" value='{{entity.fishCount}}'/>
+        </view>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">活动介绍</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <textarea name="fishDesc" bindblur="bindTextAreaBlur" placeholder="请输入活动介绍不可输入表情符号" value='{{entity.fishDesc}}' style='height:200px' maxlength='-1'/>
+        </view>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">宣传图</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cells">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <view class="weui-uploader">
+                <view class="weui-uploader__hd">
+                  <view class="weui-uploader__title">最少一张宣传图最多9张</view>
+                  <view class="weui-uploader__info">{{imageList.length}}/{{count[countIndex]}}</view>
+                </view>
+                <view class="weui-uploader__bd">
+                  <view class="weui-uploader__files">
+                    <block wx:for="{{imageList}}" wx:for-item="image">
+                      <view class="weui-uploader__file">
+                        <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+                        <view bindtap="deleteImage" data-index="{{index}}">删除</view>
+                      </view>
+                    </block>
+                  </view>
+                  <view class="weui-uploader__input-box" hidden='{{addImgHidden}}'>
+                    <view class="weui-uploader__input" bindtap="chooseImage" hidden='{{addImgHidden}}'></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+  </view>
+  <button type="primary" class="button-big login" style="background-color:#1296db" form-type='submit'>发布</button>
+</form>
+</view>

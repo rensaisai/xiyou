@@ -1,0 +1,54 @@
+@import "/pages/common/index.wxss";
+.sendMsg{
+  width: 100px;
+  height: 35px;
+  background-color: #f39400;
+  border-radius:5px; 
+  text-align: center;
+  line-height:  35px;
+  color: #ffffff;
+  font-size: 16px;
+}
+.sendMsg1{
+  width: 100px;
+  height: 35px;
+  background-color: #cccccc;
+  border-radius:5px; 
+  text-align: center;
+  line-height:  35px;
+  color: #ffffff;
+  font-size: 12px;
+}
+.contact {
+  position: fixed;
+  left: 50%;
+  margin-left: -22%;
+  bottom: 30px;
+  color: #3383dc;
+}
+.box{
+  width: 100%;
+  height: 35px;
+  border-bottom: 1px solid #cccccc; 
+}
+.boxl{
+  width: 80%;
+  height: 35px;
+  border-bottom: 1px solid #cccccc; 
+}
+.page-section{
+  margin-bottom: 20rpx;
+}
+.logo-head{
+  width: 100%;
+  text-align: center;
+}
+.logo-img{
+  width:100px;
+  height:100px;
+  border-radius: 20rpx;
+  margin:20rpx;
+}
+.login{
+  border-radius: 50px;
+}

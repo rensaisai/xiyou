@@ -1,0 +1,79 @@
+.withdrawal-btn{
+  width: 100%;
+  height: 90rpx;
+  background: #ffffff;
+  margin-top: 2rpx;
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  color: #232323;
+  font-weight: 600;
+}
+.earnings-box{
+  width: 100%;
+  height: 92rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+.left{
+  width: auto;
+  height: 92rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15rpx 0; 
+  box-sizing: border-box;
+}
+.time{
+  font-size: 34rpx;
+  color: #000000;
+  font-weight: 600;
+  line-height: 34rpx;
+}
+.income{
+  font-size: 26rpx;
+  color: #9b9b9b;
+  font-weight: 600;
+  line-height: 26rpx;
+}
+.right{
+  height: 92rpx;
+  font-size: 33rpx;
+  color: #010101;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.icon{
+  width: 40rpx;
+  height: 44rpx;
+}
+.list-box{
+  width: 100%;
+  height: 92rpx;
+  background: #ffffff;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  margin-top: 2rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.list-box:nth-child(1){
+  margin-top: 0;
+}
+.name{
+  font-size: 26rpx;
+  font-weight: 550;
+  line-height: 26rpx;
+}
+.times{
+  font-size: 20rpx;
+  font-weight: 550;
+  line-height: 20rpx;
+}

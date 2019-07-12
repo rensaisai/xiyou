@@ -1,0 +1,7 @@
+@import "/pages/cars/carselect/fct/fctlist.wxss";
+
+.button-small{
+  margin-top:0;
+  margin-right:20rpx;
+  float:right;
+}

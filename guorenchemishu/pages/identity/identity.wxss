@@ -1,0 +1,117 @@
+.camerabgImage-view{
+  height: 100%;
+  width: 100%;
+  position:absolute;
+}
+.bgImage{
+  border:2px solid #ffffff; 
+  position: absolute;
+}
+.cameratop-view1{
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cameratop-view2{
+  position: fixed;
+  width: 76%;
+  height: auto;
+  white-space: pre-wrap;
+  font-size: 18px;
+  color: #ffffff; 
+  /* transform:rotate(90deg); */
+  /* top: 50%;
+  left: 50%;
+  margin-left: -38%;
+  margin-top: -12%; */
+}
+.camerabotton-view3{
+  position: absolute;
+  background: rgba(0,0,0,0.5);
+}
+.camerabotton-view4{
+  position: absolute;
+  width: 8px;
+  background: rgba(0,0,0,0.5);
+}
+.camerabotton-view5{
+  position: absolute;
+  width: 8px;
+  background: rgba(0,0,0,0.5);
+  right: 0;
+}
+.camerabotton-view6{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: rgba(0,0,0,0.5);
+  padding-top: 100px;
+  box-sizing: border-box;
+}
+.camerabotton-view7{
+  width: 60px;
+  height: 60px;
+  border-radius:30px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  z-index: 99999;
+}
+.camerabotton-view8{
+  width: 50px;
+  height: 50px;
+  border-radius:50%; 
+  border: 1px solid #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+.camerabotton-view9{
+  width: 30px;
+  height: 30px;
+}
+.cameracenter-view{
+  height: 44rpx;
+  width: 100%;
+  position: absolute;
+ 
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+}
+ 
+/* 底部 */
+.camerabotton-view{
+  height: 200rpx;
+  width: 100%;
+  position:absolute;
+ 
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.cancelphoto{
+  width: 50rpx;
+  height: 50rpx;
+}
+.takephoto{
+  width: 132rpx;
+  height: 132rpx;
+}
+.skipphoto{
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+}

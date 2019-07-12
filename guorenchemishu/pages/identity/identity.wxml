@@ -1,0 +1,27 @@
+<camera wx:if='{{isShowCamera}}' device-position="back" flash="off" style="width:{{windowWidth}}px; height:{{windowHeight}}px;">
+    <cover-view class='camerabgImage-view'>
+      <cover-view class='bgImage' style='width:{{widths}}px;height:{{heights}}px;left:8px;top:150px;'></cover-view>
+      <cover-view class='cameratop-view1' style='height:150px'>
+         <cover-view class="cameratop-view2">
+            请将拍摄物体置于此区域内,并对齐此框边缘进行拍照！
+          </cover-view>
+      </cover-view>
+      <!-- 拍照按钮 --> 
+      <cover-view class="camerabotton-view4" style='height:224px'></cover-view>
+      <cover-view class="camerabotton-view5" style='height:224px'></cover-view>
+      <!-- <cover-view class='camerabotton-view3' style='width:100%;height:{{windowHeight- (windowHeight-150-100)}}px;top:{{windowHeight-150-224}}px'></cover-view> -->
+    </cover-view>
+    <cover-view class='camerabotton-view6' style='height:{{windowHeight-150-224}}px;'>
+        <cover-view class="camerabotton-view9" bindtap='next'>
+           <cover-image src="/image/cha.png"></cover-image>
+        </cover-view>
+        <cover-view class="camerabotton-view7" bindtap='takePhotoAction'>
+          <cover-view class="camerabotton-view8"></cover-view>
+        </cover-view>
+        <cover-view class="camerabotton-view9"></cover-view>
+    </cover-view>
+       
+  </camera>
+  <view style='width:0px;height:0px;overflow:hidden;'>
+     <canvas wx:if='{{isShowImage}}' canvas-id="image-canvas" style='width:{{windowWidth}}px; height:{{windowHeight}}px;position:relative;left:1000px;' ></canvas>
+  </view>

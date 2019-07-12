@@ -1,0 +1,21 @@
+<import src="/pages/common/none.wxml"/>
+<view class="index">
+   <view class="index-box">
+         <block wx:for="{{list}}" wx:key="this">
+         <view class="item-index">
+            <view class="left">
+               <view class="item-box">{{item.name}}</view> 
+               <view class="item-box">{{item.role}}</view> 
+               <view class="item-box">{{item.phone}}</view> 
+            </view>
+            <view class="right">
+               <view class="item-delte" bindtap='delte' data-id="{{item.id}}" wx:if="{{item.role != '老板'}}">删除</view>
+            </view>
+        </view>
+        </block>          
+   </view>
+  <view hidden="{{hiidenNone}}">
+    <template is="none" />
+  </view>
+</view>
+<button style="background:#1296db;" class="btn" bindtap="modalinput">新增员工</button>

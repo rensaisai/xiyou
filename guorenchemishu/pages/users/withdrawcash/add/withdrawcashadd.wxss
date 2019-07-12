@@ -1,0 +1,60 @@
+@import "/pages/common/index.wxss";
+
+.page-section{
+  margin-bottom: 20rpx;
+}
+.registor{
+  margin:50rpx;
+}
+
+.inputs{
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+/* .phone_personal{
+    width: 100%;
+    color:rgb(34, 154, 181);
+    height:100rpx;
+    line-height:100rpx;
+    text-align: center;
+} */
+/* .phone_one{
+    width:100%;
+    height:2.58823529em;
+    background: #ffffff; 
+} */
+.person_box{
+    position: relative;
+}
+.phone_select{
+   width: 100%;
+   height: 300rpx;
+   background: #ffffff;
+   z-index: 100;
+   position: absolute; 
+   overflow: hidden;
+   overflow-y:scroll; 
+}
+.select_one{
+    background: #ffffff;
+    width:100%;  
+    height:100rpx;
+    line-height:100rpx;
+    padding-left:20rpx;
+    box-sizing: border-box; 
+    border-top:1rpx solid #eeeeee;
+    border-bottom:1rpx solid #eeeeee;  
+}
+.personal_image{
+    z-index: 100;
+    position: absolute;
+    right:2.5%;
+    width: 34rpx;
+    height: 20rpx;
+    margin:40rpx 20rpx 40rpx 0;
+    transition: All 0.4s ease;  
+    -webkit-transition: All 0.4s ease;
+}
+.rotateRight{
+    transform: rotate(180deg); 
+}

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "短信验证",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#ffffff",
+  "enablePullDownRefresh": false,
+  "usingComponents": {}
+}

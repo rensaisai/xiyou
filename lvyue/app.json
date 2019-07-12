@@ -1,0 +1,107 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/suber/comment/comment",
+    "pages/li/li",
+    "pages/destination/destination",
+    "pages/mall/mall",
+    "pages/personalcenter/personalcenter",
+    "pages/logs/logs",
+    "pages/user/setup/setup",
+    "pages/user/register/register",
+    "pages/user/login/login",
+    "pages/user/location/location",
+    "pages/user/addre/addre",
+    "pages/line/sincedetails/sincedetails",
+    "pages/line/scattered/scattered",
+    "pages/line/purchase/purchase",
+    "pages/line/self-paying/self-paying",
+    "pages/line/details-travel/details-travel",
+    "pages/line/watch/watch",
+    "pages/line/calendar/calendar",
+    "pages/line/qualification/qualification",
+    "pages/line/search/search",
+    "pages/line/over/over",
+    "pages/line/order/order",
+    "pages/line/select/select",
+    "pages/line/addition/addition",
+    "pages/suber/goods/goods",
+    "pages/suber/place/place",
+    "pages/suber/business/business",
+    "pages/user/certificate/certificate",
+    "pages/user/addbank/addbank",
+    "pages/user/myorder/myorder",
+    "pages/user/earnings/earnings",
+    "pages/user/withdrawal/withdrawal",
+    "pages/user/team/team",
+    "pages/user/gold/gold",
+    "pages/user/information/information",
+    "pages/user/Invitecode/Invitecode",
+    "pages/user/swname/swname",
+    "pages/user/orddetail/orddetail",
+    "pages/user/orderstatus/orderstatus",
+    "pages/contract/deal/deal",
+    "pages/contract/code/code",
+    "pages/contract/signed/signed",
+    "pages/agtext/agtext",
+    "pages/user/myincome/myincome",
+    "pages/user/patcode/paycode",
+    "pages/user/paypassword/paypassword",
+    "pages/user/affirm/affirm",
+    "pages/payment/payment",
+    "pages/line/modvisit/modvisit",
+    "pages/association/details/details",
+    "pages/association/comment/comment",
+    "pages/association/attention/attention",
+    "pages/user/logistics/logistics",
+    "pages/suber/seek/seek",
+    "pages/evaluate/evaluate",
+    "pages/sale/sale",
+    "pages/suber/add/add",
+    "pages/suber/evaluate/evaluate",
+    "pages/association/issue/issue",
+    
+    "pages/suber/list/list"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ea294b",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#ea294b",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "selectedColor": "#E51337",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "自嗨团",
+        "color": "#EEEEEE",
+        "iconPath": "/image/zihai1.png",
+        "selectedIconPath": "/image/zihai2.png"
+      },
+      {
+        "pagePath": "pages/destination/destination",
+        "text": "目的地",
+        "color": "#EEEEEE",
+        "iconPath": "/image/destination1.png",
+        "selectedIconPath": "/image/destination2.png"
+      },
+      {
+        "pagePath": "pages/mall/mall",
+        "text": "商城",
+        "color": "#EEEEEE",
+        "iconPath": "/image/mall1.png",
+        "selectedIconPath": "/image/mall2.png"
+      },
+      {
+        "pagePath": "pages/personalcenter/personalcenter",
+        "text": "个人中心",
+        "color": "#EEEEEE",
+        "iconPath": "/image/center1.png",
+        "selectedIconPath": "/image/center2.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

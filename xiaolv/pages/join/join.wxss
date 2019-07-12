@@ -1,0 +1,10 @@
+@import "/pages/upgrade/joinus/joinus.wxss";
+.index{
+  width: 100%;
+  height: auto;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.btn{
+  margin-top: 30rpx;
+}

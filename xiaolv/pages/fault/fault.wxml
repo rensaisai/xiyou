@@ -1,0 +1,29 @@
+<view class="detection-box">
+  <view class="detection-btn">
+     <view class="information">{{obdmark}}</view>
+     <view class="binding" bindtap='binding' data-value="{{btnstatus}}">{{btnstatus}}</view>
+  </view>
+</view>
+<view class="img-box">
+    <image src="/image/caricon.png" class="img-icon"></image>
+</view>
+<view class="text-box">
+   <view class="">检测方法:</view>
+   <text>1.如果您的OBD支持蓝牙模式，请用安卓版app进行检测，小程序和苹果版app暂不支持蓝牙版模式。
+   2.如果您的OBD支持SIM卡模式，请先绑定设备，然后点击故障检测即可检测爱车是否故障。
+   </text>
+</view>
+<view class="btn-box">
+    <view class="btn" bindtap='detection'>故障检测</view>           
+    <view class="btn" bindtap='history'>检测历史</view>
+</view>
+<view class="commodity_screen"  catchtouchmove='true' wx:if="{{showModalStatus}}" bindtap='hider'></view> 
+<view  animation="{{animationData}}" catchtouchmove='true' class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <input placeholder='请输入OBD设备号' class="input-SIM" bindinput="block"></input>
+    <view class="btns">
+        <button style=' border-right:1rpx solid #eeeeee;' bindtap='cancel'>取消</button>
+        <button bindtap='confirm' style=' color: #fd4200;'>确定</button>
+    </view>
+   
+</view>
+

@@ -1,0 +1,3 @@
+<view class="index">
+   <image src="https://www.cmspq.xyz/cmsweb/imgs/xcxImg/daijia.jpg" class="img" bindtap='img'></image>
+</view>

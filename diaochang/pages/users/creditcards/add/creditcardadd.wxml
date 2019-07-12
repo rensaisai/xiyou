@@ -1,0 +1,34 @@
+<import src="/pages/common/head.wxml" />
+
+
+<view class="index">
+<form bindsubmit='saveBankRequest'>
+  <view class="page-section">
+      <view class="weui-cells__title">银行卡号</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="cardno" type="number" class="weui-input"  placeholder="请输入银行卡号"/>
+        </view>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">持卡人姓名</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="username" class="weui-input"  placeholder="请输入持卡人姓名"/>
+        </view>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">开户行名称</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="bankName" class="weui-input"  placeholder="请输入开户行名称"/>
+        </view>
+      </view>
+  </view>
+  <button type="primary" class="button-big login" style="background-color:#1296db"form-type='submit' >确定</button>
+
+</form>
+
+</view>

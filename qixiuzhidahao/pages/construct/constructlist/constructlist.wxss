@@ -1,0 +1,16 @@
+@import "/pages/order/orderlist/orderlist";
+.right{
+  width: 120rpx;
+  height: 130rpx;
+  display: flex;
+  align-items: center;
+}
+.btn{
+  width: 118rpx;
+  height: 50rpx;
+  border: 1rpx solid #1296db;
+  line-height: 50rpx;
+  font-size: 26rpx;
+  border-radius:5rpx; 
+  color: #1296db;
+}

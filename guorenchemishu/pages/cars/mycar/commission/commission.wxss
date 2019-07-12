@@ -1,0 +1,107 @@
+.box{
+  width: 100%;
+  height: 140rpx;
+  background: #ffffff;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  margin-top:1rpx; 
+}
+.time{
+  height: 70rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  line-height: 70rpx;
+  background: #F2F2F2;
+  font-size: 28rpx;
+}
+.box-img{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius:50%; 
+}
+.right-box{
+  flex:1;
+  padding-left:20rpx;
+
+}
+.left-box{
+  display: flex;
+  justify-content: space-between;
+}
+.left-name{
+  font-size:30rpx;
+  color:rgba(0,0,0,1);
+  font-weight: 600;  
+}
+.price{
+  font-size:40rpx; 
+  color:rgba(232,74,46,1);
+  font-weight: 600;  
+}
+.mane{
+font-size:40rpx; 
+font-weight:600;
+color:rgba(0,0,0,1);
+}
+.left-water{
+font-size:24rpx; 
+font-weight:600;
+color:rgba(153,153,153,1);
+}
+.layer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+.bounced{
+  position: fixed;
+  top: 50%;
+  left: 25%;
+  margin-top: -40%; 
+  margin-left:-20%; 
+  width: 90%;
+  height: 545rpx;
+  background: #ffffff;
+  z-index: 9999;
+  border-radius:10rpx; 
+}
+.list{
+  width: 100%;
+  height: 90rpx;
+  border-bottom:1rpx solid #eeeeee; 
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  color: #000000;
+  font-weight: 600;
+  display: flex;
+}
+.times{
+  justify-content: center;
+}
+.list:last-child{
+  border-bottom:0rpx solid #ffffff; 
+}
+.list-text{
+  display: inline-block;
+  width: 150rpx;
+  height: 90rpx;
+  text-align: justify;
+}
+.list-text::after{
+  width: 150rpx;
+  display: inline-block;
+  content: '';  
+}
+.list-sttus{
+ margin-left: 26rpx;
+}

@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "选择出游人",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "empty": "/Component/empty/empty"
+  }
+}

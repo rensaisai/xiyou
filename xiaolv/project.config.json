@@ -1,0 +1,62 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": true,
+		"checkInvalidKey": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.3.0",
+	"appid": "wxb6d36412b9f593f7",
+	"projectname": "xl",
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 2,
+			"list": [
+				{
+					"id": 0,
+					"name": "模拟更新",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "模拟更新",
+					"pathName": "pages/index/index",
+					"query": "scene=\"2c91e4b96954a8ce016954aa65ed0000\"",
+					"scene": 1011
+				},
+				{
+					"id": 2,
+					"name": "分享",
+					"pathName": "pages/cars/mycar/mvcar/mvcar",
+					"query": "userId=2c91e4b967543d520167548c05600000",
+					"scene": 1012
+				}
+			]
+		}
+	}
+}

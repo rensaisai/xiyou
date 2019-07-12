@@ -1,0 +1,40 @@
+
+<view class="index">
+<view class="logo-head">
+<image class="logo-img" src="/image/headdefault.png"></image>
+</view>
+<form bindsubmit='loginRequest'>
+  <view class="box">
+     <view class="phone">手机号</view>
+     <view class="phone-input-box">
+         <input class="phone-input" placeholder='请输入手机号' bindinput="phone"></input>
+     </view>
+  </view>
+  <view class="box">
+     <view class="phone">验证码</view>
+     <view class="phone-input-box">
+         <input class="phone-input" placeholder='请输入验证码' bindinput="addCode"></input>
+         <view class="sendMsg" wx:if="{{send}}" bindtap='sendMsg'>获取验证码</view>
+         <view class="sendMsg" style='background:#cccccc;' wx:if="{{alreadySend}}">{{second+"s后重新发送"}}</view>
+     </view>
+  </view>
+  <!-- <view class="page-section">
+      <view class="weui-cells__title">手机号</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="phone" type='number' class="weui-input"  placeholder="请输入手机号"/>
+        </view>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">验证码</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="pwd" class="weui-input"  placeholder="请输入验证码"/>
+          <view class="sendMsg"></view>
+        </view>
+      </view>
+  </view> -->
+  <button type="primary" class="button-big login" style="background-color:#1296db"form-type='submit'>登录</button>
+</form>
+</view>

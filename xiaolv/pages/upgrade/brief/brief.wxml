@@ -1,0 +1,33 @@
+<view class="index">
+   <view class="log-box">
+      <view class="log"></view>
+      <view class="title">小毛驴养车</view>
+   </view>
+   <view class="font"></view>
+   <view class="describe describe1">小毛驴养车, 开启一站式养车服务</view>
+   <view class="describe">从此, 让车主养车更安全、更方便、更实惠。</view>
+   <view class="box">
+      <view class="primary-title">
+        <view class="dian"></view>
+        <view class="headline">我们提供专业的汽车服务</view>
+      </view>
+      <view class="list">智能故障检测服务</view>
+      <view class="list">全面的养护服务</view>
+      <view class="list">审车验车服务</view>
+      <view class="list">道路救援服务</view>
+      <view class="list">各类代驾服务</view>
+      <view class="primary-title">
+        <view class="dian"></view>
+        <view class="headline">服务方式</view>
+      </view>
+      <view class="list">预约:客户在小毛驴养车预约下单各类服务内容</view>
+      <view class="list">服务:客户到店或小毛驴养车专业人员上门服务</view>
+        <view class="primary-title">
+        <view class="dian"></view>
+        <view class="headline">全平台7*12预约</view>
+      </view>
+      <view class="list">APP、微信小程序、电话</view>
+      <view class="btn" bindtap='we'>加入我们</view>
+
+   </view>
+</view>

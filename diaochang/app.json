@@ -1,0 +1,80 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/proxy/proxy",
+    "pages/mine/mine",
+    "pages/cars/carselect/fct/fctlist",
+    "pages/cars/carselect/br/brlist",
+    "pages/cars/carselect/year/yearlist",
+    "pages/cars/carselect/cc/cclist",
+    "pages/cars/mycar/cardetail/mycar",
+    "pages/cars/mycar/carlist/carlist",
+    "pages/users/register/register",
+    "pages/users/login/login",
+    "pages/users/commissions/list/commissionslist",
+    "pages/users/members/list/memberlist",
+    "pages/maps/map/map",
+    "pages/address/province/provincelist",
+    "pages/address/city/citylist",
+    "pages/address/district/districtlist",
+    "pages/repairshops/search/repairsearch",
+    "pages/repairshops/detail/repairdetail",
+    "pages/orders/my/list/myorderlist",
+    "pages/orders/my/check/ordercheck",
+    "pages/users/creditcards/list/creditcardlist",
+    "pages/users/creditcards/add/creditcardadd",
+    "pages/users/recharge/list/rechargelist",
+    "pages/users/recharge/add/rechargeadd",
+    "pages/users/withdrawcash/list/withdrawcashlist",
+    "pages/users/withdrawcash/add/withdrawcashadd",
+    "pages/orders/my/evaluate/orderevaluate",
+    "pages/orders/autoshop/list/autoshoporderlist",
+    "pages/orders/repair/list/repairorderlist",
+    "pages/orders/autoshop/perfect/orderperfect",
+    "pages/pay/payment/payment",
+    "pages/pay/payresult/payresult",
+    "pages/logs/logs",
+    "pages/users/password/password",
+    "pages/users/adviser/adviser",
+    "pages/users/cardvip/cardvip",
+    "pages/sharefriend/sharefriend",
+    "pages/infomation/addinfo/addinfo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1296db",
+    "navigationBarTitleText": "Carman",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#1296db"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#53BCE9",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/home.png",
+        "selectedIconPath": "image/home2.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "image/mine.png",
+        "selectedIconPath": "image/mine2.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 60000,
+    "downloadFile": 60000
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

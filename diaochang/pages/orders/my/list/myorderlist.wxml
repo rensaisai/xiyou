@@ -1,0 +1,40 @@
+<import src="/pages/common/none.wxml" />
+
+<view class="index">
+
+  <view class="index-bd">
+    <view class="kind-list">
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd" bindtap="itemClick" data-index="{{index}}">
+            <view class="kind-list-item-00 order-item">
+              <view class='order-title'>
+              <view class="kind-list-text3">创建时间：{{item.createTime}}</view>
+              </view>
+              <view class="kind-list-item-01">
+                <view class="kind-list-text">{{item.fishName}}</view>
+                <view class="kind-list-text3">{{item.tele}}</view>
+              </view>
+              <view class="kind-list-text3">¥{{item.fishAmount}}/人</view>
+              <view class="kind-list-text4">限{{item.peopleLimit}}人</view>
+              <view class="kind-list-text4">放鱼{{item.fishCount}}斤</view>
+            </view>
+          </view>
+
+         <!-- <button type="primary" plain="true" class="registor button-small" size="mini" bindtap="cancelClick" data-index="{{index}}" style="color:#1296db;border-color:#1296db" hidden='{{item.hiddenCancel}}'>取消</button> -->
+           <button type="primary" plain="true" class="registor button-small" size="mini" bindtap="deleteClick" data-index="{{index}}" style="color:#1296db;border-color:#1296db" hidden='{{item.hiddenPay}}'>删除</button>    
+        <button type="primary" plain="true" class="registor button-small" size="mini" bindtap="payClick" data-index="{{index}}" style="color:#1296db;border-color:#1296db" hidden=''>发布新活动</button>
+        </view>
+
+      </block>
+      <view class="loadmore" hidden="{{isHideLoadMore}}">
+        <view class="loading"></view>
+        <view class="loadmore_tips">正在加载</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view hidden="{{hiddenNone}}">
+  <template is="none" />
+</view>

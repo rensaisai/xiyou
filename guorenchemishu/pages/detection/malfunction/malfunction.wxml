@@ -1,0 +1,22 @@
+<view class="index">
+   <view class="title-box">
+      <image src="/image/logo.png" style='width:80rpx;height:80rpx;'></image>
+      <view class="title">故障检测结果</view>
+   </view>
+      <view class="box">
+       <view class="box-left">车型:</view>
+       <view class="box-right">{{list.car}}</view>
+   </view>
+   <view class="box">
+       <view class="box-left">车牌号:</view>
+       <view class="box-right">{{list.plate}}</view>
+   </view>
+   <view class="box">
+       <view class="box-left">检测时间:</view>
+       <view class="box-right">{{list.date}}</view>
+   </view>
+    <view class="box" wx:for="{{list.obdErrorList}}" wx:key="this">
+       <view class="box-left">{{item.obdCode}}</view>
+       <view class="box-right">{{item.obdDescription}}</view>
+   </view>
+</view>

@@ -1,0 +1,9 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTitleText": "旅约全球售后",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "shade": "/Component/shade/shade"
+  }
+}

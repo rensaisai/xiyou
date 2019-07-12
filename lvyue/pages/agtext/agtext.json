@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "协议文本",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#ffffff",
+  "enablePullDownRefresh": false,
+  "usingComponents": {}
+}

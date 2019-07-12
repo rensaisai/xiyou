@@ -1,0 +1,27 @@
+<view class="commodity_screen"  catchtouchmove='true' wx:if="{{showModalStatus}}"></view> 
+<view  animation="{{animationData}}" catchtouchmove='true'class="commodity_attr_box" wx:if="{{showModalStatus}}">
+   <view class="hidden-box" bindtap='hide'>
+      <image class="hidden-btn" src="/image/guanbi.png" ></image>
+   </view>
+   <view class="validation">安全验证</view>
+   <view class="prompt">请输入下图中的验证码后查看</view>
+   <view class="graphics">
+      <view class="graphics-left">
+        <canvas style="width:210rpx;height:70rpx;" canvas-id="canvas"></canvas>
+      </view>
+      <view class="graphics-right" bindtap='top'>看不清？换一张</view>
+   </view>
+   <view class="input-box">
+      <input class="input" placeholder='请输入验证码'  maxlength="4" value='{{imgCode}}' bindinput="input"></input>
+      <view class="btn" bindtap='btn'>确定</view>
+   </view>
+</view>
+<view class="{{active?'index':''}}">
+<view class="tetle">旅约全球网店经营者营业执照信息</view>
+<view class="describe">根据国家工商总局《网络交易管理办法》要求对网店
+营业执照信息公示如下：</view>
+<view class="img-box">
+  <image class="img" src="{{img}}" mode="aspectFit"></image>
+</view>
+<view class="text">注：以上营业执照信息来源于卖家自行申报或工商系统数据，具体以工商部门登记为准。经营者需确保信息真实有效，平台也将定期核查。与实际不符，为避免违规，请联系当地工商部门或平台客服更新。</view>
+</view>

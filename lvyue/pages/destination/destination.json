@@ -1,0 +1,8 @@
+{
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "目的地",
+  "usingComponents": {
+    "loding": "/Component/loding/loding",
+    "empty":"/Component/empty/empty"
+  }
+}

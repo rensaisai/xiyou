@@ -1,0 +1,30 @@
+
+<view class="index">
+   <scroll-view scroll-y style="width:100%;height:100%;" scroll-with-animation scroll-into-view="{{cityListId}}">
+   <view class="letter">热门车型</view>
+    <view class="hot-box">
+        <view class="hot" wx:for="{{hot}}" wx:key="this"  bindtap="selectOver" data-id="{{item.id}}">
+           <image class="hot-img" src="{{item.img}}"  mode="aspectFit" lazy-load="true"></image>
+           <text class="vehicle-text" style='margin-left:0rpx;'>{{item.brandName}}</text>
+        </view>
+  </view>
+  <block wx:for="{{fctList}}" wx:key="item.id"> 
+  <view class="letter" id="{{item.letter}}">{{item.letter}}</view>
+  <block wx:for="{{item.data}}" wx:key="item.id"> 
+  <view class="vehicle-box" bindtap="selectOver" data-id="{{item.id}}">
+     <view class="vehicle">
+        <image src="{{item.img}}" class="img" mode="aspectFit" lazy-load="true"></image>
+        <view class="vehicle-text">{{item.brandName}}</view>
+     </view>
+  </view>
+  </block>
+  </block>
+   </scroll-view>
+  
+   <view class="right-box">
+     <block wx:for="{{letter}}" wx:key="this">
+     <view class="text" catchtap='letterTap' data-item='{{item}}'>{{item}}</view>
+     </block>
+   </view>
+</view>
+

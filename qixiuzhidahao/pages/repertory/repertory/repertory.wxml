@@ -1,0 +1,6 @@
+<view class="index">
+    <view class="box" bindtap='inquire'>查询</view>
+    <view class="box" bindtap='delivery'>出库</view>
+    <view class="box" bindtap='replenishment'>补货</view>
+    <view class="box">盘点</view>
+</view>

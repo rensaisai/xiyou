@@ -1,0 +1,15 @@
+<view class="heider">{{repairName}}</view>
+<view class="nav-box">
+    <view class="before" bindtap='before'>
+        <image class="arrow" src="/image/zuo.png"></image>
+        <view class="text">前一天</view>
+    </view>
+    <view class="time">{{time}}</view>
+    <view class="before" bindtap='after'>
+        <view class="text">后一天</view>
+        <image class="arrow" src="/image/you.png"></image>
+    </view>
+</view>
+<view class="box">
+   <view class="quantum {{item.checked?'time-box':'time-borde'}} {{item.active?'slect':''}}" wx:for="{{listtime}}" wx:key="this" bindtap='time' data-index="{{index}}">{{item.time}}</view>
+</view>

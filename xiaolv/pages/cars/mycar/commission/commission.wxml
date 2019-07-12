@@ -1,0 +1,53 @@
+<import src="/pages/common/none.wxml" />
+<view class="index">
+<block wx:for="{{list}}" wx:key="item.id">
+   <view class="time">{{item.letter}}</view>
+   <block wx:for="{{item.data}}" wx:key="item.id">
+   <view class="box" bindtap='list' data-status="{{item.status}}" data-id="{{item.id}}">
+      <image class="box-img" src="/image/icon.png"></image>
+      <view class="right-box">
+         <view class="left">
+            <view class="left-box">
+                <view class="left-name">{{item.type}}</view>
+                <view class="{{item.active?'price':'mane'}}">{{item.amount}}</view>
+            </view>
+            <view class="left-water">{{item.remark}}</view>
+         </view>
+    </view>
+   </view>
+   </block>
+  </block>  
+  <view hidden="{{hiddenNone}}">
+      <template is="none" />
+  </view>
+</view>
+<view class="layer" catchtouchmove="preventTouchMove" catchtap='hider' wx:if="{{showModal}}"></view>
+<view class="bounced" wx:if="{{showModal}}" animation="{{animationData}}">
+    <view class="list times">{{water.time}}</view>
+    <view class="list">
+       <view class="list-text">订单</view>
+       <view class="">:</view>
+       <view class="list-sttus">{{water.type}} | {{water.orderNo}}</view>
+    </view>
+    <view class="list">
+    <view class="list-text">客户</view>
+     <view class="">:</view>
+    <view class="list-sttus">{{water.userNickName}}  | {{water.phone}}</view>
+    </view>
+    <view class="list">
+    <view class="list-text">订单金额</view>
+     <view class="">:</view>
+    <view class="list-sttus">￥{{water.orderAmount}}</view>
+    </view>
+    <view class="list">
+    <view class="list-text">实际支付</view>
+     <view class="">:</view>
+    <view class='list-sttus'> ￥{{water.payAmount}}</view>
+   </view>
+    <view class="list">
+    <view class="list-text">津贴</view>
+     <view class="">:</view>
+    <view class="list-sttus"> ￥{{water.userAmount}}</view>
+    </view>
+</view>
+

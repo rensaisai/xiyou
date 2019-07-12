@@ -1,0 +1,6 @@
+<template name="none">
+<view class="view-none">
+    <image class="icon-none" src="/image/none.png"></image>
+    <view class="">这里空空如也...</view>
+</view>
+</template>

@@ -1,0 +1,5 @@
+@import "/pages/index/index.wxss";
+.index-boxs{
+  width: 100%;
+  height: auto;
+}

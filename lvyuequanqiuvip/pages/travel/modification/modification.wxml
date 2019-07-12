@@ -1,0 +1,83 @@
+<view class="index">
+   <view class="message">基本信息</view>
+   <form  bindsubmit="formSubmit" >
+       <view class="box">
+          <view class="box-input">
+              <view class="name">
+                 <text>姓</text>
+                 <text>名</text>
+              </view>
+              <view class="dian">
+                 <view class="yuan"></view>
+              </view>
+              <input class="input" placeholder="与证件姓名一致" name="name" value='{{list.touristName}}'></input>
+          </view>
+          <view class="box-input">
+              <view class="name">
+                 <text>性</text>
+                 <text>别</text>
+              </view>
+                <view class="dian">
+                 <view class="yuan"></view>
+              </view>
+              <view class="input-box">
+                  <view class="{{list.actives?'hot':'man'}}" data-man="男" bindtap='man'>男</view>
+                  <view class="{{list.actives?'man':'hot'}}" data-woman="女" bindtap='woman'>女</view>
+              </view>
+          </view>
+          <view class="box-input">
+              <view class="name">
+                 <text>出</text>
+                 <text>生</text>
+                 <text>日</text>
+                 <text>期</text>
+              </view>
+              <view class="dian">
+                 <view class="yuan"></view>
+              </view>
+              <picker
+    mode="date"
+    value="{{date}}"
+    end="{{schedule}}"
+    bindchange="bindDateChange"
+    class="input"
+  >
+    <view class="picker">{{list.birthDate}}</view>
+  </picker>
+          </view>
+          <view class="box-input">
+              <view class="name">
+                 <text>手</text>
+                 <text>机</text>
+                 <text>号</text>
+              </view>
+              <view class="dian"></view>
+              <input class="input" placeholder="出游人手机号" name="phone" value='{{list.touristPhone}}'></input>
+          </view>
+          <view class="box-input">
+              <view class="name">
+                 <text>国</text>
+                 <text>籍</text>
+              </view>
+              <view class="dian"></view>
+              <input class="input"  value='中国大陆' disabled="true"></input>
+          </view>
+         </view>
+         <!-- <view class="certificate">证件信息</view> -->
+          <view class="box-input type">
+              <view class="name">
+                 <text>身</text>
+                 <text>份</text>
+                 <text>证</text>
+                 <text>号</text>
+              </view>
+              <view class="dian"></view>
+              <input class="input" placeholder="身份证号" name="identity" value="{{list.identifyNo}}"></input>
+          </view>
+       <button form-type="submit" class="btn">保存</button>
+  
+   </form>
+
+
+
+</view>

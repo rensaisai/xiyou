@@ -1,0 +1,34 @@
+<import src="/pages/common/none.wxml" />
+
+<view class="index">
+<navigator bindtap="add" class="">
+  <button type="primary" class="button-big" style="background-color:#1296db" hidden='{{hiddenAddButton}}'>绑定银行卡</button>
+</navigator>
+  <view class="index-bd">
+    <view class="kind-list">
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd" bindtap="itemClick" data-index="{{index}}">
+            <!-- <image class="kind-list-img" src="{{item.headImg}}"></image> -->
+            <view class="kind-list-item-00">
+              <view class="kind-list-item-01">
+                <view class="kind-list-text">{{item.bankNo}}</view>
+                <button type="primary" plain="true" class="registor button-small" size="mini" bindtap="deleteClick" data-index="{{index}}" style="color:#1296db;border-color:#1296db">解绑</button>
+              </view>
+              <view class="kind-list-text3">{{item.userName}}</view>
+              <view class="kind-list-text4">{{item.bankName}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+      <view class="loadmore" hidden="{{isHideLoadMore}}">
+      <view class="loading"></view>
+      <view class="loadmore_tips">正在加载</view>
+  </view>
+  </view>
+  </view>
+</view>
+
+<view hidden="{{hiddenNone}}">
+  <template is="none" />
+</view>

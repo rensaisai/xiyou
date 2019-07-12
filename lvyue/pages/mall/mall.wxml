@@ -1,0 +1,170 @@
+
+<scroll-view class="menu_box" scroll-x scrollLeft="{{scrollLeft}}">
+      <block wx:for="{{list}}" wx:key="{{item.id}}">
+       <view class='tab {{currentData==index?"borders":""}}'  data-id="{{item.id}}" bindtap='checkCurrent' data-index="{{index}}">{{item.typeName}}</view>
+      </block>
+</scroll-view>
+      <view class="index-lists"></view>
+      <view class="seek-box" bindtap='seek'>
+         <image src="/image/seek.png" class="seek"></image>
+         <input class="seek-input" placeholder='搜索您想要的商品...'></input>
+      </view>
+      <swiper class="kind-list-items"  current="{{currentData}}" bindchange="eventchange" style='height:{{windowHeight}}px' >
+      <swiper-item  wx:for="{{commodity}}" wx:key="this">
+      <scroll-view scroll-y style='height:100%;' bindscrolltolower="scroll" enable-back-to-top="true" lower-threshold="100">
+          <swiper class="swiper-box" indicator-dots="true" autoplay="{{true}}" interval="4500" duration="500" circular="teue" >
+                <block wx:for="{{adsList}}" wx:key="{{item.id}}">
+                 <swiper-item >
+                     <image class="swiper-img" src="{{item.imgUrl}}" mode="widthFix"></image>
+                 </swiper-item>
+                </block> 
+          </swiper>
+            <!-- <view class="index-list">
+                <view class="shop" bindtap='boutique'>
+                    <view class="shop-img">
+                        <image src="/image/bao.jpg" class="bao-img" mode="scaleToFill"></image>
+                    </view>
+                    <text class="txt">精品</text>
+                </view>
+                 <view class="shop" bindtap='protect'>
+                    <view class="shop-img">
+                        <image src="/image/lh.jpg" class="bao-img" mode="widthFix"></image>
+                    </view>
+                    <text class="txt">旅护</text>
+                </view>
+                <view class="shop" bindtap='specialty'>
+                    <view class="shop-img">
+                        <image src="/image/tc.jpg" class="bao-img" mode="widthFix"></image>
+                    </view>
+                    <text class="txt">土特产</text>
+                </view>
+                <view class="shop" bindtap='circuit'>
+                    <view class="shop-img">
+                        <image src="/image/xl.jpg" class="bao-img" mode="widthFix"></image>
+                    </view>
+                    <text class="txt">线路</text>
+                </view>   
+            </view> -->
+            <view class="activity-box" wx:if="{{(currentData == 0) && (timegoods != null || limitgoods != null)}}">
+              <view class="tilimit-box">
+                <view class="tilimit-left-box">
+                    <view class="dian"></view>
+                    <view class="title">{{title}}</view>
+                </view>
+                <view class="tilimit-right-box">
+                    <view class="title-box  {{active?'active':''}}" bindtap='xtime'>限时</view>
+                    <view class="title-box {{active?'':'active'}}" bindtap='xquantity'>限量</view>
+                </view>
+              </view>
+              <scroll-view scroll-x class="activity-time-box" wx:if="{{active}}" scrollLeft="{{scrollLefts}}" wx:if="{{time != null}}">
+                   <view class="time-list {{index==indexs?'timactive':''}}" bindtap='timelist' wx:for="{{time}}" data-index="{{index}}" wx:key="this">
+                      <view class="time-top">{{item.time}}</view>
+                      <view class="time-bottom">{{item.msg}}</view>
+                   </view> 
+              </scroll-view>
+              <swiper class="time-good"  autoplay="true" interval="4000" indicator-dots="true" circular="teue" wx:if="{{active}}"> 
+                 <block wx:for="{{timegoods}}" wx:key="this">
+                 <swiper-item class="time-good">
+                    <scroll-view class="time-good" bindtap='buygoods' data-id="{{item.goodsId}}" data-runType="{{item.runType}}" data-runTimeId = "{{time[indexs].runTimeId}}" data-isRun="{{time[indexs].isRun}}" data-num = "{{item.num}}" data-maxNum="{{item.maxNum}}" data-runId="{{item.runId}}">
+                <view class="time-limit">
+                    <image src="/image/time.png" class="time-limit-img"></image>
+                </view>
+                   <!-- <view class="time-limit" wx:else>
+                    <image src="/image/limit.png" class="time-limit-img"></image>
+                </view> -->
+                        <view class="img">
+                             <view class="failure-box" wx:if="{{time[indexs].isRun == 0}}">
+                                 <image src="/image/failure.png"  class="failure-img"></image>
+                             </view>
+                             <view class="failure-box" wx:if="{{item.num== 0}}">
+                                 <image src="/image/soldout.png"  class="failure-img"></image>
+                             </view>
+                             <image src="{{item.img}}" class="time-goods-img" mode="aspectFit" lazy-load="true"></image>
+                        </view>
+                        <!-- <view class="list-count" wx:if="{{item.runType == 2}}">剩余{{item.num}}件</view> -->
+                         <view class="list-box">
+                     <view class="list-name">
+                        <!-- <view class="proprietary" wx:if="{{ceil.newProduct == 1}}">自营</view>
+                        <view class="promotion {{ceil.newProduct == 1?'hot':''}}" wx:if="{{ceil.hotSale == 1}}">热销</view>                    -->
+                       <view class="goods-img" style="overflow:hidden; text-overflow:ellipsis;white-space: nowrap;">
+                          【{{item.goodsName}}】{{item.subTitle}}
+                       </view>
+                     </view>
+                     <view class="list-name shops">
+                          <view class="list-price"><text class="activity-price">活动价:</text><text class="list-cost">￥</text>{{item.runPrice}}<text class="list-money">已售{{item.volume}}件</text></view>
+                          <view class="list-btn">立即购买</view>
+                     </view>
+                </view> 
+                    </scroll-view>
+                 </swiper-item>
+                 </block>
+              </swiper>
+                <swiper class="time-good"  autoplay="true" interval="4000" indicator-dots="true" circular="teue" wx:else> 
+                 <block wx:for="{{limitgoods}}" wx:key="this">
+                 <swiper-item class="time-good">
+                    <scroll-view class="time-good" bindtap='buygoods' data-id="{{item.goodsId}}" data-runType="{{item.runType}}" data-runTimeId = "{{time[indexs].runTimeId}}" data-isRun="{{time[indexs].isRun}}" data-num = "{{item.num}}" data-maxNum="{{item.maxNum}}" data-runId="{{item.runId}}">
+                <!-- <view class="time-limit" wx:if="{{item.runType == 1}}">
+                    <image src="/image/time.png" class="time-limit-img"></image>
+                </view> -->
+                <view class="time-limit">
+                    <image src="/image/limit.png" class="time-limit-img"></image>
+                </view>
+                        <view class="img">
+                             <view class="failure-box" wx:if="{{time[indexs].isRun == 0}}">
+                                 <image src="/image/failure.png"  class="failure-img"></image>
+                             </view>
+                             <view class="failure-box" wx:if="{{item.num== 0}}">
+                                 <image src="/image/soldout.png"  class="failure-img"></image>
+                             </view>
+                             <image src="{{item.img}}" class="time-goods-img" mode="aspectFit" lazy-load="true"></image>
+                        </view>
+                        <view class="list-count">剩余{{item.num}}件</view>
+                         <view class="list-box">
+                     <view class="list-name">
+                        <!-- <view class="proprietary" wx:if="{{ceil.newProduct == 1}}">自营</view>
+                        <view class="promotion {{ceil.newProduct == 1?'hot':''}}" wx:if="{{ceil.hotSale == 1}}">热销</view>                    -->
+                       <view class="goods-img" style="overflow:hidden; text-overflow:ellipsis;white-space: nowrap;">
+                          【{{item.goodsName}}】{{item.subTitle}}
+                       </view>
+                     </view>
+                     <view class="list-name shops">
+                          <view class="list-price"><text class="activity-price">活动价:</text><text class="list-cost">￥</text>{{item.runPrice}}<text class="list-money">已售{{item.volume}}件</text></view>
+                          <view class="list-btn">立即购买</view>
+                     </view>
+                </view> 
+                    </scroll-view>
+                 </swiper-item>
+                 </block>
+              </swiper>
+            </view>
+            <block wx:for="{{item.goods}}" wx:for-item="ceil" wx:key="this">
+            <view class="list" bindtap='buy' data-id="{{ceil.id}}">
+                <view class="list-img"  data-id="{{ceil.id}}">
+                <image src="{{ceil.img}}" class="image" mode="aspectFit" lazy-load="true"></image>
+                </view>
+                <view class="list-count">{{ceil.volume}}人已买</view>
+                <view class="list-box">
+                     <view class="list-name">
+                        <view class="proprietary" wx:if="{{ceil.newProduct == 1}}">自营</view>
+                        <view class="promotion {{ceil.newProduct == 1?'hot':''}}" wx:if="{{ceil.hotSale == 1}}">热销</view>                   
+                       <view class="goods-img">
+                          【{{ceil.goodsName}}】{{ceil.subtitle}}
+                       </view>
+                     </view>
+                     <!-- <view class="gold-code">
+                          <view class="code-img">可抵扣{{ceil.}}金币</view>
+                     </view> -->
+                     <view class="list-name shops">
+                          <!-- <text class="activity-price">店主价:</text> -->
+                          <view class="list-price"><text class="list-cost">￥</text>{{ceil.fansPrice}}<text class="list-money decline">(市场价￥{{ceil.price}})</text></view>
+                          <view class="list-btn">立即购买</view>
+                     </view>
+                </view> 
+            </view>
+            </block>
+            <empty hiddenNone="{{item.hiddenNone}}"/>
+            <loding  loadingType="{{item.loadingType}}" wx:if="{{item.hiddenNone}}"/>
+     </scroll-view>
+    </swiper-item>
+    </swiper>
+    

@@ -1,0 +1,57 @@
+<scroll-view class="tab-nav">
+   <block wx:for="{{list}}" wx:key="this">
+      <view class="{{currentData==index?'selects':''}} text" bindtap='checkCurrent' data-index="{{index}}">{{item}}</view>
+   </block>  
+</scroll-view>
+<view class="index">
+<view class="block1"></view>
+<swiper  style='height:{{windowHeight}}px'  bindchange="eventchange" current="{{currentData}}">
+   <swiper-item style="padding:0;">
+     <scroll-view scroll-y bindscrolltolower="scroll" style='height:100%;overflow: scroll;' enable-back-to-top="true" lower-threshold="100">
+       <view class="search-box">
+           <input class="search-input" placeholder='输入关键字搜索商品'  bindinput="goodsseek" value='{{search}}'></input>
+           <image class="search-icon" src="/image/seek.png"></image>
+           <view class="btn-sech" bindtap='goodssech' wx:if="{{search != ''}}">搜索</view>
+           <view class="btn-text" bindtap='goodscancel' wx:else>取消</view>
+           
+       </view>
+       <view class="index-box">
+       <view class="list-box" style="{{index?'':'margin-top: 0rpx;'}}" wx:for="{{goodslist}}" wx:key="this"  bindtap='goods' data-index="{{index}}">
+          <view class="order-box">
+             <image class="img" src="{{item.img}}" mode="aspectFill" lazy-load="true"></image>
+             <view class="order-right-box">
+               <view class="shops-name">【{{item.goodsName}}】 {{item.subtitle}}</view>
+               <view class="price">￥{{item.price}}</view>
+             </view>
+          </view>
+       </view>
+       <empty hiddenNone = "{{hiddenNone}}"/>
+       <loding  loadingType="{{loadingType}}" wx:if="{{hiddenNone}}" lod="red-text"/>
+       </view>
+     </scroll-view>
+   </swiper-item>
+    <swiper-item style="padding:0;">
+     <scroll-view scroll-y bindscrolltolower="scroll" style='height:100%;overflow: scroll;' lower-threshold="100" enable-back-to-top="true">
+       <view class="search-box">
+           <input class="search-input" placeholder='输入关键字搜索线路' bindinput="goodsseek" value='{{search}}'></input>
+           <image class="search-icon" src="/image/seek.png"></image>
+          <view class="btn-sech" bindtap='goodssech' wx:if="{{search != ''}}">搜索</view>
+           <view class="btn-text" bindtap='goodscancel' wx:else>取消</view>
+       </view>
+       <view class="index-box">
+       <view class="list-box" wx:for="{{goodslist}}" style="{{index?'':'margin-top: 0rpx;'}}" wx:key="this"  bindtap='goods' data-index="{{index}}">
+          <view class="order-box">
+             <image class="img" src="{{item.img}}" mode="aspectFill" lazy-load="true"></image>
+             <view class="order-right-box">
+               <view class="shops-name">【{{item.goodsName}}】 {{item.subtitle}}</view>
+               <view class="price">￥{{item.price}}</view>
+             </view>
+          </view>
+       </view>
+       <empty hiddenNone = "{{hiddenNone}}"/>
+       <loding  loadingType="{{loadingType}}" wx:if="{{hiddenNone}}" lod="red-text"/>
+       </view>
+     </scroll-view>
+   </swiper-item>
+</swiper>
+</view>

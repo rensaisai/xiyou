@@ -1,0 +1,28 @@
+<import src="/pages/common/head.wxml" />
+
+<template is="head" data="{{title: ''}}"/>
+
+<view class="index">
+<form bindsubmit='applyCashRequest'>
+  <view class="page-section">
+      <view class="weui-cells__title">银行卡</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="bankno" class="weui-input" disabled="false"  placeholder="请输入银行卡" value='{{bankno}}'/>
+        </view>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">金额</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="amount" type="number" class="weui-input"  placeholder="请输入金额"/>
+        </view>
+      </view>
+  </view>
+
+  <button type="primary" class="button-big login" style="background-color:#1296db"form-type='submit'>确定</button>
+
+</form>
+
+</view>

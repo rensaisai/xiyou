@@ -1,0 +1,160 @@
+.index{
+  width: 100%;
+  height: auto;
+  padding-top: 2rpx;
+  box-sizing: border-box;
+}
+.incone-box{
+  width: 100%;
+  height: 216rpx;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.name{
+  font-size: 24rpx;
+  color: #232323;
+}
+.incone{
+  font-size: 60rpx;
+  color: #232323;
+  font-weight: 700;
+}
+.box{
+  width: 100%;
+  height: 637rpx;
+  background: #ffffff;
+  margin-top: 15rpx;
+}
+.market{
+  width: 100%;
+  height: 92rpx;
+  border-bottom:1rpx dashed #989898;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+.market-left{
+  width: auto;
+  height: 92rpx;
+  display: flex;
+  align-items: center;
+}
+.yuan{
+  width: 10rpx;
+  height: 10rpx;
+  border-radius:5rpx;
+  background: #E31436; 
+}
+.market-title{
+  font-size: 30rpx;
+  color: #232323;
+  margin-left: 10rpx;
+}
+.years-btn{
+  width: 88rpx;
+  height: 42rpx;
+  border-radius:21rpx;
+  background: #F0F0F0;
+  font-size: 24rpx;
+  color: #232323;
+  text-align: center;
+  line-height: 42rpx;
+  margin-left: 10rpx; 
+}
+.hot{
+  color: #ffffff;
+  background: #E31436;
+}
+.line-box{
+  width: 100%;
+  height: 220rpx;
+}
+.canvas{
+  width: 100%;
+  height: 200rpx;
+}
+.sign-box{
+  width: 100%;
+  height: 100rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.sign{
+  width: 100%;
+  height: 50rpx;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  font-size: 24rpx;
+  color: #232323;
+  line-height: 50rpx;
+}
+.sign-color{
+  width: 16rpx;
+  height: 16rpx;
+  background: #E31436;
+  margin-right:10rpx; 
+}
+.sign-xian{
+  width: 20rpx;
+  height: 4rpx;
+  background: #D5A660;
+  margin-right:10rpx;
+}
+.roundness-box{
+  width: 100%;
+  height: 582rpx;
+  background: #ffffff;
+  margin-top: 15rpx;
+}
+.ball-box{
+  width: 100%;
+  height: 390rpx;
+  display:flex;
+}
+.roundness1-box{
+  width: 50%;
+  height: 194px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.canvas1{
+  width: 370px;
+  height: 200px;
+}
+.income{
+  font-size: 28rpx;
+  color: #232323;
+}
+.roundness1-label{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.roundness1-label-box{
+  width: 12%;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  color: #232323;
+  margin-left: 40rpx;
+}
+.roundness1-color{
+  width: 21rpx;
+  height: 21rpx;
+  background: #D5A660;
+}
+.color{
+  background-color: #E31436;
+}

@@ -1,0 +1,4 @@
+@import "/pages/common/index.wxss";
+.kind-list-item-00{
+  width: 100%;
+}

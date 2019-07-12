@@ -1,0 +1,36 @@
+
+<view class="index">
+<view class="Since-list">
+<block wx:for="{{list}}" wx:key="this">
+<view class="list" bindtap='bourn' data-id="{{item.id}}" data-type="{{item.type}}">
+        <view class="list-img"  style="background:url({{item.img}}) no-repeat center center/cover"></view>
+        <view class="hint">
+           <view class="sign"></view>
+           <text class='sign-right'>多地出港 {{item.age}}周岁</text>
+        </view>
+        <view class="list-bottom">
+           <view class="spot-box">
+              <view class="spot-left">{{item.lineName}}{{item.subtitle}}</view>
+           </view>
+           <view class="spot-box host-price">
+              <view class="spot-left spot-price" >
+                 <view class="price">会员价￥{{item.memberPrice}}</view>
+                 <text class="cut">起/人.不含机票</text>
+              </view>
+           </view>
+           <view class="spot-box host-price">
+              <view class="spot-left spot-price" >
+                 <view class="price">非员价￥{{item.noMemberPrice}}</view>
+                 <text class="cut">起/人.不含机票</text>
+              </view>
+           </view>
+        </view>
+    </view>
+  </block>  
+  </view>
+ <empty hiddenNone = "{{hiddenNone}}"/>
+ <!-- <view class="lodings" hidden="{{hidden}}"> -->
+   <loding  loadingType="{{loadingType}}" wx:if="{{hiddenNone}}"/>
+ <!-- </view> -->
+</view>
+

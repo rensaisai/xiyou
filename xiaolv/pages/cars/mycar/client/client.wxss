@@ -1,0 +1,6 @@
+@import "/pages/cars/mycar/team/team.wxss";
+.left-generation{
+  width: auto;
+  font-size:24rpx;
+  color: #999999;
+}

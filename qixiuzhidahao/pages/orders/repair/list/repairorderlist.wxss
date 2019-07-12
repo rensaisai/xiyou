@@ -1,0 +1,9 @@
+@import "/pages/orders/my/list/myorderlist.wxss";
+.maintain{
+  display: flex;
+  flex-direction: row-reverse;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  color: #1296db;
+  font-weight: 600;
+}

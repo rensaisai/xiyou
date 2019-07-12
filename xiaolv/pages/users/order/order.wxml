@@ -1,0 +1,176 @@
+<view class="consignee-box">
+   <view class="consignee">
+       <view class="consignee-icon">
+           <view class="icon"></view>
+           <view class="consignee-name">{{name}}</view>
+       </view>
+       <view class="consignee-phone">{{phone}}</view>
+   </view>
+</view>
+<view class="consignee-box consignee-box1" bindtap='address'>
+   <view class="consignee">
+       <view class="consignee-icon">
+           <view class="icon1"></view>
+           <view class="consignee-name">{{entity.detectionLineName}}</view>
+       </view>
+        <view class="icon2"></view>
+   </view>
+</view>
+<view class="line"></view>
+<view class="index-box" wx:for="{{list}}" wx:key="item.id">
+ <view class="maintenance">
+       <view class="service">
+           <view class="service-name">{{item.itemName}}</view>
+       </view>
+    </view>
+    <view class="maintenance-box">
+        <view class="maintenance-list">
+           <image class="items-img" src="{{entity.headImg}}" mode="aspectFill" lazy-load="true"></image>
+           <view class="maintenance-right">
+            <view class="package-name">{{item.itemName}}</view>
+            <view class="specifications-price"><text class="price-icon">￥</text>{{item.price}}</view>
+           </view>
+        </view>
+        <view class="envelope" bindtap='envelope' data-index="{{index}}">
+          <view class="envelope-name">红包卡券</view>
+          <view class="envelope-right-box">
+              <view class="reduction">{{item.cardNum}}</view>
+              <view class="icon2"></view>
+          </view>
+        </view>
+        <view class="clear"></view>
+    </view>
+  </view>  
+    <view class="pay-box">
+       <view class="consignee-box pay">
+           <view class="consignee-name pay-name" >支付方式</view>
+       </view>
+       <view class="pay-icon-box">
+           <view class="icon-box">
+              <view class="weixin-icon"></view>
+              <view class="weixin-name">微信</view>
+           </view> 
+           <view class="selected-btn"></view>
+       </view>
+       <view class="consignee-box pay">
+           <view class="consignee-name pay-name" >优惠金额</view>
+           <view class="pay-price"><text wx:if="{{preferential != 0}}">-</text>{{preferential}}</view>
+       </view>
+    </view>
+    <!-- <view class="envelope" bindtap='envelope'>
+       <view class="envelope-name">红包卡券</view>
+       <view class="envelope-right-box">
+          <view class="reduction">{{member}}</view>
+          <view class="icon2"></view>
+       </view>
+    </view> -->
+    <!-- <view class="envelope">
+       <view class="envelope-name">发票</view>
+       <view class="envelope-right-box">
+          <view class="reduction invoice">不开票</view>
+          <view class="icon2"></view>
+       </view>
+    </view> -->
+    <view class="pay-details-box">
+      <view class="pay-details">
+         <view class="pay-name">商品总价</view>
+         <view class="goods-price">￥{{money}}</view>
+      </view>
+      <view class="pay-details">
+         <view class="pay-name">优惠金额</view>
+         <view class="goods-price">￥{{preferential}}</view>
+      </view>
+      <view class="pay-details">
+         <view class="pay-name">车豆支付</view>
+         <view class="goods-price">￥{{bean}}</view>
+      </view>
+      <view class="price-box">
+          <view class="shops-price">实际支付：<text class="price">¥{{price}}</text></view>
+      </view>
+      <button class="btn" loading="{{loading}}" disabled="{{loading}}" bindtap='btn'>去支付</button>
+    </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <view class="index">
+  <view class="kind-list-item detail-item">
+    <view class="kind-list-text">检测站门店：{{entity.detectionLineName}}</view>
+    <view id="{{item.id}}" class="kind-list-item-hd title">
+      <image class="kind-list-img" src="{{entity.headImg}}"></image>
+      <view class="kind-list-item-00">
+        <view class="kind-list-item-01">
+          <view class="kind-list-text">{{setmeal.setmealName}}</view>
+          <view class="kind-list-text item-price">¥:{{setmeal.price}}</view>
+        </view> -->
+        <!-- <view class="kind-list-text3"></view>
+        <view class="kind-list-text4">{{setmeal.remark}}</view> -->
+      <!-- </view>
+    </view>
+    <block wx:for-items="{{setmeal.sub}}" wx:key="{{item.id}}">
+      <view class="kind-list-item-01 detail-itemsub">
+        <view class="kind-list-text3">{{item.name}}</view>
+        <view class="kind-list-text2 item-normalprice">¥:{{item.price}}</view>
+      </view>
+    </block>
+  </view>
+  
+  
+
+
+
+
+
+  <view class="page-section">
+    <view class="page-section-title">选择支付方式</view>
+    <view class="weui-cells weui-cells_after-title">
+      <radio-group bindchange="radioChange">
+        <label class="weui-cell weui-check__label" wx:for="{{pays}}" wx:key="{{item.value}}">
+
+          <view class="weui-cell__hd">
+            <radio value="{{item.value}}" checked='{{item.checked}}' color="#fd4200"/>
+          </view>
+          <view class="weui-cell__bd">{{item.name}}</view>
+        </label>
+      </radio-group>
+    </view>
+     <view class="section">
+  <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+    <view class="picker">
+      选择检测日期:{{date}}
+    </view>
+  </picker>
+</view>
+<view class="section time">
+  <picker mode="time" value="{{time}}"  bindchange="bindTimeChange">
+    <view class="picker">
+      选择检测时间:{{time}}
+    </view>
+  </picker>
+</view>
+  </view>
+  <button type="primary" class="button-big" style="background-color:#fd4200" bindtap="commitOrderUrl">去付款</button>
+
+  <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}"></view> -->
+  <!-- http://blog.csdn.net/qq_24734285/article/details/53816637 -->
+
+<!-- </view> -->

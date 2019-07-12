@@ -1,0 +1,121 @@
+.img-box{
+  width: 100%;
+  height: 500rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img-icon{
+  width: 100%;
+  height: 100%; 
+}
+page{
+  background: #ffffff;
+}
+.detection-box{
+  width: 100%;
+  height: auto;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.detection-btn{
+  width: 100%;
+  height: 100rpx;
+  background: linear-gradient(to right, #f8632d , #fb340e); /* 标准的语法 */
+  border-radius:10rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30rpx;
+  color: #ffffff;
+}
+.binding{
+  width: 120rpx;
+  height: 60rpx;
+  border: 2rpx solid #ffffff;
+  border-radius:15rpx; 
+  text-align: center;
+  line-height: 60rpx;
+}
+.text-box{
+  width: 100%;
+  height: auto;
+  padding: 100rpx 20rpx 0;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  line-height: 45rpx;
+}
+.btn-box{
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 20rpx;
+  display: flex;
+  padding:0 20rpx;
+  box-sizing: border-box; 
+  justify-content: space-between;
+  align-items: center;
+}
+.btn{
+  width: 45%;
+  height: 80rpx;
+  background: linear-gradient(to right, #f8632d , #fc3b00); /* 标准的语法 */
+  border-radius:10rpx; 
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #ffffff;
+}
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 1000;
+}
+.commodity_attr_box {
+  position: fixed;
+  width: 80%;
+  height: 300rpx;
+  top: 50%;
+  left: 50%;
+  margin-top:-150rpx;
+  margin-left: -40%;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius:10rpx; 
+  padding-top: 55rpx;
+  box-sizing: border-box;
+}
+.input-SIM{
+  width: 100%;
+  height: 90rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.btns{
+  display: flex;
+  width: 100%;
+  height: 100rpx;
+  border-top:1rpx solid #eeeeee; 
+}
+button{
+  width: 50%;
+  margin-top:0rpx;
+  margin-bottom:0rpx; 
+  padding-left: 0;
+  padding-right: 0;
+  background: #ffffff; 
+}
+button::after{
+  border: none;
+}

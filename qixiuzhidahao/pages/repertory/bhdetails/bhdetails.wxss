@@ -1,0 +1,147 @@
+.index{
+  width: 100%;
+  height: auto;
+}
+.list{
+  width: 25%;
+  min-height: 100rpx;
+  max-height: auto;
+  padding: 0 5rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.btn-box{
+  width: 100%;
+  height: 100rpx;
+  padding-right:20rpx;
+  box-sizing: border-box; 
+  border-bottom:1rpx solid #000000;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;  
+}
+.btn{
+  width: 150rpx;
+  height: 70rpx;
+  border: 1rpx solid #000000;
+  line-height: 68rpx;
+  text-align: center;
+}
+.list-box{
+  width: 100%;
+  min-height: 100rpx;
+  max-height: auto;
+  border-bottom:1rpx solid #000000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  font-size: 26rpx;
+}
+.list1{
+  width: 20%;
+  min-height: 100rpx;
+  max-height: auto;
+  padding: 0 5rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.list2{
+  width: 20%;
+  min-height: 100rpx;
+  max-height: auto;
+  padding: 0 5rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.list3{
+  width: 15%;
+  min-height: 100rpx;
+  max-height: auto;
+  padding: 0 5rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-wrap:wrap;
+  word-wrap:break-word; 
+}
+.list4{
+  width: 28%;
+  min-height: 100rpx;
+  max-height: auto;
+  padding: 0 5rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-left{
+  width: 28%;
+  height: 40rpx;
+  border:1rpx solid #000000; 
+  text-align: center;
+  line-height: 38rpx;
+}
+.list5{
+  width: 20%;
+  min-height: 100rpx;
+  max-height: auto;
+  padding: 0 5rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-wrap:wrap;
+  word-wrap:break-word;  
+}
+.list6{
+  width: 8%;
+  min-height: 100rpx;
+  max-height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cuo{
+  width:60rpx;
+  height: 60rpx;
+}
+.pay-box{
+  width: 100%;
+  height: 100rpx;
+  padding: 0 20rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+}
+.radio-group{
+  width: 100%;
+  height: auto;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.radio{
+  widows: 100%;
+  height: 100rpx;
+  display: block;
+}
+.pay-btn{
+  position: fixed;
+  bottom:20rpx; 
+  width: 95%;
+  left: 2.5%;
+  height: 80rpx;
+  background: #1296db;
+  color: #ffffff;
+  line-height: 80rpx;
+}
+button::after{
+  border: none;
+}
+button[disabled] {
+  color: #fff !important;
+  background: #1296db !important;
+}

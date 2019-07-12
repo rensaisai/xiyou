@@ -1,0 +1,58 @@
+<view class="header">
+  <view class="header-right-box">根据相关部门要求，请上传收货人真是的身份信息，商家将
+使用您提交的信息办理个人物品相关手续，谢谢配合!</view>
+   <image class="header-icon" src="/image/icon.png"></image>
+</view>
+<view class="title">
+   <view class="title-left">身份证照片</view>
+   <view class="title-right">
+      <view class="mark">要求完整，清晰</view>
+      <image class="header-icon" src="/image/icon.png"></image>
+   </view>
+</view>
+<view class="box">
+   <view class="identity-box">
+      <view class="positive-box"></view>
+      <view class="positive-right-box" bindtap='positive' wx:if="{{tempFilePaths1 === ''}}">
+        <view class="positive">
+          <image class='positive-icon' src="/image/icon1.png" ></image>
+          <view class="text">上传正面照</view>
+        </view>
+      </view>
+      <image class="positive-img" src="{{tempFilePaths1}}" wx:else mode="aspectFit" bindtap='positive'></image>
+   </view>
+   <view class="identity-box">
+      <view class="positive-box reverse"></view>
+      <view class="positive-right-box" bindtap='reverse' wx:if="{{tempFilePaths2 === ''}}">
+        <view class="positive">
+          <image class='positive-icon' src="/image/icon1.png"></image>
+          <view class="text">上传反面照</view>
+        </view>
+      </view>
+       <image class="positive-img" src="{{tempFilePaths2}}" wx:else mode="aspectFit" bindtap='reverse'></image>
+   </view>
+</view>
+<form bindsubmit="formSubmit">
+   <view class="consignee">
+     <view class="consignee-left">收货人真实姓名：</view>
+     <input class="input" placeholder='请输入真实姓名' placeholder-class="place" type="text" name="name"></input>
+   </view>
+   <view class="consignee">
+     <view class="consignee-left">收货人身份证号：</view>
+     <input class="input inputs" placeholder='请输入18位身份证号码' placeholder-class="place" type="idcard" name="card"></input>
+   </view>
+   <view class="prompt">所传身份证相关资料只用于购买跨境直邮商品的清关手续，国家隐私法规定，旅约全球确保你的个人隐私权利不受侵犯。</view>
+   <view class="information-box" bindtap='information'>
+      <view class="information-icon">
+         <view class="for-icon" wx:if="{{active==true}}"></view>
+      </view>
+      <view class="information-text">我同意身份证信息将由商家永贵商品清关</view>
+   </view>
+   <button form-type="submit" hover-class="none">确认提交</button>
+</form>
+<view style='width:0rpx;height:0rpx;overflow:hidden;'>
+   <canvas  canvas-id="canvas1" class="canvas" style="position:relative;left:1000rpx"></canvas>
+</view>
+<view style='width:0rpx;height:0rpx;overflow:hidden;'>
+   <canvas  canvas-id="canvas2" class="canvas" style="position:relative;left:1000rpx"></canvas>
+</view>

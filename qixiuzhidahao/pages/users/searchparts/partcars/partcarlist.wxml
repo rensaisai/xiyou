@@ -1,0 +1,34 @@
+<import src="/pages/common/none.wxml" />
+
+<view class="index">
+
+  <navigator url='/pages/cars/carselect/fct/fctlist?addCar=1' class="navigator">
+    <button type="primary" class="button-big" style="background-color:#1296db" hidden='{{cantAdd}}'>新增车辆</button>
+  </navigator>
+  <view class="index-bd">
+    <view class="kind-list">
+    <!-- <view class='city_first_letter'>{{titleName}}</view> -->
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd" data-index="{{index}}">
+            <image class="car-list-img" src="{{logo}}" mode="widthFix"></image>
+            <view class="kind-list-item-00">
+              <view class="kind-list-item-01">
+                <view class="kind-list-text">{{item}}</view>
+              </view>
+            </view>
+          </view>
+          
+        </view>
+      </block>
+      <view class="loadmore" hidden="{{isHideLoadMore}}">
+      <view class="loading"></view>
+      <view class="loadmore_tips">正在加载</view>
+  </view>
+  </view>
+  </view>
+</view>
+
+<view hidden="{{hiddenNone}}">
+  <template is="none" />
+</view>

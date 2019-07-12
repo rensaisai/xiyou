@@ -1,0 +1,8 @@
+@import "/pages/common/index.wxss";
+
+.page-section{
+  margin-bottom: 20rpx;
+}
+.registor{
+  margin:50rpx;
+}

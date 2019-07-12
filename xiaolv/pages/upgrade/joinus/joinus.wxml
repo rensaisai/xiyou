@@ -1,0 +1,85 @@
+<view class="index">
+   <view class="img-box">
+      <view class="icon-box">
+         <image src="/image/logo.png" class="icon-img"></image>
+      
+      </view>
+
+      <!-- <image class="image" wx:if="{{tempFilePaths != null}}" src="{{tempFilePaths}}" bindtap='uploading' mode="aspectFit"/>
+       <view class="img1"  wx:else>
+          <view class="uploading-box" bindtap='uploading'>
+              <view class="uploading"></view>
+              <view class="uploading-text">点击上传</view>
+          </view>
+       </view>
+        <image class="image" wx:if="{{tempFilePaths1 != null}}" src="{{tempFilePaths1}}" bindtap='uploading1' mode="aspectFit"/>
+       <view class="img1 img2" wx:else>
+          <view class="uploading-box" bindtap='uploading1'>
+              <view class="uploading"></view>
+              <view class="uploading-text">点击上传</view>
+          </view>
+       </view>
+        <view class="text-box">
+           <view class="method-img"></view>
+          <text class="text">信息仅用于实名验证，我已阅读并接受</text><text class='link' bindtap='links'>《声明》</text>
+        </view>
+        <view class="recommend-boxs">
+        <view class="recommend">
+            <view class="recommend-text">申请人姓名:</view>
+            <input class="input" placeholder="请输入申请人姓名" placeholder-style="color:#CCCCCC; font-size=30rpx;" value='{{name}}' bindinput="name"></input>
+        </view>
+      </view>
+       <view class="recommend-boxs">
+        <view class="recommend">
+            <view class="recommend-text">申请人身份证号:</view>
+            <input class="input" placeholder="请输入申请人身份证号" placeholder-style="color:#CCCCCC; font-size=30rpx;" value='{{identity}}' bindinput="identity"></input>
+        </view>
+      </view>
+      <view class="signature-box">
+         <view class="apply">
+            <view>申请人签名</view>
+              <view  class='delbutton' bindtap="cleardraw">重签</view>
+         </view>
+         <canvas class="canvas" id="canvas" canvas-id="canvas" disable-scroll="true" bindtouchstart="canvasStart" bindtouchmove="canvasMove" bindtouchend="canvasEnd" touchcancel="canvasEnd" binderror="canvasIdErrorCallback"></canvas>
+      </view> -->
+      <view class="recommend-box">
+        <view class="recommend">
+            <view class="recommend-text">推荐人工号:</view>
+            <input class="input" placeholder="请输入推荐人工号" placeholder-style="color:#CCCCCC; font-size=30rpx;" value='{{number}}' bindinput="number" disabled="{{forbid}}"></input>
+        </view>
+      </view>
+
+       <view class="method">
+          <view class="method-box">
+             <view class="method-img"></view>
+             <view class="method-text">支付方式：微信支付</view>
+          </view>
+      </view>
+       <view class="method">
+          <view class="method-box" bindtap='radio'>
+             <view class="{{active?'method-img':'method-imgs'}}" ></view>
+             <view class="method-text texts">
+                <text>我已阅读并接受</text><text catchtap='link' class="link">《软件服务协议》</text>
+             </view>
+          </view>
+      </view>
+      <view class="btn" bindtap='submit'>申请并支付</view>
+  </view>    
+</view>
+<cover-view class="commodity_screen"  catchtouchmove='true'  wx:if="{{showModalStatus}}"></cover-view> 
+<cover-view  catchtouchmove='true' class="commodity_attr_box" wx:if="{{showModalStatus}}">
+   <cover-image class="box" src="https://www.cmspq.xyz/cmsweb/imgs/ads/cardBackGround.png">
+      
+   </cover-image>
+   <cover-view class="recommend-person">是否绑定以下推荐人</cover-view>
+      <cover-view class="user-box">
+          <cover-image class="user-img" src="{{user.headImg}}" wx:if="{{user.headImg != '' && user.headImg != null }}"></cover-image>
+          <cover-image src="/image/headdefault.png" class="user-img" wx:else></cover-image>
+          <cover-view class="user-name-box" wx:if= "{{user.userName != '' &&  user.userName != null}}">{{user.userName}}</cover-view>
+          <cover-view class="user-name-box" wx:else>{{user.nickName}}</cover-view>
+      </cover-view>
+      <cover-view class="bottom">
+        <cover-view class='left color' bindtap='cancel'>取消</cover-view>
+        <cover-view class='left text-color' bindtap='affirm'>确认</cover-view>
+      </cover-view>
+</cover-view>

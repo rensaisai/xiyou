@@ -1,0 +1,16 @@
+@import "/pages/common/index.wxss";
+.item-list-00{
+display: flex;
+justify-content: space-between;
+}
+.item-list{
+  display: flex;
+  flex-direction: column;
+  /* align-items:  center;/ */
+}
+.text3{
+  margin-left: 0;
+}
+.text4{
+  margin-left: 0;
+}

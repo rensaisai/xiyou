@@ -1,0 +1,34 @@
+<view class="price-box">
+   <view class="price">
+     <view class="amount">{{appBalance}}</view>
+     <view class="amount-text">可用金额</view>
+   </view>
+</view>
+<form bindsubmit="formSubmit">
+<view class="input-box">
+  <view class="left">提现金额</view>
+  <input class="right" placeholder='请输入提现金额' name="price" ></input>
+</view>
+<view class="input-box">
+  <view class="left">真实姓名</view>
+  <input class="right" value='{{name}}' disabled="true" name="name"></input>
+</view>
+<view class="input-box">
+  <view class="left">银行卡号</view>
+  <input class="right" value='{{cardnumber}}' disabled="true" name="cardnumber"></input>
+</view>
+<view class="input-box">
+  <view class="left">开户行名称</view>
+  <input class="right" value='{{bank}}' disabled="true" name="bank"></input>
+</view>
+<view class="input-box">
+  <view class="left">开户行地区</view>
+  <input class="right" value='{{selec}}' disabled="true" name="selec"></input>
+</view>
+<view class="input-box">
+  <view class="left">通知手机号</view>
+  <input class="right" value='{{phone}}' disabled="true" name="phone"></input>
+</view>
+<button form-type="submit" class="btn">申请</button>
+</form>
+

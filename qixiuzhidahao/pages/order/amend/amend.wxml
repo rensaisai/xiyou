@@ -1,0 +1,13 @@
+<view class="index"> 
+  <view class="motorcycle">订单车型：{{carSplName}}</view>
+  <view class="motorcycle">订单车牌号：{{carNo}}</view>
+  <view class="motorcycle-box">
+      <view class="title">修改车型</view>
+      <input class="motorcycle-input" placeholder='请输入车型'></input>
+  </view>
+  <view class="motorcycle-box">
+      <view class="title">修改车牌号</view>
+      <input class="motorcycle-input" placeholder='请输入车牌号'></input>
+  </view>
+  <button class="btn">提交</button>
+</view>

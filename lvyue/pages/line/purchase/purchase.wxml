@@ -1,0 +1,33 @@
+<view class="index">
+   <view class="box">
+     <view class="serve">
+         <view class="serve-img"></view>
+         <view class="serve-text">服务标准</view>
+     </view>
+     <view class="standard">
+       <text class="standard-text">{{details[0].toursList[0].serviceStandard}}</text>
+     </view>
+   </view>
+
+    <view class="box boxs">
+     <view class="serve">
+         <view class="img"></view>
+         <view class="serve-text">收客标准</view>
+     </view>
+     <view class="standard">
+       <text class="standard-text">{{details[0].toursList[0].customerCriteria}}</text>
+     </view>
+   </view>
+
+    <view class="box boxs">
+     <view class="serve">
+         <view class="serve-imgs"></view>
+         <view class="serve-text">补充说明</view>
+     </view>
+     <view class="standard">
+       <text class="standard-text">{{details[0].toursList[0].supplement}}</text>
+     </view>
+   </view>
+
+
+</view>

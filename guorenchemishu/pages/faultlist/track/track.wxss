@@ -1,0 +1,41 @@
+@import "/pages/xcar/xcar";
+page{
+  background: #ffffff;
+}
+.index{
+  widows: 100%;
+  height: auto;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.list-time-box{
+  width: 100%;
+  height: 26rpx;
+  display: flex;
+}
+.list-img{
+  width: 26rpx;
+  height: 26rpx;
+}
+.list-time{
+  font-size: 26rpx;
+  font-weight: 600;
+  line-height: 26rpx;
+  margin-left: 20rpx;
+}
+.list-boxs{
+  width: 100%;
+  height: 240rpx;
+  border-left:1rpx solid #D9D9D9;
+  margin-left:13rpx; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left:20rpx;
+  box-sizing: border-box;
+}
+.bottom-box{
+  box-shadow: 0 0 0 1rpx rgba(0, 0, 0, 0.1); 
+  padding-left: 10rpx;
+  box-sizing: border-box; 
+}

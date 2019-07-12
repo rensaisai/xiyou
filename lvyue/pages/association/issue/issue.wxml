@@ -1,0 +1,38 @@
+<view class="index">
+    <view class="img-box">
+       <view class="issue-img-boxs"  wx:for="{{img}}" wx:key="this" data-index="{{index}}">
+          <image class="issue-img" src="{{item}}" mode="aspectFit"></image>
+          <view class="detile" bindtap='detail' data-index="{{index}}">删除</view>
+       </view>
+       <image class="issue-img" src="/image/addition.png" bindtap='img' wx:if="{{imgnum != 3}}"></image> 
+    </view>
+    <form bindsubmit="formSubmit">
+    <view class="input-box">
+        <input class="title" placeholder='标题' maxlength="30" bindinput="title" name="title"></input>
+        <view class="title-num">{{num}}/30</view>
+    </view>
+    <view class="text-box">
+       <textarea class="text" placeholder="{{placeholder}}" name="content"></textarea>
+    </view>
+     <button form-type="submit" class='issue'>{{text}}</button>
+    </form>
+    <view class="relevance-goods-box" wx:if="{{busiId != null}}">
+      <view class="shut-box" catchtap='shutbtn'>
+         <image class="shut-btn" src="/image/cancel.png"></image>
+      </view>
+      <view class="goods-box">
+        <view>
+            <image class="goods-img" src="{{goodsimg}}" mode="aspectFill" ></image>
+        </view>
+        <view class="goods-right">
+           <view class="goods-left">{{goodsname}}</view>
+           <view class="goods-tap">￥{{price}}</view>
+        </view>
+          
+      </view>
+    </view>
+    <view class="add-goods-box" bindtap='goods' wx:else>
+      <image src="/image/addgoods.png" class="add-goods"></image>
+    </view>
+    <view class="clear"></view>
+</view>

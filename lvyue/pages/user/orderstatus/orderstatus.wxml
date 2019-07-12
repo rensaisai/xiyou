@@ -1,0 +1,64 @@
+<view class="index">
+   <view class="titles">{{orderlist.subtitle}}</view>
+   <view class="travel-information">
+       <view class="travel-box">
+          <text>出发日期</text>
+          <text class="text">{{orderlist.scheduleDate}}</text>
+       </view>
+       <view class="travel-box">
+          <text>购买人数</text>
+          <text class="text">￥{{orderlist.adultOnePrice}}×{{orderlist.numOfPeople}}人({{orderlist.adultNum}}成人/{{orderlist.childrenNum}}儿童）</text>
+       </view>
+   </view>
+   <view class="information-box">
+      <view class="order-information">
+          <view class="xian"></view>
+          <text class="information">出行信息</text>
+      </view>
+      <text class="describe">{{orderlist.remarks}}</text>
+   </view>
+   <view class="personal-box">
+      <view class="order-information">
+          <view class="xian"></view>
+          <text class="information">个人信息</text>
+      </view>
+      <view class="personal-information">
+          <text class="name">姓名</text>
+          <text class="name">性别</text>
+          <text class="name">年龄</text>
+          <text class="name">手机号</text>
+      </view>
+       <view class="personal-information" wx:for="{{orderlist.tourist}}" wx:key="this">
+          <text class="name">{{item.touristName}}</text>
+          <text class="name">{{item.gender}}</text>
+          <text class="name">{{item.touristAge}}</text>
+          <text class="name">{{item.touristPhone}}</text>
+      </view>
+   </view>
+   <view class='order-price'>
+      <view class="order-information">
+          <view class="xian"></view>
+          <text class="information">订单信息</text>
+      </view>
+       <view class="list">
+          <text>商品总额：</text>
+          <text>￥{{orderlist.totalSum}}</text>
+       </view>
+       <view class="list">
+            <text>订单总计：</text>
+            <text>￥{{orderlist.totalSum}}</text>
+       </view>
+       <view class="list">
+            <text>金币抵扣：</text>
+            <text>￥{{orderlist.couponPrice}}</text>
+       </view>
+       <view class="list">
+            <text>实付金额：</text>
+            <text class="pay-ment">￥{{orderlist.price}}</text>
+       </view>
+   </view>
+</view>
+<view class="boot-nav">
+  <view class="btn {{orderlist.active?'btn-select':''}}" bindtap='travelbtn'>{{orderlist.pays}}</view>
+  <view class="btn {{orderlist.active?'':'btn-select'}}" wx:if="{{orderlist.status == 0}}" bindtap='travelbtn1'>{{orderlist.refund}}</view>
+</view>

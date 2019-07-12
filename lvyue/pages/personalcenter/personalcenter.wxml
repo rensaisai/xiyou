@@ -1,0 +1,87 @@
+<view class="header">
+   <view class="set-box">
+       <view class="set" bindtap='setup'></view>
+   </view>
+   <view class="header-box">
+      <image src="{{headimg}}" class="img" bindtap='headimg'></image>
+      <view class="header-right" bindtap='headimg'>
+         <view class="header-top">
+            <view class="name">{{username}}</view>
+            <view class="logo">{{shopname}}</view>
+         </view>
+         <view class="header-bottom">
+            <view class="serial-number">编号：{{number}}</view>
+            <view class="team-box" wx:if="{{shopname != '' && shopname != '粉丝店主'}}" catchtap='teamnum'>
+              <view class="return"></view>
+              <view class="number">{{team}}</view>
+              <view class="team">团队人数</view>
+            </view>
+         </view>
+      </view>
+   </view>
+   <view class="share-box"> 
+      <view class="box">
+       <view class="box-left">
+         <view class="qr-code-box"></view>
+         <view class="code-instructions">分享二维码，邀请更多好友</view>
+       </view>
+       <view class="box-right" bindtap='share'>分享二维码</view>
+      </view>
+   </view>
+</view>
+<view class="wallet">我的钱包</view>
+<view class="money-box">
+     <view class="balance-box" bindtap='withdrawal'>
+        <view class="balance">{{appBalance}}<text class="yuan">元</text></view>
+        <view class="balance-name">可用余额</view>
+     </view>
+       <view class="balance-box" bindtap='gold'>
+        <view class="balance">{{coupon}}<text class="yuan">元</text></view>
+        <view class="balance-name">金币</view>
+     </view>
+</view>
+
+<view class="contact-box" bindtap='all'>
+   <view class="contact">我的订单</view>
+   <view class="return1"></view>
+</view>
+<view class="contact-box" bindtap='address'>
+   <view class="contact">我的地址</view>
+   <view class="return1"></view>
+</view>
+<view class="contact-box information" bindtap='information'>
+   <view class="contact">证件信息</view>
+   <view class="contact-right">
+      <view class="return1"></view>
+      <view class="immediately" wx:if="{{identifyNo =='' || identifyNo==null}}">未绑定</view>
+      <view class="immediately" wx:else>已绑定</view>
+   </view>
+</view>
+<view class="contact-box information" bindtap='bankcard'>
+   <view class="contact">银行卡信息</view>
+   <view class="return1"></view>
+</view>
+<view class="contact-box information" bindtap='community'>
+   <view class="contact">我的社区</view>
+   <view class="return1"></view>
+</view>
+<view class="contact-box" bindtap='contract' wx:if="{{active}}">
+   <view class="contact">电子合同</view>
+   <view class="contact-right">
+      <view class="return1"></view>
+      <view class="immediately">{{contract}}</view>
+   </view>
+</view>
+<view class="contact-box information" bindtap='sale'>
+   <view class="contact">旅约全球售后</view>
+   <view class="contact-right">
+      <view class="return1"></view>
+      <!-- <view class="immediately">立即联系</view> -->
+   </view>
+</view>
+<view class="commodity_screen"  catchtouchmove='true' wx:if="{{showModalStatus}}"></view> 
+<view  animation="{{animationData}}" catchtouchmove='true' class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <image class="share-img"  src="{{codeimg}}" bindtap="previewImage" data-src="{{codeimg}}" mode="aspectFit"></image>
+    <image src="/image/guanbi.png" class="shut-btn" catchtap='hider' ></image>
+    <view class="share-btn" bindtap='save'>保存图片分享朋友圈</view>     
+</view>

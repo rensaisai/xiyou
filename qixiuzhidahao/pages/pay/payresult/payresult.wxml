@@ -1,0 +1,18 @@
+<import src="/pages/common/head.wxml" />
+<import src="/pages/common/foot.wxml" />
+
+<view class="container">
+
+  <view class="page-body">
+    <view class="page-section">
+      <view>{{result}}</view>
+      <view class="price">{{price}}</view>
+      <view class="desc">{{message}}</view>
+      <view class="btn-area">
+  <button type="primary" class="button-big" style="background-color:#1296db" bindtap="okClick"loading="{{loading}}">完成</button>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot" />
+</view>

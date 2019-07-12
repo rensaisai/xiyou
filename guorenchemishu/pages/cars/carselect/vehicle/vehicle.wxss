@@ -1,0 +1,4 @@
+@import '/pages/cars/carselect/br/brlist.wxss';
+.fctName{
+  font-size: 28rpx;
+}

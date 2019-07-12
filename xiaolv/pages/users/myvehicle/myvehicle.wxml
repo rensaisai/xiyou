@@ -1,0 +1,21 @@
+<view class="index">
+  <block wx:for="{{list}}" wx:key="item.id">
+   <view class="box" bindtap='details' data-index="{{index}}">
+      <view class="vechicle">
+        <image class="vechicle-icon" src="{{item.img}}" mode="aspectFit"></image>
+        <!-- <view class="vechicle-icon" style='background:url({{item.img}}) no-repeat 100% 100%/100%;'></view> -->
+        <view class="vechicle-information">
+           <view class="information">{{item.fctName}}{{item.brName}}</view>
+           <view class="num">{{item.cc}} {{item.year}}年产</view> 
+        </view>
+      </view>
+      <view class="btn-box">
+        <view class="default defaults defau" wx:if="{{item.active == false}}">默认车辆</view>
+         <view class="default delete" wx:if="{{item.active == false}}" catchtap ='deleteClick' data-index='{{index}}'>删除</view>
+        <view class="default" wx:if="{{item.active == true}}" catchtap ='deleteClick' data-index='{{index}}'>删除</view>
+        <view class="default delete" wx:if="{{item.active == true}}" catchtap ='defaultClick' data-index='{{index}}'>设为默认</view>
+      </view>
+   </view>
+  </block>
+  <view class="btn" bindtap='btn'>添加车辆</view>
+</view>

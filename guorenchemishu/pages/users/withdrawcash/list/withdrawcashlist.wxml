@@ -1,0 +1,46 @@
+<import src="/pages/common/none.wxml" />
+ <!-- <navigator  class="navigator"> -->
+    <button type="primary" bindtap="add" class="button-big button-btn" style="background-color:#E84A2E">提现</button>
+  <!-- </navigator> -->
+<view class="index">
+ 
+  <view class="list-sort" hidden="true">
+    <view class="btn-sort">
+      <button type="default" bindtap="chooseCity">{{city}}</button>
+    </view>
+    <view class="btn-sort">
+      <button type="default" bindtap="actionSheetTap">{{sortname}}</button>
+    </view>
+  </view>
+  <view class="index-bd">
+    <view class="kind-list">
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd" bindtap="itemClick" data-index="{{index}}">
+            <!-- <image class="kind-list-img" src="{{item.headImg}}"></image> -->
+            <view class="kind-list-item-00">
+              <view class="kind-list-item-01">
+                <view class="kind-list-text">{{item.bankNo}}</view>
+                <view class="kind-list-text3">¥{{item.amount}}</view>
+              </view>
+              <view class="kind-list-text3">{{item.bankName}}</view>
+              <view class="kind-list-text4">
+                <view class="time">{{item.createTime}}</view>
+                <view class="statue">{{item.statue}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+      <view class="loadmore" hidden="{{isHideLoadMore}}">
+      <view class="loading"></view>
+      <view class="loadmore_tips">正在加载</view>
+  </view>
+  </view>
+  </view>
+  <view class="bai"></view>
+</view>
+
+<view hidden="{{hiddenNone}}">
+  <template is="none" />
+</view>

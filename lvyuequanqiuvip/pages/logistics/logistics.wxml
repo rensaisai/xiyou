@@ -1,0 +1,48 @@
+<view class="index">
+    <view class="index-logistics">
+
+    <!-- 顶部收货地址 -->
+    <view class='expressRecord-getAddress'>
+      <view class='expressRecord-top'>
+        <view class="getAddress-box">
+            <view class='getAddress-icons' wx:if="{{text==='已签收'}}">
+              收
+            </view>
+            <view class='getAddress-icon' wx:else>
+              收
+            </view>
+        </view>
+        <view class='getAddress-text'>[收货地址] {{arp}}</view>
+      </view>
+    </view>
+
+   
+   
+  <block wx:for="{{list}}" wx:key="item.id">
+  <view class='expressRecord-single-close'>
+      <view class='expressRecord-single-noReach-online-top-close'>
+        <view class='online-top-close'></view>
+        <view class='dot-closing' wx:if="{{index==0}}"></view>
+        <view class='dot-close' wx:else></view>
+
+        <!-- 起始位置，下半个时间轴线不用 -->
+        <view class='online-bottom-start'></view>
+      </view>
+
+      <view class='expressRecord-text'>
+        <view class='expressRecord-status'></view>
+        <text class='expressRecord-status-address' bindtap='click'>{{item.expressRoute}}</text>
+      </view>
+
+      <view class='expressRecord-date'>
+        <view class='expressRecord-date-text'>
+         {{item.date}}
+        </view>
+        <view class='expressRecord-date-time'>
+          {{item.time}}
+        </view>
+      </view>
+    </view>
+    </block>
+    </view>
+</view>

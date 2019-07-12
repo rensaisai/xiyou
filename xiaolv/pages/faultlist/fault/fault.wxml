@@ -1,0 +1,131 @@
+<view class="index">
+  <view class="box {{color}}">
+     <view class="box-fault">
+        <view class="box-border {{actives?'':'rotate'}}">
+          <image src="/image/fuctl.png" class="box-border"></image>
+        </view>
+        <view class="box-icon">
+          <image src="/image/cars.png" wx:if="{{active}}"></image>
+          <view wx:else>{{num}}<text style="font-size:34rpx;">分</text></view>
+        </view>
+     </view>
+     <view class="fuctl">
+         <text wx:if="{{complete}}">检测完成</text>
+    </view>
+     <view class="fuctl-btn" bindtap='btn'>
+        <view class="btn {{colors}}">{{text}}</view>
+     </view>
+  </view>
+  <view class="explain-box" wx:if="{{active}}">
+     <text class="explain-title">安装完成后请确认：</text>
+     <text class="">
+     1.安装完成后测得的实际胎压，旧配件处理选择。
+     2.旧配件处理选择。
+     3.轮胎安装后确认的信息。
+     4.轮胎安装后确认的信息。                  
+     </text>
+  </view>
+  <view class="list-box">
+      <view class="list">
+         <view class="left">车身系统</view>
+         <view class="right">
+            <text class="list-malfunction">无故障</text>
+            <view class="icon-box">
+                  <icon type="success" size="20" color="#50b624"/>
+            </view>
+         </view>
+      </view>
+      <view class="list">
+         <view class="left">车身系统</view>
+         <view class="right">
+            <text class="list-malfunction">无故障</text>
+            <view class="icon-box">
+                  <icon type="success" size="20" color="#50b624"/>
+            </view>
+         </view>
+      </view>
+      <view class="list">
+         <view class="left">车身系统</view>
+         <view class="right">
+            <text class="list-malfunction">无故障</text>
+            <view class="icon-box">
+                  <icon type="success" size="20" color="#50b624"/>
+            </view>
+         </view>
+      </view>
+      <view class="list">
+         <view class="left">车身系统</view>
+         <view class="right">
+            <text class="list-malfunction">无故障</text>
+            <view class="icon-box">
+                  <icon type="success" size="20" color="#50b624"/>
+            </view>
+         </view>
+      </view>
+      <view class="list">
+         <view class="left">车身系统</view>
+         <view class="right">
+            <text class="list-malfunction">无故障</text>
+            <view class="icon-box">
+                  <icon type="success" size="20" color="#50b624"/>
+            </view>
+         </view>
+      </view>
+      <view class="list">
+         <view class="left">车身系统</view>
+         <view class="right">
+            <text class="list-malfunction">无故障</text>
+            <view class="icon-box">
+                  <icon type="success" size="20" color="#50b624"/>
+            </view>
+         </view>
+      </view>
+       <view class="list">
+         <view class="left">车身系统</view>
+         <view class="right">
+            <text class="list-malfunction">无故障</text>
+            <view class="icon-box">
+                  <icon type="success" size="20" color="#50b624"/>
+            </view>
+         </view>
+      </view>
+       <view class="list">
+         <view class="left">车身系统</view>
+         <view class="right">
+            <text class="list-malfunction">无故障</text>
+            <view class="icon-box">
+                  <icon type="success" size="20" color="#50b624"/>
+            </view>
+         </view>
+      </view>
+       <view class="list">
+         <view class="left">车身系统</view>
+         <view class="right">
+            <text class="list-malfunction">无故障</text>
+            <view class="icon-box">
+                  <icon type="success" size="20" color="#50b624"/>
+            </view>
+         </view>
+      </view>
+       <view class="list">
+         <view class="left">车身系统</view>
+         <view class="right">
+            <text class="list-malfunction">无故障</text>
+            <view class="icon-box">
+                  <icon type="success" size="20" color="#50b624"/>
+            </view>
+         </view>
+      </view>
+       <view class="list">
+         <view class="left">车身系统</view>
+         <view class="right">
+            <text class="list-malfunction">无故障</text>
+            <view class="icon-box">
+                  <icon type="success" size="20" color="#50b624"/>
+            </view>
+         </view>
+      </view>
+  </view>
+ 
+
+</view>

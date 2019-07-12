@@ -1,0 +1,73 @@
+<view class="index">
+    <view class="box">
+         <view class="success">
+            <view class="success-img"></view>
+            <view class="success-text">支付成功</view>
+         </view>
+         <view class="peice">实付￥{{price}}</view>
+         <view class="button">
+               <view class="button-left" bindtap='getback'>返回首页</view>
+               <view class="button-left">查看订单</view>
+         </view>
+          <view class="block"></view>
+    </view>
+    <image class="advertising" src="{{img.imgUrl}}"></image>
+    <!-- <view class="advertising">
+        <view class="advertising-top">密集修护深补水面膜</view>
+        <view class="xian"></view>
+        <view class="advertising-bottom">水润亮白 | 持续滋养 | 收敛毛孔 | 嫩白透亮</view>
+    </view>
+
+    <view class="recommend-box">
+        <view class="recommend">
+           <view class="recommend-img"></view>
+           <view class="goods-name">纯净游纯净游纯净游纯净游</view>
+           <view class="goods-brief">故宫、长城、颐和园、天坛、恭王府 圆明园、海底世界</view>
+            <view class="goods-price">
+                <view class="goods-price-left">￥188</view>
+                <view class="goods-price-right">6人已参团</view>
+                <view class="goods-price-img"></view>
+            </view>
+        </view>
+
+         <view class="recommend">
+           <view class="recommend-img"></view>
+           <view class="goods-name">纯净游纯净游纯净游纯净游</view>
+           <view class="goods-brief">故宫、长城、颐和园、天坛、恭王府 圆明园、海底世界</view>
+            <view class="goods-price">
+                <view class="goods-price-left">￥188</view>
+                <view class="goods-price-right">6人已参团</view>
+                <view class="goods-price-img"></view>
+            </view>
+        </view>
+
+         <view class="recommend">
+           <view class="recommend-img"></view>
+           <view class="goods-name">纯净游纯净游纯净游纯净游</view>
+           <view class="goods-brief">故宫、长城、颐和园、天坛、恭王府 圆明园、海底世界</view>
+            <view class="goods-price">
+                <view class="goods-price-left">￥188</view>
+                <view class="goods-price-right">6人已参团</view>
+                <view class="goods-price-img"></view>
+            </view>
+        </view>
+
+
+         <view class="recommend">
+           <view class="recommend-img"></view>
+           <view class="goods-name">纯净游纯净游纯净游纯净游</view>
+           <view class="goods-brief">故宫、长城、颐和园、天坛、恭王府 圆明园、海底世界</view>
+            <view class="goods-price">
+                <view class="goods-price-left">￥188</view>
+                <view class="goods-price-right">6人已参团</view>
+                <view class="goods-price-img"></view>
+            </view>
+        </view>
+        -->
+    
+    
+    <!-- </view> -->
+
+
+
+</view>

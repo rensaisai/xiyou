@@ -1,0 +1,134 @@
+<view class="index indem">
+ <!-- <form > -->
+    <view class="order">
+       <view class="order-left">
+            <image class="site" src="/image/dinwei.png"></image>
+       </view>
+        <view class="order-right" bindtap='sitel' wx:if="{{site != null}}">
+           <view class="order-sixt">
+              <view class="order-box">收货人：{{site.receiver}}</view>
+               <view class="order-box">{{site.phone}}</view>
+           </view>
+            <view class="order-silet">
+                收货地址：{{address}}
+           </view>
+        </view>
+        <view class="order-right" bindtap='sitels' wx:else>
+            <view class="order-silets">
+                请添加你的收货地址
+           </view>
+        </view>
+        <view class="jintou-box">
+           <image src="/image/jiantou.png" class='jiantou'></image>
+        </view>
+    </view>
+    <view class="imge"></view>
+    <!-- <image class="imge" src="/image/heng.png"></image> -->
+    <view class="pay">
+         <view class="wx-box">选择支付方式</view>
+      <view class="wx-index">
+          <image class="img-weixin" src="/image/weixin.png"></image>
+          <view class="wx-tetx">
+            <view class="textl">微信支付</view>
+            <view class="texts">亿万用户的选择，更快更安全</view>
+          </view>
+          <radio-group bindchange="radioChange">
+            <label class=" weui-check__label" wx:for="{{pays}}" wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked='{{item.checked}}' color="#e51337" />
+              </view>
+            </label>
+          </radio-group>
+      </view>
+     </view>
+    <view class="wx-order">
+       <view class="order-xi">订单信息</view>
+       <view class="order-xite">
+           <view class="order-lefts"></view>  
+           <view class="order-rights">由{{supplier}}提供</view>      
+       </view>
+    </view>
+    <view class="order-goods">
+        <view class="goods-img" style="background:url({{sendType.img}}) no-repeat center center/cover"></view>
+        <view class="goods-name">
+            <view class='order-name'>{{goodsName}}</view>
+            <view class='order-name liste'>
+               <view class="man" >
+                 <text wx:for="{{goodsdard}}" wx:key="this" class="specifications">{{item.attrValue}}</text>
+               </view>
+            </view>
+             <view class='order-name order-price'>
+              <view class="price">¥:{{goodsprice}}</view>
+               <view class="price">×{{num}}</view>
+             </view>
+        </view>
+    </view>
+
+    <view class="total">
+      <view class="total-site">小计:<text class="site-total">¥:{{subtotal}}</text></view>
+    </view>
+
+    <view class="goods-total">
+        <view class="goods-pocket">
+            <view class="goods-price">商品总额:</view>
+            <view class="goods-price">¥:{{subtotal}}</view>
+        </view>
+        <view wx:if="{{sendType.isApp != 1}}">
+              <view class="goods-pocket">
+                  <view class="goods-price">已减:</view>
+                  <view class="goods-price pricels" >¥:{{coupon}}</view>
+              </view>
+              <view class="goods-pocket">
+                  <view class="goods-price" >使用金币:</view>
+                  <view class="goods-price pricels">¥:{{coupon}}</view>
+              </view>
+        </view>
+        <view class="goods-pocket">
+            <view class="goods-price">实付金额:</view>
+            <view class="goods-price pricels">¥:{{pay}}</view>
+        </view>
+    </view>
+    <view class="pay-btn">
+        <view class="address">送至：{{address}}</view>
+        <view class="boot">
+            <button class="btn"  bindtap='commitOrder'>支付订单</button>
+            <view class="place-price">实付金额：￥{{pay}}</view>
+        </view>
+    </view>
+</view>
+<view class="commodity_screen"  catchtouchmove='true' bindtap="hideModal" wx:if="{{showModalStatus}}"></view> 
+<view  animation="{{animationData}}" catchtouchmove='true' class="commodity_attr_box" wx:if="{{showModalStatus}}">
+     <image src="/image/cancel.png" class="size-img"></image>
+     <view class="specification" catchtap="hide">{{title}}</view>
+     <view wx:if="{{checked}}">
+          <view class="price-box"><text class='yuan'>￥</text>{{pay}}</view>
+            <view class="select-box" bindtap='select' wx:if="{{payType == 0 || payType == 1}}" data-text="weixin">
+              <view>微信支付</view>
+              <view class="{{select?'select':'hots'}}" wx:if="{{actives}}"></view>
+              <view class="not" wx:else></view>
+          </view>
+          <view class="select-box" bindtap='select' wx:if="{{payType == 0 || payType == 2}}" data-text="yve"> 
+              <view>余额支付</view>
+              <view class="{{select?'hots':'select'}}" wx:if="{{active1}}"></view>
+              <view class="not" wx:else></view>
+          </view>
+          <!-- <view class="select-box {{item.active?'':'not-pay'}}" wx:for="{{order}}" wx:key="this" bindtap='select' data-index="{{index}}">
+              <view>{{item.payWayValue}} {{item.balance}}</view>
+              <view class="{{item.select?'select':'hots'}}" wx:if="{{item.active}}"></view>
+              <view class="not" wx:else></view>
+          </view> -->
+           <button class="button" bindtap='button' loading='{{loading}}'>立即付款</button>
+     </view>
+     <view wx:else>
+       <view class="input-box">
+        <block wx:for="{{length}}" wx:key="this">
+            <input class="code-input" type="number" value="{{value.length>=index+1?value[index]:''}}" catchtap='tap' password="true" ></input>
+        </block>
+       </view>
+       <view class="forget" bindtap='forget'>忘记密码?</view>
+       <input class='ipt' maxlength="{{length}}" focus="{{isFocus}}" bindinput="focus" type="number" adjust-position="{{false}}"></input>
+       <button class='next-btn {{active?"button":""}}' bindtap='paybalance'>立即付款</button>
+     </view>
+    
+     
+</view>

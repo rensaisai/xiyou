@@ -1,0 +1,61 @@
+<view class="index">
+  <view class="mineback">
+    <view class="index-hd mine-head">
+     <image class="headimg" src='{{headimg}}'></image>
+      <view class="index-desc nickname">{{nickname}}</view>
+      <view class="user-statics">
+        <view class="huiyuan">
+          {{membername}}: {{memberno}}
+        </view>
+      </view>
+      <view class="user-statics">
+              <view bindtap="membersClick" class="statics" wx:if="{{membername=='商户'}}">
+          团队：{{sum}}
+             </view>
+                <view bindtap="bersClick" class="statics" wx:if="{{membername=='会员'}}">
+          团队：{{sum}}
+        </view>
+                <view  class="statics" wx:if="{{membername=='非会员'}}">
+          团队：{{sum}}
+        </view>
+         <view  class="statics" bindtap='account' wx:if="{{membername=='商户' || membername=='会员'}}">
+          待入账：{{amount}}
+        </view>
+         <view  class="statics" wx:else >
+          待入账：{{amount}}
+        </view>
+         <view  class="statics" bindtap='balance' wx:if="{{membername=='商户' || membername=='会员'}}">
+          余额：{{balance}}
+        </view>
+         <view  class="statics" wx:else>
+          余额：{{balance}}
+        </view>
+              <view bindtap="amount" class="statics" wx:if="{{membername=='商户' || membername=='会员'}}">
+          金币：{{allsum}}
+       </view>
+               <!-- <navigator bindtap="amount" class="statics" wx:if="{{}}">
+          金币：{{commission}}
+        </navigator> -->
+         <view  class="statics" wx:if="{{membername=='非会员'}}">
+          金币：{{allsum}}
+        </view>
+        
+      </view>
+    </view>
+  </view>
+  <view class="index-bd">
+    <view class="kind-list">
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd" data-index="{{index}}" bindtap="itemClick">
+            <image class="list-icon" src="{{item.img}}"></image>
+            <view class="item-left">
+                <view class="kind-list-text">{{item.title}}</view>
+                <image class="kind-list-navi" src="/image/navi.png"></image>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

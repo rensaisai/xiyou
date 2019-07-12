@@ -1,0 +1,49 @@
+@import "/pages/common/index.wxss";
+
+.kind-list-bigimg{
+  width:100%;
+  height:300rpx;
+}
+.swiper-image{
+  width:100%;
+  height:300rpx
+}
+.swiper-view{
+  margin:0rpx;
+}
+.closed{
+  position:absolute;
+  float:right;
+  width:150rpx;
+  height:150rpx;
+  right: 10px;
+  left: 0px;
+}
+.kind-list-item-hd-direction {
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: opacity .3s;
+  /* border:0.5px solid; */
+  border-radius:6px;
+}
+.star-image-index{
+  position: static;
+  top: 50rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.selectcar-img {
+  width: 60px;
+  height: 60px;
+}
+.mycar {
+  background-color: #ffffff;
+}
+.img-tag{
+  margin-top: 8rpx;
+  width: 80px;
+  height: 40px;
+}

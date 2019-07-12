@@ -1,0 +1,37 @@
+@import "/pages/index/index";
+.box{
+  position: absolute;
+  bottom: 100rpx;
+  left: 5%;
+  width: 90%;
+  height: 204rpx;
+  background: #ffffff;
+  border-radius:15rpx;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.left{
+  width: 50%;
+  height: 36rpx;
+}
+.points{
+  margin-left: 5rpx;
+}
+.img{
+  width: 136rpx;
+  height: 136rpx;
+  border-radius:6rpx;  
+}
+.list-right{
+  width: 78%;
+  height:136rpx; 
+  justify-content: space-between;
+  padding: 0 0 0 10rpx;
+}
+.garage-name{
+  font-size: 35rpx;
+}

@@ -1,0 +1,118 @@
+<view class="tab-nav">
+    <view class="{{activem?'selects':'text'}}" bindtap='goods'>商品</view>
+    <view class="{{activem?'text':'selects'}}" bindtap='line'>线路</view>
+</view>
+<view class="block1"></view>
+<view class="index" wx:if="{{activem}}">
+<scroll-view class="menu_box">
+       <view class='tab {{currentData=="0"?"borders":""}}' data-current="0" data-id="{{list[0].id}}"bindtap='checkCurrent'>全部</view>
+       <view class='tab {{currentData=="1"?"borders":""}}' data-current="1" data-id="{{list[1].id}}"bindtap='checkCurrent' >待付款</view>
+       <view class='tab {{currentData=="2"?"borders":""}}' data-current="2" data-id="{{list[2].id}}"bindtap='checkCurrent'>待收货</view> 
+       <view class='tab {{currentData=="3"?"borders":""}}' data-current="3" data-id="{{list[3].id}}"bindtap='checkCurrent'>已完成</view>
+</scroll-view> 
+<view class="block"></view>
+<swiper  style='height:{{windowHeight}}px' current="{{currentData}}" bindchange="eventchange">
+   <swiper-item class="vieitem" wx:for="{{list}}" wx:key="this">
+     <scroll-view scroll-y bindscrolltolower="scroll" style='height:100%;' lower-threshold="100">
+       <view class="list-box" wx:for="{{orderlist}}" wx:key="this">
+          <view class="order-box" catchtap='goodsdetail' data-id='{{item.id}}' data-index= "{{index}}">
+             <image class="img" src="{{item.imageUrl}}" mode="aspectFill" lazy-load="true"></image>
+             <view class="order-right-box">
+               <view class="shops-name">{{item.goodsName}}</view>
+               <view class="price-boxs">
+                  <view class="price">￥{{item.cashAmount}}</view>
+                  <view class="num">x{{item.goodsNum}}</view>
+               </view>
+               <view class="specifications">规格：{{item.goodsConfigName}}</view>
+               <view class="vouchers">使用{{item.coupon}}元金币</view>
+             </view>
+          </view>
+         <view class="btn-box">
+             <view class="btn {{item.active?'hot':''}}" bindtap='btn' data-index="{{index}}" data-pays="{{item.pays}}">{{item.pays}}</view>
+             <view class="btn {{item.active?'':'hot'}}" wx:if="{{item.orderStatus==0}}" bindtap='btn' data-index="{{index}}"  data-pays="{{item.refund}}">{{item.refund}}</view>
+                <view class="btn {{item.active?'':'hot'}}" wx:if="{{item.orderStatus==2}}" bindtap='btn' data-index="{{index}}"  data-pays="{{item.refund}}">{{item.refund}}</view>
+             <view class="btn {{item.active?'':'hot'}}" wx:if="{{item.orderStatus==3}}" bindtap='btn' data-index="{{index}}" data-pays="{{item.refund}}">{{item.refund}}</view>
+         </view>
+       </view>
+       <empty hiddenNone = "{{hiddenNone}}"/>
+       <loding  loadingType="{{loadingType}}" wx:if="{{hiddenNone}}" lod="red-text"/>
+     </scroll-view>
+   </swiper-item>
+</swiper>
+</view>
+
+
+
+<view class="index" wx:else>
+<scroll-view class="menu_box">
+       <view class='tab {{currentData=="0"?"borders":""}}' data-current="0" data-id="{{list[0].id}}"bindtap='checkCurrent'>全部</view>
+       <view class='tab {{currentData=="1"?"borders":""}}' data-current="1" data-id="{{list[1].id}}"bindtap='checkCurrent' >待付款</view>
+       <view class='tab {{currentData=="2"?"borders":""}}' data-current="2" data-id="{{list[2].id}}"bindtap='checkCurrent'>待出行</view> 
+       <view class='tab {{currentData=="3"?"borders":""}}' data-current="3" data-id="{{list[3].id}}"bindtap='checkCurrent'>已结束</view>
+</scroll-view> 
+<view class="block"></view>
+<swiper  style='height:{{windowHeight}}px' current="{{currentData}}" bindchange="eventchange">
+   <swiper-item class="vieitem" wx:for="{{list}}" wx:key="this">
+     <scroll-view scroll-y bindscrolltolower="scroll" style='height:100%;' lower-threshold="100">
+       <view class="list-box" wx:for="{{ordercircuit}}" wx:key="this">
+          <view class="order-box"  catchtap='circuitdetail' data-id="{{item.orderId}}" data-index="{{index}}">
+             <image class="img" src="{{item.img}}" mode="aspectFill" lazy-load="true"></image>
+             <view class="order-right-box travel-detail">
+                <view class="travel">
+                     <view class="travel-name">{{item.lineName}} {{item.subtitle}}</view>
+                     <view class="travel-price">￥{{item.price}}</view>
+                </view>
+                <view class="travel-time-box">
+                     <view class="travel-num">出发人数：{{item.numOfPeople}}人</view>
+                     <view class='travel-Ttime'>出发日期：{{item.scheduleDate}}</view>
+                </view>
+             </view>
+          </view>
+         <view class="btn-box">
+             <view class="btn {{item.active?'hot':''}}" bindtap='btn' data-index="{{index}}" data-pays="{{item.pays}}">{{item.pays}}</view>
+             <view class="btn {{item.active?'':'hot'}}" wx:if="{{item.orderStatus == 0}}" bindtap='btn' data-index="{{index}}" data-pays="{{item.refund}}">{{item.refund}}</view>
+            <view class="btn {{item.active?'':'hot'}}" wx:if="{{item.orderStatus==4}}" bindtap='btn' data-index="{{index}}"  data-pays="{{item.refund}}">{{item.refund}}</view>
+         </view>
+       </view>
+       <empty hiddenNone="{{hiddenNone}}"/>
+       <loding  loadingType="{{loadingType}}" wx:if="{{hiddenNone}}" lod="red-text"/>
+     </scroll-view>
+   </swiper-item>
+</swiper>
+</view>
+<view class="commodity_screen"  catchtouchmove='true' bindtap="hideModal" wx:if="{{showModalStatus}}"></view> 
+<view  animation="{{animationData}}" catchtouchmove='true' class="commodity_attr_box" wx:if="{{showModalStatus}}">
+     <image src="/image/cancel.png" class="size-img"></image>
+     <view class="specification" catchtap="hide">{{title}}</view>
+     <view wx:if="{{checked}}">
+          <view class="price-box"><text class='yuan'>￥</text>{{pay}}</view>
+            <view class="select-box" bindtap='select' wx:if="{{payType == 0 || payType == 1}}" data-text="weixin">
+              <view>微信支付</view>
+              <view class="{{select?'select':'hots'}}" wx:if="{{actives}}"></view>
+              <view class="not" wx:else></view>
+          </view>
+          <view class="select-box" bindtap='select' wx:if="{{payType == 0 || payType == 2}}" data-text="yve"> 
+              <view>余额支付</view>
+              <view class="{{select?'hots':'select'}}" wx:if="{{active1}}"></view>
+              <view class="not" wx:else></view>
+          </view>
+          <!-- <view class="select-box {{item.active?'':'not-pay'}}" wx:for="{{order}}" wx:key="this" bindtap='select' data-index="{{index}}">
+              <view>{{item.payWayValue}} {{item.balance}}</view>
+              <view class="{{item.select?'select':'hots'}}" wx:if="{{item.active}}"></view>
+              <view class="not" wx:else></view>
+          </view> -->
+           <button class="button" bindtap='button' loading='{{loading}}'>立即付款</button>
+     </view>
+     <view wx:else>
+       <view class="input-box">
+        <block wx:for="{{length}}" wx:key="this">
+            <input class="code-input" type="number" value="{{value.length>=index+1?value[index]:''}}" catchtap='tap' password="true" ></input>
+        </block>
+       </view>
+       <view class="forget" bindtap='forget'>忘记密码?</view>
+       <input class='ipt' maxlength="{{length}}" focus="{{isFocus}}" bindinput="focus" type="number" adjust-position="{{false}}"></input>
+       <button class='next-btn {{active?"button":""}}' bindtap='paybalance'>立即付款</button>
+     </view> 
+</view>
+  
+  

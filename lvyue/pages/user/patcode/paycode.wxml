@@ -1,0 +1,9 @@
+ <view class="index">
+     <view class="box">请输入<text class='code'>短信验证码</text>，完成身份验证</view>
+     <view class="validation-box">
+       <input class="validation-input" placeholder='请输入验证码' bindinput="code"></input>
+       <view class="btn" wx:if="{{alreadySend}}" bindtap='phone'>获取验证码</view>
+       <view class="btn time" wx:if="{{send}}">{{second}}秒后重新发送</view>
+     </view>
+     <button class='next-btn {{active?"hot":""}}' bindtap='nextbtn'>下一步</button>
+ </view>

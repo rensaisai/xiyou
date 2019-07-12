@@ -1,0 +1,29 @@
+<view class="index">
+    <block wx:for="{{list}}" wx:key="this">
+     <view class="list" bindtap='buy' data-id="{{item.id}}">
+                <view class="list-img"  data-id="{{item.id}}">
+                <image src="{{item.img}}" class="image" mode="aspectFit" lazy-load="true"></image>
+                </view>
+                <view class="list-count">{{item.volume}}人已买</view>
+                <view class="list-box">
+                     <view class="list-name">
+                        <view class="proprietary" wx:if="{{item.newProduct == 1}}">自营</view>
+                        <view class="promotion {{item.newProduct == 1?'hot':''}}" wx:if="{{item.hotSale == 1}}">热销</view>                   
+                       <view class="goods-img">
+                          【{{item.goodsName}}】{{item.subtitle}}
+                       </view>
+                     </view>
+                     <!-- <view class="gold-code">
+                          <view class="code-img">可抵扣{{ceil.}}金币</view>
+                     </view> -->
+                     <view class="list-name shops">
+                          <!-- <text class="activity-price">店主价:</text> -->
+                          <view class="list-price"><text class="list-cost">￥</text>{{item.fansPrice}}<text class="list-money decline">(市场价￥{{item.price}})</text></view>
+                          <view class="list-btn">立即购买</view>
+                     </view>
+                </view> 
+      </view>
+     </block>
+     <empty hiddenNone="{{hiddenNone}}"/>
+     <loding  loadingType="{{loadingType}}" wx:if="{{hiddenNone}}"/>
+</view>

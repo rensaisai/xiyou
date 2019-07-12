@@ -1,0 +1,100 @@
+<view class="index indem">
+ <!-- <form > -->
+    <view class="order">
+       <view class="order-left">
+            <image class="site" src="/image/dingwei.png"></image>
+       </view>
+        <view class="order-right" bindtap='sitel' wx:if="{{site != null}}">
+           <view class="order-sixt">
+              <view class="order-box">收货人：{{site.receiver}}</view>
+               <view class="order-box">{{site.phone}}</view>
+           </view>
+            <view class="order-silet">
+                收货地址：{{site.province}}{{site.city}}{{site.town}}{{site.detailAddress}}
+           </view>
+        </view>
+        <view class="order-right" bindtap='sitels' wx:else>
+            <view class="order-silets">
+                收货地址: 请添加你的收货地址
+           </view>
+        </view>
+     
+    </view>
+    <image class="imge" src="/image/heng.png"></image>
+    <view class="pay">
+         <view class="wx-box">选择支付方式</view>
+      <view class="wx-index">
+          <image class="img-weixin" src="/image/weixin.png"></image>
+          <view class="wx-tetx">
+            <view class="textl">微信支付</view>
+            <view class="texts">亿万用户的选择，更快更安全</view>
+          </view>
+          <radio-group bindchange="radioChange">
+            <label class=" weui-check__label" wx:for="{{pays}}" wx:key="{{item.value}}">
+              <view class="weui-cell__hd">
+                <radio value="{{item.value}}" checked='{{item.checked}}' color="#f39400" />
+              </view>
+            </label>
+          </radio-group>
+      </view>
+     </view>
+    <view class="wx-order">
+       <view class="order-xi">订单信息</view>
+       <view class="order-xite">
+           <view class="order-lefts"></view>  
+           <view class="order-rights">由{{supplier}}提供</view>      
+       </view>
+    </view>
+    <view class="order-goods">
+        <view class="goods-img" style="background:url({{sendType.img}}) no-repeat center center/cover"></view>
+        <view class="goods-name">
+            <view class='order-name'>{{goodsName}}</view>
+            <view class='order-name liste'>
+               <view class="man" >
+                 <text wx:for="{{goodsdard}}" wx:key="this" class="specifications">{{item.attrValue}}</text>
+               </view>
+               <!-- <view class="man">【{{goodscolor}}】</view>
+               <view class="man mans" wx:if="{{goodssize != 'undefined'}}">{{goodssize}}</view> -->
+            </view>
+             <view class='order-name order-price'>
+              <view class="price">¥:{{goodsprice}}</view>
+               <view class="price">×{{num}}</view>
+             </view>
+        </view>
+    </view>
+
+    <view class="total">
+      <view class="total-site">小计:<text class="site-total">¥:{{subtotal}}</text></view>
+    </view>
+
+    <view class="goods-total">
+        <view class="goods-pocket">
+            <view class="goods-price">商品总额:</view>
+            <view class="goods-price">¥:{{subtotal}}</view>
+        </view>
+        <view wx:if="{{sendType.isVip > 0}}">
+              <view class="goods-pocket">
+                  <view class="goods-price">已减:</view>
+                  <view class="goods-price pricels" >¥:{{coupon}}</view>
+              </view>
+              <view class="goods-pocket">
+                  <view class="goods-price" >使用金币:</view>
+                  <view class="goods-price pricels">¥:{{coupon}}</view>
+              </view>
+        </view>
+        <view class="goods-pocket">
+            <view class="goods-price">实付金额:</view>
+            <view class="goods-price pricels">¥:{{pay}}</view>
+        </view>
+    </view>
+
+    <button type="primary"  bindtap='commitOrder' class="button-big butt" style="background-color:#f39400" form-type="submit" loading="{{loading}}">去付款</button>
+    <!-- <view class="{{disabled?'btunel':''}}"></view> -->
+  <!-- </form> -->
+<!-- <view  class="button-big butt" style="background-color:#f39400" >去付款</view> -->
+  <!-- </form> -->
+  <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}"></view>
+  <!-- http://blog.csdn.net/qq_24734285/article/details/53816637 -->
+
+</view>

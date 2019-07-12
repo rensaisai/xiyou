@@ -1,0 +1,11 @@
+<view class="index">
+   <view class="box">
+      <view class="user-box">
+         <image class="user-img" src="{{mycode.headImg}}" mode="aspectFill"></image>
+         <view class="user-name">{{mycode.nickName}}</view>
+      </view>
+      <view class="code-box" src="{{mycode.codeUrl}}">
+        <image class="code-boxs" src="{{mycode.codeUrl}}" mode="aspectFit"></image>
+      </view>
+   </view>
+</view>

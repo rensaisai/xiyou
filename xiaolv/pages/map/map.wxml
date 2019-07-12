@@ -1,0 +1,39 @@
+
+<view class="container">
+  <view class="page-body">
+    <view class="page-section page-section-gap">
+      <map
+        style="width: 100%; height:{{windowHeight}}px;"
+        scale="14"
+        show-location
+        latitude="{{latitude}}"
+        longitude="{{longitude}}"
+        markers="{{markers}}"
+        include-points="{{markers}}"
+        bindmarkertap="controltap">
+      </map>
+    </view>
+    <cover-view class="box" bindtap='map' hidden='{{active}}' wx:if="{{list != null}}">
+        <cover-image class="img"  src="{{list.headImg}}" ></cover-image>
+        <cover-view class="list-right">
+       <cover-view class="list-name">
+           <cover-view class="garage-name">{{list.repairName}}</cover-view>
+          <cover-image src="https://www.cmspq.xyz/cmsweb/imgs/SmallProcedures/6.png" hidden='{{!list.zdhFlag}}' class="mechanics-img"></cover-image>
+       </cover-view>
+       <cover-view class="list-name">
+        <cover-view class="left">
+          <cover-view class="evaluation">总评分</cover-view> 
+          <cover-view class="points">{{list.grade}}</cover-view>
+         </cover-view>
+          <cover-view class="evaluation">{{list.distanceShow}}</cover-view>
+       </cover-view>
+       <cover-view class="list-name" >
+          <cover-image class="positioning" src="/image/dingwei.png"></cover-image>
+          <cover-view class="address">{{list.address}}</cover-view>
+       </cover-view>
+    </cover-view>
+</cover-view>
+
+  </view>
+</view>
+

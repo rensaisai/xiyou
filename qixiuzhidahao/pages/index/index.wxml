@@ -1,0 +1,22 @@
+<view class="index">
+    <view class="box">
+      <!-- <view class="list"> -->
+        <view class="box-list" bindtap='maintain'  wx:if="{{roleCode != ''}}">保养</view>
+        <view class="box-list" bindtap='wash' wx:if="{{roleCode != ''}}">洗车</view>
+        <!-- <view class="box-list" bindtap='make' wx:if="{{roleCode == 1 || roleCode == 4 || roleCode == 5}}">预约</view>
+        <view class="box-list" bindtap='order' wx:if="{{roleCode == 1 || roleCode == 4 || roleCode == 5 || roleCode == 3}}">接单</view>
+        <view class="box-list" bindtap='construct' wx:if="{{roleCode == 1 || roleCode == 4 || roleCode == 3}}">施工</view> -->
+      <!-- </view> -->
+      <!-- <view class="list"> -->
+        <view class="box-list" bindtap='employees' wx:if="{{roleCode == 1 || roleCode == 4 }}">员工</view>
+        <view class="box-list" bindtap='detection' wx:if="{{roleCode == 1 || roleCode == 4 || roleCode == 5 || roleCode == 3}}">检测</view>
+        <view class="box-list" bindtap='orderlist' wx:if="{{roleCode == 1 || roleCode == 4 || roleCode == 5}}">订单</view>
+      <!-- </view> -->
+      <!-- <view class="list"> -->
+        <view class="box-list" bindtap='repertory' wx:if="{{roleCode == 1 || roleCode == 4 || roleCode == 5}}">库存</view>
+        <view class="box-list" wx:if="{{roleCode == 1 || roleCode == 4 || roleCode == 5 || roleCode == 3}}">OBD</view>
+        <view class="box-list" bindtap='settlement' wx:if="{{roleCode == 1 || roleCode == 4 }}">结算</view>
+        <view class="box-list" bindtap='scan' wx:if="{{roleCode != ''}}">扫一扫</view>
+      <!-- </view> -->
+    </view>
+</view>

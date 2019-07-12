@@ -1,0 +1,86 @@
+<import src="/pages/common/none.wxml" />
+
+<view class="index">
+  <view class="index-hd">
+
+    <view class="page-section swiper swiper-view">
+      <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500">
+        <block wx:for="{{adsList}}" wx:key="item.id">
+          <swiper-item>
+            <view class="swiper-item">
+               <image src="{{item.imgUrl}}" mode="aspectFill" class="swiper-image"></image> 
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="weui-cell_input top-search">
+      <input class="weui-input top-searchbox" placeholder="{{qrString}}" bindinput='keywordInput' />
+      <image class="top-img" src="/image/search.png" bindtap="searchShop"></image>
+    </view>
+  </view>
+</view>
+<!-- >>>>>> -->
+     <!-- <navigator url="/pages/users/login/login" class="navigator">      -->
+<!-- <navigator bindtap="selectMyCar" class="mycar">       
+  <view class="top-item">
+    <view class="top-item-left">
+      <image class="selectcar-img" src="/image/mycar.png"></image>
+    </view>
+
+    <view class="kind-list-text">{{carName}}</view>
+    <image class="kind-list-navi" src="/image/navi.png"></image>
+  </view>
+</navigator> -->
+
+<view class="list-sort">
+  <view class="btn-sort" bindtap="chooseCity">
+    <view>{{city}}</view>
+    <image class="kind-list-navi" src="/image/sortdown.png"></image>
+  </view>
+  <view class="btn-sort" bindtap="actionSheetTap">
+    <view>{{sortname}}</view>
+    <image class="kind-list-navi" src="/image/sortdown.png"></image>
+  </view>
+</view>
+<view class="index-bd">
+  <view class="kind-list">
+    <block wx:for="{{list}}" wx:for-item="item" wx:key="item.id">
+      <view class="kind-list-item">
+        <view class="kind-list-item-hd-direction" bindtap="itemClick" data-index="{{index}}">
+
+           <image class="kind-list-bigimg" src="{{item.img[0]}}" mode="aspectFill" ></image>
+           <image class="closed" src="/image/closed.png" hidden='{{item.closed}}' mode="aspectFill" ></image>
+          <view class="kind-list-item-00">
+            <view class="kind-list-item-01">
+              <view class="kind-list-text">{{item.fishName}}</view>
+              <!-- <image class="img-tag" mode="widthFix" hidden='{{!item.zdhFlag}}' src="/image/zhida.png"></image> -->
+              <view class="kind-list-text2">{{item.peopleLimit}}人</view>
+              <view class="kind-list-text2">{{item.fishCount}}斤</view>
+            </view>
+            <view class="kind-list-item-01">
+              <view class="kind-list-text3">开始时间：{{item.startTime}}</view>
+              <view class="kind-list-text2">¥{{item.fishAmount}}/人</view>
+              <!-- <block wx:for="{{item.stars}}" wx:for-item="subitem" wx:for-index="subindex" wx:key="*this">
+                <image class="star-image-index" style="left: {{subindex*100}}rpx" src="/image/star_selected.png">
+                </image>
+              </block> -->
+            </view>
+            <view class="kind-list-item-01">
+              <view class="kind-list-text2"></view>
+              <view class="kind-list-text2">浏览{{item.clickNum}}</view>
+            </view>
+            <!-- <view class="kind-list-text4">{{item.fishCount}}</view> -->
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class="loadmore" hidden="{{isHideLoadMore}}">
+      <view class="loading"></view>
+      <view class="loadmore_tips">正在加载</view>
+    </view>
+  </view>
+</view>
+<view hidden="{{hiddenNone}}">
+  <template is="none" />
+</view>

@@ -1,0 +1,79 @@
+<import src="/pages/common/none.wxml"/>
+      <scroll-view class="menu_box" scroll-x scroll-left='{{scrollLeft}}'>
+      <block wx:for="{{list}}" wx:key="{{item.id}}">
+       <view class='tab {{currentData==index?"borders":""}}'  data-id="{{item.id}}" bindtap='checkCurrent' data-index="{{index}}">{{item.typeName}}</view>
+      </block>
+      </scroll-view>
+      <view class="index-lists"></view>
+      <swiper class="kind-list-items"  current="{{currentData}}" bindchange="eventchange" style='height:{{windowHeight}}px'>
+      <swiper-item  wx:for="{{list}}" wx:key="item.id">
+      <scroll-view scroll-y style='height:{{windowHeight}}px' bindscrolltolower="scroll">
+          <swiper class="swiper-box" indicator-dots="true" autoplay="{{true}}" interval="4500" duration="500" circular="teue">
+                <block wx:for="{{adsList}}" wx:key="{{item.id}}">
+                 <swiper-item >
+                     <image class="swiper-img" src="{{item.imgUrl}}" mode="widthFix"></image>
+                 </swiper-item>
+                </block> 
+          </swiper>
+            <!-- <view class="index-list">
+                <view class="shop" bindtap='boutique'>
+                    <view class="shop-img">
+                        <image src="/image/bao.jpg" class="bao-img" mode="widthFix"></image>
+                    </view>
+                    <text class="txt">精品</text>
+                </view>
+                 <view class="shop" bindtap='boutique'>
+                    <view class="shop-img">
+                        <image src="/image/lh.jpg" class="bao-img" mode="widthFix"></image>
+                    </view>
+                    <text class="txt">旅护</text>
+                </view>
+                <view class="shop" bindtap='boutique'>
+                    <view class="shop-img">
+                        <image src="/image/tc.jpg" class="bao-img" mode="widthFix"></image>
+                    </view>
+                    <text class="txt">土特产</text>
+                </view>
+                <view class="shop" bindtap='boutique'>
+                    <view class="shop-img">
+                        <image src="/image/xl.jpg" class="bao-img" mode="widthFix"></image>
+                    </view>
+                    <text class="txt">线路</text>
+                </view>   
+            </view> -->
+             <block wx:for="{{commodity}}" wx:key="item.id">
+            <view class="list">
+            <image src="{{item.img}}" class="list-img" bindtap='details' data-id="{{item.id}}" mode="scaleToFill"></image>
+                <view class="list-count">{{item.volume}}人已买</view>
+                <!-- <view class="list-box"></view> -->
+                <view class="list-box">
+                     <view class="list-name">
+                        <view class="proprietary" wx:if="{{item.newProduct == 1}}">自营</view>
+                        <view class="promotion {{item.newProduct == 1?'hot':''}}" wx:if="{{item.hotSale == 1}}">热销</view>
+                        <view class="goods-img">【{{item.goodsName}}】{{item.subtitle}}</view>
+                     </view>
+                     <view class="list-name shops">
+                          <view class="list-price"><text class="list-cost">￥</text>{{item.fansPrice}}<text class="list-money">(原价￥{{item.price}})</text></view>
+                          <view class="list-btn" bindtap='buy' data-id="{{item.id}}">立即购买</view>
+                     </view>
+                </view> 
+            </view>
+            </block>
+            <view hidden="{{hiddenNone}}">
+                 <template is="none" />
+            </view>
+             <view class="loadmore" hidden="{{isHideLoadMore}}">
+                <view class="loading"></view>
+                <view class="loadmore_tips">正在加载</view> 
+            </view>
+             <view class="loadmore" hidden="{{hiddenNones}}">
+                <view class="loga"></view>
+                <view class="loadmore_tips">没有更多商品</view>
+                <view class="loga log"></view>
+            </view>
+     </scroll-view>
+    </swiper-item>
+    </swiper>
+
+        
+    

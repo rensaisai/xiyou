@@ -1,0 +1,6 @@
+<view class="box">
+ <view class="item {{status ? '' :'active'}}">
+  <view class="content" bindtouchstart="touchS" bindtouchmove="touchM">显示正常内容</view>
+  <view class="del-button">删除</view>
+ </view>
+</view>

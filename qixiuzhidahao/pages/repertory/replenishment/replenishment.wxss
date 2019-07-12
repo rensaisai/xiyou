@@ -1,0 +1,69 @@
+@import "/pages/repertory/inquire/inquire.wxss";
+@import "/pages/common/index.wxss";
+.Billing-box{
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  /* flex-direction: row-reverse; */
+  width: 100%;
+  height: 100rpx;
+  background: #ffffff;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+  z-index: 99999;
+}
+.Billing-btn{
+  width: 50%;
+  height: 98rpx;
+  font-size:  30rpx;
+  line-height: 98rpx;
+  text-align: center;
+  border-bottom: 2rpx solid #ffffff;
+  /* width: 150rpx;
+  height: 80rpx;
+  border:1rpx solid #000000;
+  text-align: center;
+  line-height: 78rpx; */
+}
+.hot{
+   border-bottom: 2rpx solid #1296db;
+}
+.nav-boxs{
+  position: fixed;
+  top: 100rpx;
+  width: 100%;
+  height: 100rpx;
+  background: #ffffff;
+  z-index: 99999;
+}
+.navs{
+  width: 20%;
+  height: 98rpx;
+  line-height: 98rpx;
+  text-align: center;
+  display: inline-block;
+  border-bottom: 2rpx solid #ffffff;
+}
+.nav-selected{
+  border-bottom: 2rpx solid #1296db;
+}
+.block{
+  width: 100%;
+  height: 200rpx;
+}
+.list{
+  width: auto;
+}
+.list-btn{
+  width: 12%;
+  height:60rpx;
+  border:1rpx solid #000000; 
+  font-size: 26rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+.list-box{
+  font-size: 24rpx;
+  padding: 0 10rpx;
+}

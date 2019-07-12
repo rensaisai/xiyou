@@ -1,0 +1,43 @@
+<view class="index">
+    <view class="title-box">
+       <text class="title">*请完成以下内容即可提现</text>
+    </view> 
+     <image class="image" wx:if="{{tempFilePaths != null}}" src="{{tempFilePaths}}" bindtap='uploading' mode="aspectFit"/>
+       <view class="img1"  wx:else>
+          <view class="uploading-box" bindtap='uploading'>
+              <view class="uploading"></view>
+              <view class="uploading-text">点击上传</view>
+          </view>
+       </view>
+        <image class="image" wx:if="{{tempFilePaths1 != null}}" src="{{tempFilePaths1}}" bindtap='uploading1' mode="aspectFit"/>
+       <view class="img1 img2" wx:else>
+          <view class="uploading-box" bindtap='uploading1'>
+              <view class="uploading"></view>
+              <view class="uploading-text">点击上传</view>
+          </view>
+       </view>
+        <view class="text-box">
+           <view class="method-img"></view>
+          <text class="text">信息仅用于实名验证，我已阅读并接受</text><text class='link' bindtap='links'>《声明》</text>
+        </view>
+        <view class="recommend-boxs">
+        <view class="recommend">
+            <view class="recommend-text">申请人姓名:</view>
+            <input class="input" placeholder="请输入申请人姓名" placeholder-style="color:#CCCCCC; font-size=30rpx;" value='{{name}}' bindinput="name"></input>
+        </view>
+      </view>
+       <view class="recommend-boxs">
+        <view class="recommend">
+            <view class="recommend-text">申请人身份证号:</view>
+            <input class="input" placeholder="请输入申请人身份证号" placeholder-style="color:#CCCCCC; font-size=30rpx;" value='{{identity}}' bindinput="identity"></input>
+        </view>
+      </view>
+      <view class="signature-box">
+         <view class="apply">
+            <view>申请人签名</view>
+              <view  class='delbutton' bindtap="cleardraw">重签</view>
+         </view>
+         <canvas class="canvas" id="canvas" canvas-id="canvas" disable-scroll="true" bindtouchstart="canvasStart" bindtouchmove="canvasMove" bindtouchend="canvasEnd" touchcancel="canvasEnd" binderror="canvasIdErrorCallback"></canvas>
+      </view> 
+       <view class="btn" bindtap='submit'>提交</view>
+</view>

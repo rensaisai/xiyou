@@ -1,0 +1,35 @@
+@import "/pages/common/index.wxss";
+@import "/pages/repairshops/detail/repairdetail.wxss";
+.index{
+  width: 100%;
+  height: auto;
+}
+.headinfo {
+  height: auto;
+}
+.kind-list-item{
+  height: auto;
+}
+.head-bigimg{
+ height: 380rpx;
+}
+.kind-list-item-00{
+  width: 95%;
+}
+.tui-menu-list{
+  margin-top: 10rpx; 
+}
+.kind-list-items {
+  height: 136rpx;
+  border-radius:4rpx;
+  overflow:hidden;
+}
+.detail-itemsub{
+ padding:5rpx 20rpx;
+}
+.detail-item{
+  padding: 20rpx 20rpx 0;
+}
+.view-ios-bottom{
+  height: 140rpx;
+}

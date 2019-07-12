@@ -1,0 +1,39 @@
+<import src="/pages/common/none.wxml" />
+<view class="index">
+    <block wx:for="{{list}}" wx:key="item.id">
+    <view class="index-box">
+        <view class="location-index">
+           <view class="location-box">{{item.receiver}}</view>
+           <view class="location-box1">{{item.phone}}</view>
+           <!-- <block wx:for="{{addres}}"> -->
+            <view class="location-box2">{{item.addres}}{{item.detailAddress}}</view>
+            <!-- </block> -->
+        </view>
+        <view class="location-label">
+          <view class="weui-cell" >
+            <view class="yuan">
+            <view class="weui-cell__hd {{item.checked?'weui-check__label':''}}" data-id="{{item.id}}" bindtap="radioChange"></view>
+            </view>
+            <view class="weui-cell__bd">默认地址</view>
+         </view>
+        <!-- <radio-group bindtap="radioChange">
+        <label class="weui-cell weui-check__label">
+          <view class="weui-cell__hd">
+            <radio checked='{{item.checked}}' data-id="{{item.id}}" color="#f39400" />
+          </view>
+          <view class="weui-cell__bd">默认地址</view>
+        </label>
+      </radio-group> -->
+       <view class="location-right">
+           <view class="location-left" bindtap='editor' data-id="{{item.id}}" data-userId="{{item.userId}}" data-receiver="{{item.receiver}}" data-phone="{{item.phone}}" data-regionCode="{{item.regionCode}}" data-region="{{item.region}}" data-detailAddress="{{item.detailAddress}}" data-addres="{{item.addres}}" data-isDefault="{{item.isDefault}}">编辑</view>
+            <view class="location-left" bindtap='delert' data-id='{{item.id}}'>删除</view>
+       </view>
+      </view>
+    </view>
+    </block>
+</view>
+<view hidden="{{hiddenNone}}">
+  <template is="none" />
+</view>
+ <view class="indexs-box"   bindtap='address'>添加新地址</view>
+

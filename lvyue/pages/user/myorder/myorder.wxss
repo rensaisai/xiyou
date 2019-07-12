@@ -1,0 +1,364 @@
+
+.index{
+  width: 100%;
+  height: auto;
+}
+.tab-nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90rpx;
+  background: #ffffff;
+  border-bottom:1rpx solid #B9B9B9; 
+  display: flex;
+  justify-content: space-around;
+  z-index: 9999;
+}
+.text{
+  width: 100rpx;
+  height: 70rpx;
+  font-size: 34rpx;
+  color: #232323;
+  line-height: 70rpx;
+  text-align: center;
+  border-bottom:2rpx solid #ffffff; 
+}
+.selects{
+  width: 100rpx;
+  height: 70rpx;
+  font-size: 34rpx;
+  color: #232323;
+  line-height: 70rpx;
+  text-align: center;
+  border-bottom:2rpx solid #E31436;
+  font-weight: 700; 
+}
+.menu_box{
+  position: fixed;
+  top: 92rpx;
+  width: 100%;
+  height: 92rpx;
+  background: #ffffff;
+  z-index: 9999;
+}
+.tab{
+  display: inline-block;
+  width: 25%;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  border-bottom: 2rpx solid #ffffff;
+  font-size: 28rpx;
+  color: #232323;
+  font-weight: 600;
+}
+.borders{
+  color: #e31436;
+  border-bottom: 2rpx solid #e31436;
+}
+.block1{
+  width: 100%;
+  height: 90rpx;
+}
+.block{
+  width: 100%;
+  height: 92rpx;
+}
+.vieitem{
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.list-box{
+  width: 100%;
+  height: 390rpx;
+  background: #ffffff;
+  border-radius:30rpx;
+  padding: 25rpx 30rpx;
+  box-sizing: border-box; 
+  margin-top: 20rpx;
+}
+.order-box{
+  width: 100%;
+  height: 189rpx;
+  display: flex;
+}
+.img{
+  width: 189rpx;
+  height: 189rpx;
+  border-radius:8rpx; 
+}
+.order-right-box{
+  flex: 1;
+  width: 100%;
+  height: 189rpx;
+  padding-left: 25rpx;
+  box-sizing: border-box;
+}
+.shops-name{
+  width: 100%;
+  height: auto;
+  font-size: 26rpx;
+  color: #2e2e2e;
+  font-weight: 600;
+}
+.price-boxs{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 26rpx;
+  color: #2e2e2e;
+  font-weight: 600;
+  margin-top: 10rpx;
+  line-height: 26rpx;
+}
+.specifications{
+  width: 100%;
+  height: auto;
+  font-size: 26rpx;
+  color: #949494;
+  font-weight: 600;
+  margin-top: 10rpx;
+  line-height: 26rpx;
+}
+.vouchers{
+  display: inline-block;
+  width: auto;
+  height: 36rpx;
+  background: #ffd5dc;
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #646262;
+  line-height:36rpx;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+  border-radius:5rpx; 
+  margin-top: 10rpx;
+}
+.btn-box{
+  width: 100%;
+  height: 60rpx;
+  margin-top: 70rpx;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.btn{
+  width: 128rpx;
+  height: 60rpx;
+  border-radius:30rpx;
+  border:1rpx solid #949494;  
+  margin-left: 30rpx;
+  font-size: 26rpx;
+  color: #949494;
+  text-align: center;
+  line-height: 60rpx;
+  font-weight: 600;
+}
+.hot{
+ border: 1rpx solid #e31436;
+ color:  #e31436;
+}
+.travel{
+  width: 100%;
+  height: 28rpx;
+  display: flex;
+}
+.travel-name{
+  width: 70%;
+  line-height: 30rpx;
+  font-size: 28rpx;
+  color: #2E2E2E;
+  font-weight: 600;
+}
+.travel-price{
+  width: 30%;
+  line-height: 28rpx;
+  color: #2E2E2E;
+  font-size: 28rpx;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.travel-detail{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.travel-time-box{
+  width: 100%;
+  height: 70rpx;
+  font-size: 26rpx;
+  color: #919191;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.red-text{
+  background: #f1f1f3!important;
+}
+
+
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+.commodity_attr_box {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 720rpx;
+  z-index: 2000;
+  background: #ffffff;
+  padding-bottom: 100rpx;
+}
+.specification{
+  position: relative;
+  width: 100%;
+  height: 97rpx;
+  border-bottom:1rpx solid #E9E9E9; 
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  font-size: 38rpx;
+  color: #000000;
+  font-weight: 600; 
+  text-align: center;
+  line-height: 97rpx;
+}
+.size-img{
+  position: absolute;
+  left: 20rpx;
+  top:27rpx;
+  width: 43rpx;
+  height: 44rpx;
+  margin: auto  0;
+}
+.price-box{
+  width: 100%;
+  height: 205rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 90rpx;
+  color: #000000;
+  font-weight: 600;
+}
+.yuan{
+  font-size: 30rpx;
+  font-weight: 550;
+}
+.select-box{
+  width: 100%;
+  height: 95rpx;
+  border-bottom:1rpx solid #E9E9E9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  color:#808080;
+}
+.not-pay{
+  color: #D4D4D4;
+}
+.not{
+  width: 36rpx;
+  height: 36rpx;
+  border-radius:50%;
+  background: #D4D4D4; 
+}
+.hots{
+  width: 36rpx;
+  height: 36rpx;
+  border-radius:50%;
+  border:1rpx solid #808080;
+}
+.select{
+  width: 36rpx;
+  height: 36rpx;
+  border-radius:50%;
+  border:1rpx solid #808080;
+  background: #ffffff;
+}
+.select:after{
+    content: "";
+    display: block;
+    width: 16rpx;
+    height: 16rpx;
+    border-radius: 50%;
+    background-color: #E51337;
+    position: relative;
+    top: 12rpx;
+    left: 12rpx;
+}
+.button{
+  width: 95%;
+  height: 104rpx;
+  border-radius:10rpx;
+  text-align: center;
+  line-height: 104rpx;
+  font-size: 36rpx;
+  color: #ffffff;
+  font-weight: 600; 
+  background: #E51337;
+  margin-top: 200rpx;
+}
+.input-box{
+  width: 94%;
+  height: 100rpx;
+  background: #ffffff;
+  margin: 20rpx auto 0;
+  border-radius:5rpx;
+  border:2rpx solid #CDCDCD;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  
+}
+.code-input{
+  width: 16%;
+  height: 100rpx;
+  border-right:1px solid #CDCDCD; 
+  text-align: center;
+}
+.code-input:last-child{
+   border-right:0rpx;
+}
+.ipt{
+  width: 0;
+  height: 0;
+}
+.next-btn{
+  width: 94%;
+  height: 104rpx;
+  background: #E4E4E4;
+  font-size: 36rpx;
+  color: #ffffff;
+  text-align: center;
+  line-height: 104rpx;
+  margin: 340rpx auto 0;
+}
+button::after{
+  border: none;
+}
+.button{
+  background: #E51337;
+}
+.forget{
+  width: 94%;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  font-size: 26rpx;
+  color: #E51337;
+}

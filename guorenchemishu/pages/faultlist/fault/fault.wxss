@@ -1,0 +1,140 @@
+.index{
+  width: 100%;
+  height: auto;
+}
+.box{
+  width: 100%;
+  height: 860rpx;
+}
+.box-fault{
+  width: 100%;
+  height: 530rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-border{
+  width: 430rpx;
+  height: 430rpx;
+  position: relative;
+}
+.box-icon{
+  position: absolute;
+  width: 430rpx;
+  height: 430rpx; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 100rpx;
+  font-weight: 700;
+  color: #ffffff;
+}
+.fuctl{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  color:rgba(255,255,255,0.6);
+  font-size: 34rpx;
+  font-weight: 600;
+  text-align: center;
+}
+.fuctl-btn{
+  width: 100%;
+  height: 84rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn{
+  width: 360rpx;
+  height: 84rpx;
+  border-radius:42rpx;
+  background:rgba(255,255,255,0.8);  
+  font-size: 34rpx;
+  font-weight: 600;
+  text-align: center;
+  line-height: 84rpx;
+}
+.color1{
+  background: linear-gradient(to bottom, #493bfc, #3ebffe);
+}
+.text-color1{
+  color: #4145F2;
+}
+.color2{
+  background: linear-gradient(to bottom, #ff682e, #FF903b);
+}
+.text-color2{
+  color: #F26F41;
+}
+.color3{
+  background: linear-gradient(to bottom, #fc0019, #ff4b40);
+}
+.text-color3{
+  color: #E82C2C;
+}
+.rotate{
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+.explain-box{
+  width: 100%;
+  height: auto;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  font-size: 26rpx;
+  color: #000000;
+}
+.explain-title{
+   font-size: 30rpx;
+   font-weight: 600;
+   line-height: 100rpx;
+}
+.list-box{
+  width: 100%;
+  height: auto;
+  background: #ffffff;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+.list{
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 1rpx solid #EEEEEE;
+  display: flex;
+  justify-content: space-between;
+  padding-right:20rpx;
+  box-sizing: border-box;  
+}
+.left{
+  width: auto;
+  height: 100rpx;
+  font-size: 34rpx;
+  font-weight: 600;
+  line-height: 100rpx;
+}
+.right{
+  width: auto;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+}
+.list-malfunction{
+  width: auto;
+  height: 100rpx;
+  font-size: 30rpx;
+  color:rgba(0,0,0,0.6);
+  line-height: 100rpx;
+  margin-right:20rpx; 
+}
+.icon-box{
+  width: 40rpx;
+  height: 40rpx;
+}

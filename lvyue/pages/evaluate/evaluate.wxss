@@ -1,0 +1,50 @@
+@import "/pages/association/comment/comment.wxss";
+.comment-name{
+  width: 100%;
+  height: 70rpx;
+  display: flex;
+  flex-direction: column;
+  line-height: normal;
+  /* justify-content: space-between; */
+}
+.comment-user{
+  font-size: 30rpx;
+  color: #191919;
+}
+.goods-standard{
+  font-size: 22rpx;
+  color: #999999;
+}
+.comment-box{
+  margin-top:34rpx; 
+}
+.goods-img-box{
+  width: 100%;
+  height: 200rpx;
+  margin-top:24rpx; 
+}
+.goods-img{
+  width: 200rpx;
+  height: 200rpx;
+  margin-right:6rpx; 
+}
+.like-box{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.browse-box{
+  height:100rpx;
+  font-size: 24rpx;
+  color: #9B9A9A;
+  line-height: 100rpx;
+}
+.praises{
+  width: 130rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

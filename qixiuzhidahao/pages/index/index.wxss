@@ -1,0 +1,23 @@
+.index{
+  width: 100%;
+  height: 100%;
+  padding: 100rpx 0 0;
+  box-sizing: border-box;
+}
+.box{
+  width: 100%;
+  height: auto;
+}
+.box-list{
+  width: 160rpx;
+  height: 160rpx;
+  border: 1rpx dashed #838383;
+  display: inline-block;
+  text-align: center;
+  line-height: 160rpx;
+  font-size: 38rpx;
+  color: #000000;
+  font-weight: 600;
+  margin-left: 66rpx;
+  margin-bottom: 100rpx;
+}

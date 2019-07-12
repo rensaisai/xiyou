@@ -1,0 +1,11 @@
+<view class="index">
+   <view class="box">
+     <view class="icon-box">
+         <view class="icon"></view>
+         <view class="icon-text">提交成功</view>
+     </view>
+   </view>
+   <view class="describe">您的申请我们已经收到，我们将会在【1-3个工作日】审核您的申请，如果审核通过，您可以进行提现。</view>
+
+  <view class="btn" bindtap='btn' >完成</view>
+</view>

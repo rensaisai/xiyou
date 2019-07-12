@@ -1,0 +1,128 @@
+<view class="orderstatus-box">
+   <view class="title-box">
+      <view class="order-title">订单状态</view>
+      <view class="order-headings">{{list.status}}</view>
+   </view>
+   <view class="status">
+      <view class="status-evaluation {{active?'selected-style':''}}" bindtap='evaluation' wx:if="{{list.orderStatus == 0}}" data-list="{{list}}">支付</view>
+       <view class="status-evaluation {{active?'selected-style':''}}" bindtap='evaluation' wx:if="{{list.orderStatus == 2}}" data-list="{{list}}">预约</view>
+        <view class="status-evaluation {{active?'selected-style':''}}" bindtap='evaluation' wx:if="{{list.orderStatus == 3 && list.isPj ==0}}" data-list="{{list}}">评价</view>
+   </view>
+</view>
+<view class="consignee-box">
+   <view class="consignee">
+       <view class="consignee-icon">
+           <view class="icon"></view>
+           <view class="consignee-name">{{list.nickName}}</view>
+       </view>
+       <view class="consignee-phone">{{list.userPhone}}</view>
+   </view>
+</view>
+<view class="consignee-box consignee-box1">
+   <view class="consignee">
+       <view class="consignee-icon">
+           <view class="icon1"></view>
+           <view class="consignee-name">{{list.repairName}}</view>
+       </view>
+        <view class="icon2"></view>
+   </view>
+</view>
+<view class="consignee-box consignee-box1">
+   <!-- <view class="consignee">
+       <view class="consignee-icon">
+           <view class="icon1"></view> -->
+           <view class="car-name">{{list.userCar}}</view>
+       <!-- </view>
+        <view class="icon2"></view>
+   </view> -->
+</view>
+ <block wx:for="{{list.itemsList}}" wx:key="item.id">
+ <view class="maintenance">
+       <view class="services">
+           <view class="service-name">{{item.itemName}}</view>
+       </view>
+ </view>
+ <view class="maintenance-box">
+    <block wx:for="{{item.goodsList}}" wx:key="this">
+        <view class="maintenance-list">
+            <image class="items-img" src="{{item.img}}" mode="aspectFill"></image>
+            <view class="maintenance-list-right">
+                <view class="package-name">{{item.goodsName}}</view>
+                <view class="package-specifications">
+                    <view class="specifications-box" wx:if="{{item.goodsPackage != null && item.goodsPackage!=''}}">{{item.goodsPackage}}</view>
+                    <view class="specifications-box"  wx:if="{{item.viscosity != null && item.viscosity != ''}}">{{item.viscosity}}</view>
+                        <view class="specifications-box"  wx:if="{{item.spec != null && item.spec != ''}}">{{item.spec}}</view>
+                </view>
+                <view class="specifications-price-box">
+                    <view class="specifications-price">
+                         <text class="price-icon">￥</text>{{item.sellingPrice}}
+                    </view>
+                    <view class="specifications-number">
+                        <text class="price-icon">x</text>{{item.goodsNumber}}
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+     <!-- <view class="maintenance-list">
+            <image class="items-img" src="/image/gongshi.png" mode="aspectFill"></image>
+            <view class="maintenance-list-right">
+                <view class="package-name">工时费</view>
+                <view class="specifications-price-box">
+                    <view class="specifications-price">
+                         <text class="price-icon">￥</text>{{item.hourlyRates}}
+                    </view>
+                    <view class="specifications-number">
+                    </view>
+                </view>
+            </view>
+    </view> -->
+    </view>
+    </block>
+    <view class="consignee-box">
+           <view class="consignee-name pay-name" >支付方式</view>
+           <view class="weixin-name">微信支付</view>
+    </view>
+    <!-- <view class="envelope">
+           <view class="consignee-name pay-name" >车豆抵扣</view>
+           <view class="pay-price"><text wx:if="{{list.beanPrice != 0}}">-</text>{{list.beanPrice}}</view>
+    </view>
+    <view class="envelope">
+       <view class="envelope-name">红包卡券</view>
+       <view class="envelope-right-box">
+          <view class="reduction"><text wx:if="{{list.cardName != '(无可用优惠券)'}}">-</text>{{list.cardName}}</view>
+          <view class="icon2"></view>
+       </view>
+    </view> -->
+    <view class="envelope" bindtap='repairorder' data-orderid='{{list.id}}'>
+       <view class="envelope-name">保养工单</view>
+       <view class="envelope-right-box">
+          <view class="reduction invoice"></view>
+          <view class="icon2"></view>
+       </view>
+    </view>
+    <!-- <view class="envelope">
+       <view class="envelope-name">发票</view>
+       <view class="envelope-right-box">
+          <view class="reduction invoice">不开票</view>
+          <view class="icon2"></view>
+       </view>
+    </view> -->
+    <view class="pay-details-box">
+      <view class="pay-details">
+         <view class="pay-name">商品总价</view>
+         <view class="goods-price">￥{{list.price}}</view>
+      </view>
+      <view class="pay-details">
+         <view class="pay-name">车豆支付</view>
+         <view class="goods-price">￥{{list.beanPrice}}</view>
+      </view>
+      <view class="pay-details">
+         <view class="pay-name">优惠金额</view>
+         <view class="goods-price">￥{{list.cardPrice}}</view>
+      </view>
+       <view class="pay-details">
+         <view class="pay-name">实付金额</view>
+         <view class="goods-price">￥{{list.payAmount}}</view>
+      </view>
+    </view>

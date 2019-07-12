@@ -1,0 +1,32 @@
+@import "/pages/association/details/details.wxss";
+.list{
+  width: 50%;
+}
+.goods-img-box{
+  width: 100%;
+  height: auto;
+  padding: 30rpx 20rpx 0;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+.comment-goods-img{
+  width: 100%;
+  min-height: auto;
+  max-height: 447rpx;
+}
+.comment-information{
+  background: #ffffff;
+  font-size: 24rpx;
+  color: #8E8E8E;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.comment-details-box{
+  height: 120rpx;
+}
+.praise-box{
+ min-width:auto;
+}
+.comment-title{
+  word-wrap:break-word;
+}

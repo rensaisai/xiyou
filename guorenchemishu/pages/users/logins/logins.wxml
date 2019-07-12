@@ -1,0 +1,35 @@
+<view class="index">
+
+<view class="logo-head">
+<image class="logo-img" src="/image/logo.png"></image>
+</view>
+<form bindsubmit='loginRequest'>
+  <!-- <view class="page-section  section">
+      <view class="weui-cells_after-title"> -->
+        <view class="box">
+          <view class="box-icon"></view>
+          <view class="text">手机号码</view>
+          <input name="phone" type='number' class="input"  placeholder="请输入11位手机号" bindinput="inputPhoneNum" placeholder-style="font-size:30rpx;"/>
+        </view>
+        <view class="box" style=" margin-top:40rpx;">
+          <view class="box-icon img"></view>
+          <view class="text">验证码</view>
+          <input name="phone" type='number' class="inputs"  placeholder="请输入验证码" bindinput="addCode" placeholder-style="font-size:30rpx;" style="padding-left:35px;"/>
+          <view class="box-code">
+          <view wx:if="{{send}}" class="sendMsg" bindtap="sendMsg">获取验证码</view>
+          <view wx:if="{{alreadySend}}" class="sendMsg1" >{{second+"s后重新发送"}}</view>
+        </view>
+        </view>
+   <view class="method">
+          <view class="method-box">
+             <view class="{{active?'method-img':'method-imgs'}}" bindtap='radio'></view>
+             <view class="method-text texts">
+                <text>我已阅读并接受</text><text bindtap='link' class="link">《果仁车秘书用户协议》</text>
+             </view>
+          </view>
+      </view>
+      <button bindtap='loginRequest' type="primary" class="button-big" style="background-color:#fd4200" disabled="{{loading}}">登录</button>
+ <!-- <button type="primary"  form-type='submit' open-type="getUserInfo" bindgetuserinfo="loginRequest" >登录</button> -->
+</form>
+</view>
+

@@ -1,0 +1,29 @@
+<view class="index">
+    <view class="page-section">
+      <view class="weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="phone" type='number' class="weui-input box"  placeholder="请输入邀请码"  bindinput="focue" disabled="{{defaul}}" value="{{inviteCode}}"/>
+        </view>
+      </view>
+  </view>
+  <button type="primary"  class="button-big login" bindtap='click' style="background-color:#f39400"form-type='submit'>请输入邀请码</button>
+  <view class="box-referrer">
+     <view>邀请码规则:</view>
+     <view>1.可联系你的好友获取旅游直达号邀请码;</view>
+     <view>2.一个用户只能绑定一个邀请码,绑定后不得修改;</view>
+  </view>
+</view>
+  <view class="commodity_screen"  catchtouchmove='true' wx:if="{{showModalStatus}}"></view> 
+    <view catchtouchmove='true' class="commodity_attr_box box" wx:if="{{showModalStatus}}">
+       <view class="referrer-index">
+       <view wx:if="{{data[0].headImg == '' || data[0].headImg == null }}" class="head" style="background:url(/image/logo.png) no-repeat center center/cover"></view>
+           <view  wx:else class="head" style="background:url({{data[0].headImg}}) no-repeat center center/cover"></view>
+           
+           <view class="head-box">是否确认绑定推荐人绑定后将无法修改</view>
+           <view class="btn">
+               <view class="left-btn" bindtap='are'>是</view>
+               <view class="right-btn" bindtap='back'>否</view>
+           </view>
+       </view>
+    
+    </view>

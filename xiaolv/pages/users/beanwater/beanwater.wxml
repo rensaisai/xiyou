@@ -1,0 +1,19 @@
+<import src="/pages/common/none.wxml" />
+<view class="index">
+  <view class="box" wx:for="{{list}}" wx:key="this">
+      <view class="box-left">
+          <view>{{item.beanTypeName}}</view>
+          <view>{{item.time}}</view>
+      </view>
+      <view class="box-right">{{item.bean}}</view>
+  </view>
+ <view class="loadmore" hidden="{{loadmore}}">
+   <view class="log" hidden="{{isHideLoadMore}}">
+      <view class="loading"></view>
+      <view class="loadmore_tips">正在加载</view>
+    </view> 
+</view>
+<view hidden="{{hiddenNone}}">
+  <template is="none" />
+</view>
+</view>

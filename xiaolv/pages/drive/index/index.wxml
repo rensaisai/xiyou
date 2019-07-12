@@ -1,0 +1,214 @@
+<view class="search-box">
+   <input class="search-input" placeholder='搜索活动、游记'></input>
+   <view class="search"></view>
+</view>
+<image class="release" src="/image/release.png" bindtap='releasebtn'></image>
+<scroll-view class="title-box">
+    <view class="title {{currentData==0?'active':''}}" bindtap='checkCurrent' data-index="0">全部</view>
+    <view class="title {{currentData==1?'active':''}}" bindtap='checkCurrent' data-index="1">活动</view>
+    <view class="title {{currentData==2?'active':''}}" bindtap='checkCurrent' data-index="2">游记</view>
+</scroll-view>
+<view class="block"></view>
+<swiper style='width:100%;height:{{windowHeight}}px' current="{{currentData}}" bindchange="eventchange">
+    <swiper-item>
+       <scroll-view style='width:100%;height:{{windowHeight}}px' scroll-y>
+          <view class="hot-drive">热门自驾</view>
+          <scroll-view class="hot-box" scroll-x>
+             <view class="hot-drive-box">
+                <image class="hot-drive-img"></image>
+                <image class="hot-img" src="/image/hot.png"></image>
+             </view>
+             <view class="hot-drive-box">
+                <image class="hot-drive-img"></image>
+                <image class="hot-img" src="/image/hot.png"></image>
+             </view>
+             <view class="hot-drive-box">
+                <image class="hot-drive-img"></image>
+                <image class="hot-img" src="/image/hot.png"></image>
+             </view>
+          </scroll-view>
+          <view class="travel-box">
+             <view class="hot-drive">精华游记</view>
+             <view class="travel-list {{index==0?'travel-list1':''}}">
+                 <view class="travel-img">
+                   <image class="travel-img"></image>
+                 </view>
+                 <view class="travel-text">世界旅游日·中国这些地方藏着城市的旧故事世界旅游日·中国这些地方藏着城市的旧故事</view>
+                 <view class="information-box">
+                    <view class="information-left">
+                        <view class="user-img">
+                          <image src="/image/headdefault.png" class="user-img"></image>
+                        </view>
+                        <view class="user-name">秋水伊人在新疆日喀则秋水伊人在新疆日喀则</view>
+                    </view>
+                    <view class="information-right">
+                       <view class="browse">
+                          <view class='browse-img'>
+                            <image src="/image/browse.png" class='browse-img'></image>
+                          </view>
+                          <view class="browse-num">2000</view>
+                       </view>
+                       <view class="like">
+                          <view class='browse-img'>
+                            <image src="/image/link.png" class='browse-img'></image>
+                          </view>
+                          <view class="browse-num">2000</view>
+                       </view>
+                    </view>
+                 </view>
+             </view>
+              <view class="travel-list">
+                 <view class="travel-img">
+                   <image class="travel-img"></image>
+                 </view>
+                 <view class="travel-text">世界旅游日·中国这些地方藏着城市的旧故事世界旅游日·中国这些地方藏着城市的旧故事</view>
+                 <view class="information-box">
+                    <view class="information-left">
+                        <view class="user-img">
+                          <image src="/image/headdefault.png" class="user-img"></image>
+                        </view>
+                        <view class="user-name">秋水伊人在新疆日喀则秋水伊人在新疆日喀则</view>
+                    </view>
+                    <view class="information-right">
+                       <view class="browse">
+                          <view class='browse-img'>
+                            <image src="/image/browse.png" class='browse-img'></image>
+                          </view>
+                          <view class="browse-num">2000</view>
+                       </view>
+                       <view class="like">
+                          <view class='browse-img'>
+                            <image src="/image/link.png" class='browse-img'></image>
+                          </view>
+                          <view class="browse-num">2000</view>
+                       </view>
+                    </view>
+                 </view>
+             </view>
+          </view>
+       </scroll-view>
+    </swiper-item>
+   <swiper-item>
+       <scroll-view style='width:100%;height:{{windowHeight}}px;background: #ffffff;padding: 0 20rpx; box-sizing: border-box;'>
+          <view class="travel-list">
+                 <view class="travel-img">
+                   <image class="travel-img"></image>
+                 </view>
+                 <view class="travel-text" style='height:65rpx;line-height:65rpx;'>世界旅游日·中国这些地方藏着城市的旧故事世界旅游日·中国这些地方藏着城市的旧故事</view>
+                 <view class="xnum-box">
+                    <view class="num-box">2000人想去</view>
+                 </view>
+                 <view class="information-box">
+                    <view class="information-left">
+                        <view class="user-name" style='color:#E84A2E;font-size:36rpx;'><text style='color:#E84A2E;font-size:20rpx;'>￥</text>6000</view>
+                    </view>
+                    <view class="information-rights" style='color:#989898;font-size:26rpx; flex-direction:row-reverse;'>
+                    天<text style='color:#E84A2E;'>3</text>太原集合
+                    </view>
+                 </view>
+             </view>
+
+             <view class="travel-list">
+                 <view class="travel-img">
+                   <image class="travel-img"></image>
+                 </view>
+                 <view class="travel-text" style='height:65rpx;line-height:65rpx;'>世界旅游日·中国这些地方藏着城市的旧故事世界旅游日·中国这些地方藏着城市的旧故事</view>
+                 <view class="xnum-box">
+                    <view class="num-box">2000人想去</view>
+                 </view>
+                 <view class="information-box">
+                    <view class="information-left">
+                        <view class="user-name" style='color:#E84A2E;font-size:36rpx;'><text style='color:#E84A2E;font-size:20rpx;'>￥</text>6000</view>
+                    </view>
+                    <view class="information-rights" style='color:#989898;font-size:26rpx; flex-direction:row-reverse;'>
+                    天<text style='color:#E84A2E;'>3</text>太原集合
+                    </view>
+                 </view>
+             </view>
+
+             
+       </scroll-view>
+    </swiper-item>
+    <swiper-item>
+       <scroll-view style='width:100%;height:{{windowHeight}}px;background: #ffffff;padding: 0 20rpx; box-sizing: border-box;'>
+             <view class="travel-list">
+                 <view class="travel-img">
+                   <image class="travel-img"></image>
+                 </view>
+                 <scroll-view class="journey-box" scroll-x >
+                    <view class="journey-xbox">
+                        <view class="journey-img">
+                          <image class="journey-img"></image>
+                        </view>
+                        <view class="journey-right">
+                            <view class='journey-right-top'>
+                               <view class="journey-dian"></view>
+                               <view class="journey-time">2019-03-27</view>
+                            </view>
+                            <view class="journey-right-bottom">
+                               <view class="journey-list">
+                                   <view class="journey-km">57<text class="km">km</text></view>
+                                   <view class="journey-text">自驾里程</view>
+                               </view>
+                               <view class="journey-list">
+                                   <view class="journey-km">1.2<text class="km">h</text></view>
+                                   <view class="journey-text">驾驶时间</view>
+                               </view>
+                               <view class="journey-list">
+                                  <view class="journey-km">7.5<text class="km">L/100km</text></view>
+                                  <view class="journey-text">耗油量</view>
+                               </view>
+                            </view>
+                        </view>
+                    </view>
+                 </scroll-view>
+                 <view class="travel-text">世界旅游日·中国这些地方藏着城市的旧故事世界旅游日·中国这些地方藏着城市的旧故事</view>
+                 <view class="information-box">
+                    <view class="information-left">
+                        <view class="user-img">
+                          <image src="/image/headdefault.png" class="user-img"></image>
+                        </view>
+                        <view class="user-name">秋水伊人在新疆日喀则秋水伊人在新疆日喀则</view>
+                    </view>
+                    <view class="information-right">
+                       <view class="browse">
+                          <view class='browse-img'>
+                            <image src="/image/browse.png" class='browse-img'></image>
+                          </view>
+                          <view class="browse-num">2000</view>
+                       </view>
+                       <view class="like">
+                          <view class='browse-img'>
+                            <image src="/image/link.png" class='browse-img'></image>
+                          </view>
+                          <view class="browse-num">2000</view>
+                       </view>
+                    </view>
+                 </view>
+             </view>
+       
+       </scroll-view>
+    </swiper-item>
+</swiper>
+
+
+
+<view class="commodity_screen"  catchtouchmove='true'  wx:if="{{showModalStatus}}"></view> 
+<view  catchtouchmove='true' class="commodity_attr_box" wx:if="{{showModalStatus}}">
+       <view class="tab-box">
+         <view class="activity-box">
+             <image class="activity-img" src="/image/activity.png"></image>
+             <text class="activity-title">活动</text>
+         </view>
+         <view class="activity-box" style='margin-left: 80rpx;'>
+             <image class="activity-img" src="/image/travel.png"></image>
+             <text  class="activity-title">游记</text>
+         </view>
+       </view>
+       <view class="shut-box">
+           <image class="shut-img" src="/image/shut.png" bindtap='shutdown'></image>
+       </view>
+       
+       
+</view>
+

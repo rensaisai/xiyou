@@ -1,0 +1,24 @@
+<import src="/pages/common/head.wxml" />
+
+<view class="container">
+  <template is="head" data="{{title: '验证支付安全'}}"/>
+
+  <view class="page-body">
+    <view class="page-section">
+      <view>支付金额</view>
+      <view class="price">{{price}}</view>
+      <view class="desc"></view>
+      <view class="weui-cells__title">请确认登录密码</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input ">
+          <input name="pwd" password class="weui-input"  placeholder="请输入密码" bindinput='pwdInputBind'/>
+        </view>
+      </view>
+      <view class="btn-area">
+
+  <button type="primary" class="button-big" style="background-color:#1296db" bindtap="checkPwdRequest"loading="{{loading}}">立即支付</button>
+      </view>
+    </view>
+  </view>
+
+</view>

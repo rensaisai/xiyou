@@ -1,0 +1,21 @@
+ .commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+.commodity_attr_box {
+  /* width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 358rpx;
+  z-index: 2000;
+  background: #f0f0f0; */
+}

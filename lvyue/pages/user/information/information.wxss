@@ -1,0 +1,38 @@
+.box{
+  width: 100%;
+  height: 92rpx;
+  background: #ffffff;
+  margin-top: 2rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.left{
+  font-size: 34rpx;
+  color: #000000;
+  font-weight: 600;
+}
+.icon{
+  width: 13rpx;
+  height: 22rpx;
+}
+.right{
+  height: 92rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.img{
+  width: 58rpx;
+  height: 58rpx;
+  border-radius:50%;
+  margin-right: 20rpx;
+}
+.name{
+  font-size: 30rpx;
+  color: #9b9b9b;
+  font-weight: 600;
+  margin-right: 20rpx;
+}

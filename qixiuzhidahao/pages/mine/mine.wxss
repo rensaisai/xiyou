@@ -1,0 +1,42 @@
+@import "/pages/common/index.wxss";
+
+.mine-head{
+  padding-top:50rpx;
+  color: #ffffff;
+}
+.nickname{
+  color: #ffffff;
+}
+.user-statics{
+  display: flex;
+}
+.statics{
+  margin:1rpx;
+  box-sizing: border-box;
+  width: 50%;
+  padding: 15rpx 0rpx;
+  display: flex;
+  color:#ffffff;
+  font-size: 28rpx;
+  justify-content: center;
+  align-items: center;
+}
+.mineback{
+  width: 100%;
+  height:350rpx;
+}
+.mineback-img{
+  width: 100%;
+  height:350rpx;
+  position: absolute;
+  z-index: -1;
+}
+.headimg{
+  width: 140rpx;
+  height:140rpx;
+  border-radius: 70rpx;
+}
+.list-icon{  
+  width: 65rpx;
+  height:65rpx;
+}

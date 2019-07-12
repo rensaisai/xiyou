@@ -1,0 +1,23 @@
+<view class="index">
+  <view class="mineback">
+    <image class="mineback-img"  src="/image/mineback.jpg"/>
+    <view class="index-hd mine-head">
+      <image class="headimg" src="{{headimg}}"></image>
+      <view class="index-desc nickname">{{nickname}}</view>
+      
+    </view>
+  </view>
+  <view class="index-bd">
+    <view class="kind-list">
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd" data-index="{{index}}" bindtap="itemClick">
+            <image class="list-icon" src="{{item.img}}"></image>
+            <view class="kind-list-text">{{item.title}}</view>
+            <image class="kind-list-navi" src="/image/navi.png"></image>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

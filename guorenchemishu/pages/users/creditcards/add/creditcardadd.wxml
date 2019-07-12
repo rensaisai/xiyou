@@ -1,0 +1,116 @@
+<import src="/pages/common/head.wxml" />
+<view class="index">
+<form bindsubmit='saveBankRequest'>
+     <view class="box">
+        <view class="box-text">持卡人姓名</view>
+        <view class="box-input">
+          <input name="username" class="weui-input"  placeholder="请输入持卡人姓名"/>
+      </view>
+     </view>
+     <view class="box">
+        <view class="box-text">银行卡号</view>
+        <view class="box-input">
+          <input name="cardno" type="number" class="weui-input" placeholder="请输入银行卡号" bindinput="card" value='{{card}}'/>
+          <view class="sweep-box" bindtap='sweep'>
+             <image src="/image/sweep.png" class="sweep"></image>
+          </view>
+        </view>
+     </view>
+      <view class="box">
+        <view class="box-text">银行卡所在地区</view>
+        <view class="box-input select" bindtap='resgiter'>
+           <view class="left">{{selec}}</view>
+           <view class="right">
+               <view class="fanhui">请选择</view>
+               <image class="jiantou" src="/image/navi.png"></image>
+           </view>
+          <!-- <input name="cardno" type="number" class="weui-input"  placeholder="请输入银行卡号" bindblur="card"/> -->
+        </view>
+     </view>
+       <view class="box">
+        <view class="box-text">开户行名称</view>
+         <view class="box-input select" bindtap='opening'>
+           <view class="left">{{bankName}}</view>
+           <view class="right">
+               <view class="fanhui">请选择</view>
+               <image class="jiantou" src="/image/navi.png"></image>
+           </view>
+        </view>
+        </view>
+        <!-- <view class="box">
+        <view class="box-text">开户行名称</view>
+        <view class="box-input">
+            <input name="bankName" class="weui-input"  placeholder="请输入开户行名称"/>
+     </view>
+   </view>  -->
+  <button type="primary" class="button-big login" style="background-color:#fd4200"form-type='submit' >确定</button>
+</form>
+</view>
+  <view class="commodity_screen"   wx:if="{{showModalStatus}}"></view> 
+           <view  animation="{{animationData}}"  class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    
+    <view class="anmit">{{selec}}</view>
+    <view class="index-bd" wx:if="{{citylse == true}}">
+    <view class="kind-list">
+      <block wx:for-items="{{city}}" wx:key="{{item.id}}">
+        <!-- <view class="kind-list-box"> -->
+          <view id="{{item.id}}" class="kind-list-item-hd" data-index="{{index}}" bindtap="selectOver1">
+            <view class="kind-list-item-box">
+              <!-- <view class="kind-list-item-01"> -->
+                <view class="kind-list-text">{{item.regionName}}</view>
+                <image class="kind-list-navi" src="/image/navi.png"></image>
+              <!-- </view> -->
+            </view>
+          </view>
+        <!-- </view> -->
+      </block>
+    </view>
+  </view>
+
+  <view class="index-bd"  wx:if="{{cityls == true}}">
+    <view class="kind-list">
+        <block wx:for-items="{{citys}}" wx:key="{{item.id}}">
+        <!-- <view class="kind-list-item"> -->
+          <view id="{{item.id}}" class="kind-list-item-hd" data-index="{{index}}" bindtap="selectOver2">
+            <!-- <image class="kind-list-img" src="/image/city.png"></image> -->
+            <view class="kind-list-item-box">
+              <!-- <view class="kind-list-item-01"> -->
+                <view class="kind-list-text">{{item.regionName}}</view>
+                <image class="kind-list-navi" src="/image/navi.png"></image>
+              </view>
+            <!-- </view> -->
+          </view>
+        <!-- </view> -->
+      </block>
+    </view>
+  </view>         
+</view>
+  <view class="commodity_screen"   wx:if="{{showModal}}" bindtap='hide'></view> 
+      <view  animation="{{animationData}}"  class="commodity_attr_box" wx:if="{{showModal}}">
+    <view class="anmit">请选择开户行</view>
+    <view class="index-bd">
+    <view class="kind-list">
+        <!-- <view class="kind-list-item-hd">
+            <view class="kind-list-item-box">
+                <!-- <image class="kind-list-navi" src="/image/navi.png"></image> -->
+              <!-- </view> -->
+        <!-- </view> -->
+        <block wx:for-items="{{opening}}" wx:key="{{item.id}}">
+        <!-- <view class="kind-list-item"> -->
+          <view id="{{item.id}}" class="kind-list-item-hd" data-openingBank="{{item.openingBank}}" data -id="{{item.id}}" bindtap="selectOver3">
+            <!-- <image class="kind-list-img" src="/image/city.png"></image> -->
+            <view class="kind-list-item-box">
+              <!-- <view class="kind-list-item-01"> -->
+                <view class="kind-list-text">{{item.openingBank}}</view>
+                <image class="kind-list-navi" src="/image/navi.png"></image>
+              </view>
+            <!-- </view> -->
+          </view>
+        <!-- </view> -->
+      </block>
+    </view>
+  </view>         
+</view>
+<view style='width:0px;height:0px;overflow:hidden;'>
+    <canvas  canvas-id="canvas" class="canvas" style='width:{{width}}px;height:{{heigth}}px;position:relative;left:1000px;'></canvas>
+</view>

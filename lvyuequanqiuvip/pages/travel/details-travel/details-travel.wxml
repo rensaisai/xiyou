@@ -1,0 +1,89 @@
+
+ <view class="box" scroll-top="{{scrollTop}}">
+       <view class="numbe" bindtap='numbe'>
+          <view class="numbe-text">第{{dayes}}天</view>
+       </view>
+ </view>
+<scroll-view class="index" scroll-y="true" scroll-into-view="{{toView}}"  bindscroll="scroll">
+     <block wx:for="{{journey}}" wx:key="item.id">
+     <view class="sky" id="{{item.id}}">
+     <view wx:if="{{item.days==1}}" class="kalendar" ></view>
+     <view class="kalendar" wx:else id="{{item.id}}">
+        <view class="kalendar-img"></view>
+        <view class="kalendar-text">第{{item.days}}天</view>
+    </view>
+    <view class="sky-box">
+     
+              <view class="first-box">
+                 <view class="first-site">{{item.origin}}
+                    <view class="first-site-imgs-box">
+                          <view class="first-xian"></view>
+                        <!-- <view class="first-site-img"></view> -->
+                    </view>    
+                 {{item.destination}}</view>
+               </view>
+              <view class="slide-box">
+                 <block wx:for="{{item.img}}" wx:key="item.id">
+                    <image class="slide-img" src="{{item.imgUrl}}" data-src="{{item.imgUrl}}" mode="aspectFill"></image>
+                 </block> 
+              </view>
+          <view class="stay-box">
+              <view class="stay-eat">
+                <view class="eat-text">
+                <view class="eat-img"></view>
+                <view class="dinner">用餐</view>
+                <view class="maohao">:</view>
+                <view class="breakfast">早餐:{{item.cereal}} 晚餐:{{item.supper}}</view>
+                </view>
+              </view>
+              <view class="stay-eat">
+                <view class="eat-text">
+                <view class="eat-imgs"></view>
+                <view class="dinner">住宿</view>
+                 <view class="maohao">:</view>
+                <view class="breakfast">{{item.hotel}}</view>
+                </view>
+              </view>
+               <!-- <view class="stay-eat">
+                <view class="eat-text">
+                <view class="eat-imgs"></view>
+                <view class="dinners">购物店:</view>
+                <view class="breakfast">{{item.shopping}}</view>
+                </view>
+              </view> -->
+          </view>
+          <text class="briefs">
+            {{item.introduce}}
+          </text>
+     </view> 
+    </view>
+    </block> 
+</scroll-view>
+
+
+ <view class="commodity_screens" animation="{{animationData}}"  wx:if="{{showModalStatus}}">
+ <view class="scroll">
+   <block wx:for="{{journey}}" wx:key="item.id">  
+    <view class="firstly" bindtap="choiceWordindex" data-id="{{item.id}}" data-days="{{item.days}}">
+      <view class="firstly-text">第</view>
+      <view class="yuan-box">
+          <view class="firstly-yuan" >{{item.days}}</view>
+      </view>
+      <view class="firstly-text">天</view>
+    </view>
+    <view class="firstly-xian"></view>
+     <view class="trip">
+      <view class="trip-text1">{{item.origin}}</view>
+      <view class="trip-box">
+          <view class="first-xian"></view>
+          <!-- <view class="trip-yuan"></view> -->
+      </view>
+      <view class="trip-text">{{item.destination}}</view>
+    </view>
+    <view class="firstly-xian1"></view>
+    </block>
+
+     
+  </view>
+ </view> 
+

@@ -1,0 +1,33 @@
+<import src="/pages/common/none.wxml" />
+<view class="index">
+<view class="stores-box" bindtap='andmore'>
+    <view class="service">服务门店</view>
+    <view class="more">更多</view>
+</view>
+<view class="list-box" bindtap="itemClick" wx:for="{{list}}" wx:key="item.id" data-index="{{index}}">
+    <image src="{{item.headImg}}" class="list-img" mode="aspectFill" lazy-load="true"></image>
+    <view class="list-right">
+       <view class="list-name">
+           <view class="garage-name">{{item.repairName}}</view>
+          <!-- <image src="/image/zhida.png" hidden='{{!item.zdhFlag}}' class="mechanics-img"></image> -->
+       </view>
+       <view class="list-name">
+          <view class="evaluation">总评分 <text class="points">{{item.grade}}</text></view>
+          <view class="evaluation">{{item.distanceShow}}</view>
+       </view>
+       <view class="list-name" >
+          <image class="positioning" src="/image/dingwei.png"></image>
+          <view class="address">{{item.address}}</view>
+       </view>
+    </view>
+</view>
+<view class="loadmore" hidden="{{loadmore}}">
+   <view class="log" hidden="{{isHideLoadMore}}">
+      <view class="loading"></view>
+      <view class="loadmore_tips">正在加载</view>
+    </view> 
+</view>
+<view hidden="{{hiddenNone}}">
+  <template is="none" />
+</view>
+</view>

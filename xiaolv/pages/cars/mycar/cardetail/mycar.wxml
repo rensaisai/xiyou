@@ -1,0 +1,51 @@
+<view class="index" bindtap='show'>
+    <view class="tab">
+        <view class="box">
+           <view class="vehicle-information">
+              <image src="{{xczImg}}" class="img" mode="aspectFit"></image>
+              <view class="right">
+                 <view class="information">{{fctName}} {{brName}}</view>
+                 <view class="displacement">{{cc}} {{year}}年产</view>
+              </view>
+           </view>
+           <view class="btn-box" bindtap='modifier'>
+              <!-- <view class="btn">更改车型</view> -->
+           </view>
+        </view>
+    </view>
+    <view class="vehicle-title">车牌号码</view>
+    <view class="choose-vehicle" style='padding-right:0rpx;'>
+       <view class="choose-vehicle-left" catchtap='carnos'>{{carno}}</view>
+       <view class="choose-vehicle-right" catchtap="takePhoto">
+          <image src='/image/sweep.png' class='sweep'></image>
+       </view>
+    </view>
+    <view class="vehicle-title">上路时间</view>
+    <view class="choose-vehicle">
+         <picker mode="date" value="{{date}}" start="1940-01-01" end="{{maxDate}}" bindchange="bindDateChange" class="weui-input">
+          <view class="weui-input">{{date}}</view>
+        </picker>
+    </view>
+    <form bindsubmit='saveUserCarRequest'>
+        <view class="vehicle-title">行驶里程 (km)</view>
+        <view class="choose-vehicle">
+            <input name="km" value="{{km}}" type="number" class="weui-input" placeholder="请输入行驶里程"/>
+        </view>
+         <button type="primary" class="button-big" style="background-color:#fd4200" form-type='submit'>确定</button>
+    </form>
+</view>
+
+
+   
+  <!-- 省键盘 -->
+  <view class="provinces" hidden='{{hiddenPro}}'>
+    <view class="pro-li fl" wx:for="{{provinceArr}}" wx:key="{{item.index}}"catchtap='proTap' data-province="{{item}}">{{item}}</view>
+  </view>
+  <!-- 号码键盘 -->
+  <view class="provinces" hidden='{{hiddenStr}}'>
+    <view class="pro-li fl" wx:for="{{strArr}}" wx:key="{{item.index}}" catchtap='strTap' data-str="{{item}}">{{item}}</view>
+    <view class="bot">
+      <view class='kb-icon kb-hide fl pro-li' catchtap='backKeyboard'>返回</view>
+      <view class='kb-icon kb-hide fl pro-li' catchtap='backSpace'>删除</view>
+   </view>
+  </view>

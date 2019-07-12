@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "签署成功",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#ffffff",
+  "enablePullDownRefresh": false,
+  "usingComponents": {}
+}

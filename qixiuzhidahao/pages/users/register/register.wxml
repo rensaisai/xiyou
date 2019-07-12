@@ -1,0 +1,41 @@
+
+<view class="index">
+<view class="logo-head">
+<image class="logo-img" src="/image/logo.png"></image>
+</view>
+<form bindsubmit='registerClick'>
+  <view class="page-section">
+      <view class="weui-cells__title">手机号</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="phone" type="number" class="weui-input"  placeholder="请输入手机号"/>
+        </view>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">密码(6-10位字母或数字)</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="pwd" password class="weui-input"  placeholder="请输入密码"/>
+        </view>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">重复密码</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="pwd2"  password class="weui-input"  placeholder="请输入重复密码"/>
+        </view>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">保养顾问手机号</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="refere" type="number" class="weui-input"  placeholder="可输入保养顾问手机号，无则不填"/>
+        </view>
+      </view>
+  </view>
+  <button type="primary" class="button-big login" style="background-color:#1296db" form-type='submit'>注册</button>
+</form>
+</view>

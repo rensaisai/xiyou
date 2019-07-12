@@ -1,0 +1,38 @@
+
+
+<view class="index">
+
+<form bindsubmit='saveUserCarRequest'>
+  <view class="page-section">
+  <view class='carname'>
+  <image class="carlogo" src="{{logo}}" binderror="binderrorimg" mode="widthFix"></image>
+  <label>{{carName}}</label>
+  </view>
+      <view class="weui-cells__title">车牌号码</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="carno" class="weui-input" placeholder="请输入车牌号码"/>
+        </view>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">上路时间</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+        <picker mode="date" value="{{date}}" start="1940-01-01" end="{{maxDate}}" bindchange="bindDateChange">
+          <view class="weui-input">{{date}}</view>
+        </picker>
+        </view>
+      </view>
+  </view>
+  <view class="page-section">
+      <view class="weui-cells__title">行驶里程(km)</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="km" type="number" class="weui-input" placeholder="请输入行驶里程"/>
+        </view>
+      </view>
+  </view>
+  <button type="primary" class="button-big login" style="background-color:#1296db" form-type='submit'>确定</button>
+</form>
+</view>

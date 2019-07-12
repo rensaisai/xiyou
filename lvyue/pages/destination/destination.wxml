@@ -1,0 +1,58 @@
+
+<view class="index">
+   <swiper class="swiper-box" indicator-dots="true" autoplay="true" interval="5000" duration="500" circular="true">
+   <block wx:for="{{img}}" wx:key="item.id">
+    <swiper-item>
+       <image class="img" src="{{item.imgUrl}}" mode="widthFix"></image>
+    </swiper-item>
+  </block>  
+</swiper>
+<view class="hot">
+    <view class="bourn">
+       <view class="hot-icon"></view>
+       <text class='hot-text'>热门目的地</text>
+     </view>
+    <view class="site">
+      <view class="site-box {{check?'host':''}}" bindtap='inquires'>全部</view>
+      <block wx:for="{{hot}}" wx:key="item.id">
+       <view class="site-box {{item.active?'host':''}}" bindtap='inquire' data-code="{{item.cityName}}">{{item.cityName}}</view>
+      </block>  
+    </view>
+</view>
+<view class="Since-list">
+<block wx:for="{{list}}" wx:key="itenm.id">
+<view class="list" bindtap='bourn' data-id="{{item.id}}">
+        <image class="list-img" src="{{item.img}}" lazy-load="true" mode="aspectFill"></image>
+        <!-- <view   style="background:url({{}}) no-repeat center center/cover"></view> -->
+        <view class="hint">
+           <view class="sign"></view>
+           <text class='sign-right'>多地出港 {{item.age}}周岁 (不含往返大交通)</text>
+        </view>
+        <view class="list-bottom">
+           <view class="spot-box">
+              <view class="spot-left">{{item.lineName}} {{item.subtitle}}</view>
+           </view>
+           <view class="host-price">
+              <view class="spot-left spot-price" >
+                 <view class="price">会员价￥{{item.memberPrice}}</view>
+                 <text class="cut">起/人</text>
+              </view>
+           </view>
+           <view class="host-price">
+              <view class="spot-left spot-price" >
+                 <view class="price">非员价￥{{item.noMemberPrice}}</view>
+                 <text class="cut">起/人</text>
+              </view>
+           </view>
+            <view class="host-price">
+               <view class="cut couponPrice">此产品可抵扣{{item.couponPrice}}金币/成人|线路由小美旅行社提供</view>
+           </view>
+        </view>
+    </view>
+  </block>  
+  </view>
+  <empty hiddenNone = "{{hiddenNone}}"/>
+  <loding  loadingType="{{loadingType}}" wx:if="{{hiddenNone}}"/> 
+</view>
+
+

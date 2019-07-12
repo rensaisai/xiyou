@@ -1,0 +1,12 @@
+<view class="index">
+   <view class="box">
+     <view class="icon-box">
+         <view class="icon"></view>
+         <view class="icon-text">支付成功</view>
+     </view>
+   </view>
+ 
+
+  <view class="btn" bindtap='btn'>完成</view>
+</view>
+

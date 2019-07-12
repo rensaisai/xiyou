@@ -1,0 +1,32 @@
+<view class="index">
+   <view class="tilte">订单产品：</view>
+   <view class="tilte">更换原因：</view>
+   <view class="box">
+     <radio-group class="radio-group" bindchange="radioChange" >
+      <label class="radio" wx:for="{{items}}" wx:key="this">
+        <radio value="{{item.value}}" checked="{{item.checked}}" color="#1296db"/>
+        {{item.value}}
+      </label>
+     </radio-group>
+   </view>
+   <view class="tilte">更换方式：</view>
+   <view class="box">
+     <radio-group class="radio-group" bindchange="radioChanges" >
+      <label class="radio" wx:for="{{select}}" wx:key="this">
+        <radio value="{{item.value}}" checked="{{item.checked}}" color="#1296db"/>
+        {{item.value}}
+      </label>
+     </radio-group>
+   </view>
+   <view class="tilte">更换配件型号：</view>
+   <view class="selcet-box"></view>
+   <view class="tilte">可能适配的型号：</view>
+   <view class="">   
+      <view class="model">小保养服务</view>
+      <view class="model">小保养服务</view>
+      <view class="model">小保养服务</view>
+      <view class="model">小保养服务</view>
+   </view>
+  
+   <button class="submer">提交</button>
+</view>

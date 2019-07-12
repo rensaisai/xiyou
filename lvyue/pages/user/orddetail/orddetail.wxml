@@ -1,0 +1,54 @@
+<view class="index">
+  <view class="box">
+     <view class="stort-name">
+        <image src="/image/start.png" class="stort-icon"></image>
+        <text class="title">旅约全球</text>
+     </view>
+     <view class="order-box">
+        <view class="order">
+           <image class="goods-img" src="{{order.imageUrl}}" mode="aspectFill"></image>
+            <view class="order-right">
+               <view class="goods-name">
+                  <text class="name">{{order.goodsName}}</text>
+                  <text class="price">￥{{order.price}}</text>
+               </view>
+               <view class="headings-box">
+                   <text class="headings">{{order.subtitle}}</text>
+                   <text class="num">x{{order.goodsNum}}</text>
+               </view>
+            </view>
+        </view>
+        <view class="pay-box">
+           <text class="payment">实付款（含运费)</text>
+           <text class="price">￥{{order.cashAmount}}</text>
+        </view>
+     </view>
+  </view>
+  <view class="order-list">
+   
+   <view class="order-information">
+       <view class="xian"></view>
+       <text class="information">订单信息</text>
+   </view>
+   <view class="list">
+       <text>商品总额：</text>
+       <text>￥{{order.totalSum}}</text>
+   </view>
+   <view class="list">
+       <text>订单总计：</text>
+       <text>￥{{order.totalSum}}</text>
+   </view>
+   <view class="list">
+       <text>金币抵扣：</text>
+       <text>￥{{order.coupon}}</text>
+   </view>
+   <view class="list">
+       <text>实付金额：</text>
+       <text class="pay-ment">￥{{order.cashAmount}}</text>
+   </view>
+  </view>
+</view>
+<view class="boot-nav">
+  <view class="btn {{order.active?'btn-select':''}}" bindtap='btn'>{{order.pays}}</view>
+  <view class="btn {{order.active?'':'btn-select'}}" bindtap='btn1' wx:if="{{order.refund != undefined}}">{{order.refund}}</view>
+</view>

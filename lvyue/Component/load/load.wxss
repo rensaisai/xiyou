@@ -1,0 +1,19 @@
+/* Component/load/load.wxss */
+.load {
+  width:100%;
+  height:80rpx;
+  background: url(https://www.apple.com/ac/globalnav/4/zh_CN/assets/ac-store/spinner.svg) no-repeat center center/40rpx auto;
+  display: none;
+}
+.load.active{
+  display: block;
+  animation: zhuan 1s ease infinite;
+}
+@keyframes zhuan{
+  0%{
+    transform: rotateZ(0deg);
+  }
+  100%{
+    transform: rotateZ(360deg);
+  }
+}

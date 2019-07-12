@@ -1,0 +1,28 @@
+<view class="index">
+   <view class="btn-box">
+      <view class="btn" bindtap='addition'>添加</view>
+   </view>
+   <view class="list-box" wx:for="{{list}}" wx:key="this" > 
+     <view class="list">{{item.goodsNo}}</view>
+     <view class="list">{{item.spec}}</view>
+     <view class="list">￥{{item.price}}</view>
+     <!-- <view class="list4" >
+        <view class="btn-left" catchtap="subtract" data-id='{{item.id}}'>-</view> 
+        <view class="btn-left">{{item.shouldSum}}</view>
+        <view class="btn-left" catchtap="add" data-id='{{item.id}}'>+</view>  
+     </view> -->
+     <view class="list">￥{{item.totprice}}</view>
+     <!-- <view class="list6">
+        <image src="/image/cuo.png" class='cuo'></image>
+     </view> -->
+   </view>
+   <!-- <view class="pay-box">订单金额</view> -->
+   <view class="pay-box">支付方式</view>
+  <radio-group class="radio-group" bindchange="radioChange">
+  <label class="radio" wx:for="{{items}}" wx:key="this">
+    <radio value="{{item.name}}" checked="{{item.checked}}" color="#1296db"/>
+    {{item.value}}
+  </label>
+</radio-group>
+</view>
+<button class="pay-btn" bindtap='paybtn' disabled="{{loading}}" loading="{{loading}}">确认支付</button>

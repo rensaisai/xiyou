@@ -1,0 +1,48 @@
+
+<view class="container proxy-body">
+<view class='proxy-head'>
+<image class="proxy-headimg" hidden='{{headimgshow}}' mode="widthFix" src="/image/vip.jpg"></image>
+<!-- <view class=''>请好友扫描即可成为会员</view> -->
+  <!-- <canvas style="width:{{imgwidth}}px;height:{{imgheight}}px;background:#f1f1f1;border:1px solid #ffffff;margin:0 auto;" canvas-id="mycanvas" hidden='{{qrshow}}' /> -->
+  <image class="proxy-qrimg" hidden='{{qrshow}}' mode="widthFix" src="{{qrCodeUrl}}"></image>
+</view>
+  <view class="page-body">
+    <view class="page-section page-section-spacing swiper proxy-viptitle">
+    <view>{{message}}</view>
+    <image class="top-img-right" src="/image/scan.png" bindtap="scanCode" hidden='{{headimgshow}}'></image>
+    </view>
+    <view class="page-section" style="margin-top: 10rpx;margin-bottom: 0rpx;">
+      <view class="weui-cells">
+        <view class="weui-cell proxy-cell">
+          <view class="weui-cell__bd proxy-info">1.获得喜游车秘书车辆故障智能检测OBD一台价值599元</view>
+           <view class="weui-cell__ft"> 
+           </view> 
+        </view>
+        <view class="weui-cell proxy-cell">
+          <view class="weui-cell__bd proxy-info">2.获得喜游车秘书通用保养劵一张价值200元</view>
+           <view class="weui-cell__ft">
+           </view>  
+        </view>
+        <view class="weui-cell proxy-cell">
+          <view class="weui-cell__bd proxy-info">3.获得喜游车秘书平台产品代理权及各项权益</view>
+           <view class="weui-cell__ft"> 
+           </view>
+        </view>
+        <view class="weui-cell proxy-cell">
+          <view class="weui-cell__bd proxy-info">4.尊享喜游车秘书爱车保养永久会员价格</view>
+          <view class="weui-cell__ft">
+          </view>
+        </view>
+        <view class="weui-cell proxy-cell">
+          <view class="weui-cell__bd proxy-info">5.尊享喜游天下旅游平台VIP会员权益</view>
+          <view class="weui-cell__ft">
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  <button type="primary" class="button-big button-big login" style="background-color:#1296db" bindtap='joinVIPRequest' hidden='{{headimgshow}}'>立即加入VIP会员</button>
+
+</view>

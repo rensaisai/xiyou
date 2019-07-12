@@ -1,0 +1,9 @@
+{
+ "navigationBarTextStyle": "white",
+"navigationBarTitleText": "商城",
+"enablePullDownRefresh": false,
+"usingComponents": {
+  "loding": "/Component/loding/loding",
+  "empty": "/Component/empty/empty"
+}
+}

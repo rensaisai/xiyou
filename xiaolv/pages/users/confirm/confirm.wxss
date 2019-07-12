@@ -1,0 +1,2 @@
+@import '/pages/orders/my/check/ordercheck.wxss';
+@import "/pages/repairshops/detail/repairdetail.wxss";

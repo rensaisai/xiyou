@@ -1,0 +1,38 @@
+<import src="/pages/common/none.wxml" />
+<view class="index">
+   <swiper class="shuffling-box" indicator-dots="true" autoplay="true" circular="true" interval="4000" duration="400" wx:if="{{block != null}}">
+    <swiper-item class="shuffling-box" wx:for="{{block}}"  bindtap="cardbag" data-current="{{index}}" wx:key="this">
+      <image src="{{item.img}}" class="slide-image"/>
+    </swiper-item>
+   </swiper>
+   <!-- <view wx:if="{{memberFlag != 1}}">
+      <view class="title">超级会员卡</view>
+      <view class="cloud"bindtap='membership'></view>
+   </view> -->
+   <view class="discounts">优惠券</view>
+   <block wx:for="{{list}}" wx:key="{{item.id}}">
+   <view class="coupon">
+       <view class="coupon-left">
+          <view class="coupon-left-top">
+             <view class="icon"></view>
+             <view class="text">{{item.cardName}}</view>
+             <view class="activity">{{item.typeName}}</view>
+             <view class="activity">{{item.useTypeName}}</view>
+          </view>
+          <view class="coupon-bottom">
+             <view class="describe">{{item.remarks}}</view>
+              <view class="describe">有效期：{{item.begin}}~{{item.finish}}</view>
+          </view>
+       </view>
+       <view class="coupon-right">
+           <view class="price">￥{{item.deductionAmount}}</view>
+           <view class="btn" bindtap='use' data-index='{{index}}'>立即使用</view>
+       </view>
+   </view>
+  </block>
+
+   
+   <view hidden="{{hiddenNone}}">
+       <template is="none"/>
+   </view>
+</view>

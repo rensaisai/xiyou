@@ -1,0 +1,91 @@
+<import src="/pages/common/none.wxml"/>
+<view class="index">
+   <view class="box">
+     <input type="text" class='seek' bindtap='search' placeholder="想去那？搜索目的地 / 景点" placeholder-style="font-size:24rpx;"></input>
+     <view class="phone" bindtap='phone'></view>
+     <view class="seek-box"></view>
+   </view>
+   <swiper class="swiper-box" indicator-dots="true" autoplay="true" interval="5000" duration="500" circular="true">
+   <block wx:for="{{adsList}}" wx:key="item.id">
+      <swiper-item>
+        <image class="img" src="{{item.imgUrl}}" mode="widthFix"></image>
+      </swiper-item>
+   </block>    
+</swiper>
+<view class="headline">
+    <text class="text">热门自嗨团</text>
+    <view class="text-box">
+      <view class="text-left"></view>
+      <text class="text-sg">跟谁一起玩更重要</text>
+      <view class="text-left"></view>
+    </view>
+</view>
+   <view class="scrolls">
+      <view class="images" wx:if="{{pop==null}}"></view>
+      <block wx:for="{{pop}}" wx:key="item.id">
+       <image  class="imgs" src="{{item.img}}" bindtap='circuitdetails' data-id="{{item.id}}"   ></image>
+      </block>  
+   </view>
+  <view class="advertising" bindtap='imgs'>
+      <image  class="advertising-img" src="{{img.imgUrl}}" mode="widthFix"></image>
+  </view>
+    <view class="headline headlines">
+     <text class="text">超级自嗨团</text>
+     <view class="text-box">
+      <view class="text-left"></view>
+      <text class="text-sg">跟谁一起玩更重要</text>
+      <view class="text-left"></view>
+     </view>
+   </view>
+    <view class="Since-list">
+    <block wx:for="{{circuit}}" wx:key="item.id"> 
+    <view class="list">
+        <view class="list-img" bindtap='circuitdetails' data-id="{{item.id}}"style="background:url({{item.img}}) no-repeat center center/cover"></view>
+        <view class="hint">
+           <view class="sign"></view>
+           <text class='sign-right'>{{item.star}} {{item.time}} (不含往返大交通)</text>
+        </view>
+        <view class="list-bottom">
+           <view class="spot-box">
+              <view class="spot-left"> {{item.lineName}} {{item.subtitle}} </view>
+              <view class="spot-right">已有{{item.teamSum}}人参团</view>
+           </view>
+           <view class="spot-boxs">
+             <view class="shops-box">
+              <view class="spot-price travel-price" >
+                 <view class="price">自嗨价￥{{item.minPrice}}</view>
+                 <text class="cut">(已砍{{item.bargain}}元/人)</text>
+              </view>
+               <view class="spot-price travel-price">
+                 <view class="cut travel">此产品可抵扣{{item.couponPrice}}金币/成人|线路由小美旅行社提供</view>
+                 <!-- <text class="cut">(已砍{{item.bargain}}元/人)</text> -->
+              </view>
+              </view> 
+               <view class="spot-btn" bindtap='circuitdetails' data-id="{{item.id}}">去参团
+                 <view class="jtou"></view>
+               </view>
+           </view>
+        </view>
+    </view>
+    </block>
+  </view>
+  <view class="loadmore" hidden="{{isHideLoadMore}}">
+        <view class="loading"></view>
+            <view class="loadmore_tips">正在加载</view> 
+        </view>
+<view class="loadmore" hidden="{{hiddenNones}}">
+        <view class="loga"></view>
+            <view class="loadmore_tips">没有更多商品</view>
+        <view class="loga log"></view>
+</view>
+</view>
+
+
+
+ <view class="commodity_screen"  catchtouchmove='true' wx:if="{{showModalStatus}}"></view> 
+<view  animation="{{animationData}}" catchtouchmove='true' class="commodity_attr_box" wx:if="{{showModalStatus}}">
+      <view class="dial" bindtap='dial'>拨打电话</view>   
+      <view class="phones">400-0098-365</view>  
+      <view class="cancel" bindtap='cancel'>取消</view>
+           
+</view>

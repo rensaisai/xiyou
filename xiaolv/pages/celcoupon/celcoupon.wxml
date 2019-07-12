@@ -1,0 +1,12 @@
+<view class="index">
+  <form bindsubmit="formSubmit">
+        <input class="input" placeholder-class="input-back" placeholder="请输入卡券号" value='{{carvcher}}' bindinput="phone" type="number" name="carvcher"></input>
+          <view class="input-box">
+             <input class="input inputs" placeholder-class="input-back" placeholder="请输入验证码" value='{{code}}' bindinput="code" type="number" name="code"></input>
+              <text wx:if="{{send}}" class="sendMsg" bindtap="sendMsg">获取验证码</text>
+          <text wx:if="{{alreadySend}}" class="sendMsgs" >{{second+"s后重新发送"}}</text>
+          </view>
+  
+       <button form-type="submit" class="btn">确认</button>
+  </form>
+</view>

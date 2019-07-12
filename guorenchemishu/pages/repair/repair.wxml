@@ -1,0 +1,96 @@
+<import src="/pages/common/none.wxml" />
+<view class="{{hiddenNone?'index':'hide'}}">
+    <view class="box">
+       <view class="header">
+         <image class="img" src="/image/logo.png"></image>
+         <text class="title">果仁车秘书保养工单</text>
+       </view>
+       <view class="information-box">
+          <view class="information-left">车主电话:</view>
+          <view class="information-right">{{list.phone}}</view>
+       </view>
+       <view class="information-box">
+          <view class="information-left">车牌号:</view>
+          <view class="information-right">{{list.carNo}}</view>
+       </view>
+       <view class="information-box">
+          <view class="information-left">公里数:</view>
+          <view class="information-right">{{list.km}}km</view>
+       </view>
+       <view class="information-box">
+          <view class="information-left">车型:</view>
+          <view class="information-right">{{list.carType}}</view>
+       </view>
+       <view class="information-box">
+          <view class="information-left">服务门店:</view>
+          <view class="information-right">{{list.repairName}}</view>
+       </view>
+       <view class="information-box">
+          <view class="information-left">门店地址:</view>
+          <view class="information-right">{{list.address}}</view>
+       </view>
+       <view class="information-box">
+          <view class="information-left">门店电话:</view>
+          <view class="information-right">{{list.repairPhone}}</view>
+       </view>
+       <view class="information-box">
+          <view class="information-left">订单号:</view>
+          <view class="information-right">{{list.orderNo}}</view>
+       </view>
+       <view class="information-box">
+          <view class="information-left">订单金额:</view>
+          <view class="information-right">￥{{list.orderPrice}}</view>
+       </view>
+       <view class="information-box">
+          <view class="information-left">支付方式:</view>
+          <view class="information-right">{{list.payType}}</view>
+       </view>
+       <view class="information-box">
+          <view class="information-left">预约时间:</view>
+          <view class="information-right">{{list.time}}</view>
+       </view>
+       <view class="information-box">
+          <view class="information-left">服务项目:</view>
+          <view class="information-right">{{list.itemNames}}</view>
+       </view>
+       <view class="order">
+          <view class="order-text">订单产品:</view>
+          <view class="list-box" wx:for="{{list.goodsList}}" wx:key="this">
+             <image class="order-img" src="{{item.img}}" mode="aspectFill"></image>
+             <view class="order-right">
+                <view class="project-name">{{item.goodsName}}</view>
+                <view class="model-box">
+                  <view class="model-left">
+                     <view class="model" wx:if="{{item.goodsPackage != null}}">{{item.goodsPackage}}</view>
+                      <view class="model" wx:if="{{item.spec != null}}">{{item.spec}}</view>
+                  </view>
+                  <view class="model-right">x{{item.num}}</view>
+                </view>
+             </view>
+          </view>
+       </view>
+       <view class="detection-box">
+          <view class="order-text">安装完成后请确认:</view>
+          <view class="detection">
+             <text class="detection-name">1.您的爱车此次服务已完毕，请确认并对我们的服务做出评价！</text>
+          
+          </view>
+       </view>
+       <view class="signature-box">
+          <view class="order-text">双方确认签字:</view>
+          <view class="signature">
+            <view class="signature-left">
+               <view class="owner-box">车主签字</view>
+               <image class="signature-img" src="{{list.userSign}}" mode="aspectFit"></image>
+            </view>
+            <view class="signature-left">
+               <view class="owner-box">技工签字</view>
+               <image class="signature-img" src="{{list.technicianSign}}" mode="aspectFit"></image>
+            </view>
+          </view>
+       </view>
+    </view>
+</view>
+<view hidden="{{hiddenNone}}">
+  <template is="none" />
+</view>

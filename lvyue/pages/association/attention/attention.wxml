@@ -1,0 +1,124 @@
+
+   <scroll-view class="nav-box">
+      <view class="nav {{currentData==0?'hot':''}}" data-index="0" bindtap='checkCurrent'>关注</view>
+      <view class="nav {{currentData==1?'hot':''}}" data-index="1"  bindtap='checkCurrent'>发现</view>
+   </scroll-view>
+   <view class="issue-box" catchtap='issue' wx:if="{{active}}">
+      <image class="camera" src="/image/camera.png"></image>
+      <view class="issue-text">发布心得</view>
+   </view>
+   <view class="index">
+   <view class="clear"></view>
+   <swiper current="{{currentData}}" bindchange="eventchange" style='height:{{windowHeight}}px;'>
+       <swiper-item>
+          <scroll-view scroll-y style='height:100%;' bindscrolltolower="scrolls" enable-back-to-top="true" lower-threshold="100" bindtap='cancel' >
+            <block wx:for="{{attention}}" wx:key="this">
+             <view class="box"  data-id="{{item.topicId}}" >
+                  <view class="information-box" catchtap='details' data-id="{{item.topicId}}"> 
+                       <image class="user-heidimg" src="/image/header.png" wx:if="{{item.profilePic == null || item.profilePic == ''}}"></image>
+                      <image class="user-img" src="{{item.profilePic}}" mode="aspectFill" lazy-load="true" wx:else></image>
+                      <view class="user-infor-right">
+                        <view class="username">{{item.userName}}</view>
+                        <view class="issue-time">发布于{{item.publishTime}}前  来自社区</view>
+                      </view>
+                  </view>
+                  <text class="issue-content" catchtap='details' data-id="{{item.topicId}}">{{item.content}}</text>
+                  <view class="img-box">
+                    <block  wx:for="{{item.imgUrlList}}" wx:key="this" wx:for-item="ceil">
+                      <image class="img" src="{{ceil.imgUrl}}" mode="aspectFill" bindtap='previewImage' data-id='{{item.topicId}}' data-src="{{ceil.imgUrl}}" lazy-load="true"></image>
+                    </block> 
+                  </view>
+                  <view class="btn-box">
+                    <view class="btn" catchtap='like' data-index="{{index}}" data-date="1">
+                        <image class="icon-img" src="/image/praise1.png" wx:if="{{item.isLike}}"></image>
+                        <image class="icon-img" src="/image/praise.png" wx:else></image>
+                        <view class="number">{{item.likeQuantity}}</view>
+                    </view>
+                      <view class="btn" catchtap='comments' data-id="{{item.topicId}}">
+                        <image class="icon-img" src="/image/pinglun.png"></image>
+                        <view class="number">评论</view>
+                      </view>
+                      <button open-type='share' class="btn" data-id="{{item.topicId}}">
+                        <view class="share-box">
+                          <image class="icon-img" src="/image/zhuanfa.png"></image>
+                          <view class="number">{{item.shareQuantity}}</view>
+                        </view> 
+                      </button>
+                  </view>
+                  <view class="like-box" wx:if="{{item.likerName != null && item.likerName != ''}}">
+                      <image src="/image/zan.png" class="zan"></image>
+                      <view class="right"> 
+                        <view class="zuser">{{item.likerName}}</view>
+                        <view class="rcount">等{{item.likeQuantity}}人觉得很赞</view>
+                      </view>
+                  </view>
+              </view>
+              </block>
+           <empty hiddenNone = "{{hiddenNones}}"/>
+           <loding  loadingType="{{loadingTypes}}" wx:if="{{hiddenNones}}" lod="backged"/>
+          </scroll-view>
+       </swiper-item>
+        <swiper-item>
+          <scroll-view scroll-y style='height:100%;' bindscrolltolower="scroll" enable-back-to-top="true" lower-threshold="100">
+              <view class="list-box">
+                <view class="left-box"> 
+                 <block wx:for="{{discover}}" wx:key="this">
+                   <view class="list1" bindtap='details' data-id="{{item.topicId}}"  wx:if="{{index % 2 == 0}}">
+                   <view class="list1-img" style='height:{{item.height}}rpx'>
+                      <image  class="list1-img" src="{{item.imgUrlList[0].imgUrl}}" mode="aspectFill"  lazy-load="true" style='height:{{item.height}}rpx' bindload='loadImage' data-index='{{index}}'></image>
+                   </view>
+                    <view class="list1-box">
+                       <view class="list1-title">{{item.title}}</view>
+                       <view class="list1-user">
+                          <view class="left">
+                            <image class="user-heidimg" src="/image/header.png" wx:if="{{item.profilePic == null || item.profilePic == ''}}"></image>
+                            <image class="user-heidimg" src="{{item.profilePic}}" wx:else></image>
+                            <view class="list-username">{{item.userName}}</view>
+                          </view>
+                          <view class="list-right" catchtap='like' data-index="{{index}}">
+                             <view class="number">{{item.likeQuantity}}</view>
+                             <image class="icon-img" src="/image/praise1.png" wx:if="{{item.isLile == 1}}"></image>
+                             <image class="icon-img" src="/image/praise.png" wx:else ></image>
+                          </view>
+                       </view>
+                    </view>
+                 </view>
+                 </block>
+                </view>
+
+                <view class="right-box">
+                <block wx:for="{{discover}}" wx:key="this">
+                 <view class="list2"  bindtap='details' data-id="{{item.topicId}}"  wx:if="{{index % 2 === 1}}">
+                   <view class="list2-img" style='height:{{item.height}}rpx'>
+                      <image  class="list2-img" src="{{item.imgUrlList[0].imgUrl}}" mode="aspectFill"  lazy-load="true" bindload='loadImage' data-index='{{index}}' style='height:{{item.height}}rpx'></image>
+                   </view>
+                    <view class="list1-box">
+                       <view class="list1-title">{{item.title}}</view>
+                       <view class="list1-user">
+                          <view class="left">
+                            <image class="user-heidimg" src="/image/header.png" wx:if="{{item.profilePic == null || item.profilePic == ''}}"></image>
+                            <image class="user-heidimg" src="{{item.profilePic}}" wx:else></image>
+                            <view class="list-username">{{item.userName}}</view>
+                          </view>
+                          <view class="list-right" catchtap='like' data-index="{{index}}">
+                             <view class="number">{{item.likeQuantity}}</view>
+                             <image class="icon-img" src="/image/praise1.png" wx:if="{{item.isLile == 1}}"></image>
+                             <image class="icon-img" src="/image/praise.png" wx:else ></image>
+                          </view>
+                       </view>
+                    </view>
+                 </view>
+                </block>
+                </view>
+
+          </view>
+           <empty hiddenNone = "{{hiddenNone}}"/>
+           <loding  loadingType="{{loadingType}}" wx:if="{{hiddenNone}}" lod="backged"/>
+          </scroll-view>
+       </swiper-item>
+   </swiper>
+   
+</view>
+<view class="{{focus?'return':'return-box'}}">
+    <textarea placeholder="{{placeholder}}" focus="{{focus}}"  bindconfirm="complete" class="textarea" fixed="true" cursor-spacing="62" value='{{content}}' bindblur="bindblurs"/>
+</view>

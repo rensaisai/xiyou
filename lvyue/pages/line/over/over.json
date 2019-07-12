@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "",
+  "navigationBarBackgroundColor": "#ffffff",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "loding": "/Component/loding/loding",
+    "empty": "/Component/empty/empty"
+  }
+}

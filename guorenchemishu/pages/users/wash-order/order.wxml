@@ -1,0 +1,91 @@
+<view class="consignee-box">
+   <view class="consignee">
+       <view class="consignee-icon">
+           <view class="icon"></view>
+           <view class="consignee-name">{{name}}</view>
+       </view>
+       <view class="consignee-phone">{{phone}}</view>
+   </view>
+</view>
+<view class="consignee-box consignee-box1" bindtap='address'>
+   <view class="consignee">
+       <view class="consignee-icon">
+           <view class="icon1"></view>
+           <view class="consignee-name">{{entity.repairName}}</view>
+       </view>
+        <view class="icon2"></view>
+   </view>
+</view>
+<view class="line"></view>
+<view class="index-box" wx:for="{{list}}" wx:key="item.id">
+ <view class="maintenance">
+       <view class="service">
+           <view class="service-name">{{item.itemName}}</view>
+       </view>
+    </view>
+    <view class="maintenance-box">
+        <view class="maintenance-list">
+           <image class="items-img" src="{{entity.headImg}}" mode="aspectFill" lazy-load="true"></image>
+           <view class="maintenance-right">
+            <view class="package-name">{{item.itemName}}</view>
+            <view class="specifications-price"><text class="price-icon">￥</text>{{item.price}}</view>
+           </view>
+        </view>
+        <view class="envelope" bindtap='envelope' data-index="{{index}}">
+          <view class="envelope-name">红包卡券</view>
+          <view class="envelope-right-box">
+              <view class="reduction">{{item.cardNum}}</view>
+              <view class="icon2"></view>
+          </view>
+        </view>
+        <view class="clear"></view>
+    </view>
+  </view>  
+    <view class="pay-box">
+       <view class="consignee-box pay">
+           <view class="consignee-name pay-name" >支付方式</view>
+       </view>
+       <view class="pay-icon-box">
+           <view class="icon-box">
+              <view class="weixin-icon"></view>
+              <view class="weixin-name">微信</view>
+           </view> 
+           <view class="selected-btn"></view>
+       </view>
+       <view class="consignee-box pay">
+           <view class="consignee-name pay-name" >优惠金额</view>
+           <view class="pay-price"><text wx:if="{{preferential != 0}}">-</text>{{preferential}}</view>
+       </view>
+    </view>
+    <!-- <view class="envelope" bindtap='envelope'>
+       <view class="envelope-name">红包卡券</view>
+       <view class="envelope-right-box">
+          <view class="reduction">{{member}}</view>
+          <view class="icon2"></view>
+       </view>
+    </view> -->
+    <!-- <view class="envelope">
+       <view class="envelope-name">发票</view>
+       <view class="envelope-right-box">
+          <view class="reduction invoice">不开票</view>
+          <view class="icon2"></view>
+       </view>
+    </view> -->
+    <view class="pay-details-box">
+      <view class="pay-details">
+         <view class="pay-name">商品总价</view>
+         <view class="goods-price">￥{{money}}</view>
+      </view>
+      <view class="pay-details">
+         <view class="pay-name">优惠金额</view>
+         <view class="goods-price">￥{{preferential}}</view>
+      </view>
+      <view class="pay-details">
+         <view class="pay-name">车豆支付</view>
+         <view class="goods-price">￥{{bean}}</view>
+      </view>
+      <view class="price-box">
+          <view class="shops-price">实际支付：<text class="price">¥{{price}}</text></view>
+      </view>
+      <button class="btn" loading="{{loading}}" disabled="{{loading}}" bindtap='btn'>去支付</button>
+    </view>

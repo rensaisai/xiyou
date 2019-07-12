@@ -1,0 +1,110 @@
+ <import src="/pages/common/none.wxml" />
+ <view class="nav">
+      <view class="nav-box {{currentTab==0?'hot':''}}" data-current="0" bindtap='swichNav'>绑定VIP</view>
+      <view class="nav-box {{currentTab==1?'hot':''}}" data-current="1" bindtap="swichNav">绑定卡券</view>
+  </view>
+<!-- <view class="{{height<=667?'index':'indexs'}}"> -->
+  <!-- <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{height}}px;">
+      <swiper-item>
+      <swiper-view> -->
+      <view class="index" hidden="{{currentTab !='0'}}">
+        <view class="block"></view>
+        <view class="inde">
+          <view class="title">您还有{{carde}}张未分配的会员卡</view>
+          <input class="input" placeholder-class="input-back" placeholder="请输入会员手机号" value='{{phone}}' bindinput="phone" type="number"></input>
+          <view class="input-box">
+             <input class="input inputs" placeholder-class="input-back" placeholder="请输入验证码" value='{{code}}' bindinput="code" type="number"></input>
+              <text wx:if="{{send}}" class="sendMsg" bindtap="sendMsg">获取验证码</text>
+          <text wx:if="{{alreadySend}}" class="sendMsgs" >{{second+"s后重新发送"}}</text>
+          </view>
+          <view class="btn" bindtap='btn'>立即绑定</view>
+      </view>
+    </view>
+      <!-- </swiper-view>
+      </swiper-item>
+
+      <swiper-item>
+      <swiper-view> -->
+       <view class="indexs" hidden="{{currentTab !='1'}}">
+          <view class="block"></view>
+          <view class="screen-box" bindtap='screen'>
+             <view class="screen-img"></view>
+             <view class="screen">筛选</view>
+          </view>
+      <view class="inde">
+      <block wx:for="{{list}}" wx:key="item.id">
+      <view class="coupon">
+       <view class="coupon-left">
+          <view class="coupon-left-top">
+             <view class="icon"></view>
+             <view class="texts">{{item.cardName}}</view>
+             <view class="activity">{{item.typeName}}</view>
+              <view class="activity">{{item.useTypeName}}</view>
+          </view>
+          <view class="coupon-bottom">
+             <view class="describe">{{item.remarks}}</view>
+              <view class="describe">有效期：{{item.start}} ~ {{item.finish}}</view>
+          </view>
+       </view>
+       <view class="coupon-right">
+           <view class="price">￥{{item.deductionAmount}}</view>
+           <view class="btnm" bindtap='bindings' data-id='{{item.id}}'>绑定</view>
+       </view>
+   </view>
+   </block>
+     <view hidden="{{hiddenNone}}">
+       <template is="none"/>
+   </view>
+   </view>
+  </view>
+   
+<view class="commodity_screen"  catchtouchmove='true'  wx:if="{{showModalStatus}}"></view> 
+<view  catchtouchmove='true' class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class="box" wx:if="{{active}}">
+    <view class="box-img">
+        <view class="box-top">
+          <view class="head">
+             <image class="left-img" src="{{pop.headImg}}" wx:if="{{pop.headImg != ''}}"></image>
+             <image class="left-img" src="{{img}}" wx:else></image>
+             <view class="rigth" >
+                 <view class="text-box" wx:if="{{pop.userName !=''}}">
+                   <view class="name-box">{{pop.userName}}</view>
+                   <view class="label">非会员</view>
+                 </view>
+                 <view class="text-box" wx:else>
+                   <view class="name-box">{{pop.nickName}}</view>
+                   <view class="label">非会员</view>
+                 </view>
+                 <view class="phone">{{pop.phone}}</view>
+             </view>
+          </view>
+        </view>
+        <view class="bottom">
+            <view class='left color' bindtap='cancel'>取消</view>
+            <view class='left text-color' bindtap='affirm'>确认</view>
+        </view>
+    </view>
+  </view>
+  <view class="boxs" wx:else>
+     <view class="centre">{{msg}}</view>
+     <view class="btns">
+         <view class="btns-left color" bindtap='cancels'>取消</view>
+         <view class="btns-left text-color" bindtap='affirms'>确认</view>
+     </view>
+  </view>
+</view>
+<view class="commodity_screens"  catchtouchmove='true'  wx:if="{{showModa}}"></view>
+<view  catchtouchmove='true' class="commodity_attr_boxs" wx:if="{{showModa}}">
+    <view class="boxes">
+      <view class="across" bindtap='all'>
+         <view class="{{actives?'across-text':'textl'}}">全部</view>
+         <view class="{{actives?'across-img':''}}"></view>
+      </view>
+      <block wx:for="{{filtrate}}" wx:key="item.type"> 
+      <view class="across" bindtap='else' data-type="{{item.type}}">
+         <view class="{{item.active?'across-text':'textl'}}">{{item.remark}}</view>
+         <view class="{{item.active?'across-img':''}}"></view>
+      </view>
+      </block>
+    </view>
+</view>

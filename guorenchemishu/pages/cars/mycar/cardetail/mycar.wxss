@@ -1,0 +1,253 @@
+/* @import "/pages/common/index.wxss"; */
+.index{
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+}
+.tab{
+  width: 100%;
+  height: 300rpx;
+  background: #f74629;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box{
+  width: 90%;
+  height: 200rpx;
+  background: #ffffff;
+  border-radius:20rpx; 
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.vehicle-title{
+  width: 90%;
+  height: 40px;
+  margin: 60rpx auto 0;
+  font-size: 18px;
+  color: #000000;
+  font-weight: 600;
+  line-height: 40px;
+}
+.choose-vehicle{
+  width: 90%;
+  height: 45px;
+  background: #f2f2f2;
+  border-radius:10rpx; 
+  margin: 0 auto;
+  font-size: 16px;
+  color: #000000;
+  line-height: 45px;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  display: flex;
+}
+.choose-vehicle-left{
+   width: 85%;
+   height: 45px;
+}
+.choose-vehicle-right{
+  width: 15%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sweep{
+  width: 50%;
+  height: 50%;
+}
+.weui-input{
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+}
+.button-big{
+  width: 90%;
+  margin-top: 20px;
+}
+.vehicle-information{
+  width: 100%;
+  height: 98rpx;
+  display: flex;
+}
+.img{
+  width: 98rpx;
+  height: 98rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right{
+  flex-grow: 1;
+  height: 98rpx;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+}
+.information{
+  width: 100%;
+  height: 34rpx;
+  font-size: 34rpx;
+  color: #000000;
+  font-weight: 600;
+  line-height: 34rpx;
+}
+.displacement{
+  width: 100%;
+  height: 30rpx;
+  font-size: 24rpx;
+  color:rgba(0,0,0,0.6);
+  font-weight: 600;
+  margin-top: 20rpx;
+}
+.btn-box{
+  width: 100%;
+  height: 54rpx;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.btn{
+  width: 150rpx;
+  height: 54rpx;
+  background: rgba(232,74,46,0.1);
+  border-radius:27rpx;
+  font-size: 26rpx;
+  font-weight: 600;
+  text-align: center;
+  line-height: 54rpx;
+  color: #E84A2E; 
+}
+
+
+
+
+
+.carname{
+  margin:20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.carlogo{
+  margin:20rpx;
+  width:100px;
+  height:100px;
+}
+
+.fl{
+  float: left;
+}
+.carnum{
+  text-align: center;
+  height: 88rpx
+}
+.tel{
+	border-bottom: 2rpx solid #ddd;
+	height: 100rpx;
+	line-height:100rpx;
+}
+.chepai{
+	height: 200rpx;
+	line-height:200rpx;
+}
+.provinces{
+	overflow: hidden;
+	padding:30rpx 0;
+	position: fixed;
+  height: auto;
+  bottom: 0;
+	left: 0;
+  right: 0;
+	z-index: 10000;
+  background-color: #ffffff;
+  border-top:1rpx solid #ccc; 
+  /* display: flex;
+  flex-wrap:wrap;
+  justify-content: space-between; */
+}
+.pro-li{
+	font-size: 32rpx;
+  color:#353535;
+	height: 76rpx;
+	width: 62rpx;
+	line-height: 76rpx;
+	text-align: center;
+  padding: 0 5px; 
+	margin-left: 11rpx;
+  
+  margin-bottom: 20rpx;
+	background-color:#eee; 
+  box-shadow: 0 1rpx 2rpx 0 #CCD2E3;
+  border-radius: 5rpx;
+}
+/* .provinces .pro-li:nth-child(11),
+.provinces .pro-li:nth-child(20),
+.provinces .pro-li:nth-child(29){
+  margin-left: 48rpx
+}
+.keyNums .pro-li:nth-child(11),
+.keyNums .pro-li:nth-child(20){
+  margin-left: 48rpx
+} */
+.pro-close{
+	width: 100rpx;
+	height: 70rpx;
+	line-height: 70rpx;
+	font-size: 32rpx;
+	text-align: center;
+	background-color: #fff;
+	border: 2rpx solid #ddd;
+	margin: 5rpx ;
+}
+.pro-del{
+	width: 100rpx;
+	height: 70rpx;
+	line-height: 70rpx;
+	font-size: 32rpx;
+	text-align: center;
+	background-color: #fff;
+	border: 2rpx solid #ddd;
+	margin: 5rpx;
+}
+/* .keyNums{
+	overflow: hidden;
+	padding:30rpx 0;
+	/* position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 10000; */
+/* }  */
+.pro-ok{
+	width: 100rpx;
+	height: 70rpx;
+	line-height: 70rpx;
+	font-size: 32rpx;
+	text-align: center;
+	background-color: #fff;
+	border: 2rpx solid #ddd;
+	margin: 5rpx ;
+	/* margin-left: 35%; */
+}
+.pro-d{
+	width: 100rpx;
+	height: 70rpx;
+	line-height: 70rpx;
+	font-size: 32rpx;
+	text-align: center;
+	background-color: #fff;
+	border: 2rpx solid #ddd;
+	margin: 5rpx;
+}
+.provinces .kb-del{
+   margin-left: 12rpx
+}
+.provinces .kb-icon{
+  width: 104rpx;
+  height: 76rpx;
+  background: #fd4200;
+  color: #ffffff;
+}

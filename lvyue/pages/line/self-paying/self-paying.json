@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "温馨提示",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": false,
+  "usingComponents": {}
+}

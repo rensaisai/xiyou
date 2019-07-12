@@ -1,0 +1,7 @@
+{
+  "navigationBarBackgroundColor": "#f3f3f3",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "卡券核销",
+  "enablePullDownRefresh": false,
+  "usingComponents": {}
+}

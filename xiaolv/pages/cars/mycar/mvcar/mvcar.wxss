@@ -1,0 +1,54 @@
+.index{
+  width: 100%;
+  height:100%;
+  overflow:hidden;
+  background: #ffffff;
+}
+.img{
+  width: 100%;
+  height: 100%;
+}
+.box{
+  position: fixed;
+  top: 50%;
+  width: 100%;
+  height: 400rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  margin-top:-400rpx; 
+  }
+  .phone-box{
+    width: 100%;
+    height: 200rpx;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+  }
+  .title{
+    font-size: 28rpx;
+    font-weight: 700;
+    color: #ce6b27;
+  }
+  .phone-input{
+    width: 100%;
+    height: 80rpx;
+    border:1rpx solid #cccbcb;
+    border-radius:40rpx;  
+    padding: 0 20rpx;
+    box-sizing: border-box;
+    color: #000000;
+  }
+  .subtitle{
+    font-size: 26rpx;
+    color: #ce6b27;
+  }
+  .phone-btn{
+    width: 100%;
+    height: 80rpx;
+    border-radius:40rpx;
+    background: #ce6b27; 
+    text-align: center;
+    line-height: 80rpx;
+    color: #ffffff;
+    margin-top: 30rpx;
+  }

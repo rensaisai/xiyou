@@ -1,0 +1,6 @@
+@import "/pages/common/index.wxss";
+@import"/pages/suber/shops/shops.wxss";
+.lists{
+  height: 531rpx;
+  margin-top: 0;
+}

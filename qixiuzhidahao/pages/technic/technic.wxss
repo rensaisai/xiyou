@@ -1,0 +1,59 @@
+.index{
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+}
+.box{
+  width: 100%;
+  height: 90rpx;
+  border-bottom:1rpx solid  #efefef;
+  background: #ffffff; 
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  display: flex;
+}
+.text{
+  width: 20%;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: justify;
+}
+.text::after{
+  width: 100%;
+  display: inline-block;
+  content: '';
+}
+.input-box{
+  width: 80%;
+  height: 90rpx;
+  padding: 0 15rpx;
+  box-sizing: border-box;
+  line-height: 90rpx;
+}
+.btn{
+  position: fixed;
+  bottom: 10rpx;
+  left: 2.5%;
+  width: 95%;
+  height: 88rpx;
+  color: #ffffff;
+}
+.role{
+  position: relative;
+}
+.select{
+  position: absolute;
+  top: 180rpx;
+  left: 23%;
+  width: 77%;
+  height: 360rpx;
+  background:#ffffff;
+  z-index: 9999;
+}
+.show{
+  display: none;
+}
+.sele{
+  width: 100%;
+  border-bottom:1rpx solid #efefef; 
+}

@@ -1,0 +1,26 @@
+   <import src="/pages/common/none.wxml" />
+   <view class="index">
+   <view wx:for="{{list}}" wx:key="items.id" class="maintenance-list" bindtap='list' data-index="{{index}}">
+            <image class="items-img" src="{{item.img}}" mode="aspectFill"></image>
+            <view class="maintenance-list-right">
+                <view class="package-name">{{item.goodsName}}</view>
+                <view class="package-specifications">
+                    <view class="specifications-box" wx:if="{{item.goodsPackage != null && item.goodsPackage != ''}}">{{item.goodsPackage}}</view>
+                    <view class="specifications-box"  wx:if="{{item.viscosity != null && item.viscosity != ''}}">{{item.viscosity}}</view>
+                     <view class="specifications-box"  wx:if="{{item.spec != null && item.spec != ''}}">{{item.spec}}</view>
+                </view>
+                <view class="specifications-price-box">
+                    <view class="specifications-price">
+                         <text class="price-icon">￥</text>{{item.sellingPrice}}
+                    </view>
+                    <view class="specifications-number">
+                        <text class="price-icon">x</text>{{item.num}}
+                    </view>
+                    <!-- <view class="replace" wx:else bindtap='replace' data-id="{{item.id}}" data-oilFlag="{{item.oilFlag}}" data-index="{{index}}">更换</view> -->
+                </view>
+            </view>
+        </view>
+<view hidden="{{hiddenNone}}">
+   <template is="none" />
+</view>
+</view>

@@ -1,0 +1,179 @@
+<view class="index indem">
+
+  <view class="kind-list-item detail-item">
+
+    <!-- <view class="kind-list-text">商品名称：{{entity.goodsName}}</view> -->
+    <!-- <view id="{{item.id}}" class="kind-list-item-hd title">  -->
+      <!-- <image class="kind-list-img" src="{{setmeal.headImg}}"></image> -->
+      <!-- <view class="kind-list-item-00">
+        <view class="kind-list-item-01"> -->
+          <!-- <text class="kind-list-text text-box" decode="{{true}}">规格：{{setmeal.sizemarking}}&ensp;&ensp;&ensp;颜色：{{setmeal.clor}}</text>
+          <view class="kind-list-text item-price">¥:{{entity.price}}</view> -->
+        <!-- </view> -->
+        <!-- <view class="kind-list-text3"></view>
+        <view class="kind-list-text4">{{setmeal.remark}}</view>
+      </view> -->
+    <!-- </view> -->
+    <block wx:for-items="{{setmeal.sub}}" wx:key="{{item.id}}">
+      <view class="kind-list-item-01 detail-itemsub">
+        <view class="kind-list-text3">{{item.goodsName}}</view>
+        <view class="kind-list-text2 item-normalprice">¥:{{item.price}}</view>
+      </view>
+    </block>
+  </view>
+  <view class="page-section">
+    <view class="page-section-title">选择支付方式</view>
+    <view class="weui-cells weui-cells_after-title">
+      <radio-group bindchange="radioChange">
+        <label class="weui-cell weui-check__label" wx:for="{{pays}}" wx:key="{{item.value}}">
+          <view class="weui-cell__hd">
+            <radio value="{{item.value}}" checked='{{item.checked}}' color="#f39400" />
+          </view>
+          <view class="weui-cell__bd">{{item.name}}</view>
+        </label>
+      </radio-group>
+    </view>
+  </view>
+
+  <form bindsubmit='commitOrder'>
+    <view class="page-section">
+      <view class="weui-cells__title">手机号</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="phone" type='number' class="weui-input" placeholder="请输入手机号" value='{{phone}}'/>
+        </view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="weui-cells__title">姓名</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="name" class="weui-input" value='{{name}}' placeholder="请输入姓名" />
+        </view>
+      </view>
+    </view>
+  
+
+    <view class="page-section">
+      <view class="weui-cells__title">邀请编码</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="ancestor" class="weui-input" placeholder="可输入推荐人编码" disabled='{{notEditTenantNo}}' value='{{tenantNo}}' bindinput="coding"/>
+        </view>
+      </view>
+    </view>
+
+     <view class="page-section">
+    <view class="page-section-title">选择快递方式</view>
+    <view class="weui-cells weui-cells_after-title select" wx:if="{{entity.id == 1}}">
+      <radio-group>
+        <label class="weui-cell weui-check__label" wx:for="{{sendersl}}" wx:key="{{item.value}}">
+          <view class="weui-cell__hd">
+            <radio value="{{item.value}}" checked='{{item.checked}}' color="#f39400" />
+          </view>
+          <view class="weui-cell__bd">{{item.name}}</view>
+        </label>
+      </radio-group>
+    </view>
+    <view class="weui-cells weui-cells_after-title select" wx:else>
+      <radio-group bindchange="radioChange2">
+        <label class="weui-cell weui-check__label" wx:for="{{senders}}" wx:key="{{item.value}}">
+          <view class="weui-cell__hd">
+            <radio value="{{item.value}}" checked='{{item.checked}}' color="#f39400" />
+          </view>
+          <view class="weui-cell__bd">{{item.name}}</view>
+        </label>
+      </radio-group>
+    </view>
+  </view>
+
+  <view class="page-section {{perdue?'hot':''}}" bindtap='resgiter'>
+      <view class="weui-cells weui-cells_after-title">
+         <view class="weui-cell weui-cell_input">
+          <view class="text"  data-value="{{selec}}">{{selec}}</view>
+        </view>
+     </view>
+  </view>
+       <!-- <view class="page-section {{perdue?'hot':''}}"> -->
+      <!-- <view class="weui-cells__title" bindtap="chooseLocation">收件地址(点击选择地点)</view> -->
+      <!-- <view class="weui-cells weui-cells_after-title price"> 
+   <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}" class="weui-cell weui-cell_input">
+    <view class="text">
+      {{region[0]}}{{region[1]}}{{region[2]}}
+    </view>
+  </picker>
+  </view>
+  </view> -->
+
+   <view class="page-section">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="address" class="weui-input" placeholder="请输入收件地址" disabled='{{notEdit}}' value='{{address}}'/>
+        </view>
+      </view>
+    </view>
+    <button type="primary"  class="button-big butt" style="background-color:#f39400" form-type="submit" loading="{{loading}}">去付款</button>
+  </form>
+   <!-- <view class="{{disabled?'btunel':''}}"></view> -->
+
+  <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}"></view>
+
+  <view class="commodity_screen"  wx:if="{{showModalStatus}}"></view> 
+           <view  animation="{{animationData}}"  class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <view class="anmit">{{selec}}</view>
+
+   <view class="index-bd" wx:if="{{citylse == true}}">
+    <view class="kind-list">
+      <block wx:for-items="{{city}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd" data-index="{{index}}" bindtap="selectOver">
+            <!-- <image class="kind-list-img" src="/image/province.png"></image> -->
+            <view class="kind-list-item-00">
+              <view class="kind-list-item-01">
+                <view class="kind-list-text">{{item.regionName}}</view>
+                <image class="kind-list-navi" src="/image/navi.png"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="index-bd" wx:if="{{cityls == true}}">
+    <view class="kind-list">
+        <block wx:for-items="{{citys}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd" data-index="{{index}}" bindtap="selectOverss">
+            <!-- <image class="kind-list-img" src="/image/city.png"></image> -->
+            <view class="kind-list-item-00">
+              <view class="kind-list-item-01">
+                <view class="kind-list-text">{{item.regionName}}</view>
+                <image class="kind-list-navi" src="/image/navi.png"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+    <view class="index-bd" wx:if="{{cityl == true}}">
+    <view class="kind-list">
+      <block wx:for-items="{{citysel}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd" data-index="{{index}}" bindtap="selectOvercity">
+            <!-- <image class="kind-list-img" src="/image/province.png"></image> -->
+            <view class="kind-list-item-00">
+              <view class="kind-list-item-01">
+                <view class="kind-list-text">{{item.regionName}}</view>
+                <image class="kind-list-navi" src="/image/navi.png"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  </view>
+</view>

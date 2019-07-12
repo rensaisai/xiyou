@@ -1,0 +1,9 @@
+<view class="index">
+   <view class="log-box">
+      <view class="log"></view>
+   </view>
+   <view class="login-btn-box">
+       <button type='primary' class="btn" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo" data-id="1" loading="{{loading1}}">微信一键登录</button>
+       <button type='primary' class="btn"  open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" data-id="2" loading="{{loading2}}">使用手机号登录</button>
+   </view>
+</view>

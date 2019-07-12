@@ -1,0 +1,13 @@
+<import src="/pages/common/none.wxml"/>
+
+<view class="index">
+   
+
+    <view class="loadmore" hidden="{{isHideLoadMore}}">
+            <view class="loading"></view>
+            <view class="loadmore_tips">正在加载</view> 
+    </view>
+     <view hidden="{{hiddenNone}}">
+                 <template is="none" />
+    </view>
+</view>

@@ -1,0 +1,56 @@
+<import src="/pages/common/head.wxml" />
+<template is="head" wx:if="{{entity.vehicle==true}}" data="{{title: '保养评价'}}"/>
+<template is="head" wx:if="{{entity.active==true}}" data="{{title: '洗车美容评价'}}"/>
+<template is="head" wx:if ="{{entity.maintain == true}}" data="{{title: '年度审车评价'}}"/>
+
+<view class="index">
+  <form bindsubmit='commentRequest'>
+    <view class="page-section {{entity.maintain?'hot':''}}">
+      <view class="weui-cells__title">专业技能</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input star-view">
+          <block wx:for="{{stars}}" wx:key="{{item.index}}">
+            <image class="star-image" catchtap='evaluate' data-index="{{index}}" style="left: {{index*100}}rpx" src="{{(key>=item?selectedSrc:normalSrc)}}" >
+            </image>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="page-section" >
+      <view class="weui-cells__title">服务态度</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input star-view">
+          <block wx:for="{{stars}}" wx:key="{{item.index}}">
+            <image class="star-image" catchtap='evaluate1' data-index="{{index}}" style="left: {{index*100}}rpx" src="{{(key1>=item?selectedSrc:normalSrc)}}">
+              <!-- <view class="item" style="left:{{index*100}}rpx" data-key1="{{item+0.5}}" bindtap="selectLeft1"></view>
+              <view class="item" style="left:{{index*100+50}}rpx" data-key1="{{item+1}}" bindtap="selectRight1"></view> -->
+            </image>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="page-section {{entity.maintain?'hot':''}}">
+      <view class="weui-cells__title">门店环境</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input star-view">
+          <block wx:for="{{stars}}" wx:key="{{item.index}}">
+            <image class="star-image" catchtap='evaluate2' data-index="{{index}}" style="left: {{index*100}}rpx" src="{{(key2>=item?selectedSrc:normalSrc)}}">
+              <!-- <view class="item" style="left:{{index*100}}rpx" data-key2="{{item+0.5}}" bindtap="selectLeft2"></view>
+              <view class="item" style="left:{{index*100+50}}rpx" data-key2="{{item+1}}" bindtap="selectRight2"></view> -->
+            </image>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="weui-cells__title">内容</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+         <textarea name="content" placeholder="请输入评价内容" style="height: 10em;padding:30rpx 5rpx" />
+        </view>
+      </view>
+    </view>
+    <button type="primary" class="button-big login" style="background-color:#fd4200" form-type='submit'>确定</button>
+  </form>
+
+</view>

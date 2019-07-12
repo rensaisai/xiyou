@@ -1,0 +1,35 @@
+<import src="/pages/common/none.wxml" />
+
+<view class='city_box' style='{{styles}}'>
+  <view class='city_left'>
+    <scroll-view scroll-y style='width:100%;height:100%;' scroll-with-animation scroll-into-view='{{cityListId}}'>
+      <block wx:for-items="{{fctList}}" wx:for-item='letterItem' wx:key="{{item.id}}" wx:for-index='letterIndex'>
+        <view class='city_first_letter' id='{{letterItem.letter}}'>{{letterItem.letter}}</view>
+        <block wx:for-items="{{letterItem.data}}" wx:key="{{item.id}}">
+          <view class="kind-list-item">
+            <view id="{{item.id}}" class="kind-list-item-hd" data-item="{{item}}" bindtap="selectOver">
+              <image class="car-list-img" src="{{item.img}}" binderror="binderrorimg" data-pindex="{{letterIndex}}" data-index="{{index}}"  mode="widthFix"></image>
+              <view class="kind-list-item-00">
+                <view class="kind-list-item-01">
+                  <view class="kind-list-text">{{item.fctName}}</view>
+                  <image class="kind-list-navi" src="/image/navi.png"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </block>
+      <view class="loadmore" hidden="{{isHideLoadMore}}">
+        <view class="loading"></view>
+        <view class="loadmore_tips">正在加载</view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class='city_right'>
+    <text class='letter_item' wx:for='{{letter}}' wx:key='this' catchtap='letterTap' data-item='{{item}}'>{{item}}</text>
+  </view>
+</view>
+
+<view hidden="{{hiddenNone}}">
+  <template is="none" />
+</view>
