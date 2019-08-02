@@ -1,4 +1,7 @@
 {
     "navigationBarTitleText": "小毛驴养车",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+      "pop-up":"/component/pop-up/pop-up"
+    }
 }

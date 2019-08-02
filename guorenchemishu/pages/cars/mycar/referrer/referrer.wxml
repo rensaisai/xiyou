@@ -1,0 +1,54 @@
+<view class="index">
+       <form bindsubmit="formSubmit">
+         <view class="box">
+          <view class="section">
+            <view class="section__title">推荐人号</view>
+            <input name="input" placeholder="请输入推荐人号" class="input" type="number"/>
+          </view>
+          <view class="section section_gap">
+            <view class="section__title">手机号</view>
+             <input name="input1" placeholder="请输入手机号" class="input" type="number" maxlength="11" bindinput="phone"/>
+          </view>
+          <view class="section section_gap">
+            <view class="section__title">验证码</view>
+            <input name="input2" placeholder="验证码" class="input codeinput" type="number"/>
+            <view class="box-code">
+               <view wx:if="{{send}}" class="sendMsg" bindtap="sendMsg">获取验证码</view>
+               <view wx:if="{{alreadySend}}" class="sendMsg1" >{{second+"s后重新发送"}}</view>
+            </view>
+          </view>
+        </view>
+        <button form-type="submit" class="binding">点击绑定</button>
+        </form>
+        <view class="explain">请您先绑定推荐人，以便享受挪车服务</view>
+        <view class="explain-center-box">
+            <view class="list-box">
+               <view class="list">
+                  <image class="img-icon" src="/image/1.jpg"></image>
+                  <text class="name">隐私保护</text>
+                  <text class="text">匿名打电话 
+                信息无泄漏</text>
+               </view>
+               <view class="list">
+                  <image class="img-icon" src="/image/2.jpg"></image>
+                  <text class="name">快速便捷</text>
+                  <text class="text">手机扫码   
+                  一键通知挪车</text>
+               </view>
+                <view class="list">
+                  <image class="img-icon" src="/image/3.jpg"></image>
+                  <text class="name">多条途径</text>
+                  <text class="text">微信短信推送 
+                  通道触达</text>
+               </view>
+            </view>
+            <view class="title-box">
+                <text>本服务有果仁车秘书提供
+                 客服电话4001234567
+                </text>
+            </view>
+        
+        </view>
+    
+  
+</view>

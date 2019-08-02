@@ -5,7 +5,6 @@ const saveUserObdDeviceUrl = config.saveUserObdDeviceUrl
 const untyingUserObdDeviceUrl = config.untyingUserObdDeviceUrl
 var app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -49,9 +48,9 @@ Page({
   },
   binding(e){
     var that = this
-    if (!util.checkUserInfo()) {
-      return;
-    }
+    // if (!util.checkUserInfo()) {
+    //   return;
+    // }
     if (e.currentTarget.dataset.value == '绑定'){
       that.showModal()
     }

@@ -11,7 +11,6 @@ Page({
   data: {
     value:'',
     history:null,
-    type:'',
   },
   hot(){
     var that = this
@@ -84,19 +83,9 @@ Page({
       key: goodsseek,
       data: list,
     })
-    if (that.data.type == 0){
-      var pages = getCurrentPages();
-      var prevPage = pages[pages.length - 2];  //上一个页面
-      prevPage.data.search = that.data.value
-      prevPage.data.type = that.data.type
-      wx.navigateBack({
-        delta: 1
-      })
-    }else{
       wx.navigateTo({
         url: '/pages/suber/list/list?text=' + that.data.value,
       })
-    }
   },
   label(e){
     wx.navigateTo({
@@ -108,11 +97,6 @@ Page({
    */
   onLoad: function (options) {
     this.hot()
-    if (options.type != undefined) {
-      this.setData({
-        type: options.type
-      })
-    }
   },
 
   /**

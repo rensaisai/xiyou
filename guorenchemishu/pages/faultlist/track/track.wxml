@@ -1,18 +1,32 @@
+<import src="/pages/common/none.wxml" />
+ <!-- <view class="maps-box">
+    <block wx:for="{{img}}" wx:key="this">
+    <view class="list-time-box"></view>
+    <view class="list-boxs1">
+       <view class="bottom-box1">
+        <view class="map-boxs">
+           <image src="{{item}}" style="width:75px; height:75px;"></image>
+        </view>
+       </view>
+    </view>
+    </block>
+ </view> -->
 <view class="index">
+   <block wx:for="{{journey}}" wx:key="this">  
     <view class="list-time-box">
        <image class="list-img" src="/image/time.png"></image>
-       <text class="list-time">2019.06.14</text>
+       <text class="list-time">{{item.date}}</text>
     </view>
-    <view class="list-boxs">
+    <view class="list-boxs" bindtap="detail" data-index="{{index}}">
        <view class="bottom-box">
-          <view class="map-box">
-            <image class="map-box"></image>
-          </view>
+        <view class="map-box">
+           <image class="map-box" src="/image/guiji.png"></image>
+        </view>  
           <view class="trip-detail-box">
             <view class="trip-detail">
                <view class="detail">
                  <view class="trip-km-box">
-                   <text class="trip-km">100</text><text class="km"> km</text>
+                   <text class="trip-km">{{item.mileage}}</text><text class="km"> km</text>
                  </view>
                  <view class="trip-km-box">
                       <text class="trip">驾驶里程</text>
@@ -20,7 +34,7 @@
                </view>
                <view class="detail">
                    <view class="trip-km-box">
-                   <text class="trip-km">1.2</text><text class="km"> h</text>
+                   <text class="trip-km">{{item.time}}</text><text class="km"> h</text>
                  </view>
                  <view class="trip-km-box">
                       <text class="trip">驾驶时间</text>
@@ -28,7 +42,7 @@
                </view>
                <view class="detail">
                  <view class="trip-km-box">
-                   <text class="trip-km">7.5</text><text class="km"> L/100km</text>
+                   <text class="trip-km">{{item.averageFuel}}</text><text class="km"> L/100km</text>
                  </view>
                  <view class="trip-km-box">
                       <text class="trip">油耗</text>
@@ -38,7 +52,7 @@
             <view class="trip-detail">
                     <view class="detail">
                  <view class="trip-km-box">
-                   <text class="trip-km">100</text><text class="km"> km/h</text>
+                   <text class="trip-km">{{item.speeds}}</text><text class="km"> km/h</text>
                  </view>
                  <view class="trip-km-box">
                       <text class="trip">平均速度</text>
@@ -46,7 +60,7 @@
                </view>
                <view class="detail">
                    <view class="trip-km-box">
-                   <text class="trip-km">1.2</text><text class="km"> 次</text>
+                   <text class="trip-km">{{item.emergencySpeedup}}</text><text class="km"> 次</text>
                  </view>
                  <view class="trip-km-box">
                       <text class="trip">急加速</text>
@@ -54,7 +68,7 @@
                </view>
                <view class="detail">
                  <view class="trip-km-box">
-                   <text class="trip-km">7.5</text><text class="km"> 次</text>
+                   <text class="trip-km">{{item.emergencyBrake}}</text><text class="km"> 次</text>
                  </view>
                  <view class="trip-km-box">
                       <text class="trip">急减速</text>
@@ -64,208 +78,11 @@
           </view>
        </view>
     </view>
-
-    <view class="list-time-box">
-       <image class="list-img" src="/image/time.png"></image>
-       <text class="list-time">2019.06.14</text>
-    </view>
-    <view class="list-boxs">
-       <view class="bottom-box">
-          <view class="map-box">
-            <image class="map-box"></image>
-          </view>
-          <view class="trip-detail-box">
-            <view class="trip-detail">
-               <view class="detail">
-                 <view class="trip-km-box">
-                   <text class="trip-km">100</text><text class="km"> km</text>
-                 </view>
-                 <view class="trip-km-box">
-                      <text class="trip">驾驶里程</text>
-                 </view>
-               </view>
-               <view class="detail">
-                   <view class="trip-km-box">
-                   <text class="trip-km">1.2</text><text class="km"> h</text>
-                 </view>
-                 <view class="trip-km-box">
-                      <text class="trip">驾驶时间</text>
-                 </view>
-               </view>
-               <view class="detail">
-                 <view class="trip-km-box">
-                   <text class="trip-km">7.5</text><text class="km"> L/100km</text>
-                 </view>
-                 <view class="trip-km-box">
-                      <text class="trip">油耗</text>
-                 </view>
-               </view>
-            </view>
-            <view class="trip-detail">
-                    <view class="detail">
-                 <view class="trip-km-box">
-                   <text class="trip-km">100</text><text class="km"> km/h</text>
-                 </view>
-                 <view class="trip-km-box">
-                      <text class="trip">平均速度</text>
-                 </view>
-               </view>
-               <view class="detail">
-                   <view class="trip-km-box">
-                   <text class="trip-km">1.2</text><text class="km"> 次</text>
-                 </view>
-                 <view class="trip-km-box">
-                      <text class="trip">急加速</text>
-                 </view>
-               </view>
-               <view class="detail">
-                 <view class="trip-km-box">
-                   <text class="trip-km">7.5</text><text class="km"> 次</text>
-                 </view>
-                 <view class="trip-km-box">
-                      <text class="trip">急减速</text>
-                 </view>
-               </view>
-            </view>
-          </view>
-       </view>
-    </view>
-
-
-    <view class="list-time-box">
-       <image class="list-img" src="/image/time.png"></image>
-       <text class="list-time">2019.06.14</text>
-    </view>
-    <view class="list-boxs">
-       <view class="bottom-box">
-          <view class="map-box">
-            <image class="map-box"></image>
-          </view>
-          <view class="trip-detail-box">
-            <view class="trip-detail">
-               <view class="detail">
-                 <view class="trip-km-box">
-                   <text class="trip-km">100</text><text class="km"> km</text>
-                 </view>
-                 <view class="trip-km-box">
-                      <text class="trip">驾驶里程</text>
-                 </view>
-               </view>
-               <view class="detail">
-                   <view class="trip-km-box">
-                   <text class="trip-km">1.2</text><text class="km"> h</text>
-                 </view>
-                 <view class="trip-km-box">
-                      <text class="trip">驾驶时间</text>
-                 </view>
-               </view>
-               <view class="detail">
-                 <view class="trip-km-box">
-                   <text class="trip-km">7.5</text><text class="km"> L/100km</text>
-                 </view>
-                 <view class="trip-km-box">
-                      <text class="trip">油耗</text>
-                 </view>
-               </view>
-            </view>
-            <view class="trip-detail">
-                    <view class="detail">
-                 <view class="trip-km-box">
-                   <text class="trip-km">100</text><text class="km"> km/h</text>
-                 </view>
-                 <view class="trip-km-box">
-                      <text class="trip">平均速度</text>
-                 </view>
-               </view>
-               <view class="detail">
-                   <view class="trip-km-box">
-                   <text class="trip-km">1.2</text><text class="km"> 次</text>
-                 </view>
-                 <view class="trip-km-box">
-                      <text class="trip">急加速</text>
-                 </view>
-               </view>
-               <view class="detail">
-                 <view class="trip-km-box">
-                   <text class="trip-km">7.5</text><text class="km"> 次</text>
-                 </view>
-                 <view class="trip-km-box">
-                      <text class="trip">急减速</text>
-                 </view>
-               </view>
-            </view>
-          </view>
-       </view>
-    </view>
-
-
-    <view class="list-time-box">
-       <image class="list-img" src="/image/time.png"></image>
-       <text class="list-time">2019.06.14</text>
-    </view>
-    <view class="list-boxs">
-       <view class="bottom-box">
-          <view class="map-box">
-            <image class="map-box"></image>
-          </view>
-          <view class="trip-detail-box">
-            <view class="trip-detail">
-               <view class="detail">
-                 <view class="trip-km-box">
-                   <text class="trip-km">100</text><text class="km"> km</text>
-                 </view>
-                 <view class="trip-km-box">
-                      <text class="trip">驾驶里程</text>
-                 </view>
-               </view>
-               <view class="detail">
-                   <view class="trip-km-box">
-                   <text class="trip-km">1.2</text><text class="km"> h</text>
-                 </view>
-                 <view class="trip-km-box">
-                      <text class="trip">驾驶时间</text>
-                 </view>
-               </view>
-               <view class="detail">
-                 <view class="trip-km-box">
-                   <text class="trip-km">7.5</text><text class="km"> L/100km</text>
-                 </view>
-                 <view class="trip-km-box">
-                      <text class="trip">油耗</text>
-                 </view>
-               </view>
-            </view>
-            <view class="trip-detail">
-                    <view class="detail">
-                 <view class="trip-km-box">
-                   <text class="trip-km">100</text><text class="km"> km/h</text>
-                 </view>
-                 <view class="trip-km-box">
-                      <text class="trip">平均速度</text>
-                 </view>
-               </view>
-               <view class="detail">
-                   <view class="trip-km-box">
-                   <text class="trip-km">1.2</text><text class="km"> 次</text>
-                 </view>
-                 <view class="trip-km-box">
-                      <text class="trip">急加速</text>
-                 </view>
-               </view>
-               <view class="detail">
-                 <view class="trip-km-box">
-                   <text class="trip-km">7.5</text><text class="km"> 次</text>
-                 </view>
-                 <view class="trip-km-box">
-                      <text class="trip">急减速</text>
-                 </view>
-               </view>
-            </view>
-          </view>
-       </view>
-    </view>
-
-
-
-
+    </block>  
+<view class="loadmore" hidden="{{loadmore}}">
+   <view class="log" hidden="{{isHideLoadMore}}">
+      <view class="loading"></view>
+      <view class="loadmore_tips">正在加载</view>
+    </view> 
+</view>
 </view> 

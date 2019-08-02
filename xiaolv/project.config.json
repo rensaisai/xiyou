@@ -46,14 +46,14 @@
 					"id": 1,
 					"name": "模拟更新",
 					"pathName": "pages/index/index",
-					"query": "scene=\"2c91e4b96954a8ce016954aa65ed0000\"",
+					"query": "",
 					"scene": 1011
 				},
 				{
 					"id": 2,
 					"name": "分享",
 					"pathName": "pages/cars/mycar/mvcar/mvcar",
-					"query": "userId=2c91e4b967543d520167548c05600000",
+					"query": "scene=402881ef6bb1a7dd016bb1ad30ac0000",
 					"scene": 1012
 				}
 			]

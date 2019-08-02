@@ -24,6 +24,7 @@ Page({
     height:'',
     scroll:false,
     islike: [],
+    totalCount:0,
   },
   destination:function(id){
     var that = this

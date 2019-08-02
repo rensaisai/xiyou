@@ -109,7 +109,7 @@ Page({
           if (app.globalData.kmUserInfo.memberFlag == 0) {
             that.showModal()
           } else {
-            that.uploadingimg2()
+            that.applications()
           }
         } else {
           wx.showToast({
@@ -214,7 +214,6 @@ Page({
             icon: "none"
           })
         }
-
       }
     })
   },

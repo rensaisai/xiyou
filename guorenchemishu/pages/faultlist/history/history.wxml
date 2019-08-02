@@ -1,3 +1,4 @@
+<import src="/pages/common/none.wxml" />
 <view class="index">
    <scroll-view class="tab-box">
        <view class="tab {{currentData==0?'tab-selecrt':''}}" bindtap='tab' data-current="0">本地检测</view>
@@ -7,29 +8,27 @@
    <swiper style="width:100%;height:{{windowHeight}}px;" current="{{currentData}}" bindchange="eventchange">
      <swiper-item >
          <scroll-view scroll-y style="width:100%;height:{{windowHeight}}px;" bindscrolltolower="scroll" enable-back-to-top="true" lower-threshold="100">
-            <view class="list-box">
-               <view class="list-time">2019-03-02</view>
-               <view class="vehicle-tablet">晋A79892</view>
-               <view class="malfunction">项故障<text class="num">3</text></view>
+            <view class="list-box" bindtap='obddetails' wx:for="{{obdlist}}" wx:key="this" data-index="{{index}}">
+               <view class="list-time">{{item.date}}</view>
+               <view class="vehicle-tablet">{{item.wods}}</view>
+               <view class="malfunction">项故障<text class="num">{{item.checkNumber}}</text></view>
             </view>
-            <view class="list-box">
-               <view class="list-time">2019-03-02</view>
-               <view class="vehicle-tablet">晋A79892</view>
-               <view class="malfunction">项故障<text class="num">3</text></view>
+            <view hidden="{{hiddenNone}}">
+              <template is="none" />
             </view>
-            <view class="list-box">
-               <view class="list-time">2019-03-02</view>
-               <view class="vehicle-tablet">晋A79892</view>
-               <view class="malfunction">项故障<text class="num">3</text></view>
-            </view>
+            <loading showModalloading="{{showModalloading}}"/>
          </scroll-view>
      </swiper-item>
       <swiper-item>
          <scroll-view scroll-y style="width:100%;height:{{windowHeight}}px;" bindscrolltolower="scroll" enable-back-to-top="true" lower-threshold="100">
-             <view class="list-box">
-               <view class="list-time">2019-03-02</view>
-               <view class="vehicle-tablet">晋A79892</view>
-               <view class="malfunction">项故障<text class="num">3</text></view>
+             <view class="list-box" wx:for="{{repairlist}}" wx:key="this" bindtap='repairdetail' data-index="{{index}}">
+               <view class="list-time">{{item.date}}</view>
+               <view class="vehicle-tablet">{{item.userCarNo}}</view>
+               <view class="malfunction" wx:if="{{item.abnormal != 0}}">项异常<text class="num">{{item.abnormal}}</text></view>
+                <view class="malfunction" wx:else>正常<text class="num"></text></view>
+            </view>
+            <view hidden="{{hiddenNones}}">
+              <template is="none" />
             </view>
          </scroll-view>
      </swiper-item>

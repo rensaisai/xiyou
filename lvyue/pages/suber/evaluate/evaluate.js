@@ -114,8 +114,8 @@ Page({
                   if (res.statusCode == 200 && msg.status == 1) {
                     if (img.length == i) {
                       setTimeout(() => {
-                        wx.navigateBack({
-                          delta: 1
+                        wx.redirectTo({
+                          url: '/pages/user/myorder/myorder',
                         })
                       }, 200)
                       wx.showToast({

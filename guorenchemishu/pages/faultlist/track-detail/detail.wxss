@@ -1,0 +1,40 @@
+@import "/pages/faultlist/police-detail/detail.wxss";
+page{
+  background: #f3f3f3;
+  padding: 0px;
+}
+.index{
+  width: 100%;
+  height: auto;
+}
+.list-boxs{
+  width: auto;
+  height: auto;
+  border: 1rpx solid #f3f3f3;
+}
+.tab-box{
+  position: fixed;
+  top:0;
+  z-index: 9999;
+  width: 100%;
+  height: 100rpx;
+  border-bottom:1rpx solid #E8E8E8; 
+}
+.block{
+  width: 100%;
+  height: 100rpx;
+}
+.tab{
+  display: inline-block;
+  width: 50%;
+  height: 98rpx;
+  line-height: 98rpx;
+  border-bottom:2rpx solid #ffffff;
+  font-size: 30rpx;
+  color: #666666; 
+  text-align: center;
+}
+.tab-selecrt{
+  border-bottom: 2rpx solid #E84A2E; 
+  color: #E84A2E;
+}

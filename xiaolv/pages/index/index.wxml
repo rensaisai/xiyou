@@ -102,4 +102,12 @@
     </view>
    
 </view>
+<pop-up showModaler="{{showModaler}}"/>
+<view class="advertising-pop" wx:if="{{showModaler}}">
+    <image></image>
+    <view class="shut-btn-box">
+      <image src="/image/shut.png" class="shut-btn" bindtap='shut'></image>
+    </view>
+</view>
+
 <!-- <button open-type='openSetting' bindopensetting="callback"></button> -->

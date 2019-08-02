@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "检测历史",
-  "usingComponents": {}
+  "usingComponents": {
+    "loading": "/component/loading/loading"
+  }
 }

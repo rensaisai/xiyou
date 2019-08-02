@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/fault/fault",
+    "pages/xcar/xcar",
     "pages/progect/project",
     "pages/order/order",
     "pages/orderstatus/orderstatus",
@@ -73,10 +74,15 @@
     "pages/faultlist/fault/fault",
     "pages/faultlist/history/history",
     "pages/faultlist/track/track",
-    "pages/xcar/xcar",
+    "pages/faultlist/result/result",
     "pages/drive/issue/activity",
     "pages/drive/index/index",
     "pages/join/join",
+    "pages/faultlist/police/police",
+    "pages/faultlist/police-detail/detail",
+    "pages/faultlist/track-detail/detail",
+    "pages/cars/mycar/referrer/referrer",
+    "pages/faultlist/prevention/prevention",
     "pages/users/wash-order/order"
   ],
   "window": {
@@ -99,7 +105,7 @@
         "selectedIconPath": "image/home2.png"
       },
       {
-        "pagePath": "pages/fault/fault",
+        "pagePath": "pages/xcar/xcar",
         "text": "故障检测",
         "iconPath": "image/fault.png",
         "selectedIconPath": "image/fault1.png"

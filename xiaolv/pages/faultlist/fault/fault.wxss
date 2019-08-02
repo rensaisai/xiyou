@@ -1,3 +1,6 @@
+page{
+  background: #ffffff;
+}
 .index{
   width: 100%;
   height: auto;

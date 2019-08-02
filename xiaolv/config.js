@@ -2,7 +2,7 @@
  * 小程序配置文件
  */
 var debug =false;//测试开关 true测试 false正式
-var version = "1.0.0";//版本
+var version = "1.1.1";//版本
 var host = "https://www.cmspq.xyz/cmsweb/grApi"//正式
 var host1 = "https://www.cmspq.xyz/obd/grApi"
 var hostimg ="https://www.cmspq.xyz/upload/upload/fileUpload"
@@ -12,10 +12,10 @@ if (debug) {
   // var host1 = "http://39.105.72.30:8880/obd/grApi"
   // var hostimg = "http://39.105.72.30:8880/upload/upload/fileUpload"//上传图片
   // var hostimg1 = "http://39.105.72.30:8880/upload/upload/getCardNoByFile"//上传图片
-  var host = "http://192.168.1.111:8080/cmsweb/grApi"
-  var host1 = "http://192.168.1.111:8080/obd/grApi"
-  var hostimg = "http://192.168.1.111:8080/upload/upload/fileUpload"//上传图片
-  var hostimg1 = "http://192.168.1.111:8080/upload/upload/getCardNoByFile"//上传图片
+  var host = "http://192.168.1.218:8080/cmsweb/grApi"
+  var host1 = "http://192.168.1.218:8080/obd/grApi"
+  var hostimg = "http://192.168.1.218:8080/upload/upload/fileUpload"//上传图片
+  var hostimg1 = "http://192.168.1.218:8080/upload/upload/getCardNoByFile"//上传图片
 }
 var gaodeKey = "a4c923f7545a647e0086dcfa286e6452"
 var config = {
@@ -277,7 +277,7 @@ saveCardOrderUrl: 'saveCardOrder',
   chenkUserObdDeviceUrl:'chenkUserObdDevice',
   //绑定obd
   saveUserObdDeviceUrl:'saveUserObdDevice',
-  //接触obd绑定
+  //解除obd绑定
   untyingUserObdDeviceUrl:'untyingUserObdDevice',
   //故障检测
   getCurCodeUrl:'getCurCode',
@@ -304,6 +304,32 @@ saveCardOrderUrl: 'saveCardOrder',
   //判断用户申请信息
   checkUserAgentUrl: 'checkUserAgent',
    //提交申请人信息
-  saveUserApplyUrl: 'saveUserApply'  
+  saveUserApplyUrl: 'saveUserApply',
+  //获取obd检测故障内容
+  getObdTestingInfoByCheckIdUrl: 'getObdTestingInfoByCheckId',
+  //obd检测详情
+  getObdTestingByCheckIdUrl: 'getObdTestingByCheckId',
+  //obd检测时间，地址
+  getOBDTestingTimeUrl: 'getOBDTestingTime',
+  //修理厂检测信息
+  getRepairTestingTimeUrl: 'getRepairTestingTime',
+  //实时车况
+  OBDLatestCarConditionUrl: 'OBDLatestCarCondition',
+  //报警列表
+  getUserObdAlertUrl: 'getUserObdAlert',
+  //报警详情
+  getObdAlertByIdUrl: 'getObdAlertById',
+  //获取车辆最新位置
+  getUserAndGpsInfoByIDsUtcUrl: 'getUserAndGpsInfoByIDsUtc',
+  //获取用户最后行程
+  getUserFinalStrokeUrl: 'getUserFinalStroke',
+  //获取最近行程轨迹
+  getUserStrokeTrajectoryByIdUrl: 'getUserStrokeTrajectoryById',
+  //获取用户所有行程
+  getUserStrokeUrl: 'getUserStroke',
+  //扫码挪车码绑定推荐人
+  bindQrCodeByPhoneAndAncestorUrl: 'bindQrCodeByPhoneAndAncestor',
+  //行程详情
+  getUserStrokeInfoUrl:'getUserStrokeInfo' 
 };
 module.exports = config

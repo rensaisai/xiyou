@@ -1,0 +1,53 @@
+.index{
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+}
+.img{
+  position: relative;
+  width: 100%;
+  height: 830rpx;
+}
+.hint-box{
+  position: absolute;
+  bottom: 30rpx;
+  width: 100%;
+  height: 100rpx;
+  font-size: 34rpx;
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+}
+.box{
+  width: 100%;
+  height: auto;
+  border-bottom:1rpx solid #E9E9E9;
+  padding-left:20rpx;
+  box-sizing: border-box;  
+  background: #ffffff;
+}
+.list-box{
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 1rpx solid #E9E9E9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+}
+.list-box:last-child{
+   border-bottom: none;
+}
+.shefang-text{
+  font-size: 34rpx;
+  color: #000000;
+  font-weight: 700;
+}
+.status{
+  color:rgba(0,0,0,0.6);
+}
+.kaishi-time{
+  font-size: 34rpx;
+  color: #DDDDDD;
+  font-weight: 600;
+}

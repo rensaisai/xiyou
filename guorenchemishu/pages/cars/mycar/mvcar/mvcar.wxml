@@ -6,6 +6,7 @@
        <input class="phone-input" bindinput='phone' maxlength="11" ></input>
        <view class="subtitle">此电话号码只用作双方通话使用。不会用作其他用途。</view>
      </view>
-      <view class="phone-btn" bindtap='call'>点击呼叫车主</view>
+     <view class="phone-btn" bindtap='call'>点击呼叫车主</view>
+       <view class="phone-btn" bindtap='next'>返回首页</view>
    </view>
 </view>

@@ -1,0 +1,28 @@
+<view class="index">
+  <view class="img">
+     <image src="/image/dun.png" class="img"></image>
+     <view class="hint-box">
+        <text>开启防护后，如果检测到车辆移动将会发出 
+        警报信息</text>
+     </view>
+  </view>
+  <view class="box">
+     <view class="list-box">
+         <text class="shefang-text">设防开关</text>
+         <switch checked="{{checked}}" bindchange="switch1Change"/>
+     </view>
+     <view class="list-box">
+         <text class="shefang-text">设防控制</text>
+         <text class="shefang-text status">手动</text>
+     </view>
+     <view class="list-box">
+          <text class="kaishi-time">防护开始时间</text>
+          <text class="kaishi-time">11:00</text>
+     </view>
+     <view class="list-box">
+          <text class="kaishi-time">防护结束时间</text>
+          <text class="kaishi-time">8:00</text>
+     </view>
+  </view>
+
+</view>

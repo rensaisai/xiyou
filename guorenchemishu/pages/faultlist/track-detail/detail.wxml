@@ -1,0 +1,66 @@
+<view class="index">
+ <scroll-view class="tab-box">
+       <view class="tab {{currentData==0?'tab-selecrt':''}}" bindtap='tab' data-current="0">详情</view>
+       <view class="tab {{currentData==1?'tab-selecrt':''}}" bindtap='tab' data-current="1">路线</view>
+ </scroll-view>
+ <view class="block"></view>
+ <swiper style="width:100%;height:{{windowHeight}}px;" current="{{currentData}}" bindchange="eventchange">
+     <swiper-item >
+         <scroll-view scroll-y style="width:100%;height:{{windowHeight}}px;padding:20rpx;box-sizing:border-box;" bindscrolltolower="scroll" enable-back-to-top="true" lower-threshold="100">
+         <view class="list-boxs">
+          <view class="list">
+            <view class="list-left">开始时间</view>
+            <view class="list-right">{{detail.startTime}}</view>
+          </view>
+          <view class="list" style='background:#F5F5F5'>
+            <view class="list-left">结束时间</view>
+            <view class="list-right">{{detail.endTime}}</view>
+          </view>
+          <view class="list">
+            <view class="list-left">行驶里程</view>
+            <view class="list-right">{{detail.mileage}}km</view>
+          </view>
+          <view class="list" style='background:#F5F5F5'>
+            <view class="list-left">行驶时间</view>
+            <view class="list-right">{{detail.time}}h</view>
+          </view>
+          <view class="list">
+            <view class="list-left">总油耗</view>
+            <view class="list-right">{{detail.totaFuel}}L</view>
+          </view>
+           <view class="list" style='background:#F5F5F5'>
+            <view class="list-left">平均油耗</view>
+            <view class="list-right">{{detail.averageFuel}}L/100km</view>
+          </view>
+          <view class="list" >
+            <view class="list-left">平均速度</view>
+            <view class="list-right">{{detail.speeds}}km/h</view>
+          </view>
+          <view class="list" style='background:#F5F5F5'>
+            <view class="list-left">最高速度</view>
+            <view class="list-right">{{detail.maxSpeed}}km/h</view>
+          </view>
+          <view class="list">
+            <view class="list-left">急加速次数</view>
+            <view class="list-right">{{detail.emergencySpeedup}}次</view>
+          </view>
+          <view class="list" style='background:#F5F5F5'>
+            <view class="list-left">急减速次数</view>
+            <view class="list-right">{{detail.emergencyBrake}}次</view>
+          </view>
+          <view class="list" >
+            <view class="list-left">本行程评分</view>
+            <view class="list-right">{{detail.fraction}}分</view>
+          </view>
+         </view>
+         </scroll-view>
+     </swiper-item>
+      <swiper-item>
+         <scroll-view scroll-y style="width:100%;height:{{windowHeight}}px;" bindscrolltolower="scroll" enable-back-to-top="true" lower-threshold="100">
+                <map id="map" longitude="{{polyline[0].points.longitude}}" latitude="{{polyline[0].points.latitude}}" polyline="{{polyline}}" include-points="{{polyline[0].points}}" style="width:{{windowwidth}}px; height:{{windowHeight}}px;"  markers="{{markers}}"></map>
+         </scroll-view>
+     </swiper-item>
+   </swiper>
+
+</view>
+

@@ -1,4 +1,31 @@
-
+<view class='index' wx:if="{{versions == 0}}">
+    <block wx:for="{{goodslist}}"  wx:key="this">
+            <view class="list" bindtap='buy' data-id="{{item.id}}">
+                <view class="list-img"  data-id="{{item.id}}">
+                <image src="{{item.img}}" class="image" mode="aspectFit" lazy-load="true"></image>
+                </view>
+                <view class="list-count">{{item.volume}}人已买</view>
+                <view class="list-box">
+                     <view class="list-name">
+                        <view class="proprietary" wx:if="{{item.newProduct == 1}}">自营</view>
+                        <view class="promotion {{item.newProduct == 1?'hot':''}}" wx:if="{{item.hotSale == 1}}">热销</view>                   
+                       <view class="goods-img">
+                          【{{item.goodsName}}】{{item.subtitle}}
+                       </view>
+                     </view>
+                     <!-- <view class="gold-code">
+                          <view class="code-img">可抵扣{{ceil.}}金币</view>
+                     </view> -->
+                     <view class="list-name shops">
+                          <!-- <text class="activity-price">店主价:</text> -->
+                          <view class="list-price"><text class="list-cost">￥</text>{{item.fansPrice}}<text class="list-money decline">(市场价￥{{item.price}})</text></view>
+                          <view class="list-btn">立即购买</view>
+                     </view>
+                </view> 
+            </view>
+            </block>
+</view>
+<view wx:else>
 <scroll-view class="menu_box" scroll-x scrollLeft="{{scrollLeft}}">
       <block wx:for="{{list}}" wx:key="{{item.id}}">
        <view class='tab {{currentData==index?"borders":""}}'  data-id="{{item.id}}" bindtap='checkCurrent' data-index="{{index}}">{{item.typeName}}</view>
@@ -19,32 +46,32 @@
                  </swiper-item>
                 </block> 
           </swiper>
-            <!-- <view class="index-list">
-                <view class="shop" bindtap='boutique'>
+          <view class="index-list">
+                <view class="shop">
                     <view class="shop-img">
                         <image src="/image/bao.jpg" class="bao-img" mode="scaleToFill"></image>
                     </view>
                     <text class="txt">精品</text>
                 </view>
-                 <view class="shop" bindtap='protect'>
+                 <view class="shop">
                     <view class="shop-img">
                         <image src="/image/lh.jpg" class="bao-img" mode="widthFix"></image>
                     </view>
                     <text class="txt">旅护</text>
                 </view>
-                <view class="shop" bindtap='specialty'>
+                <view class="shop">
                     <view class="shop-img">
                         <image src="/image/tc.jpg" class="bao-img" mode="widthFix"></image>
                     </view>
                     <text class="txt">土特产</text>
                 </view>
-                <view class="shop" bindtap='circuit'>
+                <view class="shop">
                     <view class="shop-img">
                         <image src="/image/xl.jpg" class="bao-img" mode="widthFix"></image>
                     </view>
                     <text class="txt">线路</text>
                 </view>   
-            </view> -->
+            </view>
             <view class="activity-box" wx:if="{{(currentData == 0) && (timegoods != null || limitgoods != null)}}">
               <view class="tilimit-box">
                 <view class="tilimit-left-box">
@@ -91,7 +118,7 @@
                        </view>
                      </view>
                      <view class="list-name shops">
-                          <view class="list-price"><text class="activity-price">活动价:</text><text class="list-cost">￥</text>{{item.runPrice}}<text class="list-money">已售{{item.volume}}件</text></view>
+                          <view class="list-price"><text class="activity-price">活动价:</text><text class="list-cost">￥</text>{{item.runPrice}}<text class="list-money decline">(市场价￥{{item.marketPrice}})</text><text class="list-money">已售{{item.volume}}件</text></view>
                           <view class="list-btn">立即购买</view>
                      </view>
                 </view> 
@@ -128,7 +155,7 @@
                        </view>
                      </view>
                      <view class="list-name shops">
-                          <view class="list-price"><text class="activity-price">活动价:</text><text class="list-cost">￥</text>{{item.runPrice}}<text class="list-money">已售{{item.volume}}件</text></view>
+                          <view class="list-price"><text class="activity-price">活动价:</text><text class="list-cost">￥</text>{{item.runPrice}}<text class="list-money decline">(市场价￥{{item.marketPrice}})</text><text class="list-money">已售{{item.volume}}件</text></view>
                           <view class="list-btn">立即购买</view>
                      </view>
                 </view> 
@@ -167,4 +194,5 @@
      </scroll-view>
     </swiper-item>
     </swiper>
+    </view>
     

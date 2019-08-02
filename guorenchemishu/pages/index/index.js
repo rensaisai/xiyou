@@ -10,7 +10,7 @@ const getAdsUrl = config.getAdsUrl
 const updateUserUrl = config.updateUserUrl
 const vehiclemessage = config.vehiclemessage
 const getUserInfoByUserIdUrl = config.getUserInfoByUserIdUrl
-const checkQrCodeByUserIdUrl = config.checkQrCodeByUserIdUrl
+// const checkQrCodeByUserIdUrl = config.checkQrCodeByUserIdUrl
 // const dateUrl = config.dateUrl
 var app = getApp()
 console.log(app)
@@ -80,31 +80,6 @@ Page({
           that.carInfoRequest();
           if (app.globalData.userInfo != null){
             that.updateUserRequest(app.globalData.kmUserInfo.id)
-          }
-          if (app.globalData.content != '' && app.globalData.content != null && app.globalData.kmUserInfo != null) {
-            util.kmRequest({
-              data: {
-                interfaceName: checkQrCodeByUserIdUrl,
-                param: {
-                  content: app.globalData.content
-                }
-              },
-              success: function (res) {
-                app.globalData.content = null
-                wx.showModal({
-                  title: '提示',
-                  content: res.data.msg,
-                  showCancel:false,
-                  success(res) {
-                    if (res.confirm) {
-                      console.log('用户点击确定')
-                    } else if (res.cancel) {
-                      console.log('用户点击取消')
-                    }
-                  }
-                })
-              }
-            })
           }
         }else{
           if (app.globalData.userId != null){
@@ -458,7 +433,6 @@ Page({
     this.hideModal()
   },
   onLoad: function (options) {
-    console.log(options)
     var that = this
     wx.getSetting({
       success(res) {

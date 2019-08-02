@@ -19,23 +19,22 @@
   <view class="explain-box" wx:if="{{active}}">
      <text class="explain-title">安装完成后请确认：</text>
      <text class="">
-     1.安装完成后测得的实际胎压，旧配件处理选择。
-     2.旧配件处理选择。
-     3.轮胎安装后确认的信息。
-     4.轮胎安装后确认的信息。                  
-     </text>
+     1.如果您的OBD支持蓝牙模式，请用安卓版app进行检测，小程序和苹果版app暂不支持蓝牙版模式。
+     2.如果您的OBD支持SIM卡模式，请先绑定设备，然后点击故障检测即可检测爱车是否故障。             </text>
   </view>
-  <view class="list-box">
-      <view class="list">
-         <view class="left">车身系统</view>
+  <view class="list-box" wx:else>
+      <view class="list" wx:for="{{list.obdErrorList}}" wx:key="this" bindtap='fault' data-index="{{index}}">
+         <view class="left">{{item.obdTitle}}</view>
          <view class="right">
-            <text class="list-malfunction">无故障</text>
+            <text class="list-malfunction" wx:if="{{item.obdCount == 0}}">无故障</text>
+            <text class="list-malfunction" wx:else>{{item.obdCount}}项故障</text>
             <view class="icon-box">
-                  <icon type="success" size="20" color="#50b624"/>
+                  <icon type="success" size="22" color="#50b624" wx:if="{{item.obdCount == 0}}"/>
+                  <icon type="clear" size="22" color="#ec4d3e" wx:else/>
             </view>
          </view>
       </view>
-      <view class="list">
+      <!-- <view class="list">
          <view class="left">车身系统</view>
          <view class="right">
             <text class="list-malfunction">无故障</text>
@@ -124,7 +123,7 @@
                   <icon type="success" size="20" color="#50b624"/>
             </view>
          </view>
-      </view>
+      </view> -->
   </view>
  
 

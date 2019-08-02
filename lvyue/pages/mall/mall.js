@@ -1,5 +1,6 @@
 const config = require('../../config.js')
 const util = require('../../utils/util.js')
+const getGoodsVersionUrl = config.getGoodsVersionUrl
 const getAdsUrl = config.getAdsUrl
 const getAllGoodsTypeUrl = config.getAllGoodsTypeUrl
 const getGoodsByGoodsTypeIdUrl = config.getGoodsByGoodsTypeIdUrl
@@ -13,6 +14,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    goodslist:null,
+    versions:1,
     windowHeight:'',
     adsList:null,
     currentData: 0,
@@ -372,14 +375,52 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that = this
     var windowHeight = ''
     wx.getSystemInfo({
       success: function (res) {
         windowHeight = res.windowHeight - 42;
       }
     })
-    this.setData({
+    that.setData({
       windowHeight: windowHeight,
+    })
+    util.kmRequest({
+      url: getGoodsVersionUrl,
+      data: {},
+      method: "post",
+      success: (res) => {
+        if (res.data.status == 1) {
+             if (res.data.data == 0){
+               util.kmRequest({
+                 url: getGoodsByGoodsTypeIdUrl,
+                 data: {
+                   goodsTypeId: '105',
+                   goodsSource: 'sc',
+                   page: 0
+                 },
+                 success(res) {
+                   if (res.data.status == 1) {
+                     var goodslist = JSON.parse(res.data.data)
+                     that.setData({
+                       goodslist: goodslist,
+                     })
+                   } else if (res.data.status == 6) {
+                     
+                   } else {
+                     wx.showToast({
+                       title: res.data.msg,
+                       icon: "none"
+                     })
+                   }
+                 }
+               })
+             }
+          that.setData({
+            versions: res.data.data
+          })
+        }
+      }
     })
   },
 

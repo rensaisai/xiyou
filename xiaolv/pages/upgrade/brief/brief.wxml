@@ -1,6 +1,6 @@
 <view class="index">
    <view class="log-box">
-      <view class="log"></view>
+      <image class="log" src="/image/logo.png"></image>
       <view class="title">小毛驴养车</view>
    </view>
    <view class="font"></view>

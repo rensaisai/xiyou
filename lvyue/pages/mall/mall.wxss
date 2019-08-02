@@ -1,4 +1,13 @@
-
+.index{
+  width: 100%;
+  height: auto;
+}
+.index-list{
+  width: 100%;
+  height: 244rpx;
+  display: flex;
+  background: #ffffff;
+}
 .box{
   display: flex;
   justify-content: space-between;

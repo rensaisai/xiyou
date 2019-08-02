@@ -17,7 +17,7 @@
     <view class="btn" bindtap='detection'>故障检测</view>           
     <view class="btn" bindtap='history'>检测历史</view>
 </view>
-<view class="commodity_screen"  catchtouchmove='true' wx:if="{{showModalStatus}}" bindtap='hider'></view> 
+<view class="commodity_screen"  catchtouchmove='true' wx:if="{{showModalStatus}}" bindtap='hider'></view>
 <view  animation="{{animationData}}" catchtouchmove='true' class="commodity_attr_box" wx:if="{{showModalStatus}}">
     <input placeholder='请输入OBD设备号' class="input-SIM" bindinput="block"></input>
     <view class="btns">
@@ -25,5 +25,6 @@
         <button bindtap='confirm' style=' color: #fd4200;'>确定</button>
     </view>
    
-</view>
+</view> 
+
 

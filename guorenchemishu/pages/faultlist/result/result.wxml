@@ -1,0 +1,36 @@
+<view class="index">
+   <view class="door-information-box">
+      <view class='door-information'>
+         <view class="list-box">
+             <view>检测时间：</view><text class="list-right">{{information.time}}</text>
+         </view>
+         <view class="list-box">
+             <view>检测地点：</view><text class="list-right">{{information.address}}</text>
+         </view>
+         <view class="list-box">
+             <view>检测技工：</view><text class="list-right">{{information.technician}}</text>
+         </view>
+         <view class="list-box">
+             <view>检测建议：</view><text class="list-right">{{information.proposal}}</text>
+         </view>
+      </view>
+   </view>
+   <view class="list" wx:for="{{list}}" wx:key="this" data-index="{{index}}" bindtap='fault'>
+      <view class="detection-center">{{item.obdTitle}}</view>
+      <view class="detection-state-box">
+          <view class="detection-state" wx:if="{{item.obdCount == 0}}">无故障</view>
+          <view class="detection-state" wx:if="{{item.obdCount != 0 && item.obdCount != undefined}}">{{item.obdCount}}项故障</view>
+          <view class="detection-state" wx:if="{{item.status == 0}}">正常</view>
+          <view class="detection-state" wx:if="{{item.status == 1}}">异常</view>
+          <view class="detection-state" wx:if="{{item.status == 2}}">未检测</view>
+          <view class="icon-boc">
+              <icon type="success" size="22" color="#50b624" wx:if="{{item.obdCount == 0}}"/>
+              <icon type="clear" size="22" color="#ec4d3e" wx:if="{{item.obdCount != 0 && item.obdCount != undefined}}"/>
+              <icon type="success" size="22" color="#50b624" wx:if="{{item.status == 0}}"/>
+              <icon type="clear" size="22" color="#ec4d3e" wx:if="{{item.status == 1}}"/>
+              <icon type="warn" size="22" color="#fea820" wx:if="{{item.status == 2}}"/>
+             
+          </view>
+      </view>
+    </view>
+</view>

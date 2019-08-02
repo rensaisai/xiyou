@@ -183,7 +183,7 @@
 <view class="comment-box1">
       <view class="comment-details-box">
           <view class="all-comment">
-            <view class="text">全部评论
+            <view class="text">买家评论
             <view class="dian-box">
               <view class="dian" style='background:#000000;width:6rpx;height:6rpx;'></view>
             </view> 

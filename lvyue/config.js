@@ -1,9 +1,9 @@
-var debug = true;//测试开关 true测试 false正式
-var version = "1.1.1";//版本
+var debug = false;//测试开关 true测试 false正式
+var version = "1.1.2";//版本
 var host = "https://www.tianxiadiaochang.com/xyweb"//正式
 if (debug) {
-  var host = "http://114.116.49.171:8081/xyweb"//测试
-  // var host = "http://192.168.1.198:8080" 
+  // var host = "http://114.116.49.171:8081/xyweb"//测试
+  var host = "http://47.94.130.113:8081/xyweb"
 }
 var config = {
   //手机号登录
@@ -241,7 +241,9 @@ cancelFollowUrl: `${host}/xyCommunity/cancelFollow`,
   //取消回复点赞
   cancelLikeCommentReplyUrl: `${host}/xyComment/cancelLikeCommentReply`,
   //商品选择列表
-  getGoodsListUrl: `${host}/xyCommunity/getGoodsList` 
+  getGoodsListUrl: `${host}/xyCommunity/getGoodsList`,
+  //
+  getGoodsVersionUrl: `${host}/xyGoods/getGoodsVersion`, 
 
 }
 module.exports = config

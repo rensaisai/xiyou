@@ -57,11 +57,7 @@ Page({
       that.setData({
         loading: true
       })
-      if (app.globalData.content != '' && app.globalData.content != null) {
-        var content = app.globalData.content
-      } else {
-        var content = ''
-      }
+      var content = ''
       util.kmRequest({
         data: {
           token:'',
@@ -118,10 +114,8 @@ Page({
   },
   inputPhoneNum: function (e) {
     let phoneNum = e.detail.value
-    console.log(phoneNum)
     if (phoneNum.length === 11) {
       var checkedNum = this.checkPhoneNum(phoneNum)
-      console.log('phone' + checkedNum)
       if (checkedNum) {
         this.setData({
           phoneNum: phoneNum
@@ -168,12 +162,10 @@ Page({
   sendMsg: function () {
     var phoneNum = this.data.phoneNum;
     if (phoneNum != '' && phoneNum.length === 11) {
-    
       var timestamp = Date.parse(new Date());
       timestamp = timestamp / 1000;
       console.log('grcms@2019' + timestamp + phoneNum)
       util.kmRequest({
-        // url: getCodeUrl,
         data: {
           token:'',
           sign: md5('grcms@2019' + timestamp + phoneNum),

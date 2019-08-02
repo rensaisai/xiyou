@@ -62,6 +62,11 @@ Page({
     }
     that.ueserphone()
   },
+  next(){
+    wx.switchTab({
+      url: '/pages/index/index'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -81,47 +86,12 @@ Page({
         success: (res) => {
           console.log(res)
           if (res.data.status == 1) {
-            wx.login({
-              success: function (loginCode) {
-                //调用request请求api转换登录凭证
-                util.kmRequest({
-                  data: {
-                    token: '',
-                    interfaceName: getGROpenIdUrl,
-                    param: {
-                      code: loginCode.code
-                    }
-                  },
-                  success: function (res) {
-                    if (res.data.status == 1) {
-                      app.globalData.openid = JSON.parse(res.data.data).openid;
-                      util.kmRequest({
-                        data: {
-                          interfaceName: getUserInfoByOpenIdUrl,
-                          param: {
-                            openId: JSON.parse(res.data.data).openid,
-                          }
-                        },
-                        success: function (res) {
-                          app.globalData.content = options.scene
-                          if (res.data.status == 1) {
-                            wx.switchTab({
-                              url: '/pages/index/index'
-                            })
-                          } else {
-                            wx.redirectTo({
-                              url: '/pages/users/logins/logins'
-                            })
-                          }
-                        }
-                      })
-                    }
-                  }
-                })
-              }
-            })
+            app.globalData.content = options.scene
+              wx.redirectTo({
+                url: '/pages/cars/mycar/referrer/referrer'
+              })
           } else if (res.data.status == 3) {
-
+             
           }
         }
       })

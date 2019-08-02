@@ -1,0 +1,24 @@
+<view class="index">
+    <view class="list">
+       <view class="list-left">设备编号</view>
+       <view class="list-right">{{detail.deviceNumber}}</view>
+    </view>
+    <view class="list" style='background:#F5F5F5'>
+       <view class="list-left">报警时间</view>
+       <view class="list-right">{{detail.time}}</view>
+    </view>
+    <view class="list">
+       <view class="list-left">报警位置</view>
+       <view class="list-right">{{addres}}</view>
+    </view>
+    <view class="list" style='background:#F5F5F5'>
+       <view class="list-left">车速</view>
+       <view class="list-right">{{detail.speed}}</view>
+    </view>
+      <view class="list">
+       <view class="list-left">报警描述</view>
+       <view class="list-right">{{detail.describe}}</view>
+    </view>
+
+
+</view>

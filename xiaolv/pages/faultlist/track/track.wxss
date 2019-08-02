@@ -1,4 +1,5 @@
 @import "/pages/xcar/xcar";
+@import "/pages/common/index.wxss";
 page{
   background: #ffffff;
 }
@@ -38,4 +39,31 @@ page{
   box-shadow: 0 0 0 1rpx rgba(0, 0, 0, 0.1); 
   padding-left: 10rpx;
   box-sizing: border-box; 
+}
+.maps-box{
+  position: absolute;
+  width: 100rpx;
+  height: auto;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  margin-left: 64rpx;
+}
+.map-boxs{
+  width: 75px;
+  height: 75px;
+}
+.bottom-box1{
+   padding-left: 10rpx;
+   box-sizing: border-box;
+}
+.list-boxs1{
+  width: 100%;
+  height: 240rpx;
+  border-left:1rpx solid #ffffff;
+  margin-left:13rpx; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left:20rpx;
+  box-sizing: border-box;
 }

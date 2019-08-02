@@ -1,6 +1,6 @@
 <view class="index">
     <view class="logo-box">
-       <view class="icon-box"></view>
+       <image src="/image/logo.png" class="icon-box"></image>
     </view>
     <view class="title">《非全日制用工协议》</view>
     <view class="box">

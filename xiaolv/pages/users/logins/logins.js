@@ -57,11 +57,7 @@ Page({
       that.setData({
         loading: true
       })
-      if (app.globalData.content != '' && app.globalData.content != null) {
-        var content = app.globalData.content
-      } else {
-        var content = ''
-      }
+      var content = ''
       util.kmRequest({
         data: {
           token:'',
@@ -172,7 +168,6 @@ Page({
       timestamp = timestamp / 1000;
       console.log('grcms@2019' + timestamp + phoneNum)
       util.kmRequest({
-        // url: getCodeUrl,
         data: {
           token:'',
           sign: md5('grcms@2019' + timestamp + phoneNum),

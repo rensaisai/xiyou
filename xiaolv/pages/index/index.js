@@ -81,31 +81,6 @@ Page({
           if (app.globalData.userInfo != null){
             that.updateUserRequest(app.globalData.kmUserInfo.id)
           }
-          if (app.globalData.content != '' && app.globalData.content != null && app.globalData.kmUserInfo != null) {
-            util.kmRequest({
-              data: {
-                interfaceName: checkQrCodeByUserIdUrl,
-                param: {
-                  content: app.globalData.content
-                }
-              },
-              success: function (res) {
-                app.globalData.content = null
-                wx.showModal({
-                  title: '提示',
-                  content: res.data.msg,
-                  showCancel: false,
-                  success(res) {
-                    if (res.confirm) {
-                      console.log('用户点击确定')
-                    } else if (res.cancel) {
-                      console.log('用户点击取消')
-                    }
-                  }
-                })
-              }
-            })
-          }
         }else{
           if (app.globalData.userId != null){
             wx.navigateTo({
@@ -478,7 +453,13 @@ Page({
     this.newVersion();
     this.setData({
       page: 0,
+      showModaler:false,
     })
+  },
+  shut(){
+   this.setData({
+     showModaler:false
+   })
   },
   newVersion: function () {
     console.log('canIUse---getUpdateManager---' + wx.canIUse('getUpdateManager'));

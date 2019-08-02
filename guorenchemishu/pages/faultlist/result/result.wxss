@@ -1,0 +1,66 @@
+page{
+  background: #ffffff;
+}
+.index{
+  width: 100%;
+  height: auto;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.door-information-box{
+  width: 100%;
+  height: 422rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30rpx 0;
+  box-sizing: border-box;
+}
+.door-information{
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#4940fc,#3c92fe);
+  border-radius:10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  padding: 40rpx 20rpx;
+  box-sizing: border-box;
+  font-weight: 600;
+}
+.list-box{
+  width: 100%;
+  height: auto;
+  font-size: 28rpx;
+  color: #ffffff;
+  display: flex;
+}
+.list-right{
+  flex: 1;
+}
+.list{
+  width: 100%;
+  height: 100rpx;
+  border-top:1rpx solid #EEEEEE; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.detection-center{
+  font-size: 34rpx;
+  color: #000000;
+  font-weight: 700;
+}
+.detection-state-box{
+  display: flex;
+  align-items: center;
+}
+.detection-state{
+  font-size: 34rpx;
+  color: rgba(0,0,0,0.6);
+}
+.icon-boc{
+  margin-left:20rpx;
+  display: flex;
+  align-items: center; 
+} 
